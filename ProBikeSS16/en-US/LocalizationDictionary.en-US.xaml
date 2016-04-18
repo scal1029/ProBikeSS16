@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- The name of this ResourceDictionary. Should not be localized. -->
+    <sys:String x:Key="ResourceDictionaryName">Loc-en-US</sys:String>
+
+    <!-- Localized strings Menu-->
+    <sys:String x:Key="Exit">Exit</sys:String>
+    <sys:String x:Key="File">File</sys:String>
+    <sys:String x:Key="Help">Help</sys:String>
+    <sys:String x:Key="Language">Language</sys:String>
+    <sys:String x:Key="LanguageEnglish">English</sys:String>
+    <sys:String x:Key="LanguageGerman">German</sys:String>
+    <sys:String x:Key="Manual">Manual</sys:String>
+    <sys:String x:Key="Title">ProBike System: Production, Planning and Control</sys:String>
+
+    <!-- Localized strings Tabs-->
+    <sys:String x:Key="ForecastAndDataImport">Forecasts And XML-Import</sys:String>
+    <sys:String x:Key="DemandManagment">Demand-Managment</sys:String>
+    <sys:String x:Key="QuantityPlanning">Quantity-Planning</sys:String>
+    <sys:String x:Key="CapacityPlanning">Capacity-Planning</sys:String>
+    <sys:String x:Key="DataExport">Export XML</sys:String>
+
+    <!-- Localized strings ForecastAndDataImport-->
+    <sys:String x:Key="Forecast">Forecast</sys:String>
+    <sys:String x:Key="ChildBike">Children's Bike</sys:String>
+    <sys:String x:Key="FemaleBike">Ladies' Bike</sys:String>
+    <sys:String x:Key="MaleBike">Men's Bike</sys:String>
+    <sys:String x:Key="SafetyStock">Safety-Stock</sys:String>
+    <sys:String x:Key="PeriodN">Period n</sys:String>
+    <sys:String x:Key="PeriodN1">Period n+1</sys:String>
+    <sys:String x:Key="PeriodN2">Period n+2</sys:String>
+    <sys:String x:Key="PeriodN3">Period n+3</sys:String>
+    <sys:String x:Key="ShortSafetyStock">SS</sys:String>
+    <sys:String x:Key="Sales">Sales</sys:String>
+    <sys:String x:Key="Save">Save</sys:String>
+    <sys:String x:Key="SafetyStockToolTip">Number of bikes that are always supposed to be on stock.</sys:String>
+    <sys:String x:Key="UploadXml">Upload XML</sys:String>
+
+</ResourceDictionary>

@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- The name of this ResourceDictionary. Should not be localized. -->
+    <sys:String x:Key="ResourceDictionaryName" >Loc-de-DE</sys:String>
+
+    <!-- Localized strings Menu-->
+    <sys:String x:Key="Exit">Beenden</sys:String>
+    <sys:String x:Key="File">Datei</sys:String>
+    <sys:String x:Key="Help">Hilfe</sys:String>
+    <sys:String x:Key="Language">Sprache</sys:String>
+    <sys:String x:Key="LanguageEnglish">Englisch</sys:String>
+    <sys:String x:Key="LanguageGerman">Deutsch</sys:String>
+    <sys:String x:Key="Manual">Handbuch</sys:String>
+    <sys:String x:Key="Title">ProBike System: Produktion, Planung und Steuerung</sys:String>
+
+    <!-- Localized strings Tabs-->
+    <sys:String x:Key="ForecastAndDataImport">Prognosen und XML-Import</sys:String>
+    <sys:String x:Key="DemandManagment">Programmplannung</sys:String>
+    <sys:String x:Key="QuantityPlanning">Mengenplannung</sys:String>
+    <sys:String x:Key="CapacityPlanning">Kapazitätsplannung</sys:String>
+    <sys:String x:Key="DataExport">XML exportieren</sys:String>
+    
+    <!-- Localized strings ForecastAndDataImport-->
+    <sys:String x:Key="Forecast">Prognose</sys:String>
+    <sys:String x:Key="ChildBike">Kinderfahrrad</sys:String>
+    <sys:String x:Key="FemaleBike">Damenfahrrad</sys:String>
+    <sys:String x:Key="MaleBike">Herrenfahrrad</sys:String>
+    <sys:String x:Key="SafetyStock">Sicherheitsbestand</sys:String>
+    <sys:String x:Key="PeriodN">Periode n</sys:String>
+    <sys:String x:Key="PeriodN1">Periode n+1</sys:String>
+    <sys:String x:Key="PeriodN2">Periode n+2</sys:String>
+    <sys:String x:Key="PeriodN3">Periode n+3</sys:String>
+    <sys:String x:Key="ShortSafetyStock">SB</sys:String>
+    <sys:String x:Key="Sales">Absatz</sys:String>
+    <sys:String x:Key="Save">Speichern</sys:String>
+    <sys:String x:Key="SafetyStockToolTip">Anzahl Fahrräder die immer auf Lager gehalten werden sollen.</sys:String>
+    <sys:String x:Key="UploadXml">XML hochladen</sys:String>
+    
+</ResourceDictionary>

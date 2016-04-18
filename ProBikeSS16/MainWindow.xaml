@@ -1,0 +1,101 @@
+﻿<Window x:Class="ProBikeSS16.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProBikeSS16"
+        xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="{DynamicResource ResourceKey=Title}" Height="800" Width="1000"
+        Background="{DynamicResource WindowBackgroundBrush}">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush">
+            <GradientStop Offset="0" Color="Gray"/>
+            <GradientStop Offset="1" Color="White"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="{DynamicResource ResourceKey=File}">
+                <MenuItem Header="{DynamicResource ResourceKey=Help}"></MenuItem>
+                <Separator></Separator>
+                <MenuItem x:Name="ExitButton" Header="{DynamicResource ResourceKey=Exit}" Click="MenuItem_Exit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="menuItemLanguages" Header="{DynamicResource ResourceKey=Language}">
+                <MenuItem x:Name="germanHeader" Tag="de-DE" Header="{DynamicResource ResourceKey=LanguageGerman}" IsCheckable="True" IsChecked="True" Click="LanguageHeader_Click"></MenuItem>
+                <MenuItem x:Name="englishHeader" Tag="en-US" Header="{DynamicResource ResourceKey=LanguageEnglish}" IsCheckable="True" IsChecked="False" Click="LanguageHeader_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource ResourceKey=Help}">
+                <MenuItem Header="{DynamicResource ResourceKey=Manual}"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <TabControl>
+                <TabItem Header="{DynamicResource ResourceKey=ForecastAndDataImport}" Width="195">
+                    <Grid>
+                        <Grid.Resources>
+                        </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" x:Name="ForecastLabel" Content="{DynamicResource ResourceKey=Forecast}" HorizontalAlignment="Left" Margin="90,0,0,0" VerticalAlignment="Center" FontSize="30"/>
+                        <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" x:Name="ForecastImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/icon-forecast.bmp"/>
+                        <Label Grid.Column="2" Grid.Row="1" x:Name="SafetyStock" Content="{DynamicResource ResourceKey=SafetyStock}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="{DynamicResource ResourceKey=SafetyStockToolTip}"/>
+                        <Label Grid.Column="3" Grid.Row="1" x:Name="PeriodeNLabel" Content="{DynamicResource ResourceKey=PeriodN}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Grid.Column="4" Grid.Row="1" x:Name="PeriodeN1Label" Content="{DynamicResource ResourceKey=PeriodN1}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Grid.Column="5" Grid.Row="1" x:Name="PeriodeN2Label" Content="{DynamicResource ResourceKey=PeriodN2}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Grid.Column="6" Grid.Row="1" x:Name="PeriodeN3Label" Content="{DynamicResource ResourceKey=PeriodN3}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Grid.Column="1" Grid.Row="2" x:Name="ChildBike" Content="{DynamicResource ResourceKey=ChildBike}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Grid.Column="1" Grid.Row="3" x:Name="FemaleBike" Content="{DynamicResource ResourceKey=FemaleBike}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Grid.Column="1" Grid.Row="4" x:Name="MaleBike" Content="{DynamicResource ResourceKey=MaleBike}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <wpfTool:IntegerUpDown Grid.Column="2" Grid.Row="2" x:Name="SafetyStockChildBike" Background="#FFFF7878" Height="20" Width="100" Increment="1" Minimum="0" Watermark="{DynamicResource ResourceKey=ShortSafetyStock}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="2" Grid.Row="3" x:Name="SafetyStockFemaleBike" Background="#FFFF7878" Height="20" Width="100" Increment="1" Minimum="0" Watermark="{DynamicResource ResourceKey=ShortSafetyStock}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="2" Grid.Row="4" x:Name="SafetyStockMaleBike" Background="#FFFF7878" Height="20" Width="100" Increment="1" Minimum="0" Watermark="{DynamicResource ResourceKey=ShortSafetyStock}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="3" Grid.Row="2" x:Name="SalesChildBikeN" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="3" Grid.Row="3" x:Name="SalesFemaleBikeN" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="3" Grid.Row="4" x:Name="SalesMaleBikN" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="4" Grid.Row="2" x:Name="SalesChildBikeN1" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="4" Grid.Row="3" x:Name="SalesFemaleBikeN1" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="4" Grid.Row="4" x:Name="SalesMaleBikN1" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="5" Grid.Row="2" x:Name="SalesChildBikeN2" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="5" Grid.Row="3" x:Name="SalesFemaleBikeN2" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="5" Grid.Row="4" x:Name="SalesMaleBikN2" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="6" Grid.Row="2" x:Name="SalesChildBikeN3" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="6" Grid.Row="3" x:Name="SalesFemaleBikeN3" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <wpfTool:IntegerUpDown Grid.Column="6" Grid.Row="4" x:Name="SalesMaleBikN3" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"/>
+                        <Button Grid.Column="6" Grid.Row="5" x:Name="SaveSafetyStockAndSales" Height="20" Width="100" Content="{DynamicResource ResourceKey=Save}"/>
+                        <Label Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" x:Name="XMLLabel" Content="XML" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0" FontSize="30"/>
+                        <Image Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" x:Name="XMLImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/File Adobe Dreamweaver XML-01.bmp"/>
+                        <TextBox Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" x:Name="XMLPath" Height="20" Width="280"/>
+                        <Button Grid.Column="3" Grid.Row="8" x:Name="XmlUpload" Height="20" Width="100" HorizontalAlignment="Left" Margin="-10,0,0,0" Content="{DynamicResource ResourceKey=UploadXml}" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="{DynamicResource ResourceKey=DemandManagment}" Width="195"></TabItem>
+                <TabItem Header="{DynamicResource ResourceKey=QuantityPlanning}" Width="195"></TabItem>
+                <TabItem Header="{DynamicResource ResourceKey=CapacityPlanning}" Width="195"></TabItem>
+                <TabItem Header="{DynamicResource ResourceKey=DataExport}" Width="145"></TabItem>
+                <TabItem Header="DC" Width="50"></TabItem>
+            </TabControl>
+        </Grid>
+    </DockPanel>
+</Window>
