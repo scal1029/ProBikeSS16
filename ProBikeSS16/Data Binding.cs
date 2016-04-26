@@ -12,7 +12,7 @@ namespace ProBikeSS16
     public class PageBinding : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
+        
         public string TextBinding
         {
             get { return _TextBinding; }
