@@ -100,11 +100,22 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TabControl>
-                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
-                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
-                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
-                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
-                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
+                            <TabItem Header="Kinderfahrrad-Platzhalter">
+                                <Grid Margin="10,10,10,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Damenfahrrad-Platzhalter"/>
+                            <TabItem Header="Herrenfahrrad-Platzhalter"/>
+                            <TabItem Header="Aktueller Lagerbestand-Platzhalter">
+                                <DataGrid Margin="10,10,10,10"></DataGrid>
+                            </TabItem>
+                            <TabItem Header="Produktionsaufträge-Platzhalter"/>
                     </TabControl>
                     </Grid>
                 </TabItem>
