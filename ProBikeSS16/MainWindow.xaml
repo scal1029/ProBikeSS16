@@ -91,12 +91,23 @@
                         <Image Grid.Column="7" Grid.Row="5" HorizontalAlignment="Left" Source="Images/haken.bmp"></Image>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{DynamicResource ResourceKey=DemandManagment}" Width="195"></TabItem>
-                    <Grid>
-                        <TabControl>
-                            <TabItem Header="Kin"></TabItem>
-                        </TabControl>
+                <TabItem Header="{DynamicResource ResourceKey=DemandManagment}" Width="195">
+                    <Grid Margin="20,20,20,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl>
+                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
+                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
+                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
+                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
+                            <TabItem Header="Kinderfahrrad-Platzhalter"/>
+                    </TabControl>
                     </Grid>
+                </TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=QuantityPlanning}" Width="195"></TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=CapacityPlanning}" Width="195"></TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=DataExport}" Width="145"></TabItem>
