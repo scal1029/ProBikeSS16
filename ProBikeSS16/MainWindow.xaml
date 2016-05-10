@@ -92,6 +92,11 @@
                     </Grid>
                 </TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=DemandManagment}" Width="195"></TabItem>
+                    <Grid>
+                        <TabControl>
+                            <TabItem Header="Kin"></TabItem>
+                        </TabControl>
+                    </Grid>
                 <TabItem Header="{DynamicResource ResourceKey=QuantityPlanning}" Width="195"></TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=CapacityPlanning}" Width="195"></TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=DataExport}" Width="145"></TabItem>
