@@ -11,12 +11,27 @@ namespace ProBikeSS16.domain
     {
         public int id;
         public type t;
+        public List<Unit> lUnits;
 
-        public Unit (int id, type t)
+        public Unit (int id, type t, List<Unit> li)
         {
             this.id = id;
             this.t = t;
+            
+            foreach(Unit u in li)
+            {
+                lUnits.Add(u);
+            }
+          
         }
 
-  }
+        public Unit(int id, type ti)
+        {
+            this.id = id;
+            this.t = t;
+            lUnits = null;
+
+        }
+
+    }
 }
