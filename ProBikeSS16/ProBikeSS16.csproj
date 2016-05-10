@@ -105,6 +105,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\1024px-Forbidden_Symbol.svg.cur" />
     <Resource Include="Images\haken.bmp" />
     <Resource Include="Images\File Adobe Dreamweaver XML-01.bmp" />
     <Resource Include="Images\icon-forecast.bmp" />

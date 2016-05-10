@@ -86,37 +86,673 @@
                         <Button Grid.Column="6" Grid.Row="5" x:Name="SaveSafetyStockAndSales" Height="20" Width="100" Content="{DynamicResource ResourceKey=Save}" Click="SaveSafetyStockAndSales_OnClick"/>
                         <Label Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" x:Name="XMLLabel" Content="XML" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0" FontSize="30"/>
                         <Image Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" x:Name="XMLImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/File Adobe Dreamweaver XML-01.bmp"/>
-                        <TextBox Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" x:Name="XMLPath" Height="20" Width="280"/>
+                        <TextBox Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" IsReadOnly="True" x:Name="XMLPath" Height="20" Width="280"/>
                         <Button Grid.Column="3" Grid.Row="8" x:Name="XmlUpload" Height="20" Width="100" HorizontalAlignment="Left" Margin="-10,0,0,0" Content="{DynamicResource ResourceKey=UploadXml}" Click="XmlUpload_OnClick"/>
                         <Image Grid.Column="7" Grid.Row="5" HorizontalAlignment="Left" Source="Images/haken.bmp"></Image>
                     </Grid>
                 </TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=DemandManagment}" Width="195">
                     <Grid Margin="20,20,20,20">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TabControl>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TabControl>
                             <TabItem Header="Kinderfahrrad-Platzhalter">
-                                <Grid Margin="10,10,10,10">
+                                <Grid Margin="10,10,10,10" Width="850">
                                     <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="1" Content="P1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Content="E26" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold" Background="Gold"/>
+                                    <Label Grid.Column="0" Grid.Row="4" Content="E51" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="6" Content="E16" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold" Background="Gold"/>
+                                    <Label Grid.Column="0" Grid.Row="7" Content="E17" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold" Background="Gold"/>
+                                    <Label Grid.Column="0" Grid.Row="8" Content="E50" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="10" Content="E4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="11" Content="E10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="12" Content="E49" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="14" Content="E7" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="15" Content="E13" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="16" Content="E18" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="2" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Verbindliche Aufträge /Vertriebswunsch PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="6" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Geplanter Lagerbestand am Ende der Planperiode (Sicherheits-bestand)PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="8" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Lagerbestand am Ender der Vorperiode PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="10" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Aufträge in der Warteschlange PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="12" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Aufträge in Bearbeitung-PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="14" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Produktions-auftäge für die kommende Periode-PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="14" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="15" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="16" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="12" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="14" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="15" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="16" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="6" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="7" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="10" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="11" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="12" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="14" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="15" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="16" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="1" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="4" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="7" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="8" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="10" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="11" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="12" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="14" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="15" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="16" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="1" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="3" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="4" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="6" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="8" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="10" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="11" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="12" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="14" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="15" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="16" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="1" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="6" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="7" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="8" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="10" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="11" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="12" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="14" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="15" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="16" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <TextBox Grid.Column="2" Grid.Row="1" Height="20" Width="60" x:Name="ChildBikeOrderP1" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="3" Height="20" Width="60" x:Name="ChildBikeOrderE26" IsReadOnly="True" Background="#FFFF3200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="4" Height="20" Width="60" x:Name="ChildBikeOrderE51" IsReadOnly="True" Background="#FFFF3200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="15,5,15,0"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="6" Height="20" Width="60" x:Name="ChildBikeOrderE16" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="7" Height="20" Width="60" x:Name="ChildBikeOrderE17" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="8" Height="20" Width="60" x:Name="ChildBikeOrderE50" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="10" Height="20" Width="60" x:Name="ChildBikeOrderE4" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="11" Height="20" Width="60" x:Name="ChildBikeOrderE10" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="12" Height="20" Width="60" x:Name="ChildBikeOrderE49" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikeOrderE7" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikeOrderE13" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikeOrderE18" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="3" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE26" IsReadOnly="True" Background="#FF0064FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="4" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE51" IsReadOnly="True" Background="#FF0064FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="6" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE16" IsReadOnly="True" Background="#FF0096FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="7" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE17" IsReadOnly="True" Background="#FF0096FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="8" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE50" IsReadOnly="True" Background="#FF0096FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="10" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE4" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="11" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE10" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="12" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE49" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE7" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE13" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE18" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="1" Height="20" Width="60" x:Name="ChildBikeSafetyP1" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="3" Height="20" Width="60" x:Name="ChildBikeSafetyE26" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="4" Height="20" Width="60" x:Name="ChildBikeSafetyE51" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="6" Height="20" Width="60" x:Name="ChildBikeSafetyE16" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="7" Height="20" Width="60" x:Name="ChildBikeSafetyE17" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="8" Height="20" Width="60" x:Name="ChildBikeSafetyE50" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="10" Height="20" Width="60" x:Name="ChildBikeSafetyE4" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="11" Height="20" Width="60" x:Name="ChildBikeSafetyE10" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="12" Height="20" Width="60" x:Name="ChildBikeSafetyE49" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikeSafetyE7" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikeSafetyE13" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikeSafetyE18" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="1" Height="20" Width="60" x:Name="ChildBikeStockP1" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="3" Height="20" Width="60" x:Name="ChildBikeStockE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="4" Height="20" Width="60" x:Name="ChildBikeStockE51" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="6" Height="20" Width="60" x:Name="ChildBikeStockE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="7" Height="20" Width="60" x:Name="ChildBikeStockE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="8" Height="20" Width="60" x:Name="ChildBikeStockE50" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="10" Height="20" Width="60" x:Name="ChildBikeStockE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="11" Height="20" Width="60" x:Name="ChildBikeStockE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="12" Height="20" Width="60" x:Name="ChildBikeStockE49" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikeStockE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikeStockE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikeStockE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="1" Height="20" Width="60" x:Name="ChildBikeWaitlistP1" IsReadOnly="True" Background="#FF0064FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="3" Height="20" Width="60" x:Name="ChildBikeWaitlistE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="4" Height="20" Width="60" x:Name="ChildBikeWaitlistE51" IsReadOnly="True" Background="#FF0096FF"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="6" Height="20" Width="60" x:Name="ChildBikeWaitlistE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="7" Height="20" Width="60" x:Name="ChildBikeWaitlistE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="8" Height="20" Width="60" x:Name="ChildBikeWaitlistE50" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="10" Height="20" Width="60" x:Name="ChildBikeWaitlistE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="11" Height="20" Width="60" x:Name="ChildBikeWaitlistE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="12" Height="20" Width="60" x:Name="ChildBikeWaitlistE49" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikeWaitlistE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikeWaitlistE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikeWaitlistE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="1" Height="20" Width="60" x:Name="ChildBikeInProductionP1" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="3" Height="20" Width="60" x:Name="ChildBikeInProductionE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="4" Height="20" Width="60" x:Name="ChildBikeInProductionE51" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="6" Height="20" Width="60" x:Name="ChildBikeInProductionE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="7" Height="20" Width="60" x:Name="ChildBikeInProductionE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="8" Height="20" Width="60" x:Name="ChildBikeInProductionE50" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="10" Height="20" Width="60" x:Name="ChildBikeInProductionE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="11" Height="20" Width="60" x:Name="ChildBikeInProductionE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="12" Height="20" Width="60" x:Name="ChildBikeInProductionE49" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikeInProductionE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikeInProductionE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikeInProductionE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="1" Height="20" Width="60" x:Name="ChildBikePlannedProductionP1" IsReadOnly="True" Background="#FFFF3200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="3" Height="20" Width="60" x:Name="ChildBikePlannedProductionE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="4" Height="20" Width="60" x:Name="ChildBikePlannedProductionE51" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="6" Height="20" Width="60" x:Name="ChildBikePlannedProductionE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="7" Height="20" Width="60" x:Name="ChildBikePlannedProductionE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="8" Height="20" Width="60" x:Name="ChildBikePlannedProductionE50" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="10" Height="20" Width="60" x:Name="ChildBikePlannedProductionE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="11" Height="20" Width="60" x:Name="ChildBikePlannedProductionE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="12" Height="20" Width="60" x:Name="ChildBikePlannedProductionE49" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikePlannedProductionE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikePlannedProductionE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikePlannedProductionE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="Damenfahrrad-Platzhalter"/>
-                            <TabItem Header="Herrenfahrrad-Platzhalter"/>
+                            <TabItem Header="Damenfahrrad-Platzhalter">
+                                <Grid Margin="10,10,10,10" Width="850">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="1" Content="P1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Content="E26" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold" Background="Gold"/>
+                                    <Label Grid.Column="0" Grid.Row="4" Content="E51" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="6" Content="E16" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold" Background="Gold"/>
+                                    <Label Grid.Column="0" Grid.Row="7" Content="E17" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold" Background="Gold"/>
+                                    <Label Grid.Column="0" Grid.Row="8" Content="E50" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="10" Content="E4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="11" Content="E10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="12" Content="E49" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="14" Content="E7" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="15" Content="E13" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="16" Content="E18" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="2" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Verbindliche Aufträge /Vertriebswunsch PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="6" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Geplanter Lagerbestand am Ende der Planperiode (Sicherheits-bestand)PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="8" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Lagerbestand am Ender der Vorperiode PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="10" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Aufträge in der Warteschlange PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="12" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Aufträge in Bearbeitung-PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="14" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Produktions-auftäge für die kommende Periode-PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="14" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="15" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="16" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="12" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="14" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="15" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="16" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="6" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="7" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="10" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="11" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="12" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="14" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="15" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="16" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="1" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="4" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="7" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="8" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="10" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="11" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="12" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="14" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="15" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="16" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="1" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="3" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="4" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="6" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="8" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="10" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="11" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="12" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="14" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="15" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="16" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="1" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="6" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="7" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="8" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="10" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="11" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="12" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="14" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="15" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="16" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <TextBox Grid.Column="2" Grid.Row="1" Height="20" Width="60" x:Name="FemaleBikeOrderP1" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="3" Height="20" Width="60" x:Name="FemaleBikeOrderE26" IsReadOnly="True" Background="#FFFF3200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="4" Height="20" Width="60" x:Name="FemaleBikeOrderE51" IsReadOnly="True" Background="#FFFF3200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="15,5,15,0"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="6" Height="20" Width="60" x:Name="FemaleBikeOrderE16" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="7" Height="20" Width="60" x:Name="FemaleBikeOrderE17" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="8" Height="20" Width="60" x:Name="FemaleBikeOrderE50" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="10" Height="20" Width="60" x:Name="FemaleBikeOrderE4" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="11" Height="20" Width="60" x:Name="FemaleBikeOrderE10" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="12" Height="20" Width="60" x:Name="FemaleBikeOrderE49" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikeOrderE7" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikeOrderE13" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikeOrderE18" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="3" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE26" IsReadOnly="True" Background="#FF0064FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="4" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE51" IsReadOnly="True" Background="#FF0064FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="6" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE16" IsReadOnly="True" Background="#FF0096FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="7" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE17" IsReadOnly="True" Background="#FF0096FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="8" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE50" IsReadOnly="True" Background="#FF0096FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="10" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE4" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="11" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE10" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="12" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE49" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE7" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE13" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikePassedWaitlistE18" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="1" Height="20" Width="60" x:Name="FemaleBikeSafetyP1" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="3" Height="20" Width="60" x:Name="FemaleBikeSafetyE26" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="4" Height="20" Width="60" x:Name="FemaleBikeSafetyE51" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="6" Height="20" Width="60" x:Name="FemaleBikeSafetyE16" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="7" Height="20" Width="60" x:Name="FemaleBikeSafetyE17" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="8" Height="20" Width="60" x:Name="FemaleBikeSafetyE50" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="10" Height="20" Width="60" x:Name="FemaleBikeSafetyE4" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="11" Height="20" Width="60" x:Name="FemaleBikeSafetyE10" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="12" Height="20" Width="60" x:Name="FemaleBikeSafetyE49" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikeSafetyE7" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikeSafetyE13" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikeSafetyE18" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="1" Height="20" Width="60" x:Name="FemaleBikeStockP1" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="3" Height="20" Width="60" x:Name="FemaleBikeStockE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="4" Height="20" Width="60" x:Name="FemaleBikeStockE51" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="6" Height="20" Width="60" x:Name="FemaleBikeStockE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="7" Height="20" Width="60" x:Name="FemaleBikeStockE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="8" Height="20" Width="60" x:Name="FemaleBikeStockE50" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="10" Height="20" Width="60" x:Name="FemaleBikeStockE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="11" Height="20" Width="60" x:Name="FemaleBikeStockE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="12" Height="20" Width="60" x:Name="FemaleBikeStockE49" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikeStockE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikeStockE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikeStockE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="1" Height="20" Width="60" x:Name="FemaleBikeWaitlistP1" IsReadOnly="True" Background="#FF0064FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="3" Height="20" Width="60" x:Name="FemaleBikeWaitlistE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="4" Height="20" Width="60" x:Name="FemaleBikeWaitlistE51" IsReadOnly="True" Background="#FF0096FF"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="6" Height="20" Width="60" x:Name="FemaleBikeWaitlistE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="7" Height="20" Width="60" x:Name="FemaleBikeWaitlistE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="8" Height="20" Width="60" x:Name="FemaleBikeWaitlistE50" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="10" Height="20" Width="60" x:Name="FemaleBikeWaitlistE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="11" Height="20" Width="60" x:Name="FemaleBikeWaitlistE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="12" Height="20" Width="60" x:Name="FemaleBikeWaitlistE49" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikeWaitlistE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikeWaitlistE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikeWaitlistE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="1" Height="20" Width="60" x:Name="FemaleBikeInProductionP1" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="3" Height="20" Width="60" x:Name="FemaleBikeInProductionE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="4" Height="20" Width="60" x:Name="FemaleBikeInProductionE51" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="6" Height="20" Width="60" x:Name="FemaleBikeInProductionE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="7" Height="20" Width="60" x:Name="FemaleBikeInProductionE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="8" Height="20" Width="60" x:Name="FemaleBikeInProductionE50" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="10" Height="20" Width="60" x:Name="FemaleBikeInProductionE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="11" Height="20" Width="60" x:Name="FemaleBikeInProductionE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="12" Height="20" Width="60" x:Name="FemaleBikeInProductionE49" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikeInProductionE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikeInProductionE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikeInProductionE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="1" Height="20" Width="60" x:Name="FemaleBikePlannedProductionP1" IsReadOnly="True" Background="#FFFF3200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="3" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="4" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE51" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="6" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="7" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="8" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE50" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="10" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="11" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="12" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE49" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Herrenfahrrad-Platzhalter">
+                                <Grid Margin="10,10,10,10" Width="850">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="1" Content="P1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Content="E26" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold" Background="Gold"/>
+                                    <Label Grid.Column="0" Grid.Row="4" Content="E51" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="6" Content="E16" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold" Background="Gold"/>
+                                    <Label Grid.Column="0" Grid.Row="7" Content="E17" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold" Background="Gold"/>
+                                    <Label Grid.Column="0" Grid.Row="8" Content="E50" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="10" Content="E4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="11" Content="E10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="12" Content="E49" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="14" Content="E7" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="15" Content="E13" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="0" Grid.Row="16" Content="E18" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="2" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Verbindliche Aufträge /Vertriebswunsch PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="6" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Geplanter Lagerbestand am Ende der Planperiode (Sicherheits-bestand)PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="8" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Lagerbestand am Ender der Vorperiode PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="10" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Aufträge in der Warteschlange PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="12" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Aufträge in Bearbeitung-PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="14" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Produktions-auftäge für die kommende Periode-PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="14" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="15" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="2" Grid.Row="16" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="12" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="14" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="15" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="4" Grid.Row="16" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="6" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="7" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="10" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="11" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="12" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="14" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="15" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="6" Grid.Row="16" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="1" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="4" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="7" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="8" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="10" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="11" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="12" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="14" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="15" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="8" Grid.Row="16" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="1" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="3" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="4" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="6" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="8" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="10" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="11" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="12" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="14" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="15" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="10" Grid.Row="16" Grid.ColumnSpan="3"  Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="1" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="6" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="7" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="8" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="10" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="11" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="12" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="14" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="15" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <Label Grid.Column="12" Grid.Row="16" Grid.ColumnSpan="3"  Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                                    <TextBox Grid.Column="2" Grid.Row="1" Height="20" Width="60" x:Name="MaleBikeOrderP1" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="3" Height="20" Width="60" x:Name="MaleBikeOrderE26" IsReadOnly="True" Background="#FFFF3200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="4" Height="20" Width="60" x:Name="MaleBikeOrderE51" IsReadOnly="True" Background="#FFFF3200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="15,5,15,0"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="6" Height="20" Width="60" x:Name="MaleBikeOrderE16" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="7" Height="20" Width="60" x:Name="MaleBikeOrderE17" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="8" Height="20" Width="60" x:Name="MaleBikeOrderE50" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="10" Height="20" Width="60" x:Name="MaleBikeOrderE4" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="11" Height="20" Width="60" x:Name="MaleBikeOrderE10" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="12" Height="20" Width="60" x:Name="MaleBikeOrderE49" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikeOrderE7" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikeOrderE13" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="2" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikeOrderE18" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="3" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE26" IsReadOnly="True" Background="#FF0064FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="4" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE51" IsReadOnly="True" Background="#FF0064FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="6" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE16" IsReadOnly="True" Background="#FF0096FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="7" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE17" IsReadOnly="True" Background="#FF0096FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="8" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE50" IsReadOnly="True" Background="#FF0096FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="10" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE4" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="11" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE10" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="12" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE49" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE7" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE13" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="4" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikePassedWaitlistE18" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="1" Height="20" Width="60" x:Name="MaleBikeSafetyP1" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="3" Height="20" Width="60" x:Name="MaleBikeSafetyE26" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="4" Height="20" Width="60" x:Name="MaleBikeSafetyE51" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="6" Height="20" Width="60" x:Name="MaleBikeSafetyE16" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="7" Height="20" Width="60" x:Name="MaleBikeSafetyE17" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="8" Height="20" Width="60" x:Name="MaleBikeSafetyE50" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="10" Height="20" Width="60" x:Name="MaleBikeSafetyE4" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="11" Height="20" Width="60" x:Name="MaleBikeSafetyE10" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="12" Height="20" Width="60" x:Name="MaleBikeSafetyE49" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikeSafetyE7" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikeSafetyE13" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Grid.Column="6" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikeSafetyE18" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="1" Height="20" Width="60" x:Name="MaleBikeStockP1" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="3" Height="20" Width="60" x:Name="MaleBikeStockE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="4" Height="20" Width="60" x:Name="MaleBikeStockE51" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="6" Height="20" Width="60" x:Name="MaleBikeStockE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="7" Height="20" Width="60" x:Name="MaleBikeStockE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="8" Height="20" Width="60" x:Name="MaleBikeStockE50" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="10" Height="20" Width="60" x:Name="MaleBikeStockE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="11" Height="20" Width="60" x:Name="MaleBikeStockE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="12" Height="20" Width="60" x:Name="MaleBikeStockE49" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikeStockE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikeStockE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="8" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikeStockE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="1" Height="20" Width="60" x:Name="MaleBikeWaitlistP1" IsReadOnly="True" Background="#FF0064FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="3" Height="20" Width="60" x:Name="MaleBikeWaitlistE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="4" Height="20" Width="60" x:Name="MaleBikeWaitlistE51" IsReadOnly="True" Background="#FF0096FF"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="6" Height="20" Width="60" x:Name="MaleBikeWaitlistE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="7" Height="20" Width="60" x:Name="MaleBikeWaitlistE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="8" Height="20" Width="60" x:Name="MaleBikeWaitlistE50" IsReadOnly="True" Background="#FF00C8FF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="10" Height="20" Width="60" x:Name="MaleBikeWaitlistE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="11" Height="20" Width="60" x:Name="MaleBikeWaitlistE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="12" Height="20" Width="60" x:Name="MaleBikeWaitlistE49" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikeWaitlistE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikeWaitlistE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="10" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikeWaitlistE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="1" Height="20" Width="60" x:Name="MaleBikeInProductionP1" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="3" Height="20" Width="60" x:Name="MaleBikeInProductionE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="4" Height="20" Width="60" x:Name="MaleBikeInProductionE51" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="6" Height="20" Width="60" x:Name="MaleBikeInProductionE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="7" Height="20" Width="60" x:Name="MaleBikeInProductionE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="8" Height="20" Width="60" x:Name="MaleBikeInProductionE50" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="10" Height="20" Width="60" x:Name="MaleBikeInProductionE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="11" Height="20" Width="60" x:Name="MaleBikeInProductionE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="12" Height="20" Width="60" x:Name="MaleBikeInProductionE49" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikeInProductionE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikeInProductionE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="12" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikeInProductionE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="1" Height="20" Width="60" x:Name="MaleBikePlannedProductionP1" IsReadOnly="True" Background="#FFFF3200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="3" Height="20" Width="60" x:Name="MaleBikePlannedProductionE26" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="4" Height="20" Width="60" x:Name="MaleBikePlannedProductionE51" IsReadOnly="True" Background="#FFFF6400" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="6" Height="20" Width="60" x:Name="MaleBikePlannedProductionE16" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="7" Height="20" Width="60" x:Name="MaleBikePlannedProductionE17" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="8" Height="20" Width="60" x:Name="MaleBikePlannedProductionE50" IsReadOnly="True" Background="#FFFF9600" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="10" Height="20" Width="60" x:Name="MaleBikePlannedProductionE4" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="11" Height="20" Width="60" x:Name="MaleBikePlannedProductionE10" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="12" Height="20" Width="60" x:Name="MaleBikePlannedProductionE49" IsReadOnly="True" Background="#FFFFC800" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikePlannedProductionE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikePlannedProductionE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikePlannedProductionE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Grid>
+                            </TabItem>
                             <TabItem Header="Aktueller Lagerbestand-Platzhalter">
                                 <DataGrid Margin="10,10,10,10"></DataGrid>
                             </TabItem>
                             <TabItem Header="Produktionsaufträge-Platzhalter"/>
-                    </TabControl>
+                        </TabControl>
                     </Grid>
                 </TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=QuantityPlanning}" Width="195"></TabItem>
