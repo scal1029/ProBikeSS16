@@ -87,7 +87,7 @@
                         <Label Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" x:Name="XMLLabel" Content="XML" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0" FontSize="30"/>
                         <Image Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" x:Name="XMLImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/File Adobe Dreamweaver XML-01.bmp"/>
                         <TextBox Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" x:Name="XMLPath" Height="20" Width="280"/>
-                        <Button Grid.Column="3" Grid.Row="8" x:Name="XmlUpload" Height="20" Width="100" HorizontalAlignment="Left" Margin="-10,0,0,0" Content="{DynamicResource ResourceKey=UploadXml}" />
+                        <Button Grid.Column="3" Grid.Row="8" x:Name="XmlUpload" Height="20" Width="100" HorizontalAlignment="Left" Margin="-10,0,0,0" Content="{DynamicResource ResourceKey=UploadXml}" Click="XmlUpload_OnClick"/>
                         <Image Grid.Column="7" Grid.Row="5" HorizontalAlignment="Left" Source="Images/haken.bmp"></Image>
                     </Grid>
                 </TabItem>

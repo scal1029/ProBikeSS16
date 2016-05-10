@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ProBikeSS16
 {
@@ -25,5 +26,26 @@ namespace ProBikeSS16
 
         public const uint MAX_WORKPLACES                        = 15;
         public enum WORKPLACES                                  { A1=0, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15 };
+    }
+
+    public static class GlobalVariables
+    {
+        public static int? StockChildBike;
+        public static int? StockMaleBike;
+        public static int? StockFemaleBike;
+        public static int? SaleChildBikeN;
+        public static int? SaleChildBikeN1;
+        public static int? SaleChildBikeN2;
+        public static int? SaleChildBikeN3;
+        public static int? SaleFemaleBikeN;
+        public static int? SaleFemaleBikeN1;
+        public static int? SaleFemaleBikeN2;
+        public static int? SaleFemaleBikeN3;
+        public static int? SaleMaleBikeN;
+        public static int? SaleMaleBikeN1;
+        public static int? SaleMaleBikeN2;
+        public static int? SaleMaleBikeN3;
+
+        public static XDocument InputXML = new XDocument();
     }
 }

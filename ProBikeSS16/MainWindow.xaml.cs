@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using System.Xml.Linq;
 using ProBikeSS16;
 using Xceed.Wpf.Toolkit;
 using MessageBox = System.Windows.MessageBox;
@@ -53,21 +55,7 @@ namespace ProBikeSS16
         }
 
         #region Save ForecastAndSales
-        public int? StockChildBike;
-        public int? StockMaleBike;
-        public int? StockFemaleBike;
-        public int? SaleChildBikeN;
-        public int? SaleChildBikeN1;
-        public int? SaleChildBikeN2;
-        public int? SaleChildBikeN3;
-        public int? SaleFemaleBikeN;
-        public int? SaleFemaleBikeN1;
-        public int? SaleFemaleBikeN2;
-        public int? SaleFemaleBikeN3;
-        public int? SaleMaleBikeN;
-        public int? SaleMaleBikeN1;
-        public int? SaleMaleBikeN2;
-        public int? SaleMaleBikeN3;
+
 
         private void SaveSafetyStockAndSales_OnClick(object sender, RoutedEventArgs e)
         {
@@ -80,26 +68,58 @@ namespace ProBikeSS16
             }
             else
             {
-                StockChildBike = SafetyStockChildBike.Value;
-                StockFemaleBike = SafetyStockFemaleBike.Value;
-                StockMaleBike = SafetyStockMaleBike.Value;
-                SaleChildBikeN = SalesChildBikeN.Value;
-                SaleChildBikeN1 = SalesChildBikeN1.Value;
-                SaleChildBikeN2 = SalesChildBikeN2.Value;
-                SaleChildBikeN3 = SalesChildBikeN3.Value;
-                SaleFemaleBikeN = SalesFemaleBikeN.Value;
-                SaleFemaleBikeN1 = SalesFemaleBikeN1.Value;
-                SaleFemaleBikeN2 = SalesFemaleBikeN2.Value;
-                SaleFemaleBikeN3 = SalesFemaleBikeN3.Value;
-                SaleMaleBikeN = SalesMaleBikeN.Value;
-                SaleMaleBikeN1 = SalesMaleBikeN1.Value;
-                SaleMaleBikeN2 = SalesMaleBikeN2.Value;
-                SaleMaleBikeN3 = SalesMaleBikeN3.Value;
-                MessageBox.Show(StockChildBike.Value.ToString()+" Success");
+                GlobalVariables.StockChildBike = SafetyStockChildBike.Value;
+                GlobalVariables.StockFemaleBike = SafetyStockFemaleBike.Value;
+                GlobalVariables.StockMaleBike = SafetyStockMaleBike.Value;
+                GlobalVariables.SaleChildBikeN = SalesChildBikeN.Value;
+                GlobalVariables.SaleChildBikeN1 = SalesChildBikeN1.Value;
+                GlobalVariables.SaleChildBikeN2 = SalesChildBikeN2.Value;
+                GlobalVariables.SaleChildBikeN3 = SalesChildBikeN3.Value;
+                GlobalVariables.SaleFemaleBikeN = SalesFemaleBikeN.Value;
+                GlobalVariables.SaleFemaleBikeN1 = SalesFemaleBikeN1.Value;
+                GlobalVariables.SaleFemaleBikeN2 = SalesFemaleBikeN2.Value;
+                GlobalVariables.SaleFemaleBikeN3 = SalesFemaleBikeN3.Value;
+                GlobalVariables.SaleMaleBikeN = SalesMaleBikeN.Value;
+                GlobalVariables.SaleMaleBikeN1 = SalesMaleBikeN1.Value;
+                GlobalVariables.SaleMaleBikeN2 = SalesMaleBikeN2.Value;
+                GlobalVariables.SaleMaleBikeN3 = SalesMaleBikeN3.Value;
+                MessageBox.Show(GlobalVariables.StockChildBike.Value.ToString()+" Success");
                 
             }
 
         }
-        #endregion 
+        #endregion
+
+        private void XmlUpload_OnClick(object sender, RoutedEventArgs e)
+        {
+            
+
+            // Create OpenFileDialog
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension
+            dlg.DefaultExt = ".xml";
+            dlg.Filter = "xml files (.xml)|*.xml";
+
+            // Display OpenFileDialog by calling ShowDialog method
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Get the selected file name and display in a TextBox
+            if (result == true)
+            {
+                // Open document
+                string filename = dlg.FileName;
+                try
+                {
+                    GlobalVariables.InputXML = XDocument.Load(filename);
+                    XMLPath.Text = filename;
+                }
+                catch (XmlException exception)
+                {
+                    XMLPath.Text = null;
+                    MessageBox.Show("Your XML was probably bad...");
+                }
+            }
+        }
     }
 }
