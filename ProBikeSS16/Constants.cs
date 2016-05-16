@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,5 +48,10 @@ namespace ProBikeSS16
         public static int? SaleMaleBikeN3;
 
         public static XDocument InputXML = new XDocument();
+
+        public static bool ForecastCorrect;
+        public static bool XMLCorrect;
+
+        public static DataSet InputDataSetWithoutOldBatchCalc;
     }
 }

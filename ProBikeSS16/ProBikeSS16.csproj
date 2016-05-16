@@ -94,6 +94,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataTable.cs" />
     <Compile Include="domain\Global.cs" />
     <Compile Include="domain\Unit.cs" />
     <Compile Include="Workplace.cs" />

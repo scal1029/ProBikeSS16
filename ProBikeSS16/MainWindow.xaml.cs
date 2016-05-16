@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -65,7 +66,8 @@ namespace ProBikeSS16
                 !SalesFemaleBikeN1.Value.HasValue || !SalesFemaleBikeN2.Value.HasValue || !SalesFemaleBikeN3.Value.HasValue || !SalesMaleBikeN.Value.HasValue ||
                 !SalesMaleBikeN1.Value.HasValue || !SalesMaleBikeN2.Value.HasValue || !SalesMaleBikeN3.Value.HasValue)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error: Neue Werte nicht übernommen");
+                GlobalVariables.ForecastCorrect = false;
             }
             else
             {
@@ -85,7 +87,14 @@ namespace ProBikeSS16
                 GlobalVariables.SaleMaleBikeN2 = SalesMaleBikeN2.Value;
                 GlobalVariables.SaleMaleBikeN3 = SalesMaleBikeN3.Value;
                 MessageBox.Show(GlobalVariables.StockChildBike.Value.ToString()+" Success");
-                
+                GlobalVariables.ForecastCorrect = true;
+                XMLImage.Visibility = Visibility.Visible;
+                XMLPath.Visibility = Visibility.Visible;
+                XMLLabel.Visibility = Visibility.Visible;
+                XmlUpload.Visibility = Visibility.Visible;
+                Okay1.Visibility = Visibility.Visible;
+                DoubleAnimation animation = new DoubleAnimation(0,TimeSpan.FromSeconds(3));
+                Okay1.BeginAnimation(Image.OpacityProperty, animation);
             }
 
         }
@@ -93,8 +102,6 @@ namespace ProBikeSS16
 
         private void XmlUpload_OnClick(object sender, RoutedEventArgs e)
         {
-            
-
             // Create OpenFileDialog
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
@@ -103,7 +110,7 @@ namespace ProBikeSS16
             dlg.Filter = "xml files (.xml)|*.xml";
 
             // Display OpenFileDialog by calling ShowDialog method
-            Nullable<bool> result = dlg.ShowDialog();
+            bool? result = dlg.ShowDialog();
 
             // Get the selected file name and display in a TextBox
             if (result == true)
@@ -112,13 +119,30 @@ namespace ProBikeSS16
                 string filename = dlg.FileName;
                 try
                 {
+
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(filename);
+                    XmlNodeList nodes = doc.SelectNodes("//completedorders");
+                    for (int i = nodes.Count - 1; i >= 0; i--)
+                    {
+                        nodes[i].ParentNode.RemoveChild(nodes[i]);
+                    }
+                    doc.Save(filename);
+
                     GlobalVariables.InputXML = XDocument.Load(filename);
                     XMLPath.Text = filename;
+                    GlobalVariables.XMLCorrect = true;
+                    CalculationStart.Visibility = Visibility.Visible;
+                    Okay2.Visibility = Visibility.Visible;
+                    DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(3));
+                    Okay2.BeginAnimation(Image.OpacityProperty, animation);
                 }
                 catch (XmlException exception)
                 {
                     XMLPath.Text = null;
                     MessageBox.Show("Your XML was probably bad...");
+                    GlobalVariables.XMLCorrect = false;
+                    CalculationStart.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -128,5 +152,24 @@ namespace ProBikeSS16
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        private void CalculationStart_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (GlobalVariables.XMLCorrect && GlobalVariables.ForecastCorrect)
+            {
+                GlobalVariables.InputDataSetWithoutOldBatchCalc = DataTableStuff.ReadXMLtoDataSet(XMLPath.Text);
+                GridOldStock.DataContext = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].DefaultView;
+            }
+            else
+            {
+                MessageBox.Show("Mistakes");
+            }
+        }
+
+        #region Data
+        
+
+
+        #endregion Data
     }
 }

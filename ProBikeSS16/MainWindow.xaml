@@ -84,11 +84,13 @@
                         <wpfTool:IntegerUpDown Grid.Column="6" Grid.Row="3" x:Name="SalesFemaleBikeN3" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
                         <wpfTool:IntegerUpDown Grid.Column="6" Grid.Row="4" x:Name="SalesMaleBikeN3" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
                         <Button Grid.Column="6" Grid.Row="5" x:Name="SaveSafetyStockAndSales" Height="20" Width="100" Content="{DynamicResource ResourceKey=Save}" Click="SaveSafetyStockAndSales_OnClick"/>
-                        <Label Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" x:Name="XMLLabel" Content="XML" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0" FontSize="30"/>
-                        <Image Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" x:Name="XMLImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/File Adobe Dreamweaver XML-01.bmp"/>
-                        <TextBox Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" IsReadOnly="True" x:Name="XMLPath" Height="20" Width="280"/>
-                        <Button Grid.Column="3" Grid.Row="8" x:Name="XmlUpload" Height="20" Width="100" HorizontalAlignment="Left" Margin="-10,0,0,0" Content="{DynamicResource ResourceKey=UploadXml}" Click="XmlUpload_OnClick"/>
-                        <Image Grid.Column="7" Grid.Row="5" HorizontalAlignment="Left" Source="Images/haken.bmp"></Image>
+                        <Label Grid.Column="1" Grid.Row="7" Visibility="Hidden" Grid.ColumnSpan="2" x:Name="XMLLabel" Content="XML" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0" FontSize="30"/>
+                        <Image Grid.Column="0" Grid.Row="7" Visibility="Hidden" Grid.ColumnSpan="2" x:Name="XMLImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/File Adobe Dreamweaver XML-01.bmp"/>
+                        <TextBox Grid.Column="1" Grid.Row="8" Visibility="Hidden" Grid.ColumnSpan="2" IsReadOnly="True" x:Name="XMLPath" Height="20" Width="280"/>
+                        <Button Grid.Column="3" Grid.Row="8" Visibility="Hidden" x:Name="XmlUpload" Height="20" Width="100" HorizontalAlignment="Left" Margin="-10,0,0,0" Content="{DynamicResource ResourceKey=UploadXml}" Click="XmlUpload_OnClick"/>
+                        <Image Grid.Column="7" Grid.Row="5" x:Name="Okay1" HorizontalAlignment="Left" Source="Images/haken.bmp" Visibility="Hidden"/>
+                        <Image Grid.Column="6" Grid.Row="8" x:Name="Okay2" HorizontalAlignment="Left" Source="Images/haken.bmp" Visibility="Hidden"/>
+                        <Button Grid.Column="4" Grid.Row="8" Visibility="Hidden" Content="Platzhalterberechnung" x:Name="CalculationStart" Height="20" Click="CalculationStart_OnClick"></Button>
                     </Grid>
                 </TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=DemandManagment}" Width="195">
@@ -749,7 +751,7 @@
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Aktueller Lagerbestand-Platzhalter">
-                                <DataGrid Margin="10,10,10,10"></DataGrid>
+                                <DataGrid Name="GridOldStock" ItemsSource="{Binding}" Margin="10,10,10,10"></DataGrid>
                             </TabItem>
                             <TabItem Header="Produktionsaufträge-Platzhalter"/>
                         </TabControl>
