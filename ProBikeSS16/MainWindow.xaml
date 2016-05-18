@@ -32,7 +32,7 @@
         </Menu>
         <Grid>
             <TabControl>
-                <TabItem Header="{DynamicResource ResourceKey=ForecastAndDataImport}" Width="195">
+                <TabItem Header="{DynamicResource ResourceKey=ForecastAndDataImport}" Width="195" HorizontalAlignment="Left" Margin="0,-2,0,0">
                     <Grid>
                         <Grid.Resources>
                         </Grid.Resources>

@@ -94,6 +94,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Storage.cs" />
     <Compile Include="Workplace.cs" />
     <Content Include="en-US\LocalizationDictionary.en-US.xaml">
       <SubType>Designer</SubType>
