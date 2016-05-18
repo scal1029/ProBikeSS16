@@ -219,17 +219,92 @@ namespace ProBikeSS16
             MaleBikeSafetyE20.Text = MaleBikeSafetyP3.Text;
 
             //Stock
-            //P1
-            DataRow[] results = data.Tables[2].Select("id = '1'");
-            ChildBikeStockP1.Text = results[0].ItemArray[1].ToString();
+            //P123
+            DataRow[] results = data.Tables[2].Select("id = '16'");
+            int E16 = Int32.Parse(results[0].ItemArray[1].ToString());
+            int E16P1 = 0;
+            int E16P2 = 0;
+            int E16P3 = 0;
+            while(E16>0)
+            {
+                if (E16 > 0)
+                {
+                    E16P1 = E16P1 + 10;
+                    E16 = E16 - 10;
+                }
+                if (E16 > 0)
+                {
+                    E16P2 = E16P2 + 10;
+                    E16 = E16 - 10;
+                }
+                if (E16 > 0)
+                {
+                    E16P3 = E16P3 + 10;
+                    E16 = E16 - 10;
+                }
+            }
+            ChildBikeStockE16.Text = E16P1.ToString();
+            FemaleBikeStockE16.Text = E16P2.ToString();
+            MaleBikeStockE16.Text = E16P3.ToString();
+
+            results = data.Tables[2].Select("id = '17'");
+            int E17 = Int32.Parse(results[0].ItemArray[1].ToString());
+            int E17P1 = 0;
+            int E17P2 = 0;
+            int E17P3 = 0;
+            while (E17 > 0)
+            {
+                if (E17 > 0)
+                {
+                    E17P1 = E17P1 + 10;
+                    E17 = E17 - 10;
+                }
+                if (E17 > 0)
+                {
+                    E17P2 = E17P2 + 10;
+                    E17 = E17 - 10;
+                }
+                if (E17 > 0)
+                {
+                    E17P3 = E17P3 + 10;
+                    E17 = E17 - 10;
+                }
+            }
+            ChildBikeStockE17.Text = E17P1.ToString();
+            FemaleBikeStockE17.Text = E17P2.ToString();
+            MaleBikeStockE17.Text = E17P3.ToString();
+
             results = data.Tables[2].Select("id = '26'");
-            ChildBikeStockE26.Text = results[0].ItemArray[1].ToString();
+            int E26 = Int32.Parse(results[0].ItemArray[1].ToString());
+            int E26P1 = 0;
+            int E26P2 = 0;
+            int E26P3 = 0;
+            while (E26 > 0)
+            {
+                if (E26 > 0)
+                {
+                    E26P1 = E26P1 + 10;
+                    E26 = E26 - 10;
+                }
+                if (E26 > 0)
+                {
+                    E26P2 = E26P2 + 10;
+                    E26 = E26 - 10;
+                }
+                if (E26 > 0)
+                {
+                    E26P3 = E26P3 + 10;
+                    E26 = E26 - 10;
+                }
+            }
+            ChildBikeStockE26.Text = E26P1.ToString();
+            FemaleBikeStockE26.Text = E26P2.ToString();
+            MaleBikeStockE26.Text = E26P3.ToString();
+            //P1
+            results = data.Tables[2].Select("id = '1'");
+            ChildBikeStockP1.Text = results[0].ItemArray[1].ToString();
             results = data.Tables[2].Select("id = '51'");
             ChildBikeStockE51.Text = results[0].ItemArray[1].ToString();
-            results = data.Tables[2].Select("id = '16'");
-            ChildBikeStockE16.Text = results[0].ItemArray[1].ToString();
-            results = data.Tables[2].Select("id = '17'");
-            ChildBikeStockE17.Text = results[0].ItemArray[1].ToString();
             results = data.Tables[2].Select("id = '50'");
             ChildBikeStockE50.Text = results[0].ItemArray[1].ToString();
             results = data.Tables[2].Select("id = '4'");
