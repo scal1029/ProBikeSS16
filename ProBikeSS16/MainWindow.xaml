@@ -316,6 +316,7 @@
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikePlannedProductionE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikePlannedProductionE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikePlannedProductionE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Button Content="Platzhalter" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="ChildProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Damenfahrrad-Platzhalter">
@@ -532,6 +533,7 @@
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE8" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE14" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE19" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Button Content="Platzhalter" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="FemaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Herrenfahrrad-Platzhalter">
@@ -748,6 +750,7 @@
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikePlannedProductionE9" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikePlannedProductionE15" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikePlannedProductionE20" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Button Content="Platzhalter" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="MaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Aktueller Lagerbestand-Platzhalter">

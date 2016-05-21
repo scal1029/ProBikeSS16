@@ -53,5 +53,50 @@ namespace ProBikeSS16
         public static bool XMLCorrect;
 
         public static DataSet InputDataSetWithoutOldBatchCalc;
+
+        //Produktionsaufträge
+        public static int E26Produktionsauftrag;
+        public static int P1E26Produktionsauftrag;
+        public static int P2E26Produktionsauftrag;
+        public static int P3E26Produktionsauftrag;
+        public static int E16Produktionsauftrag;
+        public static int P1E16Produktionsauftrag;
+        public static int P2E16Produktionsauftrag;
+        public static int P3E16Produktionsauftrag;
+        public static int E17Produktionsauftrag;
+        public static int P1E17Produktionsauftrag;
+        public static int P2E17Produktionsauftrag;
+        public static int P3E17Produktionsauftrag;
+
+        public static int P1Produktionsauftrag;
+        public static int E51Produktionsauftrag;
+        public static int E50Produktionsauftrag;
+        public static int E4Produktionsauftrag;
+        public static int E10Produktionsauftrag;
+        public static int E49Produktionsauftrag;
+        public static int E7Produktionsauftrag;
+        public static int E13Produktionsauftrag;
+        public static int E18Produktionsauftrag;
+
+        public static int P2Produktionsauftrag;
+        public static int E56Produktionsauftrag;
+        public static int E55Produktionsauftrag;
+        public static int E5Produktionsauftrag;
+        public static int E11Produktionsauftrag;
+        public static int E54Produktionsauftrag;
+        public static int E8Produktionsauftrag;
+        public static int E14Produktionsauftrag;
+        public static int E19Produktionsauftrag;
+
+
+        public static int P3Produktionsauftrag;
+        public static int E31Produktionsauftrag;
+        public static int E30Produktionsauftrag;
+        public static int E6Produktionsauftrag;
+        public static int E12Produktionsauftrag;
+        public static int E29Produktionsauftrag;
+        public static int E9Produktionsauftrag;
+        public static int E15Produktionsauftrag;
+        public static int E20Produktionsauftrag;
     }
 }
