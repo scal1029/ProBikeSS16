@@ -1241,294 +1241,511 @@ namespace ProBikeSS16
             #region DataTable
             
             GlobalVariables.dtProdOrder.Clear();
-            GlobalVariables.dtProdOrder.Columns.Add("Item");
-            GlobalVariables.dtProdOrder.Columns.Add("Amount");
+            if(!GlobalVariables.dtProdOrder.Columns.Contains("Item"))
+                GlobalVariables.dtProdOrder.Columns.Add("Item");
+            if (!GlobalVariables.dtProdOrder.Columns.Contains("Amount"))
+                GlobalVariables.dtProdOrder.Columns.Add("Amount");
 
             //Enter all Rows
             DataRow P1P = GlobalVariables.dtProdOrder.NewRow();
             P1P["Item"] = "1";
             if(int.Parse(ChildBikePlannedProductionP1.Text) > 0)
-                P1P["Amount"] = ChildBikePlannedProductionP1.Text;
+                P1P["Amount"] = int.Parse(ChildBikePlannedProductionP1.Text);
             else
-                P1P["Amount"] = "0";
+                P1P["Amount"] = 0;
 
             DataRow P2P = GlobalVariables.dtProdOrder.NewRow();
             P2P["Item"] = "2";
             if (int.Parse(FemaleBikePlannedProductionP2.Text) > 0)
-                P2P["Amount"] = FemaleBikePlannedProductionP2.Text;
+                P2P["Amount"] = int.Parse(FemaleBikePlannedProductionP2.Text);
             else
-                P2P["Amount"] = "0";
+                P2P["Amount"] = 0;
             
             DataRow P3P = GlobalVariables.dtProdOrder.NewRow();
             P3P["Item"] = "3";
             if (int.Parse(MaleBikePlannedProductionP3.Text) > 0)
-                P3P["Amount"] = MaleBikePlannedProductionP3.Text;
+                P3P["Amount"] = int.Parse(MaleBikePlannedProductionP3.Text);
             else
-                P3P["Amount"] = "0";
+                P3P["Amount"] = 0;
 
             DataRow E26P = GlobalVariables.dtProdOrder.NewRow();
             E26P["Item"] = "26";
             if (int.Parse(GlobalVariables.E26Produktionsauftrag.ToString()) > 0)
-                E26P["Amount"] = GlobalVariables.E26Produktionsauftrag.ToString();
+                E26P["Amount"] = GlobalVariables.E26Produktionsauftrag;
             else
-                E26P["Amount"] = "0";
+                E26P["Amount"] = 0;
 
             DataRow E16P = GlobalVariables.dtProdOrder.NewRow();
             E16P["Item"] = "16";
             if (int.Parse(GlobalVariables.E16Produktionsauftrag.ToString()) > 0)
-                E16P["Amount"] = GlobalVariables.E16Produktionsauftrag.ToString();
+                E16P["Amount"] = GlobalVariables.E16Produktionsauftrag;
             else
-                E16P["Amount"] = "0";
+                E16P["Amount"] = 0;
 
             DataRow E17P = GlobalVariables.dtProdOrder.NewRow();
             E17P["Item"] = "17";
             if (int.Parse(GlobalVariables.E17Produktionsauftrag.ToString()) > 0)
-                E17P["Amount"] = GlobalVariables.E17Produktionsauftrag.ToString();
+                E17P["Amount"] = GlobalVariables.E17Produktionsauftrag;
             else
-                E17P["Amount"] = "0";
+                E17P["Amount"] = 0;
 
             DataRow E51P = GlobalVariables.dtProdOrder.NewRow();
             E51P["Item"] = "51";
             if (int.Parse(GlobalVariables.E51Produktionsauftrag.ToString()) > 0)
-                E51P["Amount"] = GlobalVariables.E51Produktionsauftrag.ToString();
+                E51P["Amount"] = GlobalVariables.E51Produktionsauftrag;
             else
-                E51P["Amount"] = "0";
+                E51P["Amount"] = 0;
 
             DataRow E56P = GlobalVariables.dtProdOrder.NewRow();
             E56P["Item"] = "56";
             if (int.Parse(GlobalVariables.E56Produktionsauftrag.ToString()) > 0)
-                E56P["Amount"] = GlobalVariables.E56Produktionsauftrag.ToString();
+                E56P["Amount"] = GlobalVariables.E56Produktionsauftrag;
             else
-                E56P["Amount"] = "0";
+                E56P["Amount"] = 0;
 
             DataRow E31P = GlobalVariables.dtProdOrder.NewRow();
             E31P["Item"] = "31";
             if (int.Parse(GlobalVariables.E31Produktionsauftrag.ToString()) > 0)
-                E31P["Amount"] = GlobalVariables.E31Produktionsauftrag.ToString();
+                E31P["Amount"] = GlobalVariables.E31Produktionsauftrag;
             else
-                E31P["Amount"] = "0";
+                E31P["Amount"] = 0;
 
             DataRow E50P = GlobalVariables.dtProdOrder.NewRow();
             E50P["Item"] = "50";
             if (int.Parse(GlobalVariables.E50Produktionsauftrag.ToString()) > 0)
-                E50P["Amount"] = GlobalVariables.E50Produktionsauftrag.ToString();
+                E50P["Amount"] = GlobalVariables.E50Produktionsauftrag;
             else
-                E50P["Amount"] = "0";
+                E50P["Amount"] = 0;
 
             DataRow E55P = GlobalVariables.dtProdOrder.NewRow();
             E55P["Item"] = "55";
             if (int.Parse(GlobalVariables.E55Produktionsauftrag.ToString()) > 0)
-                E55P["Amount"] = GlobalVariables.E55Produktionsauftrag.ToString();
+                E55P["Amount"] = GlobalVariables.E55Produktionsauftrag;
             else
-                E55P["Amount"] = "0";
+                E55P["Amount"] = 0;
 
             DataRow E30P = GlobalVariables.dtProdOrder.NewRow();
             E30P["Item"] = "30";
             if (int.Parse(GlobalVariables.E30Produktionsauftrag.ToString()) > 0)
-                E30P["Amount"] = GlobalVariables.E30Produktionsauftrag.ToString();
+                E30P["Amount"] = GlobalVariables.E30Produktionsauftrag;
             else
-                E30P["Amount"] = "0";
+                E30P["Amount"] = 0;
 
             DataRow E49P = GlobalVariables.dtProdOrder.NewRow();
             E49P["Item"] = "49";
             if (int.Parse(GlobalVariables.E49Produktionsauftrag.ToString()) > 0)
-                E49P["Amount"] = GlobalVariables.E49Produktionsauftrag.ToString();
+                E49P["Amount"] = GlobalVariables.E49Produktionsauftrag;
             else
-                E49P["Amount"] = "0";
+                E49P["Amount"] = 0;
 
             DataRow E54P = GlobalVariables.dtProdOrder.NewRow();
             E54P["Item"] = "54";
             if (int.Parse(GlobalVariables.E54Produktionsauftrag.ToString()) > 0)
-                E54P["Amount"] = GlobalVariables.E54Produktionsauftrag.ToString();
+                E54P["Amount"] = GlobalVariables.E54Produktionsauftrag;
             else
-                E54P["Amount"] = "0";
+                E54P["Amount"] = 0;
 
             DataRow E29P = GlobalVariables.dtProdOrder.NewRow();
             E29P["Item"] = "29";
             if (int.Parse(GlobalVariables.E29Produktionsauftrag.ToString()) > 0)
-                E29P["Amount"] = GlobalVariables.E29Produktionsauftrag.ToString();
+                E29P["Amount"] = GlobalVariables.E29Produktionsauftrag;
             else
-                E29P["Amount"] = "0";
+                E29P["Amount"] = 0;
 
             DataRow E18P = GlobalVariables.dtProdOrder.NewRow();
             E18P["Item"] = "18";
             if (int.Parse(GlobalVariables.E18Produktionsauftrag.ToString()) > 0)
-                E18P["Amount"] = GlobalVariables.E18Produktionsauftrag.ToString();
+                E18P["Amount"] = GlobalVariables.E18Produktionsauftrag;
             else
-                E18P["Amount"] = "0";
+                E18P["Amount"] = 0;
 
             DataRow E19P = GlobalVariables.dtProdOrder.NewRow();
             E19P["Item"] = "19";
             if (int.Parse(GlobalVariables.E19Produktionsauftrag.ToString()) > 0)
-                E19P["Amount"] = GlobalVariables.E19Produktionsauftrag.ToString();
+                E19P["Amount"] = GlobalVariables.E19Produktionsauftrag;
             else
-                E19P["Amount"] = "0";
+                E19P["Amount"] = 0;
 
             DataRow E20P = GlobalVariables.dtProdOrder.NewRow();
             E20P["Item"] = "20";
             if (int.Parse(GlobalVariables.E20Produktionsauftrag.ToString()) > 0)
-                E20P["Amount"] = GlobalVariables.E20Produktionsauftrag.ToString();
+                E20P["Amount"] = GlobalVariables.E20Produktionsauftrag;
             else
-                E20P["Amount"] = "0";
+                E20P["Amount"] = 0;
 
             DataRow E13P = GlobalVariables.dtProdOrder.NewRow();
             E13P["Item"] = "13";
             if (int.Parse(GlobalVariables.E13Produktionsauftrag.ToString()) > 0)
-                E13P["Amount"] = GlobalVariables.E13Produktionsauftrag.ToString();
+                E13P["Amount"] = GlobalVariables.E13Produktionsauftrag;
             else
-                E13P["Amount"] = "0";
+                E13P["Amount"] = 0;
 
             DataRow E14P = GlobalVariables.dtProdOrder.NewRow();
             E14P["Item"] = "14";
             if (int.Parse(GlobalVariables.E14Produktionsauftrag.ToString()) > 0)
-                E14P["Amount"] = GlobalVariables.E14Produktionsauftrag.ToString();
+                E14P["Amount"] = GlobalVariables.E14Produktionsauftrag;
             else
-                E14P["Amount"] = "0";
+                E14P["Amount"] = 0;
 
             DataRow E15P = GlobalVariables.dtProdOrder.NewRow();
             E15P["Item"] = "15";
             if (int.Parse(GlobalVariables.E15Produktionsauftrag.ToString()) > 0)
-                E15P["Amount"] = GlobalVariables.E15Produktionsauftrag.ToString();
+                E15P["Amount"] = GlobalVariables.E15Produktionsauftrag;
             else
-                E15P["Amount"] = "0";
+                E15P["Amount"] = 0;
 
             DataRow E10P = GlobalVariables.dtProdOrder.NewRow();
             E10P["Item"] = "10";
             if (int.Parse(GlobalVariables.E10Produktionsauftrag.ToString()) > 0)
-                E10P["Amount"] = GlobalVariables.E10Produktionsauftrag.ToString();
+                E10P["Amount"] = GlobalVariables.E10Produktionsauftrag;
             else
-                E10P["Amount"] = "0";
+                E10P["Amount"] = 0;
 
             DataRow E11P = GlobalVariables.dtProdOrder.NewRow();
             E11P["Item"] = "11";
             if (int.Parse(GlobalVariables.E11Produktionsauftrag.ToString()) > 0)
-                E11P["Amount"] = GlobalVariables.E11Produktionsauftrag.ToString();
+                E11P["Amount"] = GlobalVariables.E11Produktionsauftrag;
             else
-                E11P["Amount"] = "0";
+                E11P["Amount"] = 0;
 
             DataRow E12P = GlobalVariables.dtProdOrder.NewRow();
             E12P["Item"] = "12";
             if (int.Parse(GlobalVariables.E12Produktionsauftrag.ToString()) > 0)
-                E12P["Amount"] = GlobalVariables.E12Produktionsauftrag.ToString();
+                E12P["Amount"] = GlobalVariables.E12Produktionsauftrag;
             else
-                E12P["Amount"] = "0";
+                E12P["Amount"] = 0;
 
             DataRow E7P = GlobalVariables.dtProdOrder.NewRow();
             E7P["Item"] = "7";
             if (int.Parse(GlobalVariables.E7Produktionsauftrag.ToString()) > 0)
-                E7P["Amount"] = GlobalVariables.E7Produktionsauftrag.ToString();
+                E7P["Amount"] = GlobalVariables.E7Produktionsauftrag;
             else
-                E7P["Amount"] = "0";
+                E7P["Amount"] = 0;
 
             DataRow E8P = GlobalVariables.dtProdOrder.NewRow();
             E8P["Item"] = "8";
             if (int.Parse(GlobalVariables.E8Produktionsauftrag.ToString()) > 0)
-                E8P["Amount"] = GlobalVariables.E8Produktionsauftrag.ToString();
+                E8P["Amount"] = GlobalVariables.E8Produktionsauftrag;
             else
-                E8P["Amount"] = "0";
+                E8P["Amount"] = 0;
 
             DataRow E9P = GlobalVariables.dtProdOrder.NewRow();
             E9P["Item"] = "9";
             if (int.Parse(GlobalVariables.E9Produktionsauftrag.ToString()) > 0)
-                E9P["Amount"] = GlobalVariables.E9Produktionsauftrag.ToString();
+                E9P["Amount"] = GlobalVariables.E9Produktionsauftrag;
             else
-                E9P["Amount"] = "0";
+                E9P["Amount"] = 0;
 
             DataRow E4P = GlobalVariables.dtProdOrder.NewRow();
             E4P["Item"] = "4";
             if (int.Parse(GlobalVariables.E4Produktionsauftrag.ToString()) > 0)
-                E4P["Amount"] = GlobalVariables.E4Produktionsauftrag.ToString();
+                E4P["Amount"] = GlobalVariables.E4Produktionsauftrag;
             else
-                E4P["Amount"] = "0";
+                E4P["Amount"] = 0;
 
             DataRow E5P = GlobalVariables.dtProdOrder.NewRow();
             E5P["Item"] = "5";
             if (int.Parse(GlobalVariables.E5Produktionsauftrag.ToString()) > 0)
-                E5P["Amount"] = GlobalVariables.E5Produktionsauftrag.ToString();
+                E5P["Amount"] = GlobalVariables.E5Produktionsauftrag;
             else
-                E5P["Amount"] = "0";
+                E5P["Amount"] = 0;
 
             DataRow E6P = GlobalVariables.dtProdOrder.NewRow();
             E6P["Item"] = "6";
             if (int.Parse(GlobalVariables.E6Produktionsauftrag.ToString()) > 0)
-                E6P["Amount"] = GlobalVariables.E6Produktionsauftrag.ToString();
+                E6P["Amount"] = GlobalVariables.E6Produktionsauftrag;
             else
-                E6P["Amount"] = "0";
+                E6P["Amount"] = 0;
 
 
             //int test = int.Parse(P1P[1].ToString());
             //MessageBox.Show(test.ToString());
             //MIst
-            GlobalVariables.dtProdOrder.Rows.Add(P1P);
-            GlobalVariables.dtProdOrder.Rows.Add(P2P);
-            GlobalVariables.dtProdOrder.Rows.Add(P3P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E51P);
-            GlobalVariables.dtProdOrder.Rows.Add(E56P);
-            GlobalVariables.dtProdOrder.Rows.Add(E31P);
+            //GlobalVariables.dtProdOrder.Rows.Add(P1P);
+            //GlobalVariables.dtProdOrder.Rows.Add(P2P);
+            //GlobalVariables.dtProdOrder.Rows.Add(P3P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E50P);
-            GlobalVariables.dtProdOrder.Rows.Add(E55P);
-            GlobalVariables.dtProdOrder.Rows.Add(E30P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E51P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E56P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E31P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E49P);
-            GlobalVariables.dtProdOrder.Rows.Add(E54P);
-            GlobalVariables.dtProdOrder.Rows.Add(E29P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E50P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E55P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E30P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E26P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E49P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E54P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E29P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E18P);
-            GlobalVariables.dtProdOrder.Rows.Add(E19P);
-            GlobalVariables.dtProdOrder.Rows.Add(E20P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E26P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E16P);
-            GlobalVariables.dtProdOrder.Rows.Add(E17P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E18P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E19P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E20P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E13P);
-            GlobalVariables.dtProdOrder.Rows.Add(E14P);
-            GlobalVariables.dtProdOrder.Rows.Add(E15P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E16P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E17P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E10P);
-            GlobalVariables.dtProdOrder.Rows.Add(E11P);
-            GlobalVariables.dtProdOrder.Rows.Add(E12P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E13P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E14P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E15P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E7P);
-            GlobalVariables.dtProdOrder.Rows.Add(E8P);
-            GlobalVariables.dtProdOrder.Rows.Add(E9P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E10P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E11P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E12P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E4P);
-            GlobalVariables.dtProdOrder.Rows.Add(E5P);
-            GlobalVariables.dtProdOrder.Rows.Add(E6P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E7P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E8P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E9P);
+
+            //GlobalVariables.dtProdOrder.Rows.Add(E4P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E5P);
+            //GlobalVariables.dtProdOrder.Rows.Add(E6P);
+
+            List<DataRow> P1P2P3 = new List<DataRow> { P1P,P2P, P3P};
+            List<DataRow> E51E56E31 = new List<DataRow> { E51P, E56P, E31P };
+            List<DataRow> E50E55E30 = new List<DataRow> { E50P, E55P, E30P };
+            List<DataRow> E49E54E29 = new List<DataRow> { E49P, E54P, E29P };
+
+            List<DataRow> E18E19E20 = new List<DataRow> { E18P, E19P, E20P };
+            List<DataRow> E16E17 = new List<DataRow> { E16P, E17P };
+
+            List<DataRow> E13E14E15 = new List<DataRow> { E13P, E14P, E15P };
+            List<DataRow> E10E11E12 = new List<DataRow> { E10P, E11P, E12P };
+            List<DataRow> E7E8E9 = new List<DataRow> { E7P, E8P, E9P };
+            List<DataRow> E4E5E6 = new List<DataRow> { E4P, E5P, E6P };
+
 
 
             //Order Rows according to Settings
+            #region Order
             if (BikesFirst.IsChecked)
             {
                 if (High.IsChecked)
                 {
+                    var R123 = P1P2P3.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R123)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R515631 = E51E56E31.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R515631)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R505530 = E50E55E30.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R505530)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R495429 = E49E54E29.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R495429)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    GlobalVariables.dtProdOrder.Rows.Add(E26P);
+                    var R181920 = E18E19E20.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R181920)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R16R17 = E16E17.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R16R17)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R131415 = E13E14E15.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R131415)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R101112 = E10E11E12.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R101112)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R789 = E7E8E9.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R789)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R456 = E4E5E6.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R456)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
 
-                    
-                    int test = int.Parse(P1P[1].ToString());
-                    MessageBox.Show(test.ToString());
                 }
                 else
                 {
-                    
+                    var R123 = P1P2P3.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R123)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R515631 = E51E56E31.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R515631)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R505530 = E50E55E30.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R505530)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R495429 = E49E54E29.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R495429)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    GlobalVariables.dtProdOrder.Rows.Add(E26P);
+                    var R181920 = E18E19E20.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R181920)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R16R17 = E16E17.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R16R17)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R131415 = E13E14E15.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R131415)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R101112 = E10E11E12.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R101112)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R789 = E7E8E9.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R789)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R456 = E4E5E6.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R456)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
                 }
             }
             else
             {
                 if (High.IsChecked)
                 {
-                    
+                    var R456 = E4E5E6.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R456)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R789 = E7E8E9.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R789)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R101112 = E10E11E12.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R101112)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R131415 = E13E14E15.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R131415)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R16R17 = E16E17.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R16R17)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R181920 = E18E19E20.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R181920)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    GlobalVariables.dtProdOrder.Rows.Add(E26P);
+                    var R495429 = E49E54E29.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R495429)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R505530 = E50E55E30.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R505530)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R515631 = E51E56E31.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R515631)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R123 = P1P2P3.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R123)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
                 }
                 else
                 {
-                    
+                    var R456 = E4E5E6.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R456)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R789 = E7E8E9.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R789)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R101112 = E10E11E12.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R101112)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R131415 = E13E14E15.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R131415)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R16R17 = E16E17.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R16R17)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R181920 = E18E19E20.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R181920)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    GlobalVariables.dtProdOrder.Rows.Add(E26P);
+                    var R495429 = E49E54E29.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R495429)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R505530 = E50E55E30.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R505530)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R515631 = E51E56E31.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R515631)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R123 = P1P2P3.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R123)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
                 }
             }
+            #endregion Order
 
-           
+
 
 
             GridProductionOrders.DataContext = GlobalVariables.dtProdOrder.DefaultView;
