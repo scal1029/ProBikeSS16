@@ -112,7 +112,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <TabControl>
-                            <TabItem Header="{DynamicResource ResourceKey=childBike}">
+                            <TabItem Header="{DynamicResource ResourceKey=ChildBike}">
                                 <Grid Margin="10,10,10,10" Width="850">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="100"/>
@@ -329,7 +329,7 @@
                                     <Button Content="{DynamicResource ResourceKey=refreshChild}" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="ChildProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="{DynamicResource ResourceKey=femBike}">
+                            <TabItem Header="{DynamicResource ResourceKey=FemaleBike}">
                                 <Grid Margin="10,10,10,10" Width="850">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="100"/>
@@ -543,10 +543,10 @@
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE8" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE14" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE19" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <Button Content="refresh" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="FemaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
+                                    <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="FemaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="Herrenfahrrad-Platzhalter">
+                            <TabItem Header="MaleBike">
                                 <Grid Margin="10,10,10,10" Width="850">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="100"/>
@@ -600,12 +600,12 @@
                                     <Label Grid.Column="0" Grid.Row="14" Content="E9" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
                                     <Label Grid.Column="0" Grid.Row="15" Content="E15" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
                                     <Label Grid.Column="0" Grid.Row="16" Content="E20" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
-                                    <TextBlock Grid.Column="2" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Verbindliche Aufträge /Vertriebswunsch PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
-                                    <TextBlock Grid.Column="6" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Geplanter Lagerbestand am Ende der Planperiode (Sicherheits-bestand)PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
-                                    <TextBlock Grid.Column="8" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Lagerbestand am Ender der Vorperiode PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
-                                    <TextBlock Grid.Column="10" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Aufträge in der Warteschlange PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
-                                    <TextBlock Grid.Column="12" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Aufträge in Bearbeitung-PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
-                                    <TextBlock Grid.Column="14" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="Produktions-auftäge für die kommende Periode-PH" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="2" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="{DynamicResource ResourceKey=bindingOrders}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="6" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="{DynamicResource ResourceKey=safetyStock}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="8" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="{DynamicResource ResourceKey=priorPeriod}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="10" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="{DynamicResource ResourceKey=ordersQueue}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="12" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="{DynamicResource ResourceKey=ordersProcessing}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
+                                    <TextBlock Grid.Column="14" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Center" Text="{DynamicResource ResourceKey=comingPeriod}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="DemiBold"/>
                                     <Label Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
                                     <Label Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
                                     <Label Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"  Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
@@ -760,7 +760,7 @@
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikePlannedProductionE9" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikePlannedProductionE15" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikePlannedProductionE20" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <Button Content="Platzhalter" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="MaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
+                                    <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="MaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Aktueller Lagerbestand-Platzhalter">
