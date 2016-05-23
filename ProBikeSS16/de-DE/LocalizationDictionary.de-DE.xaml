@@ -38,4 +38,13 @@
     <sys:String x:Key="SafetyStockToolTip">Anzahl Fahrräder die immer auf Lager gehalten werden sollen.</sys:String>
     <sys:String x:Key="UploadXml">XML hochladen</sys:String>
     
+    <!-- Localized strings planned Program-->
+    <sys:String x:Key="bindingOrders">Verbindliche Aufträge /Vertriebswunsch</sys:String>
+    <sys:String x:Key="safetyStock">Geplanter Lagerbestand am Ende der Planperiode (Sicherheits-bestand)</sys:String>
+    <sys:String x:Key="priorPeriod">Lagerbestand am Ende der Vorperiode</sys:String>
+    <sys:String x:Key="ordersQueue">Aufträge in der Warteschlange</sys:String>
+    <sys:String x:Key="ordersProcessing">Aufträge in Bearbeitung</sys:String>
+    <sys:String x:Key="comingPeriod">Produktionsauftäge für die kommende Periode</sys:String>
+    <sys:String x:Key="refreshChild">Aktualisieren</sys:String>
+
 </ResourceDictionary>
