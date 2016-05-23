@@ -1,0 +1,11 @@
+Kinderfahrrad = Children's bicycle === childBike
+Verbindliche Aufträge /Vertriebswunsch = Binding order/ sales request === bindingOrdersChild
+Geplanter Lagerbestand am Ende der Planperiode (Sicherheits-bestand) = Planned stock at the end of the planning period (safety stock) === safetyStockChild
+Lagerbestand am Ende der Vorperiode = Stock at the end of the prior period  === priorPeriodChild
+Aufträge in der Warteschlange = Orders in queue === ordersQueueChild
+Aufträge in Bearbeitung = Orders in Processing === ordersProcessingChild
+Produktionsauftäge für die kommende Periode = Production orders for the upcoming period === comingPeriodChild
+Aktualisieren = Refresh === refreshChild
+
+================================================================
+Damenfahrrad = Ladies' bicyle == femBike
