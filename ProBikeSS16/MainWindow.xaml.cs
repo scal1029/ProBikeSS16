@@ -152,6 +152,7 @@ namespace ProBikeSS16
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+            //&& (int.Parse(e.Text)%10==0);
         }
 
         private void CalculationStart_OnClick(object sender, RoutedEventArgs e)
@@ -1235,7 +1236,104 @@ namespace ProBikeSS16
                                                     GlobalVariables.P2E26Produktionsauftrag +
                                                     GlobalVariables.P3E26Produktionsauftrag;
             #endregion ProgrammplannungKalkulation
+
+            //Datagrid ProdOrders
+            #region DataTable
+            
+            GlobalVariables.dtProdOrder.Clear();
+            GlobalVariables.dtProdOrder.Columns.Add("Item");
+            GlobalVariables.dtProdOrder.Columns.Add("Amount");
+
+            //Enter all Rows
+            DataRow P1P = GlobalVariables.dtProdOrder.NewRow();
+            P1P["Item"] = "1";
+            if(int.Parse(ChildBikePlannedProductionP1.Text) > 0)
+                P1P["Amount"] = ChildBikePlannedProductionP1.Text;
+            else
+                P1P["Amount"] = "0";
+
+            DataRow P2P = GlobalVariables.dtProdOrder.NewRow();
+            P2P["Item"] = "2";
+            if (int.Parse(FemaleBikePlannedProductionP2.Text) > 0)
+                P2P["Amount"] = FemaleBikePlannedProductionP2.Text;
+            else
+                P2P["Amount"] = "0";
+            
+            DataRow P3P = GlobalVariables.dtProdOrder.NewRow();
+            P3P["Item"] = "3";
+            if (int.Parse(MaleBikePlannedProductionP3.Text) > 0)
+                P3P["Amount"] = MaleBikePlannedProductionP3.Text;
+            else
+                P3P["Amount"] = "0";
+
+            DataRow E16P = GlobalVariables.dtProdOrder.NewRow();
+            E16P["Item"] = "16";
+            if (int.Parse(GlobalVariables.E16Produktionsauftrag.ToString()) > 0)
+                E16P["Amount"] = GlobalVariables.E16Produktionsauftrag.ToString();
+            else
+                E16P["Amount"] = "0";
+
+            DataRow E17P = GlobalVariables.dtProdOrder.NewRow();
+            E17P["Item"] = "17";
+            if (int.Parse(GlobalVariables.E17Produktionsauftrag.ToString()) > 0)
+                E17P["Amount"] = GlobalVariables.E17Produktionsauftrag.ToString();
+            else
+                E17P["Amount"] = "0";
+
+            DataRow E26P = GlobalVariables.dtProdOrder.NewRow();
+            E26P["Item"] = "26";
+            if (int.Parse(GlobalVariables.E26Produktionsauftrag.ToString()) > 0)
+                E26P["Amount"] = GlobalVariables.E26Produktionsauftrag.ToString();
+            else
+                E26P["Amount"] = "0";
+
+            
+            //int test = int.Parse(P1P[1].ToString());
+            //MessageBox.Show(test.ToString());
+            GlobalVariables.dtProdOrder.Rows.Add(P1P);
+            GlobalVariables.dtProdOrder.Rows.Add(P2P);
+            GlobalVariables.dtProdOrder.Rows.Add(P3P);
+
+            GlobalVariables.dtProdOrder.Rows.Add(E16P);
+            GlobalVariables.dtProdOrder.Rows.Add(E17P);
+
+
+            GlobalVariables.dtProdOrder.Rows.Add(E26P);
+
+            //Order Rows according to Settings
+            if (BikesFirst.IsChecked)
+            {
+                if (High.IsChecked)
+                {
+
+                    
+                    int test = int.Parse(P1P[1].ToString());
+                    MessageBox.Show(test.ToString());
+                }
+                else
+                {
+                    
+                }
+            }
+            else
+            {
+                if (High.IsChecked)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+            }
+
+           
+
+
+            GridProductionOrders.DataContext = GlobalVariables.dtProdOrder.DefaultView;
+            #endregion DataTable
         }
+
 
         private void ProgrammplannungRepeat(object sender, RoutedEventArgs e)
         {
@@ -1587,5 +1685,104 @@ namespace ProBikeSS16
         }
 
         #endregion Data
+
+        private void DeleteOrder_OnClick(object sender, RoutedEventArgs e)
+        {
+            DataRowView row = (DataRowView)GridProductionOrders.SelectedItems[0];
+            row.Delete();
+        }
+
+
+        private void AddOrder_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (AddItemBox.Text.Length>0 && AddAmountBox.Text.Length>0)
+            {
+                string ItemID;
+                string amount;
+                ItemID = AddItemBox.Text;
+                amount = AddAmountBox.Text;
+                DataRow AddRow = GlobalVariables.dtProdOrder.NewRow();
+                AddRow["Item"] = ItemID;
+                AddRow["Amount"] = amount;
+                GlobalVariables.dtProdOrder.Rows.Add(AddRow);
+            }
+            else
+            {
+                MessageBox.Show("Fehler");
+            }
+            
+        }
+
+        private void Up_OnClick(object sender, RoutedEventArgs e)
+        {
+            int CurrentRow = GridProductionOrders.SelectedIndex;
+            int old = CurrentRow;
+            DataRow row = GlobalVariables.dtProdOrder.Rows[old];
+            DataRow row2 = GlobalVariables.dtProdOrder.NewRow();
+            row2.ItemArray = row.ItemArray;
+
+            if (old - 1 >= 0)
+            {
+                GlobalVariables.dtProdOrder.Rows.Remove(GlobalVariables.dtProdOrder.Rows[old]);
+                GlobalVariables.dtProdOrder.Rows.InsertAt(row2, old - 1);
+                this.GridProductionOrders.SelectedIndex = old - 1;
+            }
+            else
+            {
+                MessageBox.Show("Really");
+            }
+        }
+
+        private void Down_OnClick(object sender, RoutedEventArgs e)
+        {
+            int CurrentRow = GridProductionOrders.SelectedIndex;
+            int old = CurrentRow;
+            if (old<GlobalVariables.dtProdOrder.Rows.Count-1)
+            {
+                DataRow row = GlobalVariables.dtProdOrder.Rows[old];
+                DataRow row2 = GlobalVariables.dtProdOrder.NewRow();
+                row2.ItemArray = row.ItemArray;
+
+                if (old + 1 <= GlobalVariables.dtProdOrder.Rows.Count)
+                {
+                    GlobalVariables.dtProdOrder.Rows.Remove(GlobalVariables.dtProdOrder.Rows[old]);
+                    GlobalVariables.dtProdOrder.Rows.InsertAt(row2, old + 1);
+                    this.GridProductionOrders.SelectedIndex = old + 1;
+                }
+                else
+                {
+                    MessageBox.Show("Really");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Really");
+            }
+
+        }
+
+        private void ProdCalcSettings_OnClick(object sender, RoutedEventArgs e)
+        {
+            // Uncheck each item
+            foreach (MenuItem item in ProdCalcSettings.Items)
+            {
+                item.IsChecked = false;
+            }
+
+            MenuItem mi = sender as MenuItem;
+            mi.IsChecked = true;
+        }
+
+        private void HighOrLowSettings_OnClick(object sender, RoutedEventArgs e)
+        {
+            // Uncheck each item
+            foreach (MenuItem item in HighOrLow.Items)
+            {
+                item.IsChecked = false;
+            }
+
+            MenuItem mi = sender as MenuItem;
+            mi.IsChecked = true;
+        }
     }
 }

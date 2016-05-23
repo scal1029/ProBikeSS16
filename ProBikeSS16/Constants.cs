@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml.Linq;
 
 namespace ProBikeSS16
@@ -98,5 +99,7 @@ namespace ProBikeSS16
         public static int E9Produktionsauftrag;
         public static int E15Produktionsauftrag;
         public static int E20Produktionsauftrag;
+
+        public static DataTable dtProdOrder = new DataTable();
     }
 }

@@ -26,6 +26,16 @@
                 <MenuItem x:Name="germanHeader" Tag="de-DE" Header="{DynamicResource ResourceKey=LanguageGerman}" IsCheckable="True" IsChecked="True" Click="LanguageHeader_Click"></MenuItem>
                 <MenuItem x:Name="englishHeader" Tag="en-US" Header="{DynamicResource ResourceKey=LanguageEnglish}" IsCheckable="True" IsChecked="False" Click="LanguageHeader_Click"></MenuItem>
             </MenuItem>
+            <MenuItem x:Name="Settings" Header="Settings PH">
+                <MenuItem x:Name="ProdCalcSettings" Header="ProdCalcSettings PH">
+                    <MenuItem x:Name="EarlyPartsFirst" Header="Teile Prio PH" IsCheckable="True" IsChecked="False" Click="ProdCalcSettings_OnClick"></MenuItem>
+                    <MenuItem x:Name="BikesFirst" Header="Bike Prio PH" IsCheckable="True" IsChecked="True" Click="ProdCalcSettings_OnClick"></MenuItem>
+                </MenuItem>
+                <MenuItem x:Name="HighOrLow" Header="HighOrLowSettings PH">
+                    <MenuItem x:Name="High" Header="High Prio PH" IsCheckable="True" IsChecked="False" Click="HighOrLowSettings_OnClick"></MenuItem>
+                    <MenuItem x:Name="Low" Header="Low Prio PH" IsCheckable="True" IsChecked="True" Click="HighOrLowSettings_OnClick"></MenuItem>
+                </MenuItem>
+            </MenuItem>
             <MenuItem Header="{DynamicResource ResourceKey=Help}">
                 <MenuItem Header="{DynamicResource ResourceKey=Manual}"></MenuItem>
             </MenuItem>
@@ -756,7 +766,31 @@
                             <TabItem Header="Aktueller Lagerbestand-Platzhalter">
                                 <DataGrid Name="GridOldStock" ItemsSource="{Binding}" Margin="10,10,10,10"></DataGrid>
                             </TabItem>
-                            <TabItem Header="Produktionsaufträge-Platzhalter"/>
+                            <TabItem Header="Produktionsaufträge-Platzhalter">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="700"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="600"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <DataGrid SelectionMode="Single" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10" Name="GridProductionOrders" ItemsSource="{Binding}"></DataGrid>
+                                    <Button Grid.Column="1" Grid.Row="0" Height="20" Width="200" Name="AddOrder" Content="AddOrder" Margin="0,-150,0,0" Click="AddOrder_OnClick"></Button>
+                                    <Label Grid.Column="1" Grid.Row="0" Height="30" Name="AddItem" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Item-ID" Margin="0,-100,100,0"></Label>
+                                    <TextBox Grid.Column="1" Grid.Row="0" Height="20" Name="AddAmountBox" Width="100" PreviewTextInput="NumberValidationTextBox" Margin="0,-50,-100,0"></TextBox>
+                                    <Label Grid.Column="1" Grid.Row="0" Height="30"  Name="AddAmount" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Amount" Margin="0,-50,100,0"></Label>
+                                    <TextBox Grid.Column="1" Grid.Row="0" Height="20" Name="AddItemBox" Width="100" PreviewTextInput="NumberValidationTextBox" Margin="0,-100,-100,0"></TextBox>
+                                    <Button Grid.Column="1" Grid.Row="0" Height="20" Width="200" Name="DeleteOrder" Content="DeleteOrder" Margin="0,0,0,0" Click="DeleteOrder_OnClick"></Button>
+                                    <Button Name="Up" Grid.Column="1" Grid.Row="0" Height="40" Width="40" Margin="0,150,0,0" Click="Up_OnClick">
+                                        <Image Source="Images/Arrow Up.png"></Image>
+                                    </Button>
+                                    <Button Name="Down" Grid.Column="1" Grid.Row="0" Height="40" Width="40" Margin="0,250,0,0" Click="Down_OnClick">
+                                        <Image Source="Images/Down.png"></Image>
+                                    </Button>
+                                </Grid>
+                            </TabItem>
                         </TabControl>
                     </Grid>
                 </TabItem>
