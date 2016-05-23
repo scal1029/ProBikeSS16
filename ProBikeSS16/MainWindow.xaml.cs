@@ -1064,13 +1064,13 @@ namespace ProBikeSS16
             FemaleBikePassedWaitlistE11.Text = FemaleBikeWaitlistE55.Text;
             FemaleBikePassedWaitlistE54.Text = FemaleBikeWaitlistE55.Text;
             //7.-9. Zeile ausrechnen und Warteschlange und geplante Produktion durchreichen
-            GlobalVariables.E4Produktionsauftrag = int.Parse(FemaleBikeOrderE5.Text) +
+            GlobalVariables.E5Produktionsauftrag = int.Parse(FemaleBikeOrderE5.Text) +
                                                       int.Parse(FemaleBikePassedWaitlistE5.Text) +
                                                       int.Parse(FemaleBikeSafetyE5.Text) -
                                                       int.Parse(FemaleBikeStockE5.Text) -
                                                       int.Parse(FemaleBikeWaitlistE5.Text) -
                                                       int.Parse(FemaleBikeInProductionE5.Text);
-            FemaleBikePlannedProductionE5.Text = GlobalVariables.E4Produktionsauftrag.ToString();
+            FemaleBikePlannedProductionE5.Text = GlobalVariables.E5Produktionsauftrag.ToString();
             GlobalVariables.E11Produktionsauftrag = int.Parse(FemaleBikeOrderE11.Text) +
                                                       int.Parse(FemaleBikePassedWaitlistE11.Text) +
                                                       int.Parse(FemaleBikeSafetyE11.Text) -
@@ -1174,13 +1174,13 @@ namespace ProBikeSS16
             MaleBikePassedWaitlistE12.Text = MaleBikeWaitlistE30.Text;
             MaleBikePassedWaitlistE29.Text = MaleBikeWaitlistE30.Text;
             //7.-9. Zeile ausrechnen und Warteschlange und geplante Produktion durchreichen
-            GlobalVariables.E4Produktionsauftrag = int.Parse(MaleBikeOrderE6.Text) +
+            GlobalVariables.E6Produktionsauftrag = int.Parse(MaleBikeOrderE6.Text) +
                                                       int.Parse(MaleBikePassedWaitlistE6.Text) +
                                                       int.Parse(MaleBikeSafetyE6.Text) -
                                                       int.Parse(MaleBikeStockE6.Text) -
                                                       int.Parse(MaleBikeWaitlistE6.Text) -
                                                       int.Parse(MaleBikeInProductionE6.Text);
-            MaleBikePlannedProductionE6.Text = GlobalVariables.E4Produktionsauftrag.ToString();
+            MaleBikePlannedProductionE6.Text = GlobalVariables.E6Produktionsauftrag.ToString();
             GlobalVariables.E12Produktionsauftrag = int.Parse(MaleBikeOrderE12.Text) +
                                                       int.Parse(MaleBikePassedWaitlistE12.Text) +
                                                       int.Parse(MaleBikeSafetyE12.Text) -
@@ -1202,13 +1202,13 @@ namespace ProBikeSS16
             MaleBikePassedWaitlistE15.Text = MaleBikeWaitlistE29.Text;
             MaleBikePassedWaitlistE20.Text = MaleBikeWaitlistE29.Text;
             //10.-12. Zeile ausrechnen
-            GlobalVariables.E8Produktionsauftrag = int.Parse(MaleBikeOrderE9.Text) +
+            GlobalVariables.E9Produktionsauftrag = int.Parse(MaleBikeOrderE9.Text) +
                                                       int.Parse(MaleBikePassedWaitlistE9.Text) +
                                                       int.Parse(MaleBikeSafetyE9.Text) -
                                                       int.Parse(MaleBikeStockE9.Text) -
                                                       int.Parse(MaleBikeWaitlistE9.Text) -
                                                       int.Parse(MaleBikeInProductionE9.Text);
-            MaleBikePlannedProductionE9.Text = GlobalVariables.E8Produktionsauftrag.ToString();
+            MaleBikePlannedProductionE9.Text = GlobalVariables.E9Produktionsauftrag.ToString();
             GlobalVariables.E15Produktionsauftrag = int.Parse(MaleBikeOrderE15.Text) +
                                                       int.Parse(MaleBikePassedWaitlistE15.Text) +
                                                       int.Parse(MaleBikeSafetyE15.Text) -
@@ -1266,6 +1266,13 @@ namespace ProBikeSS16
             else
                 P3P["Amount"] = "0";
 
+            DataRow E26P = GlobalVariables.dtProdOrder.NewRow();
+            E26P["Item"] = "26";
+            if (int.Parse(GlobalVariables.E26Produktionsauftrag.ToString()) > 0)
+                E26P["Amount"] = GlobalVariables.E26Produktionsauftrag.ToString();
+            else
+                E26P["Amount"] = "0";
+
             DataRow E16P = GlobalVariables.dtProdOrder.NewRow();
             E16P["Item"] = "16";
             if (int.Parse(GlobalVariables.E16Produktionsauftrag.ToString()) > 0)
@@ -1280,25 +1287,219 @@ namespace ProBikeSS16
             else
                 E17P["Amount"] = "0";
 
-            DataRow E26P = GlobalVariables.dtProdOrder.NewRow();
-            E26P["Item"] = "26";
-            if (int.Parse(GlobalVariables.E26Produktionsauftrag.ToString()) > 0)
-                E26P["Amount"] = GlobalVariables.E26Produktionsauftrag.ToString();
+            DataRow E51P = GlobalVariables.dtProdOrder.NewRow();
+            E51P["Item"] = "51";
+            if (int.Parse(GlobalVariables.E51Produktionsauftrag.ToString()) > 0)
+                E51P["Amount"] = GlobalVariables.E51Produktionsauftrag.ToString();
             else
-                E26P["Amount"] = "0";
+                E51P["Amount"] = "0";
 
-            
+            DataRow E56P = GlobalVariables.dtProdOrder.NewRow();
+            E56P["Item"] = "56";
+            if (int.Parse(GlobalVariables.E56Produktionsauftrag.ToString()) > 0)
+                E56P["Amount"] = GlobalVariables.E56Produktionsauftrag.ToString();
+            else
+                E56P["Amount"] = "0";
+
+            DataRow E31P = GlobalVariables.dtProdOrder.NewRow();
+            E31P["Item"] = "31";
+            if (int.Parse(GlobalVariables.E31Produktionsauftrag.ToString()) > 0)
+                E31P["Amount"] = GlobalVariables.E31Produktionsauftrag.ToString();
+            else
+                E31P["Amount"] = "0";
+
+            DataRow E50P = GlobalVariables.dtProdOrder.NewRow();
+            E50P["Item"] = "50";
+            if (int.Parse(GlobalVariables.E50Produktionsauftrag.ToString()) > 0)
+                E50P["Amount"] = GlobalVariables.E50Produktionsauftrag.ToString();
+            else
+                E50P["Amount"] = "0";
+
+            DataRow E55P = GlobalVariables.dtProdOrder.NewRow();
+            E55P["Item"] = "55";
+            if (int.Parse(GlobalVariables.E55Produktionsauftrag.ToString()) > 0)
+                E55P["Amount"] = GlobalVariables.E55Produktionsauftrag.ToString();
+            else
+                E55P["Amount"] = "0";
+
+            DataRow E30P = GlobalVariables.dtProdOrder.NewRow();
+            E30P["Item"] = "30";
+            if (int.Parse(GlobalVariables.E30Produktionsauftrag.ToString()) > 0)
+                E30P["Amount"] = GlobalVariables.E30Produktionsauftrag.ToString();
+            else
+                E30P["Amount"] = "0";
+
+            DataRow E49P = GlobalVariables.dtProdOrder.NewRow();
+            E49P["Item"] = "49";
+            if (int.Parse(GlobalVariables.E49Produktionsauftrag.ToString()) > 0)
+                E49P["Amount"] = GlobalVariables.E49Produktionsauftrag.ToString();
+            else
+                E49P["Amount"] = "0";
+
+            DataRow E54P = GlobalVariables.dtProdOrder.NewRow();
+            E54P["Item"] = "54";
+            if (int.Parse(GlobalVariables.E54Produktionsauftrag.ToString()) > 0)
+                E54P["Amount"] = GlobalVariables.E54Produktionsauftrag.ToString();
+            else
+                E54P["Amount"] = "0";
+
+            DataRow E29P = GlobalVariables.dtProdOrder.NewRow();
+            E29P["Item"] = "29";
+            if (int.Parse(GlobalVariables.E29Produktionsauftrag.ToString()) > 0)
+                E29P["Amount"] = GlobalVariables.E29Produktionsauftrag.ToString();
+            else
+                E29P["Amount"] = "0";
+
+            DataRow E18P = GlobalVariables.dtProdOrder.NewRow();
+            E18P["Item"] = "18";
+            if (int.Parse(GlobalVariables.E18Produktionsauftrag.ToString()) > 0)
+                E18P["Amount"] = GlobalVariables.E18Produktionsauftrag.ToString();
+            else
+                E18P["Amount"] = "0";
+
+            DataRow E19P = GlobalVariables.dtProdOrder.NewRow();
+            E19P["Item"] = "19";
+            if (int.Parse(GlobalVariables.E19Produktionsauftrag.ToString()) > 0)
+                E19P["Amount"] = GlobalVariables.E19Produktionsauftrag.ToString();
+            else
+                E19P["Amount"] = "0";
+
+            DataRow E20P = GlobalVariables.dtProdOrder.NewRow();
+            E20P["Item"] = "20";
+            if (int.Parse(GlobalVariables.E20Produktionsauftrag.ToString()) > 0)
+                E20P["Amount"] = GlobalVariables.E20Produktionsauftrag.ToString();
+            else
+                E20P["Amount"] = "0";
+
+            DataRow E13P = GlobalVariables.dtProdOrder.NewRow();
+            E13P["Item"] = "13";
+            if (int.Parse(GlobalVariables.E13Produktionsauftrag.ToString()) > 0)
+                E13P["Amount"] = GlobalVariables.E13Produktionsauftrag.ToString();
+            else
+                E13P["Amount"] = "0";
+
+            DataRow E14P = GlobalVariables.dtProdOrder.NewRow();
+            E14P["Item"] = "14";
+            if (int.Parse(GlobalVariables.E14Produktionsauftrag.ToString()) > 0)
+                E14P["Amount"] = GlobalVariables.E14Produktionsauftrag.ToString();
+            else
+                E14P["Amount"] = "0";
+
+            DataRow E15P = GlobalVariables.dtProdOrder.NewRow();
+            E15P["Item"] = "15";
+            if (int.Parse(GlobalVariables.E15Produktionsauftrag.ToString()) > 0)
+                E15P["Amount"] = GlobalVariables.E15Produktionsauftrag.ToString();
+            else
+                E15P["Amount"] = "0";
+
+            DataRow E10P = GlobalVariables.dtProdOrder.NewRow();
+            E10P["Item"] = "10";
+            if (int.Parse(GlobalVariables.E10Produktionsauftrag.ToString()) > 0)
+                E10P["Amount"] = GlobalVariables.E10Produktionsauftrag.ToString();
+            else
+                E10P["Amount"] = "0";
+
+            DataRow E11P = GlobalVariables.dtProdOrder.NewRow();
+            E11P["Item"] = "11";
+            if (int.Parse(GlobalVariables.E11Produktionsauftrag.ToString()) > 0)
+                E11P["Amount"] = GlobalVariables.E11Produktionsauftrag.ToString();
+            else
+                E11P["Amount"] = "0";
+
+            DataRow E12P = GlobalVariables.dtProdOrder.NewRow();
+            E12P["Item"] = "12";
+            if (int.Parse(GlobalVariables.E12Produktionsauftrag.ToString()) > 0)
+                E12P["Amount"] = GlobalVariables.E12Produktionsauftrag.ToString();
+            else
+                E12P["Amount"] = "0";
+
+            DataRow E7P = GlobalVariables.dtProdOrder.NewRow();
+            E7P["Item"] = "7";
+            if (int.Parse(GlobalVariables.E7Produktionsauftrag.ToString()) > 0)
+                E7P["Amount"] = GlobalVariables.E7Produktionsauftrag.ToString();
+            else
+                E7P["Amount"] = "0";
+
+            DataRow E8P = GlobalVariables.dtProdOrder.NewRow();
+            E8P["Item"] = "8";
+            if (int.Parse(GlobalVariables.E8Produktionsauftrag.ToString()) > 0)
+                E8P["Amount"] = GlobalVariables.E8Produktionsauftrag.ToString();
+            else
+                E8P["Amount"] = "0";
+
+            DataRow E9P = GlobalVariables.dtProdOrder.NewRow();
+            E9P["Item"] = "9";
+            if (int.Parse(GlobalVariables.E9Produktionsauftrag.ToString()) > 0)
+                E9P["Amount"] = GlobalVariables.E9Produktionsauftrag.ToString();
+            else
+                E9P["Amount"] = "0";
+
+            DataRow E4P = GlobalVariables.dtProdOrder.NewRow();
+            E4P["Item"] = "4";
+            if (int.Parse(GlobalVariables.E4Produktionsauftrag.ToString()) > 0)
+                E4P["Amount"] = GlobalVariables.E4Produktionsauftrag.ToString();
+            else
+                E4P["Amount"] = "0";
+
+            DataRow E5P = GlobalVariables.dtProdOrder.NewRow();
+            E5P["Item"] = "5";
+            if (int.Parse(GlobalVariables.E5Produktionsauftrag.ToString()) > 0)
+                E5P["Amount"] = GlobalVariables.E5Produktionsauftrag.ToString();
+            else
+                E5P["Amount"] = "0";
+
+            DataRow E6P = GlobalVariables.dtProdOrder.NewRow();
+            E6P["Item"] = "6";
+            if (int.Parse(GlobalVariables.E6Produktionsauftrag.ToString()) > 0)
+                E6P["Amount"] = GlobalVariables.E6Produktionsauftrag.ToString();
+            else
+                E6P["Amount"] = "0";
+
+
             //int test = int.Parse(P1P[1].ToString());
             //MessageBox.Show(test.ToString());
+            //MIst
             GlobalVariables.dtProdOrder.Rows.Add(P1P);
             GlobalVariables.dtProdOrder.Rows.Add(P2P);
             GlobalVariables.dtProdOrder.Rows.Add(P3P);
 
+            GlobalVariables.dtProdOrder.Rows.Add(E51P);
+            GlobalVariables.dtProdOrder.Rows.Add(E56P);
+            GlobalVariables.dtProdOrder.Rows.Add(E31P);
+
+            GlobalVariables.dtProdOrder.Rows.Add(E50P);
+            GlobalVariables.dtProdOrder.Rows.Add(E55P);
+            GlobalVariables.dtProdOrder.Rows.Add(E30P);
+
+            GlobalVariables.dtProdOrder.Rows.Add(E49P);
+            GlobalVariables.dtProdOrder.Rows.Add(E54P);
+            GlobalVariables.dtProdOrder.Rows.Add(E29P);
+
+            GlobalVariables.dtProdOrder.Rows.Add(E26P);
+
+            GlobalVariables.dtProdOrder.Rows.Add(E18P);
+            GlobalVariables.dtProdOrder.Rows.Add(E19P);
+            GlobalVariables.dtProdOrder.Rows.Add(E20P);
+
             GlobalVariables.dtProdOrder.Rows.Add(E16P);
             GlobalVariables.dtProdOrder.Rows.Add(E17P);
 
+            GlobalVariables.dtProdOrder.Rows.Add(E13P);
+            GlobalVariables.dtProdOrder.Rows.Add(E14P);
+            GlobalVariables.dtProdOrder.Rows.Add(E15P);
 
-            GlobalVariables.dtProdOrder.Rows.Add(E26P);
+            GlobalVariables.dtProdOrder.Rows.Add(E10P);
+            GlobalVariables.dtProdOrder.Rows.Add(E11P);
+            GlobalVariables.dtProdOrder.Rows.Add(E12P);
+
+            GlobalVariables.dtProdOrder.Rows.Add(E7P);
+            GlobalVariables.dtProdOrder.Rows.Add(E8P);
+            GlobalVariables.dtProdOrder.Rows.Add(E9P);
+
+            GlobalVariables.dtProdOrder.Rows.Add(E4P);
+            GlobalVariables.dtProdOrder.Rows.Add(E5P);
+            GlobalVariables.dtProdOrder.Rows.Add(E6P);
+
 
             //Order Rows according to Settings
             if (BikesFirst.IsChecked)
