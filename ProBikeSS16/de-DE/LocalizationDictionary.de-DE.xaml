@@ -45,6 +45,6 @@
     <sys:String x:Key="ordersQueue">Aufträge in der Warteschlange</sys:String>
     <sys:String x:Key="ordersProcessing">Aufträge in Bearbeitung</sys:String>
     <sys:String x:Key="comingPeriod">Produktionsauftäge für die kommende Periode</sys:String>
-    <sys:String x:Key="refreshChild">Aktualisieren</sys:String>
+    <sys:String x:Key="refresh">Aktualisieren</sys:String>
 
 </ResourceDictionary>
