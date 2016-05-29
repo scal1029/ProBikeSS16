@@ -97,6 +97,8 @@
     <Compile Include="DataTable.cs" />
     <Compile Include="domain\Global.cs" />
     <Compile Include="domain\Unit.cs" />
+    <Compile Include="KapazitätPrototyp.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Workplace.cs" />
     <Content Include="en-US\LocalizationDictionary.en-US.xaml">
       <SubType>Designer</SubType>
