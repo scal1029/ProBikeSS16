@@ -104,6 +104,7 @@
     <Compile Include="Storage\Storage.cs" />
     <Compile Include="Workplace.cs" />
     <Compile Include="Workplaces\Directs.cs" />
+    <Compile Include="Workplaces\WP_11.cs" />
     <Compile Include="Workplaces\WP_12.cs" />
     <Compile Include="Workplaces\WP_14.cs" />
     <Compile Include="Workplaces\WP_13.cs" />
