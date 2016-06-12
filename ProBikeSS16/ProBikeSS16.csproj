@@ -103,6 +103,11 @@
     <Compile Include="Storage\PurchasePart.cs" />
     <Compile Include="Storage\Storage.cs" />
     <Compile Include="Workplace.cs" />
+    <Compile Include="Workplaces\WP_14.cs" />
+    <Compile Include="Workplaces\WP_15.cs" />
+    <Compile Include="Workplaces\WP_2.cs" />
+    <Compile Include="Workplaces\WP_3.cs" />
+    <Compile Include="Workplaces\WP_4.cs" />
     <Content Include="en-US\LocalizationDictionary.en-US.xaml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
