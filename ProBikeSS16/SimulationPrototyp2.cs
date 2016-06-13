@@ -188,7 +188,7 @@ namespace ProBikeSS16
 
                     foreach (KeyValuePair<int, Arbeitsplatzprototyp> ABP in Arbeitsplätze)
                     {
-                        if (ABP.Value.Blockierzeit > 0)
+                        if (ABP.Value.Blockierzeit > 0 || ABP.Value.ArbeitszeitProTagInMinuten >= i)
                             ABP.Value.Blockierzeit = ABP.Value.Blockierzeit - 1;
                     }
 
@@ -377,14 +377,28 @@ namespace ProBikeSS16
             //        }
             //    }
             //}
+            GlobalVariables.KPErg.Clear();
+            if (!GlobalVariables.KPErg.Columns.Contains("ID"))
+            {
+                GlobalVariables.KPErg.Columns.Add("ID");
+                GlobalVariables.KPErg.Columns.Add("Rüstungen");
+                GlobalVariables.KPErg.Columns.Add("ArbeitszeitInMinutenTag");
+                GlobalVariables.KPErg.Columns["ArbeitszeitInMinutenTag"].DataType = typeof(double);
+                GlobalVariables.KPErg.Columns.Add("Rüstzeit");
+                GlobalVariables.KPErg.Columns.Add("Prodzeit");
+            }
+
 
             foreach (var VARIABLE in Arbeitsplätze)
             {
-                Console.WriteLine("ID: " + VARIABLE.Value.ID + " Rüstungen: " + VARIABLE.Value.Rüstungen + " Arbeitszeit: " + VARIABLE.Value.ArbeitszeitProTagInMinuten
-                    + " Rüstzeit: " + VARIABLE.Value.Rüstzeit + " Prodzeit: " + VARIABLE.Value.Arbeitszeit + " Leerzeit: " + VARIABLE.Value.Leerzeit);
+                //Console.WriteLine("ID: " + VARIABLE.Value.ID + " Rüstungen: " + VARIABLE.Value.Rüstungen + " Arbeitszeit: " + VARIABLE.Value.ArbeitszeitProTagInMinuten
+                //    + " Rüstzeit: " + VARIABLE.Value.Rüstzeit + " Prodzeit: " + VARIABLE.Value.Arbeitszeit + " Leerzeit: " + VARIABLE.Value.Leerzeit);
+                double Test = (((double.Parse(VARIABLE.Value.Rüstzeit.ToString()) + double.Parse(VARIABLE.Value.Arbeitszeit.ToString()))*1.1) / 5);
+                //Console.WriteLine(Test);
+                GlobalVariables.KPErg.Rows.Add(VARIABLE.Value.ID, VARIABLE.Value.Rüstungen,  double.Parse(Test.ToString()), VARIABLE.Value.Rüstzeit, VARIABLE.Value.Arbeitszeit);
             }
 
-            
+
 
 
             ////Console.WriteLine("SimuVorbei");
