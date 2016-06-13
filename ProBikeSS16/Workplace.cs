@@ -9,13 +9,17 @@ namespace ProBikeSS16
 {
     class Workplace
     {
-        uint id;
-        double wage=0, var_machineCosts, fix_machineCosts;
-        uint currentWorkTime=0, shiftsToDo;
-        double overTimeToDo;
+        int id;
+        double wage = 0, var_machineCosts, fix_machineCosts;
+        protected int currentWorkTime=0, shiftsToDo;
+        protected double overTimeToDo;
+
+        protected int prod_batch = 10;
+
+        protected Storage storage = Storage.Instance;
 
         #region Properties
-        public uint Id
+        public int Id
         {
             get
             {
@@ -47,7 +51,7 @@ namespace ProBikeSS16
             }
         }
 
-        public uint CurrentWorkTime
+        public int CurrentWorkTime
         {
             get
             {
@@ -55,7 +59,7 @@ namespace ProBikeSS16
             }
         }
 
-        public uint ShiftsToDo
+        public int ShiftsToDo
         {
             get
             {
@@ -85,9 +89,37 @@ namespace ProBikeSS16
                 overTimeToDo = value;
             }
         }
+
+        public double CurrentProductionsCosts
+        {
+            get
+            {
+                double wholeCosts = 0;
+                wholeCosts = currentWorkTime * (Fix_machineCosts + Var_machineCosts);
+                for (int i = shiftsToDo; i > 0; i--)
+                    wholeCosts += Constants.WAGES_SHIFT[i] * Constants.WHOLE_SHIFT_TIME;
+                return wholeCosts += Constants.WAGE_OVERTIME * overTimeToDo;
+            }
+        }
+
+        public double FreeTime
+        {
+            get
+            {
+                return Math.Abs(currentWorkTime - (shiftsToDo * Constants.WHOLE_SHIFT_TIME + overTimeToDo));
+            }
+        }
+
+        public double Capacity
+        {
+            get
+            {
+                return Math.Round((currentWorkTime / (shiftsToDo * Constants.WHOLE_SHIFT_TIME + overTimeToDo)) * 100, 2);
+            }
+        }
         #endregion
-        
-        public Workplace(uint id, double var_machineCosts, double fix_machineCosts, uint shiftsToDo=1, double overTimeToDo=0)
+
+        public Workplace(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo=1, double overTimeToDo=0)
         {
             #region Guardians
             if (id >= Constants.MAX_WORKPLACES)
@@ -107,6 +139,30 @@ namespace ProBikeSS16
             OverTimeToDo = overTimeToDo;
 
             Debug.WriteLine("Created Workplace: " + id);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder s = new StringBuilder();
+
+            s.Append("WP ");
+            s.AppendLine(id.ToString());
+            s.Append("Wage ");
+            s.AppendLine(wage.ToString());
+            s.Append("Current Worktime ");
+            s.AppendLine(currentWorkTime.ToString());
+            s.Append("Variable Machine Costs ");
+            s.AppendLine(var_machineCosts.ToString());
+            s.Append("Fix Machine Costs ");
+            s.AppendLine(fix_machineCosts.ToString());
+            s.Append("Shifts to Do ");
+            s.AppendLine(shiftsToDo.ToString());
+            s.Append("Overtime to Do ");
+            s.AppendLine(overTimeToDo.ToString());
+            s.Append("Production Batch ");
+            s.AppendLine(prod_batch.ToString());
+
+            return s.ToString();
         }
     }
 }

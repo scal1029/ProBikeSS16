@@ -113,6 +113,16 @@
     <Compile Include="Order.cs" />
     <Compile Include="TeilPrototyp.cs" />
     <Compile Include="Workplace.cs" />
+    <Compile Include="Workplaces\Directs.cs" />
+    <Compile Include="Workplaces\WP_11.cs" />
+    <Compile Include="Workplaces\WP_12.cs" />
+    <Compile Include="Workplaces\WP_14.cs" />
+    <Compile Include="Workplaces\WP_13.cs" />
+    <Compile Include="Workplaces\WP_15.cs" />
+    <Compile Include="Workplaces\WP_1.cs" />
+    <Compile Include="Workplaces\WP_2.cs" />
+    <Compile Include="Workplaces\WP_3.cs" />
+    <Compile Include="Workplaces\WP_4.cs" />
     <Content Include="en-US\LocalizationDictionary.en-US.xaml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -186,7 +196,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Storage\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

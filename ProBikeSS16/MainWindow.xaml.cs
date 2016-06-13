@@ -87,7 +87,6 @@ namespace ProBikeSS16
                 GlobalVariables.SaleMaleBikeN1 = SalesMaleBikeN1.Value;
                 GlobalVariables.SaleMaleBikeN2 = SalesMaleBikeN2.Value;
                 GlobalVariables.SaleMaleBikeN3 = SalesMaleBikeN3.Value;
-                MessageBox.Show(GlobalVariables.StockChildBike.Value.ToString()+" Success");
                 GlobalVariables.ForecastCorrect = true;
                 XMLImage.Visibility = Visibility.Visible;
                 XMLPath.Visibility = Visibility.Visible;
@@ -162,6 +161,7 @@ namespace ProBikeSS16
                 GlobalVariables.InputDataSetWithoutOldBatchCalc = DataTableStuff.ReadXMLtoDataSet(XMLPath.Text);
                 GridOldStock.DataContext = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].DefaultView;
                 Programmplannung(GlobalVariables.InputDataSetWithoutOldBatchCalc);
+                GlobalVariables.factory.initStorage(GlobalVariables.InputDataSetWithoutOldBatchCalc);
             }
             else
             {
@@ -4028,7 +4028,7 @@ namespace ProBikeSS16
         {
             int CurrentRow = GridProductionOrders.SelectedIndex;
             int old = CurrentRow;
-            if (old<GlobalVariables.dtProdOrder.Rows.Count-1)
+            if (old < GlobalVariables.dtProdOrder.Rows.Count-1)
             {
                 DataRow row = GlobalVariables.dtProdOrder.Rows[old];
                 DataRow row2 = GlobalVariables.dtProdOrder.NewRow();
