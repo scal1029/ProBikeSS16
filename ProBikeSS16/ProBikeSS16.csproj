@@ -94,9 +94,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Arbeitsplatzprototyp.cs" />
+    <Compile Include="ArbeitsstationPrototyp.cs" />
     <Compile Include="DataTable.cs" />
     <Compile Include="domain\Global.cs" />
     <Compile Include="domain\Unit.cs" />
+    <Compile Include="ObjectCopier.cs" />
+    <Compile Include="OrderPrototyp.cs" />
+    <Compile Include="Simulation.cs" />
+    <Compile Include="SimulationPrototyp.cs" />
+    <Compile Include="SimulationPrototyp2.cs" />
     <Compile Include="Storage\Fabricate.cs" />
     <Compile Include="Storage\PEK.cs" />
     <Compile Include="Storage\Product.cs" />
@@ -104,6 +111,7 @@
     <Compile Include="Storage\Storage.cs" />
     <Compile Include="KapazitätPrototyp.cs" />
     <Compile Include="Order.cs" />
+    <Compile Include="TeilPrototyp.cs" />
     <Compile Include="Workplace.cs" />
     <Content Include="en-US\LocalizationDictionary.en-US.xaml">
       <SubType>Designer</SubType>

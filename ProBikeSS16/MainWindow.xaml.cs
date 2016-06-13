@@ -366,263 +366,875 @@ namespace ProBikeSS16
             ChildBikeWaitlistE16.Text = "0";
             FemaleBikeWaitlistE16.Text = "0";
             MaleBikeWaitlistE16.Text = "0";
-            results = data.Tables[10].Select("item = '16'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            //results = data.Tables[10].Select("item = '16'");
+            try
             {
-                int WE16 = Int32.Parse(results[0].ItemArray[5].ToString());
-                int WE16P1 = 0;
-                int WE16P2 = 0;
-                int WE16P3 = 0;
-                while (WE16 > 0)
+                results = data.Tables["waitinglist"].Select("item = '16'");
+            }
+            catch (Exception)
+            {
+                results = null;
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
                 {
-                    if (WE16 > 0)
+                    int WE16 = Int32.Parse(results[0].ItemArray[5].ToString());
+                    int WE16P1 = 0;
+                    int WE16P2 = 0;
+                    int WE16P3 = 0;
+                    while (WE16 > 0)
                     {
-                        WE16P1 = WE16P1 + 10;
-                        WE16 = WE16 - 10;
+                        if (WE16 > 0)
+                        {
+                            WE16P1 = WE16P1 + 10;
+                            WE16 = WE16 - 10;
+                        }
+                        if (WE16 > 0)
+                        {
+                            WE16P2 = WE16P2 + 10;
+                            WE16 = WE16 - 10;
+                        }
+                        if (WE16 > 0)
+                        {
+                            WE16P3 = WE16P3 + 10;
+                            WE16 = WE16 - 10;
+                        }
                     }
-                    if (WE16 > 0)
-                    {
-                        WE16P2 = WE16P2 + 10;
-                        WE16 = WE16 - 10;
-                    }
-                    if (WE16 > 0)
-                    {
-                        WE16P3 = WE16P3 + 10;
-                        WE16 = WE16 - 10;
-                    }
+                    ChildBikeWaitlistE16.Text = WE16P1.ToString();
+                    FemaleBikeWaitlistE16.Text = WE16P2.ToString();
+                    MaleBikeWaitlistE16.Text = WE16P3.ToString();
                 }
-                ChildBikeWaitlistE16.Text = WE16P1.ToString();
-                FemaleBikeWaitlistE16.Text = WE16P2.ToString();
-                MaleBikeWaitlistE16.Text = WE16P3.ToString();
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    int WE16 = Int32.Parse(results[0].ItemArray[5].ToString());
+                    int WE16P1 = 0;
+                    int WE16P2 = 0;
+                    int WE16P3 = 0;
+                    while (WE16 > 0)
+                    {
+                        if (WE16 > 0)
+                        {
+                            WE16P1 = WE16P1 + 10;
+                            WE16 = WE16 - 10;
+                        }
+                        if (WE16 > 0)
+                        {
+                            WE16P2 = WE16P2 + 10;
+                            WE16 = WE16 - 10;
+                        }
+                        if (WE16 > 0)
+                        {
+                            WE16P3 = WE16P3 + 10;
+                            WE16 = WE16 - 10;
+                        }
+                    }
+                    ChildBikeWaitlistE16.Text = WE16P1.ToString();
+                    FemaleBikeWaitlistE16.Text = WE16P2.ToString();
+                    MaleBikeWaitlistE16.Text = WE16P3.ToString();
+                }
             }
             ChildBikeWaitlistE17.Text = "0";
             FemaleBikeWaitlistE17.Text = "0";
             MaleBikeWaitlistE17.Text = "0";
-            results = data.Tables[10].Select("item = '17'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                int WE17 = Int32.Parse(results[0].ItemArray[5].ToString());
-                int WE17P1 = 0;
-                int WE17P2 = 0;
-                int WE17P3 = 0;
-                while (WE17 > 0)
+                results = data.Tables["waitinglist"].Select("item = '17'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
                 {
-                    if (WE17 > 0)
+                    int WE17 = Int32.Parse(results[0].ItemArray[5].ToString());
+                    int WE17P1 = 0;
+                    int WE17P2 = 0;
+                    int WE17P3 = 0;
+                    while (WE17 > 0)
                     {
-                        WE17P1 = WE17P1 + 10;
-                        WE17 = WE17 - 10;
+                        if (WE17 > 0)
+                        {
+                            WE17P1 = WE17P1 + 10;
+                            WE17 = WE17 - 10;
+                        }
+                        if (WE17 > 0)
+                        {
+                            WE17P2 = WE17P2 + 10;
+                            WE17 = WE17 - 10;
+                        }
+                        if (WE17 > 0)
+                        {
+                            WE17P3 = WE17P3 + 10;
+                            WE17 = WE17 - 10;
+                        }
                     }
-                    if (WE17 > 0)
-                    {
-                        WE17P2 = WE17P2 + 10;
-                        WE17 = WE17 - 10;
-                    }
-                    if (WE17 > 0)
-                    {
-                        WE17P3 = WE17P3 + 10;
-                        WE17 = WE17 - 10;
-                    }
+                    ChildBikeWaitlistE17.Text = WE17P1.ToString();
+                    FemaleBikeWaitlistE17.Text = WE17P2.ToString();
+                    MaleBikeWaitlistE17.Text = WE17P3.ToString();
                 }
-                ChildBikeWaitlistE17.Text = WE17P1.ToString();
-                FemaleBikeWaitlistE17.Text = WE17P2.ToString();
-                MaleBikeWaitlistE17.Text = WE17P3.ToString();
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    int WE17 = Int32.Parse(results[0].ItemArray[5].ToString());
+                    int WE17P1 = 0;
+                    int WE17P2 = 0;
+                    int WE17P3 = 0;
+                    while (WE17 > 0)
+                    {
+                        if (WE17 > 0)
+                        {
+                            WE17P1 = WE17P1 + 10;
+                            WE17 = WE17 - 10;
+                        }
+                        if (WE17 > 0)
+                        {
+                            WE17P2 = WE17P2 + 10;
+                            WE17 = WE17 - 10;
+                        }
+                        if (WE17 > 0)
+                        {
+                            WE17P3 = WE17P3 + 10;
+                            WE17 = WE17 - 10;
+                        }
+                    }
+                    ChildBikeWaitlistE17.Text = WE17P1.ToString();
+                    FemaleBikeWaitlistE17.Text = WE17P2.ToString();
+                    MaleBikeWaitlistE17.Text = WE17P3.ToString();
+                }
             }
             ChildBikeWaitlistE26.Text = "0";
             FemaleBikeWaitlistE26.Text = "0";
             MaleBikeWaitlistE26.Text = "0";
-            results = data.Tables[10].Select("item = '26'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                int WE26 = Int32.Parse(results[0].ItemArray[5].ToString());
-                int WE26P1 = 0;
-                int WE26P2 = 0;
-                int WE26P3 = 0;
-                while (WE26 > 0)
+                results = data.Tables["waitinglist"].Select("item = '26'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
                 {
-                    if (WE26 > 0)
+                    int WE26 = Int32.Parse(results[0].ItemArray[5].ToString());
+                    int WE26P1 = 0;
+                    int WE26P2 = 0;
+                    int WE26P3 = 0;
+                    while (WE26 > 0)
                     {
-                        WE26P1 = WE26P1 + 10;
-                        WE26 = WE26 - 10;
+                        if (WE26 > 0)
+                        {
+                            WE26P1 = WE26P1 + 10;
+                            WE26 = WE26 - 10;
+                        }
+                        if (WE26 > 0)
+                        {
+                            WE26P2 = WE26P2 + 10;
+                            WE26 = WE26 - 10;
+                        }
+                        if (WE26 > 0)
+                        {
+                            WE26P3 = WE26P3 + 10;
+                            WE26 = WE26 - 10;
+                        }
                     }
-                    if (WE26 > 0)
-                    {
-                        WE26P2 = WE26P2 + 10;
-                        WE26 = WE26 - 10;
-                    }
-                    if (WE26 > 0)
-                    {
-                        WE26P3 = WE26P3 + 10;
-                        WE26 = WE26 - 10;
-                    }
+                    ChildBikeWaitlistE26.Text = WE26P1.ToString();
+                    FemaleBikeWaitlistE26.Text = WE26P2.ToString();
+                    MaleBikeWaitlistE26.Text = WE26P3.ToString();
                 }
-                ChildBikeWaitlistE26.Text = WE26P1.ToString();
-                FemaleBikeWaitlistE26.Text = WE26P2.ToString();
-                MaleBikeWaitlistE26.Text = WE26P3.ToString();
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    int WE26 = Int32.Parse(results[0].ItemArray[5].ToString());
+                    int WE26P1 = 0;
+                    int WE26P2 = 0;
+                    int WE26P3 = 0;
+                    while (WE26 > 0)
+                    {
+                        if (WE26 > 0)
+                        {
+                            WE26P1 = WE26P1 + 10;
+                            WE26 = WE26 - 10;
+                        }
+                        if (WE26 > 0)
+                        {
+                            WE26P2 = WE26P2 + 10;
+                            WE26 = WE26 - 10;
+                        }
+                        if (WE26 > 0)
+                        {
+                            WE26P3 = WE26P3 + 10;
+                            WE26 = WE26 - 10;
+                        }
+                    }
+                    ChildBikeWaitlistE26.Text = WE26P1.ToString();
+                    FemaleBikeWaitlistE26.Text = WE26P2.ToString();
+                    MaleBikeWaitlistE26.Text = WE26P3.ToString();
+                }
             }
             //P1
             ChildBikeWaitlistP1.Text = "0";
-            results = data.Tables[10].Select("item = '1'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                ChildBikeWaitlistP1.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '1'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    ChildBikeWaitlistP1.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    ChildBikeWaitlistP1.Text = results[0].ItemArray[5].ToString();
+                }
             }
             ChildBikeWaitlistE51.Text = "0";
-            results = data.Tables[10].Select("item = '51'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                ChildBikeWaitlistE51.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '51'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    ChildBikeWaitlistE51.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    ChildBikeWaitlistE51.Text = results[0].ItemArray[5].ToString();
+                }
             }
             ChildBikeWaitlistE50.Text = "0";
-            results = data.Tables[10].Select("item = '50'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                ChildBikeWaitlistE50.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '50'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    ChildBikeWaitlistE50.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    ChildBikeWaitlistE50.Text = results[0].ItemArray[5].ToString();
+                }
             }
             ChildBikeWaitlistE4.Text = "0";
-            results = data.Tables[10].Select("item = '4'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                ChildBikeWaitlistE4.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '4'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    ChildBikeWaitlistE4.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    ChildBikeWaitlistE4.Text = results[0].ItemArray[5].ToString();
+                }
             }
             ChildBikeWaitlistE10.Text = "0";
-            results = data.Tables[10].Select("item = '10'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                ChildBikeWaitlistE10.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '10'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    ChildBikeWaitlistE10.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    ChildBikeWaitlistE10.Text = results[0].ItemArray[5].ToString();
+                }
             }
             ChildBikeWaitlistE49.Text = "0";
-            results = data.Tables[10].Select("item = '49'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                ChildBikeWaitlistE49.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '49'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    ChildBikeWaitlistE49.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    ChildBikeWaitlistE49.Text = results[0].ItemArray[5].ToString();
+                }
             }
             ChildBikeWaitlistE7.Text = "0";
-            results = data.Tables[10].Select("item = '7'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                ChildBikeWaitlistE7.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '7'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    ChildBikeWaitlistE7.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    ChildBikeWaitlistE7.Text = results[0].ItemArray[5].ToString();
+                }
             }
             ChildBikeWaitlistE13.Text = "0";
-            results = data.Tables[10].Select("item = '13'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                ChildBikeWaitlistE13.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '13'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    ChildBikeWaitlistE13.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    ChildBikeWaitlistE13.Text = results[0].ItemArray[5].ToString();
+                }
             }
             ChildBikeWaitlistE18.Text = "0";
-            results = data.Tables[10].Select("item = '18'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                ChildBikeWaitlistE18.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '18'");
+            }
+            catch (Exception)
+            {
+
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    ChildBikeWaitlistE18.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0 )
+                {
+                    ChildBikeWaitlistE18.Text = results[0].ItemArray[5].ToString();
+                }
             }
             //P2
             FemaleBikeWaitlistP2.Text = "0";
-            results = data.Tables[10].Select("item = '2'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                FemaleBikeWaitlistP2.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '2'");
+            }
+            catch (Exception)
+            {
+
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    FemaleBikeWaitlistP2.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    FemaleBikeWaitlistP2.Text = results[0].ItemArray[5].ToString();
+                }
             }
             FemaleBikeWaitlistE56.Text = "0";
-            results = data.Tables[10].Select("item = '56'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                FemaleBikeWaitlistE56.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '56'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    FemaleBikeWaitlistE56.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    FemaleBikeWaitlistE56.Text = results[0].ItemArray[5].ToString();
+                }
             }
             FemaleBikeWaitlistE55.Text = "0";
-            results = data.Tables[10].Select("item = '55'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                FemaleBikeWaitlistE55.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '55'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    FemaleBikeWaitlistE55.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    FemaleBikeWaitlistE55.Text = results[0].ItemArray[5].ToString();
+                }
             }
             FemaleBikeWaitlistE5.Text = "0";
-            results = data.Tables[10].Select("item = '5'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                FemaleBikeWaitlistE5.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '5'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    FemaleBikeWaitlistE5.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    FemaleBikeWaitlistE5.Text = results[0].ItemArray[5].ToString();
+                }
             }
             FemaleBikeWaitlistE11.Text = "0";
-            results = data.Tables[10].Select("item = '11'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                FemaleBikeWaitlistE11.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '11'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    FemaleBikeWaitlistE11.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    FemaleBikeWaitlistE11.Text = results[0].ItemArray[5].ToString();
+                }
             }
             FemaleBikeWaitlistE54.Text = "0";
-            results = data.Tables[10].Select("item = '54'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                FemaleBikeWaitlistE54.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '54'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    FemaleBikeWaitlistE54.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    FemaleBikeWaitlistE54.Text = results[0].ItemArray[5].ToString();
+                }
             }
             FemaleBikeWaitlistE8.Text = "0";
-            results = data.Tables[10].Select("item = '8'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                FemaleBikeWaitlistE8.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '8'");
+            }
+            catch (Exception)
+            {
+      
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    FemaleBikeWaitlistE8.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    FemaleBikeWaitlistE8.Text = results[0].ItemArray[5].ToString();
+                }
             }
             FemaleBikeWaitlistE14.Text = "0";
-            results = data.Tables[10].Select("item = '14'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                FemaleBikeWaitlistE14.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '14'");
+            }
+            catch (Exception)
+            {
+           
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    FemaleBikeWaitlistE14.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    FemaleBikeWaitlistE14.Text = results[0].ItemArray[5].ToString();
+                }
             }
             FemaleBikeWaitlistE19.Text = "0";
-            results = data.Tables[10].Select("item = '19'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                FemaleBikeWaitlistE19.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '19'");
+            }
+            catch (Exception)
+            {
+               
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    FemaleBikeWaitlistE19.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    FemaleBikeWaitlistE19.Text = results[0].ItemArray[5].ToString();
+                }
             }
             //P3
             MaleBikeWaitlistP3.Text = "0";
-            results = data.Tables[10].Select("item = '3'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                MaleBikeWaitlistP3.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '3'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistP3.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    MaleBikeWaitlistP3.Text = results[0].ItemArray[5].ToString();
+                }
             }
             MaleBikeWaitlistE31.Text = "0";
-            results = data.Tables[10].Select("item = '31'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                MaleBikeWaitlistE31.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '31'");
+            }
+            catch (Exception)
+            {
+               
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistE31.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    MaleBikeWaitlistE31.Text = results[0].ItemArray[5].ToString();
+                }
             }
             MaleBikeWaitlistE30.Text = "0";
-            results = data.Tables[10].Select("item = '30'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                MaleBikeWaitlistE30.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '30'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistE30.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    MaleBikeWaitlistE30.Text = results[0].ItemArray[5].ToString();
+                }
             }
             MaleBikeWaitlistE6.Text = "0";
-            results = data.Tables[10].Select("item = '6'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                MaleBikeWaitlistE6.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '6'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistE6.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistE6.Text = results[0].ItemArray[5].ToString();
+                }
             }
             MaleBikeWaitlistE12.Text = "0";
-            results = data.Tables[10].Select("item = '12'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                MaleBikeWaitlistE12.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '12'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistE12.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    MaleBikeWaitlistE12.Text = results[0].ItemArray[5].ToString();
+                }
             }
             MaleBikeWaitlistE29.Text = "0";
-            results = data.Tables[10].Select("item = '29'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                MaleBikeWaitlistE29.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '29'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistE29.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    MaleBikeWaitlistE29.Text = results[0].ItemArray[5].ToString();
+                }
             }
             MaleBikeWaitlistE9.Text = "0";
-            results = data.Tables[10].Select("item = '9'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                MaleBikeWaitlistE9.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '9'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistE9.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    MaleBikeWaitlistE9.Text = results[0].ItemArray[5].ToString();
+                }
             }
             MaleBikeWaitlistE15.Text = "0";
-            results = data.Tables[10].Select("item = '15'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                MaleBikeWaitlistE15.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '15'");
+            }
+            catch (Exception)
+            {
+                
+               
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistE15.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    MaleBikeWaitlistE15.Text = results[0].ItemArray[5].ToString();
+                }
             }
             MaleBikeWaitlistE20.Text = "0";
-            results = data.Tables[10].Select("item = '20'");
-            if (results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+            try
             {
-                MaleBikeWaitlistE20.Text = results[0].ItemArray[5].ToString();
+                results = data.Tables["waitinglist"].Select("item = '20'");
+            }
+            catch (Exception)
+            {
+                ;
+            }
+            
+            try
+            {
+                if (results != null && results.Length > 0 && results[0].ItemArray[8] == DBNull.Value)
+                {
+                    MaleBikeWaitlistE20.Text = results[0].ItemArray[5].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (results != null && results.Length > 0)
+                {
+                    MaleBikeWaitlistE20.Text = results[0].ItemArray[5].ToString();
+                }
             }
             #endregion Waitlist
             //InBearbeitung
@@ -631,8 +1243,16 @@ namespace ProBikeSS16
             ChildBikeInProductionE16.Text = "0";
             FemaleBikeInProductionE16.Text = "0";
             MaleBikeInProductionE16.Text = "0";
-            results = data.Tables[7].Select("item = '16'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '16'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 int E16inP = ((results.Length) * 10);
                 int E16inP1 = 0;
@@ -663,8 +1283,16 @@ namespace ProBikeSS16
             ChildBikeInProductionE17.Text = "0";
             FemaleBikeInProductionE17.Text = "0";
             MaleBikeInProductionE17.Text = "0";
-            results = data.Tables[7].Select("item = '17'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '17'");
+            }
+            catch (Exception)
+            {
+
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 int E17inP = ((results.Length) * 10);
                 int E17inP1 = 0;
@@ -695,8 +1323,17 @@ namespace ProBikeSS16
             ChildBikeInProductionE26.Text = "0";
             FemaleBikeInProductionE26.Text = "0";
             MaleBikeInProductionE26.Text = "0";
-            results = data.Tables[7].Select("item = '26'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '26'");
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 int E26inP = ((results.Length) * 10);
                 int E26inP1 = 0;
@@ -726,166 +1363,389 @@ namespace ProBikeSS16
             }
             //P1
             ChildBikeInProductionP1.Text = "0";
-            results = data.Tables[7].Select("item = '1'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '1'");
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 ChildBikeInProductionP1.Text = ((results.Length) * 10).ToString();
             }
             ChildBikeInProductionE51.Text = "0";
-            results = data.Tables[7].Select("item = '51'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '51'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 ChildBikeInProductionE51.Text = ((results.Length) * 10).ToString();
             }
             ChildBikeInProductionE50.Text = "0";
-            results = data.Tables[7].Select("item = '50'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '50'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 ChildBikeInProductionE50.Text = ((results.Length) * 10).ToString();
             }
             ChildBikeInProductionE4.Text = "0";
-            results = data.Tables[7].Select("item = '4'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '4'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 ChildBikeInProductionE4.Text = ((results.Length) * 10).ToString();
             }
             ChildBikeInProductionE10.Text = "0";
-            results = data.Tables[7].Select("item = '10'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '10'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 ChildBikeInProductionE10.Text = ((results.Length) * 10).ToString();
             }
             ChildBikeInProductionE49.Text = "0";
-            results = data.Tables[7].Select("item = '49'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '49'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 ChildBikeInProductionE49.Text = ((results.Length) * 10).ToString();
             }
             ChildBikeInProductionE7.Text = "0";
-            results = data.Tables[7].Select("item = '7'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '7'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 ChildBikeInProductionE7.Text = ((results.Length) * 10).ToString();
             }
             ChildBikeInProductionE13.Text = "0";
-            results = data.Tables[7].Select("item = '13'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '13'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 ChildBikeInProductionE13.Text = ((results.Length) * 10).ToString();
             }
             ChildBikeInProductionE18.Text = "0";
-            results = data.Tables[7].Select("item = '18'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '18'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 ChildBikeInProductionE18.Text = ((results.Length) * 10).ToString();
             }
             //P2
             FemaleBikeInProductionP2.Text = "0";
-            results = data.Tables[7].Select("item = '2'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '2'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            if (results != null && results.Length > 0)
             {
                 FemaleBikeInProductionP2.Text = ((results.Length)*10).ToString();
             }
             FemaleBikeInProductionE56.Text = "0";
-            results = data.Tables[7].Select("item = '56'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '56'");
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            if (results != null && results.Length > 0)
             {
                 FemaleBikeInProductionE56.Text = ((results.Length) * 10).ToString();
             }
             FemaleBikeInProductionE55.Text = "0";
-            results = data.Tables[7].Select("item = '55'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '55'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 FemaleBikeInProductionE55.Text = ((results.Length) * 10).ToString();
             }
             FemaleBikeInProductionE5.Text = "0";
-            results = data.Tables[7].Select("item = '5'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '5'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 FemaleBikeInProductionE5.Text = ((results.Length) * 10).ToString();
             }
             FemaleBikeInProductionE11.Text = "0";
-            results = data.Tables[7].Select("item = '11'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '11'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 FemaleBikeInProductionE11.Text = ((results.Length) * 10).ToString();
             }
             FemaleBikeInProductionE54.Text = "0";
-            results = data.Tables[7].Select("item = '54'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '54'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 FemaleBikeInProductionE54.Text = ((results.Length) * 10).ToString();
             }
             FemaleBikeInProductionE8.Text = "0";
-            results = data.Tables[7].Select("item = '8'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '8'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 FemaleBikeInProductionE8.Text = ((results.Length) * 10).ToString();
             }
             FemaleBikeInProductionE14.Text = "0";
-            results = data.Tables[7].Select("item = '14'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '14'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 FemaleBikeInProductionE14.Text = ((results.Length) * 10).ToString();
             }
             FemaleBikeInProductionE19.Text = "0";
-            results = data.Tables[7].Select("item = '19'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '19'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 FemaleBikeInProductionE19.Text = ((results.Length) * 10).ToString();
             }
             //P3
             MaleBikeInProductionP3.Text = "0";
-            results = data.Tables[7].Select("item = '3'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '3'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 MaleBikeInProductionP3.Text = ((results.Length) * 10).ToString();
             }
             MaleBikeInProductionE31.Text = "0";
-            results = data.Tables[7].Select("item = '31'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '31'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 MaleBikeInProductionE31.Text = ((results.Length) * 10).ToString();
             }
             MaleBikeInProductionE30.Text = "0";
-            results = data.Tables[7].Select("item = '30'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '30'");
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 MaleBikeInProductionE30.Text = ((results.Length) * 10).ToString();
             }
             MaleBikeInProductionE6.Text = "0";
-            results = data.Tables[7].Select("item = '6'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '6'");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 MaleBikeInProductionE6.Text = ((results.Length) * 10).ToString();
             }
             MaleBikeInProductionE12.Text = "0";
-            results = data.Tables[7].Select("item = '12'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '12'");
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 MaleBikeInProductionE12.Text = ((results.Length) * 10).ToString();
             }
             MaleBikeInProductionE29.Text = "0";
-            results = data.Tables[7].Select("item = '29'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '29'");
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 MaleBikeInProductionE29.Text = ((results.Length) * 10).ToString();
             }
             MaleBikeInProductionE9.Text = "0";
-            results = data.Tables[7].Select("item = '9'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '9'");
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 MaleBikeInProductionE9.Text = ((results.Length) * 10).ToString();
             }
             MaleBikeInProductionE15.Text = "0";
-            results = data.Tables[7].Select("item = '15'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '15'");
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 MaleBikeInProductionE15.Text = ((results.Length) * 10).ToString();
             }
             MaleBikeInProductionE20.Text = "0";
-            results = data.Tables[7].Select("item = '20'");
-            if (results.Length > 0)
+            try
+            {
+                results = data.Tables["workplace"].Select("item = '20'");
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+            if (results != null && results.Length > 0)
             {
                 MaleBikeInProductionE20.Text = ((results.Length) * 10).ToString();
             }
@@ -1745,12 +2605,1025 @@ namespace ProBikeSS16
             }
             #endregion Order
 
+            //1. Arbeitsplätze initialisieren und zu Liste hinzufügen
+            Arbeitsplatzprototyp A1 = new Arbeitsplatzprototyp(1);
+            Arbeitsplatzprototyp A2 = new Arbeitsplatzprototyp(2);
+            Arbeitsplatzprototyp A3 = new Arbeitsplatzprototyp(3);
+            Arbeitsplatzprototyp A4 = new Arbeitsplatzprototyp(4);
+            Arbeitsplatzprototyp A6 = new Arbeitsplatzprototyp(6);
+            Arbeitsplatzprototyp A7 = new Arbeitsplatzprototyp(7);
+            Arbeitsplatzprototyp A8 = new Arbeitsplatzprototyp(8);
+            Arbeitsplatzprototyp A9 = new Arbeitsplatzprototyp(9);
+            Arbeitsplatzprototyp A10 = new Arbeitsplatzprototyp(10);
+            Arbeitsplatzprototyp A11 = new Arbeitsplatzprototyp(11);
+            Arbeitsplatzprototyp A12 = new Arbeitsplatzprototyp(12);
+            Arbeitsplatzprototyp A13 = new Arbeitsplatzprototyp(13);
+            Arbeitsplatzprototyp A14 = new Arbeitsplatzprototyp(14);
+            Arbeitsplatzprototyp A15 = new Arbeitsplatzprototyp(15);
+            GlobalVariables.AlleArbeitsplätze.Clear();
+            GlobalVariables.AlleArbeitsplätze.Add(1,A1);
+            GlobalVariables.AlleArbeitsplätze.Add(2,A2);
+            GlobalVariables.AlleArbeitsplätze.Add(3,A3);
+            GlobalVariables.AlleArbeitsplätze.Add(4,A4);
+            GlobalVariables.AlleArbeitsplätze.Add(6,A6);
+            GlobalVariables.AlleArbeitsplätze.Add(7,A7);
+            GlobalVariables.AlleArbeitsplätze.Add(8,A8);
+            GlobalVariables.AlleArbeitsplätze.Add(9,A9);
+            GlobalVariables.AlleArbeitsplätze.Add(10,A10);
+            GlobalVariables.AlleArbeitsplätze.Add(11,A11);
+            GlobalVariables.AlleArbeitsplätze.Add(12,A12);
+            GlobalVariables.AlleArbeitsplätze.Add(13,A13);
+            GlobalVariables.AlleArbeitsplätze.Add(14,A14);
+            GlobalVariables.AlleArbeitsplätze.Add(15,A15);
+            Console.WriteLine("Test1");
+            //2. Arbeitsstationen initialisieren und zu Kette machen
+            //Arbeitsstationen P123
+            //E26
+            Dictionary<int,int> TeileE26_1 = new Dictionary<int, int>();
+            TeileE26_1.Add(44, 2);
+            TeileE26_1.Add(48, 2);
+            ArbeitsstationPrototyp E261 = new ArbeitsstationPrototyp("Teil26Station1Arbeitsplatz7",A7,30,2,TeileE26_1,"Init",26);
+            Dictionary<int, int> TeileE26_2 = new Dictionary<int, int>();
+            TeileE26_2.Add(47, 1);
+            ArbeitsstationPrototyp E262 = new ArbeitsstationPrototyp("Teil26Station2Arbeitsplatz15", A15, 15, 3, TeileE26_2, "Init",26);
+            //E16
+            Dictionary<int, int> TeileE16_1 = new Dictionary<int, int>();
+            TeileE16_1.Add(28, 1);
+            ArbeitsstationPrototyp E161 = new ArbeitsstationPrototyp("Teil16Station1Arbeitsplatz6", A6, 15, 2, TeileE16_1, "Init", 16);
+            Dictionary<int, int> TeileE16_2 = new Dictionary<int, int>();
+            TeileE16_2.Add(24, 1);
+            TeileE16_2.Add(40, 1);
+            TeileE16_2.Add(41, 1);
+            TeileE16_2.Add(42, 2);
+            ArbeitsstationPrototyp E162 = new ArbeitsstationPrototyp("Teil16Station2Arbeitsplatz14", A14, 0, 3, TeileE16_2, "Init", 16);
+            //E17
+            Dictionary<int, int> TeileE17_1 = new Dictionary<int, int>();
+            TeileE17_1.Add(43, 1);
+            TeileE17_1.Add(44, 1);
+            TeileE17_1.Add(45, 1);
+            TeileE17_1.Add(46, 1);
+            ArbeitsstationPrototyp E171 = new ArbeitsstationPrototyp("Teil17Station1Arbeitsplatz15", A15, 15, 3, TeileE17_1, "Init", 17);
+            //P1
+            //E13
+            Dictionary<int, int> TeileE13_1 = new Dictionary<int, int>();
+            TeileE13_1.Add(39, 1);
+            ArbeitsstationPrototyp E131 = new ArbeitsstationPrototyp("Teil13Station1Arbeitsplatz13", A13, 0, 2, TeileE13_1, "Init",13);
+            Dictionary<int, int> TeileE13_2 = new Dictionary<int, int>();
+            //TeileE13_2.Add(X, X);
+            ArbeitsstationPrototyp E132 = new ArbeitsstationPrototyp("Teil13Station2Arbeitsplatz12", A12, 0, 3, TeileE13_2, "Init", 13);
+            Dictionary<int, int> TeileE13_3 = new Dictionary<int, int>();
+            //TeileE13_3.Add(X, X);
+            ArbeitsstationPrototyp E133 = new ArbeitsstationPrototyp("Teil13Station3Arbeitsplatz8", A8, 15, 1, TeileE13_3, "Init", 13);
+            Dictionary<int, int> TeileE13_4 = new Dictionary<int, int>();
+            //TeileE13_4.Add(X, X);
+            ArbeitsstationPrototyp E134 = new ArbeitsstationPrototyp("Teil13Station4Arbeitsplatz7", A7, 20, 2, TeileE13_4, "Init", 13);
+            Dictionary<int, int> TeileE13_5 = new Dictionary<int, int>();
+            TeileE13_5.Add(32, 1);
+            ArbeitsstationPrototyp E135 = new ArbeitsstationPrototyp("Teil13Station5Arbeitsplatz9", A9, 15, 3, TeileE13_5, "Init", 13);
+            //E18
+            Dictionary<int, int> TeileE18_1 = new Dictionary<int, int>();
+            TeileE18_1.Add(28, 3);
+            ArbeitsstationPrototyp E181 = new ArbeitsstationPrototyp("Teil18Station1Arbeitsplatz6", A6, 15, 3, TeileE18_1, "Init", 18);
+            Dictionary<int, int> TeileE18_2 = new Dictionary<int, int>();
+            //TeileE18_2.Add(X, X);
+            ArbeitsstationPrototyp E182 = new ArbeitsstationPrototyp("Teil18Station2Arbeitsplatz8", A8, 20, 3, TeileE18_2, "Init", 18);
+            Dictionary<int, int> TeileE18_3 = new Dictionary<int, int>();
+            TeileE18_3.Add(59, 2);
+            ArbeitsstationPrototyp E183 = new ArbeitsstationPrototyp("Teil18Station3Arbeitsplatz7", A7, 20, 2, TeileE18_3, "Init", 18);
+            Dictionary<int, int> TeileE18_4 = new Dictionary<int, int>();
+            TeileE18_4.Add(32, 1);
+            ArbeitsstationPrototyp E184 = new ArbeitsstationPrototyp("Teil18Station4Arbeitsplatz9", A9, 15, 2, TeileE18_4, "Init", 18);
+            //E7
+            Dictionary<int, int> TeileE7_1 = new Dictionary<int, int>();
+            TeileE7_1.Add(52, 1);
+            TeileE7_1.Add(53, 36);
+            ArbeitsstationPrototyp E71 = new ArbeitsstationPrototyp("Teil7Station1Arbeitsplatz10", A10, 20, 4, TeileE7_1, "Init", 7);
+            Dictionary<int, int> TeileE7_2 = new Dictionary<int, int>();
+            TeileE7_2.Add(35, 2);
+            TeileE7_2.Add(37, 1);
+            TeileE7_2.Add(38, 1);
+            ArbeitsstationPrototyp E72 = new ArbeitsstationPrototyp("Teil7Station2Arbeitsplatz11", A11, 20, 3, TeileE7_2, "Init", 7);
+            //E4
+            Dictionary<int, int> TeileE4_1 = new Dictionary<int, int>();
+            TeileE4_1.Add(52, 1);
+            TeileE4_1.Add(53, 36);
+            ArbeitsstationPrototyp E41 = new ArbeitsstationPrototyp("Teil4Station1Arbeitsplatz10", A10, 20, 4, TeileE4_1, "Init", 4);
+            Dictionary<int, int> TeileE4_2 = new Dictionary<int, int>();
+            TeileE4_2.Add(35, 2);
+            TeileE4_2.Add(36, 1);
+            ArbeitsstationPrototyp E42 = new ArbeitsstationPrototyp("Teil4Station2Arbeitsplatz11", A11, 10, 3, TeileE4_2, "Init", 4);
+            //E10
+            Dictionary<int, int> TeileE10_1 = new Dictionary<int, int>();
+            TeileE10_1.Add(39, 1);
+            ArbeitsstationPrototyp E101 = new ArbeitsstationPrototyp("Teil10Station1Arbeitsplatz13", A13, 0, 2, TeileE10_1, "Init", 10);
+            Dictionary<int, int> TeileE10_2 = new Dictionary<int, int>();
+            //TeileEX_X.Add(X, X);
+            ArbeitsstationPrototyp E102 = new ArbeitsstationPrototyp("Teil10Station2Arbeitsplatz12", A12, 0, 3, TeileE10_2, "Init", 10);
+            Dictionary<int, int> TeileE10_3 = new Dictionary<int, int>();
+            //TeileEX_X.Add(X, X);
+            ArbeitsstationPrototyp E103 = new ArbeitsstationPrototyp("Teil10Station3Arbeitsplatz8", A8, 15, 1, TeileE10_3, "Init", 10);
+            Dictionary<int, int> TeileE10_4 = new Dictionary<int, int>();
+            //TeileEX_X.Add(X, X);
+            ArbeitsstationPrototyp E104 = new ArbeitsstationPrototyp("Teil10Station4Arbeitsplatz7", A7, 20, 2, TeileE10_4, "Init", 10);
+            Dictionary<int, int> TeileE10_5 = new Dictionary<int, int>();
+            TeileE10_5.Add(32, 1);
+            ArbeitsstationPrototyp E105 = new ArbeitsstationPrototyp("Teil10Station5Arbeitsplatz9", A9, 15, 3, TeileE10_5, "Init", 10);
+            //E49
+            Dictionary<int, int> TeileE49_1 = new Dictionary<int, int>();
+            TeileE49_1.Add(13, 1);
+            TeileE49_1.Add(18, 1);
+            TeileE49_1.Add(7, 1);
+            TeileE49_1.Add(24, 2);
+            TeileE49_1.Add(25, 2);
+            ArbeitsstationPrototyp E491 = new ArbeitsstationPrototyp("Teil49Station1Arbeitsplatz1", A1, 20, 6, TeileE49_1, "Init", 49);
+            //E50
+            Dictionary<int, int> TeileE50_1 = new Dictionary<int, int>();
+            TeileE50_1.Add(49, 1);
+            TeileE50_1.Add(4, 1);
+            TeileE50_1.Add(10, 1);
+            TeileE50_1.Add(24, 2);
+            TeileE50_1.Add(25, 2);
+            ArbeitsstationPrototyp E501 = new ArbeitsstationPrototyp("Teil50Station1Arbeitsplatz2", A2, 30, 5, TeileE50_1, "Init", 50);
+            //E51
+            Dictionary<int, int> TeileE51_1 = new Dictionary<int, int>();
+            TeileE51_1.Add(17, 1);
+            TeileE51_1.Add(16, 1);
+            TeileE51_1.Add(50, 1);
+            TeileE51_1.Add(24, 1);
+            TeileE51_1.Add(27, 1);
+            ArbeitsstationPrototyp E511 = new ArbeitsstationPrototyp("Teil51Station1Arbeitsplatz3", A3, 20, 5, TeileE51_1, "Init", 51);
+            //P1
+            Dictionary<int, int> TeileE1_1 = new Dictionary<int, int>();
+            TeileE1_1.Add(51, 1);
+            TeileE1_1.Add(26, 1);
+            TeileE1_1.Add(21, 1);
+            TeileE1_1.Add(24, 1);
+            TeileE1_1.Add(27, 1);
+            ArbeitsstationPrototyp E11 = new ArbeitsstationPrototyp("Teil1Station1Arbeitsplatz4", A4, 30, 6, TeileE1_1, "Init", 1);
+            //P2
+            //E14
+            Dictionary<int, int> TeileE14_1 = new Dictionary<int, int>();
+            TeileE14_1.Add(39, 1);
+            ArbeitsstationPrototyp E141 = new ArbeitsstationPrototyp("Teil14Station1Arbeitsplatz14", A14, 0, 2, TeileE14_1, "Init", 14);
+            Dictionary<int, int> TeileE14_2 = new Dictionary<int, int>();
+            //TeileE14_2.Add(X, X);
+            ArbeitsstationPrototyp E142 = new ArbeitsstationPrototyp("Teil14Station2Arbeitsplatz12", A12, 0, 3, TeileE14_2, "Init", 14);
+            Dictionary<int, int> TeileE14_3 = new Dictionary<int, int>();
+            //TeileE14_3.Add(X, X);
+            ArbeitsstationPrototyp E143 = new ArbeitsstationPrototyp("Teil14Station3Arbeitsplatz8", A8, 15, 2, TeileE14_3, "Init", 14);
+            Dictionary<int, int> TeileE14_4 = new Dictionary<int, int>();
+            //TeileE14_4.Add(X, X);
+            ArbeitsstationPrototyp E144 = new ArbeitsstationPrototyp("Teil14Station4Arbeitsplatz7", A7, 20, 2, TeileE14_4, "Init", 14);
+            Dictionary<int, int> TeileE14_5 = new Dictionary<int, int>();
+            TeileE14_5.Add(32, 1);
+            ArbeitsstationPrototyp E145 = new ArbeitsstationPrototyp("Teil14Station5Arbeitsplatz9", A9, 15, 3, TeileE14_5, "Init", 14);
+            //E19
+            Dictionary<int, int> TeileE19_1 = new Dictionary<int, int>();
+            TeileE19_1.Add(28, 4);
+            ArbeitsstationPrototyp E191 = new ArbeitsstationPrototyp("Teil19Station1Arbeitsplatz6", A6, 15, 3, TeileE19_1, "Init", 19);
+            Dictionary<int, int> TeileE19_2 = new Dictionary<int, int>();
+            //TeileE19_2.Add(X, X);
+            ArbeitsstationPrototyp E192 = new ArbeitsstationPrototyp("Teil19Station2Arbeitsplatz8", A8, 25, 3, TeileE19_2, "Init", 19);
+            Dictionary<int, int> TeileE19_3 = new Dictionary<int, int>();
+            TeileE19_3.Add(59, 2);
+            ArbeitsstationPrototyp E193 = new ArbeitsstationPrototyp("Teil19Station3Arbeitsplatz7", A7, 20, 2, TeileE19_3, "Init", 19);
+            Dictionary<int, int> TeileE19_4 = new Dictionary<int, int>();
+            TeileE19_4.Add(32, 1);
+            ArbeitsstationPrototyp E194 = new ArbeitsstationPrototyp("Teil19Station4Arbeitsplatz9", A9, 20, 2, TeileE19_4, "Init", 19);
+            //E8
+            Dictionary<int, int> TeileE8_1 = new Dictionary<int, int>();
+            TeileE8_1.Add(57, 1);
+            TeileE8_1.Add(58, 36);
+            ArbeitsstationPrototyp E81 = new ArbeitsstationPrototyp("Teil8Station1Arbeitsplatz10", A10, 20, 4, TeileE8_1, "Init", 8);
+            Dictionary<int, int> TeileE8_2 = new Dictionary<int, int>();
+            TeileE8_2.Add(35, 2);
+            TeileE8_2.Add(37, 1);
+            TeileE8_2.Add(38, 1);
+            ArbeitsstationPrototyp E82 = new ArbeitsstationPrototyp("Teil8Station2Arbeitsplatz11", A11, 20, 3, TeileE8_2, "Init", 8);
+            //E5
+            Dictionary<int, int> TeileE5_1 = new Dictionary<int, int>();
+            TeileE5_1.Add(57, 1);
+            TeileE5_1.Add(58, 36);
+            ArbeitsstationPrototyp E51 = new ArbeitsstationPrototyp("Teil5Station1Arbeitsplatz10", A10, 20, 4, TeileE4_1, "Init", 5);
+            Dictionary<int, int> TeileE5_2 = new Dictionary<int, int>();
+            TeileE5_2.Add(35, 2);
+            TeileE5_2.Add(36, 1);
+            ArbeitsstationPrototyp E52 = new ArbeitsstationPrototyp("Teil5Station2Arbeitsplatz11", A11, 10, 3, TeileE5_2, "Init", 5);
+            //E11
+            Dictionary<int, int> TeileE11_1 = new Dictionary<int, int>();
+            TeileE11_1.Add(39, 1);
+            ArbeitsstationPrototyp E111 = new ArbeitsstationPrototyp("Teil11Station1Arbeitsplatz13", A13, 0, 2, TeileE11_1, "Init", 11);
+            Dictionary<int, int> TeileE11_2 = new Dictionary<int, int>();
+            //TeileEX_X.Add(X, X);
+            ArbeitsstationPrototyp E112 = new ArbeitsstationPrototyp("Teil11Station2Arbeitsplatz12", A12, 0, 3, TeileE11_2, "Init", 11);
+            Dictionary<int, int> TeileE11_3 = new Dictionary<int, int>();
+            //TeileEX_X.Add(X, X);
+            ArbeitsstationPrototyp E113 = new ArbeitsstationPrototyp("Teil11Station3Arbeitsplatz8", A8, 15, 2, TeileE11_3, "Init", 11);
+            Dictionary<int, int> TeileE11_4 = new Dictionary<int, int>();
+            //TeileEX_X.Add(X, X);
+            ArbeitsstationPrototyp E114 = new ArbeitsstationPrototyp("Teil11Station4Arbeitsplatz7", A7, 20, 2, TeileE11_4, "Init", 11);
+            Dictionary<int, int> TeileE11_5 = new Dictionary<int, int>();
+            TeileE11_5.Add(32, 1);
+            ArbeitsstationPrototyp E115 = new ArbeitsstationPrototyp("Teil11Station5Arbeitsplatz9", A9, 15, 3, TeileE11_5, "Init", 11);
+            //E54
+            Dictionary<int, int> TeileE54_1 = new Dictionary<int, int>();
+            TeileE54_1.Add(14, 1);
+            TeileE54_1.Add(19, 1);
+            TeileE54_1.Add(8, 1);
+            TeileE54_1.Add(24, 2);
+            TeileE54_1.Add(25, 2);
+            ArbeitsstationPrototyp E541 = new ArbeitsstationPrototyp("Teil54Station1Arbeitsplatz1", A1, 20, 6, TeileE54_1, "Init", 54);
+            //E55
+            Dictionary<int, int> TeileE55_1 = new Dictionary<int, int>();
+            TeileE55_1.Add(54, 1);
+            TeileE55_1.Add(5, 1);
+            TeileE55_1.Add(11, 1);
+            TeileE55_1.Add(24, 2);
+            TeileE55_1.Add(25, 2);
+            ArbeitsstationPrototyp E551 = new ArbeitsstationPrototyp("Teil55Station1Arbeitsplatz2", A2, 30, 5, TeileE55_1, "Init", 55);
+            //E56
+            Dictionary<int, int> TeileE56_1 = new Dictionary<int, int>();
+            TeileE56_1.Add(17, 1);
+            TeileE56_1.Add(16, 1);
+            TeileE56_1.Add(55, 1);
+            TeileE56_1.Add(24, 1);
+            TeileE56_1.Add(27, 1);
+            ArbeitsstationPrototyp E561 = new ArbeitsstationPrototyp("Teil56Station1Arbeitsplatz3", A3, 20, 6, TeileE56_1, "Init", 56);
+            //P2
+            Dictionary<int, int> TeileE2_1 = new Dictionary<int, int>();
+            TeileE2_1.Add(56, 1);
+            TeileE2_1.Add(26, 1);
+            TeileE2_1.Add(22, 1);
+            TeileE2_1.Add(24, 1);
+            TeileE2_1.Add(27, 1);
+            ArbeitsstationPrototyp E21 = new ArbeitsstationPrototyp("Teil2Station1Arbeitsplatz4", A4, 20, 7, TeileE2_1, "Init", 2);
 
 
+            //P3
+            //E15
+            Dictionary<int, int> TeileE15_1 = new Dictionary<int, int>();
+            TeileE15_1.Add(39, 1);
+            ArbeitsstationPrototyp E151 = new ArbeitsstationPrototyp("Teil15Station1Arbeitsplatz15", A15, 0, 2, TeileE15_1, "Init", 15);
+            Dictionary<int, int> TeileE15_2 = new Dictionary<int, int>();
+            //TeileE15_2.Add(X, X);
+            ArbeitsstationPrototyp E152 = new ArbeitsstationPrototyp("Teil15Station2Arbeitsplatz12", A12, 0, 3, TeileE15_2, "Init", 15);
+            Dictionary<int, int> TeileE15_3 = new Dictionary<int, int>();
+            //TeileE15_3.Add(X, X);
+            ArbeitsstationPrototyp E153 = new ArbeitsstationPrototyp("Teil15Station3Arbeitsplatz8", A8, 15, 2, TeileE15_3, "Init", 15);
+            Dictionary<int, int> TeileE15_4 = new Dictionary<int, int>();
+            //TeileE15_4.Add(X, X);
+            ArbeitsstationPrototyp E154 = new ArbeitsstationPrototyp("Teil15Station4Arbeitsplatz7", A7, 20, 2, TeileE15_4, "Init", 15);
+            Dictionary<int, int> TeileE15_5 = new Dictionary<int, int>();
+            TeileE15_5.Add(32, 1);
+            ArbeitsstationPrototyp E155 = new ArbeitsstationPrototyp("Teil15Station5Arbeitsplatz9", A9, 15, 3, TeileE15_5, "Init", 15);
+            //E20
+            Dictionary<int, int> TeileE20_1 = new Dictionary<int, int>();
+            TeileE20_1.Add(28, 5);
+            ArbeitsstationPrototyp E201 = new ArbeitsstationPrototyp("Teil20Station1Arbeitsplatz6", A6, 15, 3, TeileE20_1, "Init", 20);
+            Dictionary<int, int> TeileE20_2 = new Dictionary<int, int>();
+            //TeileE20_2.Add(X, X);
+            ArbeitsstationPrototyp E202 = new ArbeitsstationPrototyp("Teil20Station2Arbeitsplatz8", A8, 20, 3, TeileE20_2, "Init", 20);
+            Dictionary<int, int> TeileE20_3 = new Dictionary<int, int>();
+            TeileE20_3.Add(59, 2);
+            ArbeitsstationPrototyp E203 = new ArbeitsstationPrototyp("Teil20Station3Arbeitsplatz7", A7, 20, 2, TeileE20_3, "Init", 20);
+            Dictionary<int, int> TeileE20_4 = new Dictionary<int, int>();
+            TeileE20_4.Add(32, 1);
+            ArbeitsstationPrototyp E204 = new ArbeitsstationPrototyp("Teil20Station4Arbeitsplatz9", A9, 15, 2, TeileE20_4, "Init", 20);
+            //E9
+            Dictionary<int, int> TeileE9_1 = new Dictionary<int, int>();
+            TeileE9_1.Add(33, 1);
+            TeileE9_1.Add(34, 36);
+            ArbeitsstationPrototyp E91 = new ArbeitsstationPrototyp("Teil9Station1Arbeitsplatz10", A10, 20, 4, TeileE9_1, "Init", 9);
+            Dictionary<int, int> TeileE9_2 = new Dictionary<int, int>();
+            TeileE9_2.Add(35, 2);
+            TeileE9_2.Add(37, 1);
+            TeileE9_2.Add(38, 1);
+            ArbeitsstationPrototyp E92 = new ArbeitsstationPrototyp("Teil9Station2Arbeitsplatz11", A11, 20, 3, TeileE9_2, "Init", 9);
+            //E6
+            Dictionary<int, int> TeileE6_1 = new Dictionary<int, int>();
+            TeileE6_1.Add(33, 1);
+            TeileE6_1.Add(34, 36);
+            ArbeitsstationPrototyp E61 = new ArbeitsstationPrototyp("Teil6Station1Arbeitsplatz10", A10, 20, 4, TeileE4_1, "Init", 6);
+            Dictionary<int, int> TeileE6_2 = new Dictionary<int, int>();
+            TeileE6_2.Add(35, 2);
+            TeileE6_2.Add(36, 1);
+            ArbeitsstationPrototyp E62 = new ArbeitsstationPrototyp("Teil6Station2Arbeitsplatz11", A11, 20, 3, TeileE6_2, "Init", 6);
+            //E12
+            Dictionary<int, int> TeileE12_1 = new Dictionary<int, int>();
+            TeileE12_1.Add(39, 1);
+            ArbeitsstationPrototyp E121 = new ArbeitsstationPrototyp("Teil12Station1Arbeitsplatz13", A13, 0, 2, TeileE12_1, "Init", 12);
+            Dictionary<int, int> TeileE12_2 = new Dictionary<int, int>();
+            //TeileEX_X.Add(X, X);
+            ArbeitsstationPrototyp E122 = new ArbeitsstationPrototyp("Teil12Station2Arbeitsplatz12", A12, 0, 3, TeileE12_2, "Init", 12);
+            Dictionary<int, int> TeileE12_3 = new Dictionary<int, int>();
+            //TeileEX_X.Add(X, X);
+            ArbeitsstationPrototyp E123 = new ArbeitsstationPrototyp("Teil12Station3Arbeitsplatz8", A8, 15, 2, TeileE12_3, "Init", 12);
+            Dictionary<int, int> TeileE12_4 = new Dictionary<int, int>();
+            //TeileEX_X.Add(X, X);
+            ArbeitsstationPrototyp E124 = new ArbeitsstationPrototyp("Teil12Station4Arbeitsplatz7", A7, 20, 2, TeileE12_4, "Init", 12);
+            Dictionary<int, int> TeileE12_5 = new Dictionary<int, int>();
+            TeileE12_5.Add(32, 1);
+            ArbeitsstationPrototyp E125 = new ArbeitsstationPrototyp("Teil12Station5Arbeitsplatz9", A9, 15, 3, TeileE12_5, "Init", 12);
+            //E29
+            Dictionary<int, int> TeileE29_1 = new Dictionary<int, int>();
+            TeileE29_1.Add(15, 1);
+            TeileE29_1.Add(20, 1);
+            TeileE29_1.Add(9, 1);
+            TeileE29_1.Add(24, 2);
+            TeileE29_1.Add(25, 2);
+            ArbeitsstationPrototyp E291 = new ArbeitsstationPrototyp("Teil29Station1Arbeitsplatz1", A1, 20, 6, TeileE29_1, "Init", 29);
+            //E30
+            Dictionary<int, int> TeileE30_1 = new Dictionary<int, int>();
+            TeileE30_1.Add(29, 1);
+            TeileE30_1.Add(6, 1);
+            TeileE30_1.Add(12, 1);
+            TeileE30_1.Add(24, 2);
+            TeileE30_1.Add(25, 2);
+            ArbeitsstationPrototyp E301 = new ArbeitsstationPrototyp("Teil30Station1Arbeitsplatz2", A2, 20, 5, TeileE30_1, "Init", 30);
+            //E31
+            Dictionary<int, int> TeileE31_1 = new Dictionary<int, int>();
+            TeileE31_1.Add(17, 1);
+            TeileE31_1.Add(16, 1);
+            TeileE31_1.Add(30, 1);
+            TeileE31_1.Add(24, 1);
+            TeileE31_1.Add(27, 1);
+            ArbeitsstationPrototyp E311 = new ArbeitsstationPrototyp("Teil31Station1Arbeitsplatz3", A3, 20, 6, TeileE31_1, "Init", 31);
+            //P3
+            Dictionary<int, int> TeileE3_1 = new Dictionary<int, int>();
+            TeileE3_1.Add(31, 1);
+            TeileE3_1.Add(26, 1);
+            TeileE3_1.Add(23, 1);
+            TeileE3_1.Add(24, 1);
+            TeileE3_1.Add(27, 1);
+            ArbeitsstationPrototyp E31 = new ArbeitsstationPrototyp("Teil3Station1Arbeitsplatz4", A4, 30, 7, TeileE3_1, "Init", 3);
+            Console.WriteLine("Test2");
+            //P123
+            List<ArbeitsstationPrototyp> KetteE26 = new List<ArbeitsstationPrototyp> {E261, E262};
+            List<ArbeitsstationPrototyp> KetteE16 = new List<ArbeitsstationPrototyp> { E161, E162 };
+            List<ArbeitsstationPrototyp> KetteE17 = new List<ArbeitsstationPrototyp> { E171 };
+            //P1
+            List<ArbeitsstationPrototyp> KetteE13 = new List<ArbeitsstationPrototyp> { E131, E132, E133, E134, E135 };
+            List<ArbeitsstationPrototyp> KetteE18 = new List<ArbeitsstationPrototyp> { E181, E182, E183, E184 };
+            List<ArbeitsstationPrototyp> KetteE7 = new List<ArbeitsstationPrototyp> { E71, E72 };
+            List<ArbeitsstationPrototyp> KetteE4 = new List<ArbeitsstationPrototyp> { E41, E42 };
+            List<ArbeitsstationPrototyp> KetteE10 = new List<ArbeitsstationPrototyp> { E101, E102, E103, E104, E105 };
+            List<ArbeitsstationPrototyp> KetteE49 = new List<ArbeitsstationPrototyp> { E491 };
+            List<ArbeitsstationPrototyp> KetteE50 = new List<ArbeitsstationPrototyp> { E501 };
+            List<ArbeitsstationPrototyp> KetteE51 = new List<ArbeitsstationPrototyp> { E511 };
+            List<ArbeitsstationPrototyp> KetteE1 = new List<ArbeitsstationPrototyp> { E11 };
+            //P2
+            List<ArbeitsstationPrototyp> KetteE14 = new List<ArbeitsstationPrototyp> { E141, E142, E143, E144, E145 };
+            List<ArbeitsstationPrototyp> KetteE19 = new List<ArbeitsstationPrototyp> { E191, E192, E193, E194 };
+            List<ArbeitsstationPrototyp> KetteE8 = new List<ArbeitsstationPrototyp> { E81, E82 };
+            List<ArbeitsstationPrototyp> KetteE5 = new List<ArbeitsstationPrototyp> { E51, E52 };
+            List<ArbeitsstationPrototyp> KetteE11 = new List<ArbeitsstationPrototyp> { E111, E112, E113, E114, E115 };
+            List<ArbeitsstationPrototyp> KetteE54 = new List<ArbeitsstationPrototyp> { E541 };
+            List<ArbeitsstationPrototyp> KetteE55 = new List<ArbeitsstationPrototyp> { E551 };
+            List<ArbeitsstationPrototyp> KetteE56 = new List<ArbeitsstationPrototyp> { E561 };
+            List<ArbeitsstationPrototyp> KetteE2 = new List<ArbeitsstationPrototyp> { E21 };
+            //P3
+            List<ArbeitsstationPrototyp> KetteE15 = new List<ArbeitsstationPrototyp> { E151, E152, E153, E154, E155 };
+            List<ArbeitsstationPrototyp> KetteE20 = new List<ArbeitsstationPrototyp> { E201, E202, E203, E204 };
+            List<ArbeitsstationPrototyp> KetteE9 = new List<ArbeitsstationPrototyp> { E91, E92 };
+            List<ArbeitsstationPrototyp> KetteE6 = new List<ArbeitsstationPrototyp> { E61, E62 };
+            List<ArbeitsstationPrototyp> KetteE12 = new List<ArbeitsstationPrototyp> { E121, E122, E123, E124, E125 };
+            List<ArbeitsstationPrototyp> KetteE29 = new List<ArbeitsstationPrototyp> { E291 };
+            List<ArbeitsstationPrototyp> KetteE30 = new List<ArbeitsstationPrototyp> { E301 };
+            List<ArbeitsstationPrototyp> KetteE31 = new List<ArbeitsstationPrototyp> { E311 };
+            List<ArbeitsstationPrototyp> KetteE3 = new List<ArbeitsstationPrototyp> { E31 };
 
+            Console.WriteLine("Test3");
+            //3. Produzierbare Teile Initialisieren und zu Liste hinzufügen
+            //P123
+            TeilPrototyp Teil26 = new TeilPrototyp(26, KetteE26);
+            TeilPrototyp Teil16 = new TeilPrototyp(16, KetteE16);
+            TeilPrototyp Teil17 = new TeilPrototyp(17, KetteE17);
+            GlobalVariables.AlleTeile.Add(Teil26);
+            GlobalVariables.AlleTeile.Add(Teil16);
+            GlobalVariables.AlleTeile.Add(Teil17);
+            //P1
+            TeilPrototyp Teil13 = new TeilPrototyp(13, KetteE13);
+            TeilPrototyp Teil18 = new TeilPrototyp(18, KetteE18);
+            TeilPrototyp Teil7 = new TeilPrototyp(7, KetteE7);
+            TeilPrototyp Teil4 = new TeilPrototyp(4, KetteE4);
+            TeilPrototyp Teil10 = new TeilPrototyp(10, KetteE10);
+            TeilPrototyp Teil49 = new TeilPrototyp(49, KetteE49);
+            TeilPrototyp Teil50 = new TeilPrototyp(50, KetteE50);
+            TeilPrototyp Teil51 = new TeilPrototyp(51, KetteE51);
+            TeilPrototyp Teil1 = new TeilPrototyp(1, KetteE1);
+            GlobalVariables.AlleTeile.Add(Teil13);
+            GlobalVariables.AlleTeile.Add(Teil18);
+            GlobalVariables.AlleTeile.Add(Teil7);
+            GlobalVariables.AlleTeile.Add(Teil4);
+            GlobalVariables.AlleTeile.Add(Teil10);
+            GlobalVariables.AlleTeile.Add(Teil49);
+            GlobalVariables.AlleTeile.Add(Teil50);
+            GlobalVariables.AlleTeile.Add(Teil51);
+            GlobalVariables.AlleTeile.Add(Teil1);
+            //P2
+            TeilPrototyp Teil14 = new TeilPrototyp(14, KetteE14);
+            TeilPrototyp Teil19 = new TeilPrototyp(19, KetteE19);
+            TeilPrototyp Teil8 = new TeilPrototyp(8, KetteE8);
+            TeilPrototyp Teil5 = new TeilPrototyp(5, KetteE5);
+            TeilPrototyp Teil11 = new TeilPrototyp(11, KetteE11);
+            TeilPrototyp Teil54 = new TeilPrototyp(54, KetteE54);
+            TeilPrototyp Teil55 = new TeilPrototyp(55, KetteE55);
+            TeilPrototyp Teil56 = new TeilPrototyp(56, KetteE56);
+            TeilPrototyp Teil2 = new TeilPrototyp(2, KetteE2);
+            GlobalVariables.AlleTeile.Add(Teil14);
+            GlobalVariables.AlleTeile.Add(Teil19);
+            GlobalVariables.AlleTeile.Add(Teil8);
+            GlobalVariables.AlleTeile.Add(Teil5);
+            GlobalVariables.AlleTeile.Add(Teil11);
+            GlobalVariables.AlleTeile.Add(Teil54);
+            GlobalVariables.AlleTeile.Add(Teil55);
+            GlobalVariables.AlleTeile.Add(Teil56);
+            GlobalVariables.AlleTeile.Add(Teil2);
+            //P3
+            TeilPrototyp Teil15 = new TeilPrototyp(15, KetteE15);
+            TeilPrototyp Teil20 = new TeilPrototyp(20, KetteE20);
+            TeilPrototyp Teil9 = new TeilPrototyp(9, KetteE9);
+            TeilPrototyp Teil6 = new TeilPrototyp(6, KetteE6);
+            TeilPrototyp Teil12 = new TeilPrototyp(12, KetteE12);
+            TeilPrototyp Teil29 = new TeilPrototyp(29, KetteE29);
+            TeilPrototyp Teil30 = new TeilPrototyp(30, KetteE30);
+            TeilPrototyp Teil31 = new TeilPrototyp(31, KetteE31);
+            TeilPrototyp Teil3 = new TeilPrototyp(3, KetteE3);
+            GlobalVariables.AlleTeile.Add(Teil15);
+            GlobalVariables.AlleTeile.Add(Teil20);
+            GlobalVariables.AlleTeile.Add(Teil9);
+            GlobalVariables.AlleTeile.Add(Teil6);
+            GlobalVariables.AlleTeile.Add(Teil12);
+            GlobalVariables.AlleTeile.Add(Teil29);
+            GlobalVariables.AlleTeile.Add(Teil30);
+            GlobalVariables.AlleTeile.Add(Teil31);
+            GlobalVariables.AlleTeile.Add(Teil3);
+            Console.WriteLine("Test4");
+
+            
+
+            //Produktionsauftragsliste erstellen(ohne in Bearbeitung und Warteschlange)
             GridProductionOrders.DataContext = GlobalVariables.dtProdOrder.DefaultView;
             #endregion DataTable
+            GlobalVariables.ProduktionsAufträgeAktuellePeriode.Clear();
+            foreach (DataRow Produktionsauftrag in GlobalVariables.dtProdOrder.Rows)
+            {
+                int Index;
+                if(Produktionsauftrag[0] != null && Produktionsauftrag[1] != null)
+                { 
+                    foreach (TeilPrototyp teil in GlobalVariables.AlleTeile)
+                    {
+                        if(teil.TeilID == int.Parse(Produktionsauftrag[0].ToString()))
+                            GlobalVariables.ProduktionsAufträgeAktuellePeriode.Add(new OrderPrototyp(int.Parse(Produktionsauftrag[0].ToString()),int.Parse(Produktionsauftrag[1].ToString()), teil));//List x,y aus allen Teilen richtiges auswählenTeilPrototyp);
+                    }
+                }
+            }
+
+            foreach (OrderPrototyp O in GlobalVariables.ProduktionsAufträgeAktuellePeriode)
+            {
+                Console.WriteLine("Artikel: " + O.Artikel+ " Menge: " + O.Menge + " ID: " + O.TeilPrototyp.TeilID.ToString());
+            }
+
+            Console.WriteLine("Test5");
+
+            //Warteschlange und Bearbeitung hinzufügen
+            //Warteschlange
+            if (GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables.Contains("waitinglist") && GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["workplace"].Columns.Contains("period")
+                && GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["workplace"].Columns.Contains("order"))
+            {
+                DataTable WaitSnake = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["waitinglist"].Clone();
+                WaitSnake.Columns[1].DataType = typeof(int);
+                WaitSnake.Columns[0].DataType = typeof(int);
+                foreach (DataRow datarow in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["waitinglist"].Rows)
+                {
+                    if (datarow[6] != DBNull.Value)
+                    {
+                        WaitSnake.ImportRow(datarow);
+                    }
+                }
+
+                DataView wsReal = new DataView(WaitSnake);
+                wsReal.Sort = "period DESC, order DESC";
+
+                foreach (DataRowView dr in wsReal)
+                {
+                    int i = ((int) dr.Row["order"]);
+                    int i2 = ((int) dr.Row["period"]);
+                    Console.WriteLine("Periode: " + i2.ToString() + " Order: " + i.ToString() + " Item: " +
+                                      (string) dr.Row["item"]);
+                }
+
+                foreach (DataRowView dr in wsReal)
+                {
+                    foreach (TeilPrototyp teil in GlobalVariables.AlleTeile)
+                    {
+                        if (teil.TeilID == int.Parse((string) dr["item"]))
+                        {
+                            //alt GlobalVariables.ProduktionsAufträgeAktuellePeriode.Insert(0, (new OrderPrototyp(int.Parse((string) dr["item"]), int.Parse((string) dr["amount"]), teil)));
+                            GlobalVariables.ProduktionsAufträgeAktuellePeriode.Insert(0,
+                                new OrderPrototyp(int.Parse((string) dr["item"]), 0, teil));
+                            foreach (TeilPrototyp TP in GlobalVariables.AlleTeile)
+                            {
+                                if (TP.TeilID == int.Parse((string) dr["item"]))
+                                {
+                                    foreach (ArbeitsstationPrototyp AP in TP.KetteStationen)
+                                    {
+                                        if (AP.Arbeitsplatz.ID == (int) dr["workplace_id"])
+                                        {
+                                            AP.Warteschlange = AP.Warteschlange + int.Parse((string) dr["amount"]);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables.Contains("workplace") && GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["workplace"].Columns.Contains("period") 
+                && GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["workplace"].Columns.Contains("order"))
+            {
+                //in Arbeit
+                //DataTable WaitSnake = new DataTable();
+                DataTable inArbeit = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["workplace"].Clone();
+                inArbeit.Columns[1].DataType = typeof(int);
+                foreach (DataRow datarow in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["workplace"].Rows)
+                {
+                    try
+                    {
+                        if (datarow[10] != DBNull.Value)
+                        {
+                            inArbeit.ImportRow(datarow);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                            inArbeit.ImportRow(datarow); 
+                    }
+                    
+                }
+
+                DataView ws = new DataView(inArbeit);
+                ws.Sort = "period ASC, order ASC";
+
+                foreach (DataRowView dr in ws)
+                {
+                    foreach (TeilPrototyp teil in GlobalVariables.AlleTeile)
+                    {
+                        if (teil.TeilID == int.Parse((string) dr["item"]))
+                        {
+                            foreach (TeilPrototyp TP in GlobalVariables.AlleTeile)
+                            {
+                                if (TP.TeilID == int.Parse((string) dr["item"]))
+                                {
+                                    foreach (ArbeitsstationPrototyp AP in TP.KetteStationen)
+                                    {
+                                        if (AP.Arbeitsplatz.ID == (int) dr["id"])
+                                        {
+                                            AP.Warteschlange = AP.Warteschlange + int.Parse((string) dr["amount"]);
+                                            AP.Arbeitsplatz.Blockierzeit = int.Parse((string) dr["timeneed"]);
+                                            AP.Produziert = true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("Test5,5");
+
+            //foreach (DataRowView dr in ws)
+            //{
+            //    Console.WriteLine("In Bearbeitung: Periode: " + (string)dr["period"] + " Order: " + (string)dr.Row["order"]);
+            //}
+
+           
+
+
+            Console.WriteLine("Test6");
+
+            foreach (OrderPrototyp O in GlobalVariables.ProduktionsAufträgeAktuellePeriode)
+            {
+                Console.WriteLine("Artikel: " + O.Artikel + " Menge: " + O.Menge + " ID: " + O.TeilPrototyp.TeilID.ToString());
+            }
+            
+
+            Console.WriteLine("Test7");
+            //Iterieren Warteschlange weitergeben, Teile am Schluss etc. als Eigene Klasse
+
+
+            ////Umwandlung Tabelle Lager zu Dictionary
+            GlobalVariables.Lagerstand.Clear();
+            foreach (DataRow Row in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].Rows)
+            {
+                GlobalVariables.Lagerstand.Add(int.Parse((string)Row[0]),int.Parse((string)Row[1]));
+            }
+
+            Dictionary<int, int> LagerZuBeginn = ObjectCopier.Clone(GlobalVariables.Lagerstand);
+
+
+
+            SimulationPrototyp2 test2 = new SimulationPrototyp2();
+
+            test2.SimulationPrototypDurchführung(GlobalVariables.ProduktionsAufträgeAktuellePeriode, GlobalVariables.Lagerstand, 1);
+
+
+
+            //foreach (var O in GlobalVariables.ProduktionsAufträgeAktuellePeriode)
+            //{
+            //    foreach (var VARIABLE in O.TeilPrototyp.KetteStationen)
+            //    {
+            //        Console.WriteLine("Arbeitsplatz: " + VARIABLE.Arbeitsplatz.ID.ToString() + " Station: " + VARIABLE.ID.ToString() + " Grund: " + VARIABLE.BegründungStop);
+            //    }
+
+            //}
+
+            foreach (KeyValuePair<int, int> VARIABLE in GlobalVariables.Lagerstand)
+            {
+                Console.WriteLine("Lager Vorher Artikel: " + VARIABLE.Key + " Menge: " + VARIABLE.Value);
+            }
+
+            Simulation test = new Simulation();
+            while (!test.SimuVersuch3(GlobalVariables.ProduktionsAufträgeAktuellePeriode, GlobalVariables.Lagerstand, ref GlobalVariables.AlleArbeitsplätze))
+            {
+                
+            }
+
+            foreach (KeyValuePair<int, int> VARIABLE in GlobalVariables.Lagerstand)
+            {
+                Console.WriteLine("Lager Danach Artikel: " + VARIABLE.Key + " Menge: " + VARIABLE.Value);
+            }
+
+
+            Console.WriteLine("Test9");
+
+            //foreach ( KeyValuePair<int, Arbeitsplatzprototyp> A in GlobalVariables.OriginalAlleArbeitsplätze)
+            //{
+            //    Console.WriteLine("Arbeitsplatz " + A.Value.ID.ToString() + " Arbeitszeit: " + A.Value.ArbeitszeitProTagInMinuten.ToString());
+            //}
+
+
+
+
+
+
+
+            //Bestellungsplannung
+            DataTable Bestellungsplannung = new DataTable();
+            Bestellungsplannung.Columns.Add("Teil");
+            Bestellungsplannung.Columns.Add("Lagerbestand");
+            Bestellungsplannung.Columns.Add("Brutto Periode n");
+            Bestellungsplannung.Columns.Add("Brutto Periode n+1");
+            Bestellungsplannung.Columns.Add("Brutto Periode n+2");
+            Bestellungsplannung.Columns.Add("Brutto Periode n+3");
+            Bestellungsplannung.Columns.Add("Bestellung Periode n");
+            Bestellungsplannung.Columns.Add("Bestellung Periode n+1");
+            Bestellungsplannung.Columns.Add("Bestellung Periode n+2");
+            Bestellungsplannung.Columns.Add("Bestellung Periode n+3");
+
+            //Teil21
+            double T21LZ = 2.2;
+            int BruttoT21P1 = GlobalVariables.SaleChildBikeN.GetValueOrDefault() * 1;
+            int BruttoT21P2 = GlobalVariables.SaleChildBikeN1.GetValueOrDefault() * 1;
+            int BruttoT21P3 = GlobalVariables.SaleChildBikeN2.GetValueOrDefault() * 1;
+            int BruttoT21P4 = GlobalVariables.SaleChildBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(21, LagerZuBeginn[21], BruttoT21P1, BruttoT21P2, BruttoT21P3, BruttoT21P4, 
+                LagerZuBeginn[21]- BruttoT21P1, LagerZuBeginn[21] - BruttoT21P1- BruttoT21P2, LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 -BruttoT21P3,
+                LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 - BruttoT21P2);
+
+            //Teil22
+            double T22LZ = 2.1;
+            int BruttoT22P1 = GlobalVariables.SaleFemaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT22P2 = GlobalVariables.SaleFemaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT22P3 = GlobalVariables.SaleFemaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT22P4 = GlobalVariables.SaleFemaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(22, LagerZuBeginn[22], BruttoT22P1, BruttoT22P2, BruttoT22P3, BruttoT22P4,
+                LagerZuBeginn[22] - BruttoT22P1, LagerZuBeginn[22] - BruttoT22P1 - BruttoT22P2, LagerZuBeginn[22] - BruttoT22P1 - BruttoT22P2 - BruttoT22P3,
+                LagerZuBeginn[22] - BruttoT22P1 - BruttoT22P2 - BruttoT22P3 - BruttoT22P2);
+
+            //Teil23
+            double T23LZ = 1.4;
+            int BruttoT23P1 = GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT23P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT23P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT23P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(23, LagerZuBeginn[23], BruttoT23P1, BruttoT23P2, BruttoT23P3, BruttoT23P4,
+                LagerZuBeginn[23] - BruttoT23P1, LagerZuBeginn[23] - BruttoT23P1 - BruttoT23P2, LagerZuBeginn[23] - BruttoT23P1 - BruttoT23P2 - BruttoT23P3,
+                LagerZuBeginn[23] - BruttoT23P1 - BruttoT23P2 - BruttoT23P3 - BruttoT23P2);
+
+
+            //Teil24
+            double T24LZ = 3.5;
+            int BruttoT24P1 = GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN.Value * 7 + GlobalVariables.SaleFemaleBikeN.Value * 7;
+            int BruttoT24P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN1.Value * 7 + GlobalVariables.SaleFemaleBikeN1.Value * 7;
+            int BruttoT24P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN2.Value * 7 + GlobalVariables.SaleFemaleBikeN2.Value * 7;
+            int BruttoT24P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN3.Value * 7 + GlobalVariables.SaleFemaleBikeN3.Value * 7;
+
+            Bestellungsplannung.Rows.Add(24, LagerZuBeginn[24], BruttoT24P1, BruttoT24P2, BruttoT24P3, BruttoT24P4,
+                LagerZuBeginn[24] - BruttoT24P1, LagerZuBeginn[24] - BruttoT24P1 - BruttoT24P2, LagerZuBeginn[24] - BruttoT24P1 - BruttoT24P2 - BruttoT24P3,
+                LagerZuBeginn[24] - BruttoT24P1 - BruttoT24P2 - BruttoT24P3 - BruttoT24P2);
+
+
+            //Teil25
+            double T25LZ = 1.1;
+            int BruttoT25P1 = GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN.Value * 4 + GlobalVariables.SaleFemaleBikeN.Value * 4;
+            int BruttoT25P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 4;
+            int BruttoT25P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 4;
+            int BruttoT25P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 4;
+
+            Bestellungsplannung.Rows.Add(25, LagerZuBeginn[25], BruttoT25P1, BruttoT25P2, BruttoT25P3, BruttoT25P4,
+                LagerZuBeginn[25] - BruttoT25P1, LagerZuBeginn[25] - BruttoT25P1 - BruttoT25P2, LagerZuBeginn[25] - BruttoT25P1 - BruttoT25P2 - BruttoT25P3,
+                LagerZuBeginn[25] - BruttoT25P1 - BruttoT25P2 - BruttoT25P3 - BruttoT25P2);
+
+            //Teil27
+            double T27LZ = 1.1;
+            int BruttoT27P1 = GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2;
+            int BruttoT27P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2;
+            int BruttoT27P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2;
+            int BruttoT27P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2;
+
+            Bestellungsplannung.Rows.Add(27, LagerZuBeginn[27], BruttoT27P1, BruttoT27P2, BruttoT27P3, BruttoT27P4,
+                LagerZuBeginn[27] - BruttoT27P1, LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2, LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3,
+                LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3 - BruttoT27P2);
+
+
+            //Teil28
+            double T28LZ = 2.1;
+            int BruttoT28P1 = GlobalVariables.SaleChildBikeN.Value * 4 + GlobalVariables.SaleFemaleBikeN.Value * 5 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 6;
+            int BruttoT28P2 = GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 5 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 6;
+            int BruttoT28P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
+            int BruttoT28P4 = GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 5 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 6;
+
+            Bestellungsplannung.Rows.Add(28, LagerZuBeginn[28], BruttoT28P1, BruttoT28P2, BruttoT28P3, BruttoT28P4,
+                LagerZuBeginn[28] - BruttoT28P1, LagerZuBeginn[28] - BruttoT28P1 - BruttoT28P2, LagerZuBeginn[28] - BruttoT28P1 - BruttoT28P2 - BruttoT28P3,
+                LagerZuBeginn[28] - BruttoT28P1 - BruttoT28P2 - BruttoT28P3 - BruttoT28P2);
+
+            //Teil32
+            double T32LZ = 2.6;
+            int BruttoT32P1 = GlobalVariables.SaleChildBikeN.Value * 3 + GlobalVariables.SaleFemaleBikeN.Value * 3 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 3;
+            int BruttoT32P2 = GlobalVariables.SaleChildBikeN1.Value * 3 + GlobalVariables.SaleFemaleBikeN1.Value * 3 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 3;
+            int BruttoT32P3 = GlobalVariables.SaleChildBikeN2.Value * 3 + GlobalVariables.SaleFemaleBikeN2.Value * 3 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 3;
+            int BruttoT32P4 = GlobalVariables.SaleChildBikeN3.Value * 3 + GlobalVariables.SaleFemaleBikeN3.Value * 3 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 3;
+
+            Bestellungsplannung.Rows.Add(32, LagerZuBeginn[32], BruttoT32P1, BruttoT32P2, BruttoT32P3, BruttoT32P4,
+                LagerZuBeginn[32] - BruttoT32P1, LagerZuBeginn[32] - BruttoT32P1 - BruttoT32P2, LagerZuBeginn[32] - BruttoT32P1 - BruttoT32P2 - BruttoT32P3,
+                LagerZuBeginn[32] - BruttoT32P1 - BruttoT32P2 - BruttoT32P3 - BruttoT32P2);
+
+            //Teil33
+            double T33LZ = 2.4;
+            int BruttoT33P1 = GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
+            int BruttoT33P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT33P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT33P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+
+            Bestellungsplannung.Rows.Add(33, LagerZuBeginn[33], BruttoT33P1, BruttoT33P2, BruttoT33P3, BruttoT33P4,
+                LagerZuBeginn[33] - BruttoT33P1, LagerZuBeginn[33] - BruttoT33P1 - BruttoT33P2, LagerZuBeginn[33] - BruttoT33P1 - BruttoT33P2 - BruttoT33P3,
+                LagerZuBeginn[33] - BruttoT33P1 - BruttoT33P2 - BruttoT33P3 - BruttoT33P2);
+
+            //Teil34
+            double T34LZ = 1.9;
+            int BruttoT34P1 = GlobalVariables.SaleChildBikeN.Value * 72 + GlobalVariables.SaleFemaleBikeN.Value * 0 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
+            int BruttoT34P2 = GlobalVariables.SaleChildBikeN1.Value * 72 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT34P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT34P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            Bestellungsplannung.Rows.Add(34, LagerZuBeginn[34], BruttoT34P1, BruttoT34P2, BruttoT34P3, BruttoT34P4,
+                LagerZuBeginn[34] - BruttoT34P1, LagerZuBeginn[34] - BruttoT34P1 - BruttoT34P2, LagerZuBeginn[34] - BruttoT34P1 - BruttoT34P2 - BruttoT34P3,
+                LagerZuBeginn[34] - BruttoT34P1 - BruttoT34P2 - BruttoT34P3 - BruttoT34P2);
+
+            //Teil35
+            double T35LZ = 2.6;
+            int BruttoT35P1 = GlobalVariables.SaleChildBikeN.Value * 4 + GlobalVariables.SaleFemaleBikeN.Value * 5 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 6;
+            int BruttoT35P2 = GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 5 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 6;
+            int BruttoT35P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
+            int BruttoT35P4 = GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 5 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 6;
+
+            Bestellungsplannung.Rows.Add(35, LagerZuBeginn[35], BruttoT35P1, BruttoT35P2, BruttoT35P3, BruttoT35P4,
+                LagerZuBeginn[35] - BruttoT35P1, LagerZuBeginn[35] - BruttoT35P1 - BruttoT35P2, LagerZuBeginn[35] - BruttoT35P1 - BruttoT35P2 - BruttoT35P3,
+                LagerZuBeginn[35] - BruttoT35P1 - BruttoT35P2 - BruttoT35P3 - BruttoT35P2);
+
+            //Teil36
+            double T36LZ = 1.3;
+            int BruttoT36P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT36P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT36P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT36P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(36, LagerZuBeginn[36], BruttoT36P1, BruttoT36P2, BruttoT36P3, BruttoT36P4,
+                LagerZuBeginn[36] - BruttoT36P1, LagerZuBeginn[36] - BruttoT36P1 - BruttoT36P2, LagerZuBeginn[36] - BruttoT36P1 - BruttoT36P2 - BruttoT36P3,
+                LagerZuBeginn[36] - BruttoT36P1 - BruttoT36P2 - BruttoT36P3 - BruttoT36P2);
+
+            //Teil37
+            double T37LZ = 1.8;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil38
+            double T38LZ = 2.1;
+            int BruttoT38P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT38P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT38P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT38P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(38, LagerZuBeginn[38], BruttoT38P1, BruttoT38P2, BruttoT38P3, BruttoT38P4,
+                LagerZuBeginn[38] - BruttoT38P1, LagerZuBeginn[38] - BruttoT38P1 - BruttoT38P2, LagerZuBeginn[38] - BruttoT38P1 - BruttoT38P2 - BruttoT38P3,
+                LagerZuBeginn[38] - BruttoT38P1 - BruttoT38P2 - BruttoT38P3 - BruttoT38P2);
+
+            //Teil39
+            double T39LZ = 1.8;
+            int BruttoT39P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
+            int BruttoT39P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT39P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT39P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+
+            Bestellungsplannung.Rows.Add(39, LagerZuBeginn[39], BruttoT39P1, BruttoT39P2, BruttoT39P3, BruttoT39P4,
+                LagerZuBeginn[39] - BruttoT39P1, LagerZuBeginn[39] - BruttoT39P1 - BruttoT39P2, LagerZuBeginn[39] - BruttoT39P1 - BruttoT39P2 - BruttoT39P3,
+                LagerZuBeginn[39] - BruttoT39P1 - BruttoT39P2 - BruttoT39P3 - BruttoT39P2);
+
+            //Teil40
+            double T40LZ = 1.9;
+            int BruttoT40P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT40P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT40P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT40P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(40, LagerZuBeginn[40], BruttoT40P1, BruttoT40P2, BruttoT40P3, BruttoT40P4,
+                LagerZuBeginn[40] - BruttoT40P1, LagerZuBeginn[40] - BruttoT40P1 - BruttoT40P2, LagerZuBeginn[40] - BruttoT40P1 - BruttoT40P2 - BruttoT40P3,
+                LagerZuBeginn[40] - BruttoT40P1 - BruttoT40P2 - BruttoT40P3 - BruttoT40P2);
+
+            //Teil41
+            double T41LZ = 1.1;
+            int BruttoT41P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT41P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT41P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT41P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(41, LagerZuBeginn[41], BruttoT41P1, BruttoT41P2, BruttoT41P3, BruttoT41P4,
+                LagerZuBeginn[41] - BruttoT41P1, LagerZuBeginn[41] - BruttoT41P1 - BruttoT41P2, LagerZuBeginn[41] - BruttoT41P1 - BruttoT41P2 - BruttoT41P3,
+                LagerZuBeginn[41] - BruttoT41P1 - BruttoT41P2 - BruttoT41P3 - BruttoT41P2);
+
+            //Teil42
+            double T37LZ = 1.5;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil43
+            double T37LZ = 2.5;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil44
+            double T37LZ = 1.2;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil45
+            double T37LZ = 2.0;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil46
+            double T37LZ = 1.2;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil47
+            double T37LZ = 1.2;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil48
+            double T37LZ = 1.2;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil52
+            double T37LZ = 2.0;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 0 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil53
+            double T37LZ = 1.8;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 72 + GlobalVariables.SaleFemaleBikeN.Value * 0 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 72 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil57
+            double T37LZ = 2.0;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 0 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 0 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil58
+            double T37LZ = 2.1;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 0 + GlobalVariables.SaleFemaleBikeN.Value * 72 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 0 + GlobalVariables.SaleFemaleBikeN1.Value * 72 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 72 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 72 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+            //Teil59
+            double T37LZ = 0.9;
+            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
+                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
+                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+
+
+
+            ////Lager befüllen
+            //foreach (DataRow r1Row in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].Rows)
+            //{
+            //    foreach (DataRow r2Row in Bestellungsplannung.Rows)
+            //    {
+            //        if (r2Row["Teil"].ToString() == r1Row["id"].ToString())
+            //        {
+            //            r2Row["Lagerbestand"] = int.Parse(r1Row["amount"].ToString());
+            //        }
+            //    }
+            //}
+
+
+            Bestellung.DataContext = Bestellungsplannung.DefaultView;
+
+
         }
+
 
 
         private void ProgrammplannungRepeat(object sender, RoutedEventArgs e)

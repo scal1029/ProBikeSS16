@@ -794,7 +794,23 @@
                         </TabControl>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{DynamicResource ResourceKey=QuantityPlanning}" Width="195"></TabItem>
+                <TabItem Header="{DynamicResource ResourceKey=QuantityPlanning}" Width="195">
+                    <Grid>
+                        <TabControl>
+                            <TabItem Header="Plannung">
+                                <Grid>
+                                    <DataGrid Name="Bestellung" ItemsSource="{Binding}" Margin="100,10,10,10" IsReadOnly="True"></DataGrid>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Auflistung">
+                                <Grid>
+                                    
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </TabItem>
+                
                 <TabItem Header="{DynamicResource ResourceKey=CapacityPlanning}" Width="195"></TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=DataExport}" Width="145"></TabItem>
                 <TabItem Header="DC" Width="50"></TabItem>

@@ -101,5 +101,31 @@ namespace ProBikeSS16
         public static int E20Produktionsauftrag;
 
         public static DataTable dtProdOrder = new DataTable();
+
+        public static List<OrderPrototyp> ProduktionsAufträgeAktuellePeriode = new List<OrderPrototyp>();
+
+        public static List<TeilPrototyp> AlleTeile = new List<TeilPrototyp>();
+
+        public static Dictionary<int, ArbeitsstationPrototyp> ZusammenTeilundProduktionskette =
+            new Dictionary<int, ArbeitsstationPrototyp>();
+
+        public static  Dictionary<int ,Arbeitsplatzprototyp> AlleArbeitsplätze = new Dictionary<int, Arbeitsplatzprototyp>();
+
+        public static List<string> Wochentage = new List<string>
+        {
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag"
+        };
+
+        public static Dictionary<int, int> Lagerstand = new Dictionary<int, int>();
+
+        //SimuStartDaten(Stationen, Arbeitsplätze, Produktionsaufträge, Lagerstände)
+
+        public static Dictionary<int, Arbeitsplatzprototyp> OriginalAlleArbeitsplätze = new Dictionary<int, Arbeitsplatzprototyp>();
+        public static List<OrderPrototyp> OriginalProduktionsAufträgeAktuellePeriode = new List<OrderPrototyp>();
+        public static Dictionary<int, int> OriginalLagerstand = new Dictionary<int, int>();
     }
 }
