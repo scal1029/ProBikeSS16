@@ -130,5 +130,8 @@ namespace ProBikeSS16
         public static Dictionary<int, Arbeitsplatzprototyp> OriginalAlleArbeitsplätze = new Dictionary<int, Arbeitsplatzprototyp>();
         public static List<OrderPrototyp> OriginalProduktionsAufträgeAktuellePeriode = new List<OrderPrototyp>();
         public static Dictionary<int, int> OriginalLagerstand = new Dictionary<int, int>();
+
+        //Ausgabe
+        public static DataTable KPErg = new DataTable();
     }
 }
