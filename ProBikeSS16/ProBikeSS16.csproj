@@ -97,6 +97,11 @@
     <Compile Include="DataTable.cs" />
     <Compile Include="domain\Global.cs" />
     <Compile Include="domain\Unit.cs" />
+    <Compile Include="Storage\Fabricate.cs" />
+    <Compile Include="Storage\PEK.cs" />
+    <Compile Include="Storage\Product.cs" />
+    <Compile Include="Storage\PurchasePart.cs" />
+    <Compile Include="Storage\Storage.cs" />
     <Compile Include="KapazitätPrototyp.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Workplace.cs" />
