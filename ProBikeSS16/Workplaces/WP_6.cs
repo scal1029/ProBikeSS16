@@ -1,6 +1,6 @@
 ﻿namespace ProBikeSS16.Workplaces
 {
-    class WP_1 : Workplace
+    class WP_6 : Workplace
     {
 
         int order_E49 = 0;
@@ -137,7 +137,7 @@
         }
         #endregion
 
-        public WP_1(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo = 1, double overTimeToDo = 0) 
+        public WP_6(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo = 1, double overTimeToDo = 0) 
             : base(id, var_machineCosts, fix_machineCosts, shiftsToDo, overTimeToDo)
         {
 
