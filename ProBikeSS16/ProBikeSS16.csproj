@@ -114,6 +114,7 @@
     <Compile Include="TeilPrototyp.cs" />
     <Compile Include="Workplace.cs" />
     <Compile Include="Workplaces\Directs.cs" />
+    <Compile Include="Workplaces\WP_6.cs" />
     <Compile Include="Workplaces\WP_11.cs" />
     <Compile Include="Workplaces\WP_12.cs" />
     <Compile Include="Workplaces\WP_14.cs" />
@@ -196,9 +197,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Storage\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

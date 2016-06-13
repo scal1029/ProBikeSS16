@@ -11,7 +11,7 @@ namespace ProBikeSS16
     {
         static readonly Factory instance = new Factory();
 
-        List<Workplace> workplaces = new List<Workplace>();
+        Dictionary<int, Workplace> workplaces = new Dictionary<int, Workplace>();
 
         Storage storage;
 
@@ -30,11 +30,9 @@ namespace ProBikeSS16
 
         private void initWorkplaces()
         {
-            for (int i = 0; i < Constants.MAX_WORKPLACES; i++)
-            { 
-                workplaces.Add(new Workplace(i, Constants.VARIABLE_MACHINE_COSTS[i], Constants.FIX_MACHINE_COSTS[i]));
-                Console.WriteLine(workplaces[i]);
-            }
+            //workplaces.Add(i, (new WP_1(i, Constants.VARIABLE_MACHINE_COSTS[i], Constants.FIX_MACHINE_COSTS[i]));
+            //Console.WriteLine(workplaces[i]);
+            
         }
 
         internal void initStorage(DataSet inputDataSetWithoutOldBatchCalc)
