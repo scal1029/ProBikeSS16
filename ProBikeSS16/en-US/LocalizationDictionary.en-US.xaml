@@ -38,4 +38,19 @@
     <sys:String x:Key="SafetyStockToolTip">Number of bikes that are always supposed to be on stock.</sys:String>
     <sys:String x:Key="UploadXml">Upload XML</sys:String>
 
+    <!-- Localized strings DemandManagement-->
+    <sys:String x:Key="bindingOrders">Binding order/ sales request</sys:String>
+    <sys:String x:Key="safetyStock">Planned stock at the end of the planning period (safety stock)</sys:String>
+    <sys:String x:Key="priorPeriod">Stock at the end of the prior period</sys:String>
+    <sys:String x:Key="ordersQueue">Orders in queue</sys:String>
+    <sys:String x:Key="ordersProcessing">Orders in processing</sys:String>
+    <sys:String x:Key="comingPeriod">Production orders for the upcoming period</sys:String>
+    <sys:String x:Key="refresh">Refresh</sys:String>
+    <sys:String x:Key="currentStock">Current Stock</sys:String>
+    <sys:String x:Key="manufactoringOrders">Manufactoring Orders</sys:String>
+    <sys:String x:Key="addOrder">Add order</sys:String>
+    <sys:String x:Key="itemID">Item ID</sys:String>
+    <sys:String x:Key="amount">Amount</sys:String>
+    <sys:String x:Key="deleteOrder">Delete Order</sys:String>
+
 </ResourceDictionary>

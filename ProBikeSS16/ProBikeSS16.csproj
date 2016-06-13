@@ -97,7 +97,22 @@
     <Compile Include="DataTable.cs" />
     <Compile Include="domain\Global.cs" />
     <Compile Include="domain\Unit.cs" />
+    <Compile Include="Storage\Fabricate.cs" />
+    <Compile Include="Storage\PEK.cs" />
+    <Compile Include="Storage\Product.cs" />
+    <Compile Include="Storage\PurchasePart.cs" />
+    <Compile Include="Storage\Storage.cs" />
     <Compile Include="Workplace.cs" />
+    <Compile Include="Workplaces\Directs.cs" />
+    <Compile Include="Workplaces\WP_11.cs" />
+    <Compile Include="Workplaces\WP_12.cs" />
+    <Compile Include="Workplaces\WP_14.cs" />
+    <Compile Include="Workplaces\WP_13.cs" />
+    <Compile Include="Workplaces\WP_15.cs" />
+    <Compile Include="Workplaces\WP_1.cs" />
+    <Compile Include="Workplaces\WP_2.cs" />
+    <Compile Include="Workplaces\WP_3.cs" />
+    <Compile Include="Workplaces\WP_4.cs" />
     <Content Include="en-US\LocalizationDictionary.en-US.xaml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -106,6 +121,9 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="multi.txt" />
+    <Resource Include="Images\Arrow Up.png" />
+    <Resource Include="Images\Down.png" />
     <Resource Include="Images\1024px-Forbidden_Symbol.svg.cur" />
     <Resource Include="Images\haken.bmp" />
     <Resource Include="Images\File Adobe Dreamweaver XML-01.bmp" />
