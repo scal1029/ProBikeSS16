@@ -3473,136 +3473,136 @@ namespace ProBikeSS16
                 LagerZuBeginn[41] - BruttoT41P1 - BruttoT41P2 - BruttoT41P3 - BruttoT41P2);
 
             //Teil42
-            double T37LZ = 1.5;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+            double T42LZ = 1.5;
+            int BruttoT42P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
+            int BruttoT42P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT42P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT42P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(42, LagerZuBeginn[42], BruttoT42P1, BruttoT42P2, BruttoT42P3, BruttoT42P4,
+                LagerZuBeginn[42] - BruttoT42P1, LagerZuBeginn[42] - BruttoT42P1 - BruttoT42P2, LagerZuBeginn[42] - BruttoT42P1 - BruttoT42P2 - BruttoT42P3,
+                LagerZuBeginn[42] - BruttoT42P1 - BruttoT42P2 - BruttoT42P3 - BruttoT42P2);
 
             //Teil43
-            double T37LZ = 2.5;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+            double T43LZ = 2.5;
+            int BruttoT43P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT43P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT43P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT43P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(43, LagerZuBeginn[43], BruttoT43P1, BruttoT43P2, BruttoT43P3, BruttoT43P4,
+                LagerZuBeginn[43] - BruttoT43P1, LagerZuBeginn[43] - BruttoT43P1 - BruttoT43P2, LagerZuBeginn[43] - BruttoT43P1 - BruttoT43P2 - BruttoT43P3,
+                LagerZuBeginn[43] - BruttoT43P1 - BruttoT43P2 - BruttoT43P3 - BruttoT43P2);
 
             //Teil44
-            double T37LZ = 1.2;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+            double T44LZ = 1.2;
+            int BruttoT44P1 = GlobalVariables.SaleChildBikeN.Value * 3 + GlobalVariables.SaleFemaleBikeN.Value * 3 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 3;
+            int BruttoT44P2 = GlobalVariables.SaleChildBikeN1.Value * 3 + GlobalVariables.SaleFemaleBikeN1.Value * 3 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 3;
+            int BruttoT44P3 = GlobalVariables.SaleChildBikeN2.Value * 3 + GlobalVariables.SaleFemaleBikeN2.Value * 3 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 3;
+            int BruttoT44P4 = GlobalVariables.SaleChildBikeN3.Value * 3 + GlobalVariables.SaleFemaleBikeN3.Value * 3 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 3;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(44, LagerZuBeginn[44], BruttoT44P1, BruttoT44P2, BruttoT44P3, BruttoT44P4,
+                LagerZuBeginn[44] - BruttoT44P1, LagerZuBeginn[44] - BruttoT44P1 - BruttoT44P2, LagerZuBeginn[44] - BruttoT44P1 - BruttoT44P2 - BruttoT44P3,
+                LagerZuBeginn[44] - BruttoT44P1 - BruttoT44P2 - BruttoT44P3 - BruttoT44P2);
 
             //Teil45
-            double T37LZ = 2.0;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+            double T45LZ = 2.0;
+            int BruttoT45P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT45P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT45P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT45P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(45, LagerZuBeginn[45], BruttoT45P1, BruttoT45P2, BruttoT45P3, BruttoT45P4,
+                LagerZuBeginn[45] - BruttoT45P1, LagerZuBeginn[45] - BruttoT45P1 - BruttoT45P2, LagerZuBeginn[45] - BruttoT45P1 - BruttoT45P2 - BruttoT45P3,
+                LagerZuBeginn[45] - BruttoT45P1 - BruttoT45P2 - BruttoT45P3 - BruttoT45P2);
 
             //Teil46
-            double T37LZ = 1.2;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+            double T46LZ = 1.2;
+            int BruttoT46P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT46P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT46P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT46P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(46, LagerZuBeginn[46], BruttoT46P1, BruttoT46P2, BruttoT46P3, BruttoT46P4,
+                LagerZuBeginn[46] - BruttoT46P1, LagerZuBeginn[46] - BruttoT46P1 - BruttoT46P2, LagerZuBeginn[46] - BruttoT46P1 - BruttoT46P2 - BruttoT46P3,
+                LagerZuBeginn[46] - BruttoT46P1 - BruttoT46P2 - BruttoT46P3 - BruttoT46P2);
 
             //Teil47
-            double T37LZ = 1.2;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+            double T47LZ = 1.2;
+            int BruttoT47P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
+            int BruttoT47P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT47P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT47P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(47, LagerZuBeginn[47], BruttoT47P1, BruttoT47P2, BruttoT47P3, BruttoT47P4,
+                LagerZuBeginn[47] - BruttoT47P1, LagerZuBeginn[47] - BruttoT47P1 - BruttoT47P2, LagerZuBeginn[47] - BruttoT47P1 - BruttoT47P2 - BruttoT47P3,
+                LagerZuBeginn[47] - BruttoT47P1 - BruttoT47P2 - BruttoT47P3 - BruttoT47P2);
 
             //Teil48
-            double T37LZ = 1.2;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+            double T48LZ = 1.2;
+            int BruttoT48P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
+            int BruttoT48P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT48P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT48P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(48, LagerZuBeginn[48], BruttoT48P1, BruttoT48P2, BruttoT48P3, BruttoT48P4,
+                LagerZuBeginn[48] - BruttoT48P1, LagerZuBeginn[48] - BruttoT48P1 - BruttoT48P2, LagerZuBeginn[48] - BruttoT48P1 - BruttoT48P2 - BruttoT48P3,
+                LagerZuBeginn[48] - BruttoT48P1 - BruttoT48P2 - BruttoT48P3 - BruttoT48P2);
 
             //Teil52
-            double T37LZ = 2.0;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 0 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+            double T52LZ = 2.0;
+            int BruttoT52P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 0 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
+            int BruttoT52P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT52P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT52P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(52, LagerZuBeginn[52], BruttoT52P1, BruttoT52P2, BruttoT52P3, BruttoT52P4,
+                LagerZuBeginn[52] - BruttoT52P1, LagerZuBeginn[52] - BruttoT52P1 - BruttoT52P2, LagerZuBeginn[52] - BruttoT52P1 - BruttoT52P2 - BruttoT52P3,
+                LagerZuBeginn[52] - BruttoT52P1 - BruttoT52P2 - BruttoT52P3 - BruttoT52P2);
 
             //Teil53
-            double T37LZ = 1.8;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 72 + GlobalVariables.SaleFemaleBikeN.Value * 0 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 72 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+            double T53LZ = 1.8;
+            int BruttoT53P1 = GlobalVariables.SaleChildBikeN.Value * 72 + GlobalVariables.SaleFemaleBikeN.Value * 0 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
+            int BruttoT53P2 = GlobalVariables.SaleChildBikeN1.Value * 72 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT53P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT53P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(53, LagerZuBeginn[53], BruttoT53P1, BruttoT53P2, BruttoT53P3, BruttoT53P4,
+                LagerZuBeginn[53] - BruttoT53P1, LagerZuBeginn[53] - BruttoT53P1 - BruttoT53P2, LagerZuBeginn[53] - BruttoT53P1 - BruttoT53P2 - BruttoT53P3,
+                LagerZuBeginn[53] - BruttoT53P1 - BruttoT53P2 - BruttoT53P3 - BruttoT53P2);
 
             //Teil57
-            double T37LZ = 2.0;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 0 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 0 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+            double T57LZ = 2.0;
+            int BruttoT57P1 = GlobalVariables.SaleChildBikeN.Value * 0 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
+            int BruttoT57P2 = GlobalVariables.SaleChildBikeN1.Value * 0 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT57P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT57P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(57, LagerZuBeginn[57], BruttoT57P1, BruttoT57P2, BruttoT57P3, BruttoT57P4,
+                LagerZuBeginn[57] - BruttoT57P1, LagerZuBeginn[57] - BruttoT57P1 - BruttoT57P2, LagerZuBeginn[57] - BruttoT57P1 - BruttoT57P2 - BruttoT57P3,
+                LagerZuBeginn[57] - BruttoT57P1 - BruttoT57P2 - BruttoT57P3 - BruttoT57P2);
 
             //Teil58
-            double T37LZ = 2.1;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 0 + GlobalVariables.SaleFemaleBikeN.Value * 72 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 0 + GlobalVariables.SaleFemaleBikeN1.Value * 72 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 72 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 72 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+            double T58LZ = 2.1;
+            int BruttoT58P1 = GlobalVariables.SaleChildBikeN.Value * 0 + GlobalVariables.SaleFemaleBikeN.Value * 72 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
+            int BruttoT58P2 = GlobalVariables.SaleChildBikeN1.Value * 0 + GlobalVariables.SaleFemaleBikeN1.Value * 72 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT58P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 72 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT58P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 72 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(58, LagerZuBeginn[58], BruttoT58P1, BruttoT58P2, BruttoT58P3, BruttoT58P4,
+                LagerZuBeginn[58] - BruttoT58P1, LagerZuBeginn[58] - BruttoT58P1 - BruttoT58P2, LagerZuBeginn[58] - BruttoT58P1 - BruttoT58P2 - BruttoT58P3,
+                LagerZuBeginn[58] - BruttoT58P1 - BruttoT58P2 - BruttoT58P3 - BruttoT58P2);
 
             //Teil59
-            double T37LZ = 0.9;
-            int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
-            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
-            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
-            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+            double T59LZ = 0.9;
+            int BruttoT59P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
+            int BruttoT59P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT59P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT59P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
 
-            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4,
-                LagerZuBeginn[37] - BruttoT37P1, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2, LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3,
-                LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2);
+            Bestellungsplannung.Rows.Add(59, LagerZuBeginn[59], BruttoT59P1, BruttoT59P2, BruttoT59P3, BruttoT59P4,
+                LagerZuBeginn[59] - BruttoT59P1, LagerZuBeginn[59] - BruttoT59P1 - BruttoT59P2, LagerZuBeginn[59] - BruttoT59P1 - BruttoT59P2 - BruttoT59P3,
+                LagerZuBeginn[59] - BruttoT59P1 - BruttoT59P2 - BruttoT59P3 - BruttoT59P2);
 
 
 
