@@ -94,7 +94,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Storage.cs" />
+    <Compile Include="DataTable.cs" />
+    <Compile Include="domain\Global.cs" />
+    <Compile Include="domain\Unit.cs" />
     <Compile Include="Workplace.cs" />
     <Content Include="en-US\LocalizationDictionary.en-US.xaml">
       <SubType>Designer</SubType>
@@ -104,6 +106,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\1024px-Forbidden_Symbol.svg.cur" />
     <Resource Include="Images\haken.bmp" />
     <Resource Include="Images\File Adobe Dreamweaver XML-01.bmp" />
     <Resource Include="Images\icon-forecast.bmp" />
@@ -164,6 +167,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Storage\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
