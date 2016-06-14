@@ -114,6 +114,8 @@
     <Compile Include="TeilPrototyp.cs" />
     <Compile Include="Workplace.cs" />
     <Compile Include="Workplaces\Directs.cs" />
+    <Compile Include="Workplaces\WP_8.cs" />
+    <Compile Include="Workplaces\WP_7.cs" />
     <Compile Include="Workplaces\WP_6.cs" />
     <Compile Include="Workplaces\WP_11.cs" />
     <Compile Include="Workplaces\WP_12.cs" />
