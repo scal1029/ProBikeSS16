@@ -3224,9 +3224,9 @@ namespace ProBikeSS16
 
 
 
-            SimulationPrototyp2 test2 = new SimulationPrototyp2();
+            //SimulationPrototyp2 test2 = new SimulationPrototyp2();
 
-            test2.SimulationPrototypDurchführung(GlobalVariables.ProduktionsAufträgeAktuellePeriode, GlobalVariables.Lagerstand, 1);
+            //test2.SimulationPrototypDurchführung(GlobalVariables.ProduktionsAufträgeAktuellePeriode, GlobalVariables.Lagerstand, 1);
 
             Kapa.DataContext = GlobalVariables.KPErg.DefaultView;
 
@@ -3283,7 +3283,49 @@ namespace ProBikeSS16
             Bestellungsplannung.Columns.Add("Bestellung Periode n+3");
 
 
-            DataRow result = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["results"].Rows[0];
+            DataRow result2 = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["results"].Rows[0];
+            int AktuellePeriode = int.Parse(result2["period"].ToString());
+
+            DataTable AlteBestellungen = new DataTable();
+            AlteBestellungen.Columns.Add("Vergangenheit",typeof(int));
+            AlteBestellungen.Columns.Add("item", typeof(int));
+            AlteBestellungen.Columns.Add("Menge", typeof(int));
+            AlteBestellungen.Columns.Add("Modus", typeof(int));
+            string B1;
+            string B2;
+            string B3;
+            string B4;
+            int B11;
+            int B22;
+            int B33;
+            int B44;
+            foreach (DataRow DR in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["order"].Rows)
+            {
+
+                if (GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["order"].Columns.Contains("futureinwardstockmovement_Id"))
+                {
+                    if (DR["futureinwardstockmovement_Id"]!=DBNull.Value)
+                    {
+                        B1 = DR["orderperiod"].ToString();
+                        B11 = int.Parse(B1)-AktuellePeriode;
+                        B2 = DR["article"].ToString();
+                        B22 = int.Parse(B2);
+                        B3 = DR["amount"].ToString();
+                        B33 = int.Parse(B3);
+                        B4 = DR["mode"].ToString();
+                        B44 = int.Parse(B4);
+                        AlteBestellungen.Rows.Add(B11, B22, B33, B44);
+                    }
+                        
+
+                }
+            }
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                Console.WriteLine("Vergangenheit: " + DR[0].ToString() + " Artikel: " + DR[1].ToString() + " Menge: " + DR[2].ToString());
+            }
+
+            DataRow[] results3 = new DataRow[4];
 
 
             //Teil21
@@ -3293,10 +3335,54 @@ namespace ProBikeSS16
             int BruttoT21P2 = GlobalVariables.SaleChildBikeN1.GetValueOrDefault() * 1;
             int BruttoT21P3 = GlobalVariables.SaleChildBikeN2.GetValueOrDefault() * 1;
             int BruttoT21P4 = GlobalVariables.SaleChildBikeN3.GetValueOrDefault() * 1;
+            int P1Zuwachs = 0;
+            int P2Zuwachs = 0;
+            int P3Zuwachs = 0;
+            int P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '21'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T21LZ);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T21E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
 
             Bestellungsplannung.Rows.Add(21, LagerZuBeginn[21], BruttoT21P1, BruttoT21P2, BruttoT21P3, BruttoT21P4, 
-                LagerZuBeginn[21]- BruttoT21P1, LagerZuBeginn[21] - BruttoT21P1- BruttoT21P2, LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 -BruttoT21P3,
-                LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 - BruttoT21P2);
+                LagerZuBeginn[21]- BruttoT21P1, LagerZuBeginn[21] - BruttoT21P1- BruttoT21P2 + P2Zuwachs, LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 -BruttoT21P3 + P3Zuwachs,
+                LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 - BruttoT21P2 + P4Zuwachs);
 
 
 
@@ -4085,5 +4171,8 @@ namespace ProBikeSS16
             MenuItem mi = sender as MenuItem;
             mi.IsChecked = true;
         }
+
+
+
     }
 }

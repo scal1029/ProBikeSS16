@@ -124,6 +124,11 @@
     <Compile Include="Workplaces\WP_2.cs" />
     <Compile Include="Workplaces\WP_3.cs" />
     <Compile Include="Workplaces\WP_4.cs" />
+    <Compile Include="XMLExport.cs" />
+    <Compile Include="XMLproductionlist.cs" />
+    <Compile Include="XMLselldirect.cs" />
+    <Compile Include="XMLsellwish.cs" />
+    <Compile Include="XMLworkingtimelist.cs" />
     <Content Include="en-US\LocalizationDictionary.en-US.xaml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
