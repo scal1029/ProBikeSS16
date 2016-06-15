@@ -13,7 +13,7 @@ namespace ProBikeSS16
         public double price;
         public double penalty;
 
-        public XMLselldirect(int a, int q, double p, double pe)
+        public XMLselldirect(int q, int a, double p, double pe)
         {
             article = a;
             quantity = q;

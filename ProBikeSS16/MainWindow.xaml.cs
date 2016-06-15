@@ -3320,33 +3320,55 @@ namespace ProBikeSS16
             //}
 
 
+            //Direktverkäufe vorbereiten
+            DataTable DirektverkäufeAnfang = new DataTable();
+            if (!DirektverkäufeAnfang.Columns.Contains("article"))
+            {
+                DirektverkäufeAnfang.Columns.Add("quantity", typeof(int));
+                DirektverkäufeAnfang.Columns.Add("article", typeof(int));
+                DirektverkäufeAnfang.Columns.Add("penalty", typeof(double));
+                DirektverkäufeAnfang.Columns.Add("price", typeof(double));
+            }
+            DirektverkäufeAnfang.Clear();
 
+            DirektverkäufeAnfang.Rows.Add(0, 1, 0, 0);
+            DirektverkäufeAnfang.Rows.Add(0, 2, 0, 0);
+            DirektverkäufeAnfang.Rows.Add(0, 3, 0, 0);
 
-
+            Selldirect.DataContext = DirektverkäufeAnfang;
+            Selldirect.ItemsSource = DirektverkäufeAnfang.DefaultView;
 
 
             //Bestellungsplannung
             DataTable Bestellungsplannung = new DataTable();
-            Bestellungsplannung.Columns.Add("Teil");
-            Bestellungsplannung.Columns.Add("Lagerbestand");
-            Bestellungsplannung.Columns.Add("Brutto Periode n");
-            Bestellungsplannung.Columns.Add("Brutto Periode n+1");
-            Bestellungsplannung.Columns.Add("Brutto Periode n+2");
-            Bestellungsplannung.Columns.Add("Brutto Periode n+3");
-            Bestellungsplannung.Columns.Add("Bestellung Periode n");
-            Bestellungsplannung.Columns.Add("Bestellung Periode n+1");
-            Bestellungsplannung.Columns.Add("Bestellung Periode n+2");
-            Bestellungsplannung.Columns.Add("Bestellung Periode n+3");
+            if (!Bestellungsplannung.Columns.Contains("Teil"))
+            {
+                Bestellungsplannung.Columns.Add("Teil");
+                Bestellungsplannung.Columns.Add("Lagerbestand");
+                Bestellungsplannung.Columns.Add("Brutto Periode n");
+                Bestellungsplannung.Columns.Add("Brutto Periode n+1");
+                Bestellungsplannung.Columns.Add("Brutto Periode n+2");
+                Bestellungsplannung.Columns.Add("Brutto Periode n+3");
+                Bestellungsplannung.Columns.Add("Bestellung Periode n");
+                Bestellungsplannung.Columns.Add("Bestellung Periode n+1");
+                Bestellungsplannung.Columns.Add("Bestellung Periode n+2");
+                Bestellungsplannung.Columns.Add("Bestellung Periode n+3");
+            }
+            Bestellungsplannung.Clear();
 
 
             DataRow result2 = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["results"].Rows[0];
             int AktuellePeriode = int.Parse(result2["period"].ToString());
 
             DataTable AlteBestellungen = new DataTable();
-            AlteBestellungen.Columns.Add("Vergangenheit",typeof(int));
-            AlteBestellungen.Columns.Add("item", typeof(int));
-            AlteBestellungen.Columns.Add("Menge", typeof(int));
-            AlteBestellungen.Columns.Add("Modus", typeof(int));
+            if (!AlteBestellungen.Columns.Contains("item"))
+            {
+                AlteBestellungen.Columns.Add("Vergangenheit", typeof(int));
+                AlteBestellungen.Columns.Add("item", typeof(int));
+                AlteBestellungen.Columns.Add("Menge", typeof(int));
+                AlteBestellungen.Columns.Add("Modus", typeof(int));
+            }
+            AlteBestellungen.Clear();
             string B1;
             string B2;
             string B3;
@@ -3384,10 +3406,20 @@ namespace ProBikeSS16
             DataRow[] results3 = new DataRow[4];
 
 
+            DataTable Bestellungsliste = new DataTable();
+            if (!Bestellungsliste.Columns.Contains("article"))
+            {
+                Bestellungsliste.Columns.Add("article", typeof(int));
+                Bestellungsliste.Columns.Add("quantity", typeof(int));
+                Bestellungsliste.Columns.Add("modus", typeof(int));
+            }
+            Bestellungsliste.Clear();
+
             //Teil21
-            double T21LZ = 2.2;
+            double T21LZ = 1.8;
+            double T21AB = 0.4;
             double T21E = 1.8/2;
-            int BruttoT21P1 = GlobalVariables.SaleChildBikeN.GetValueOrDefault() * 1;
+            int BruttoT21P1 = GlobalVariables.SaleChildBikeN.GetValueOrDefault() * 1 + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text));
             int BruttoT21P2 = GlobalVariables.SaleChildBikeN1.GetValueOrDefault() * 1;
             int BruttoT21P3 = GlobalVariables.SaleChildBikeN2.GetValueOrDefault() * 1;
             int BruttoT21P4 = GlobalVariables.SaleChildBikeN3.GetValueOrDefault() * 1;
@@ -3403,7 +3435,7 @@ namespace ProBikeSS16
                 {
                     if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
                     {
-                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T21LZ);
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T21LZ + T21AB);
                         if (ZeitCheck <= 1)
                         {
                             P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
@@ -3436,9 +3468,41 @@ namespace ProBikeSS16
                 }
             }
 
-            Bestellungsplannung.Rows.Add(21, LagerZuBeginn[21], BruttoT21P1, BruttoT21P2, BruttoT21P3, BruttoT21P4, 
-                LagerZuBeginn[21]- BruttoT21P1, LagerZuBeginn[21] - BruttoT21P1- BruttoT21P2 + P2Zuwachs, LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 -BruttoT21P3 + P3Zuwachs,
-                LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 - BruttoT21P2 + P4Zuwachs);
+            int Periode1 = LagerZuBeginn[21] - BruttoT21P1;
+            int Periode2 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 + P2Zuwachs;
+            int Periode3 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 + P3Zuwachs;
+            int Periode4 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 - BruttoT21P2 + P4Zuwachs;
+
+            int Modus = 5;
+            int Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1*(-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0)
+            {
+                if (T21LZ + T21AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Bestellmenge + Periode3 *(-1);
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(21, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(21, LagerZuBeginn[21], BruttoT21P1, BruttoT21P2, BruttoT21P3, BruttoT21P4, Periode1, Periode2, Periode3, Periode4);
 
 
 
@@ -3482,6 +3546,7 @@ namespace ProBikeSS16
 
             //Teil25
             double T25LZ = 1.1;
+            double T25E = 0.9 / 2;
             int BruttoT25P1 = GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN.Value * 4 + GlobalVariables.SaleFemaleBikeN.Value * 4;
             int BruttoT25P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 4;
             int BruttoT25P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 4;
@@ -3493,6 +3558,7 @@ namespace ProBikeSS16
 
             //Teil27
             double T27LZ = 1.1;
+            double T27E = 0.9 / 2;
             int BruttoT27P1 = GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2;
             int BruttoT27P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2;
             int BruttoT27P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2;
@@ -3505,6 +3571,7 @@ namespace ProBikeSS16
 
             //Teil28
             double T28LZ = 2.1;
+            double T28E = 1.7 / 2;
             int BruttoT28P1 = GlobalVariables.SaleChildBikeN.Value * 4 + GlobalVariables.SaleFemaleBikeN.Value * 5 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 6;
             int BruttoT28P2 = GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 5 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 6;
             int BruttoT28P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
@@ -3516,6 +3583,7 @@ namespace ProBikeSS16
 
             //Teil32
             double T32LZ = 2.6;
+            double T32E = 2.1 / 2;
             int BruttoT32P1 = GlobalVariables.SaleChildBikeN.Value * 3 + GlobalVariables.SaleFemaleBikeN.Value * 3 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 3;
             int BruttoT32P2 = GlobalVariables.SaleChildBikeN1.Value * 3 + GlobalVariables.SaleFemaleBikeN1.Value * 3 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 3;
             int BruttoT32P3 = GlobalVariables.SaleChildBikeN2.Value * 3 + GlobalVariables.SaleFemaleBikeN2.Value * 3 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 3;
@@ -3527,6 +3595,7 @@ namespace ProBikeSS16
 
             //Teil33
             double T33LZ = 2.4;
+            double T33E = 1.9 / 2;
             int BruttoT33P1 = GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
             int BruttoT33P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
             int BruttoT33P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
@@ -3538,6 +3607,7 @@ namespace ProBikeSS16
 
             //Teil34
             double T34LZ = 1.9;
+            double T34E = 1.6 / 2;
             int BruttoT34P1 = GlobalVariables.SaleChildBikeN.Value * 72 + GlobalVariables.SaleFemaleBikeN.Value * 0 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 0;
             int BruttoT34P2 = GlobalVariables.SaleChildBikeN1.Value * 72 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
             int BruttoT34P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
@@ -3549,6 +3619,7 @@ namespace ProBikeSS16
 
             //Teil35
             double T35LZ = 2.6;
+            double T35E = 2.2 / 2;
             int BruttoT35P1 = GlobalVariables.SaleChildBikeN.Value * 4 + GlobalVariables.SaleFemaleBikeN.Value * 5 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 6;
             int BruttoT35P2 = GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 5 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 6;
             int BruttoT35P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
@@ -3560,6 +3631,7 @@ namespace ProBikeSS16
 
             //Teil36
             double T36LZ = 1.3;
+            double T36E = 1.2 / 2;
             int BruttoT36P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
             int BruttoT36P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT36P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
@@ -3571,6 +3643,7 @@ namespace ProBikeSS16
 
             //Teil37
             double T37LZ = 1.8;
+            double T37E = 1.5 / 2;
             int BruttoT37P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
             int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
@@ -3582,6 +3655,7 @@ namespace ProBikeSS16
 
             //Teil38
             double T38LZ = 2.1;
+            double T38E = 1.7 / 2;
             int BruttoT38P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
             int BruttoT38P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT38P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
@@ -3593,6 +3667,7 @@ namespace ProBikeSS16
 
             //Teil39
             double T39LZ = 1.8;
+            double T39E = 1.5 / 2;
             int BruttoT39P1 = GlobalVariables.SaleChildBikeN.Value * 2 + GlobalVariables.SaleFemaleBikeN.Value * 2 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 2;
             int BruttoT39P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
             int BruttoT39P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
@@ -3604,6 +3679,7 @@ namespace ProBikeSS16
 
             //Teil40
             double T40LZ = 1.9;
+            double T40E = 1.7 / 2;
             int BruttoT40P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
             int BruttoT40P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT40P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
@@ -3615,6 +3691,7 @@ namespace ProBikeSS16
 
             //Teil41
             double T41LZ = 1.1;
+
             int BruttoT41P1 = GlobalVariables.SaleChildBikeN.Value * 1 + GlobalVariables.SaleFemaleBikeN.Value * 1 + GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1;
             int BruttoT41P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT41P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
@@ -3773,6 +3850,11 @@ namespace ProBikeSS16
 
             Bestellung.DataContext = Bestellungsplannung.DefaultView;
 
+            BestellungslisteZu.DataContext = Bestellungsliste;
+            BestellungslisteZu.ItemsSource = Bestellungsliste.DefaultView;
+
+            Orderlist.DataContext = BestellungslisteZu.DataContext;
+            Orderlist.ItemsSource = BestellungslisteZu.ItemsSource;
 
         }
 
@@ -4243,11 +4325,36 @@ namespace ProBikeSS16
                     VerkäufeImport.Add(new XMLsellwish((int)dr[0],(int)dr[1]));
                 }
 
+            foreach (System.Data.DataRowView dr in Orderlist.ItemsSource)
+            {
+                if (dr[0] != DBNull.Value && dr[1] != DBNull.Value && dr[2] != DBNull.Value)
+                    Bestellungen.Add(new XMLorderlist((int)dr[0], (int)dr[1], (int)dr[2]));
+            }
+
+            foreach (System.Data.DataRowView dr in Selldirect.ItemsSource)
+            {
+                if (dr[0] != DBNull.Value && dr[1] != DBNull.Value && dr[2] != DBNull.Value && dr[3] != DBNull.Value)
+                    DirektVerkäufe.Add(new XMLselldirect((int)dr["quantity"], (int)dr["article"], (double)dr["price"], (double)dr["penalty"]));
+            }
+
+            foreach (System.Data.DataRowView dr in Productionlist.ItemsSource)
+            {
+                if (dr[0] != DBNull.Value && dr[1] != DBNull.Value)
+                    Aufträge.Add(new XMLproductionlist((int)dr[0], (int)dr[1]));
+            }
+
+            foreach (System.Data.DataRowView dr in Workingtimelist.ItemsSource)
+            {
+                if (dr[0] != DBNull.Value && dr[1] != DBNull.Value && dr[2] != DBNull.Value)
+                    Schichten.Add(new XMLworkingtimelist((int)dr[0], (int)dr[1], (int)dr[2]));
+            }
+
+
 
 
 
             XMLExport Ende = new XMLExport();
-            Ende.XMLExportReal(VerkäufeImport, null, null, null, null);
+            Ende.XMLExportReal(VerkäufeImport, DirektVerkäufe, Bestellungen, Aufträge, Schichten);
 
         }
 

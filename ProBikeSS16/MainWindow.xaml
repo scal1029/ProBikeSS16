@@ -266,7 +266,7 @@
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="4" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE7" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="4" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE13" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="4" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikePassedWaitlistE18" IsReadOnly="True" Background="#FF00FAFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <TextBox TextAlignment="Center" Grid.Column="6" Grid.Row="1" Height="20" Width="60" x:Name="ChildBikeSafetyP1" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox TextAlignment="Center" Grid.Column="6" Grid.Row="1" Height="20" Width="60" x:Name="ChildBikeSafetyP1" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="15,5,15,0"/>
                                     <TextBox TextAlignment="Center" Grid.Column="6" Grid.Row="3" Height="20" Width="60" x:Name="ChildBikeSafetyE26" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Grid.Column="6" Grid.Row="4" Height="20" Width="60" x:Name="ChildBikeSafetyE51" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Grid.Column="6" Grid.Row="6" Height="20" Width="60" x:Name="ChildBikeSafetyE16" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -799,24 +799,50 @@
                         <TabControl>
                             <TabItem Header="Plannung">
                                 <Grid>
-                                    <DataGrid Name="Bestellung" ItemsSource="{Binding}" Margin="100,10,10,10" IsReadOnly="True"></DataGrid>
+                                    <DataGrid Name="Bestellung" ItemsSource="{Binding}" Margin="100,10,100,10" IsReadOnly="True">
+
+                                    </DataGrid>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Auflistung">
                                 <Grid>
-                                    
+                                    <DataGrid Name="BestellungslisteZu" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="100,10,100,10">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="Article" Width="120">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBox Text="{Binding article}" MaxLength="2"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                            <DataGridTemplateColumn Header="Quantity" Width="120">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBox Text="{Binding quantity}"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                            <DataGridTemplateColumn Header="Modus" Width="*">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBox Text="{Binding modus}" MaxLength="1"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                 </Grid>
                             </TabItem>
                         </TabControl>
                     </Grid>
                 </TabItem>
-                
+
                 <TabItem Header="{DynamicResource ResourceKey=CapacityPlanning}" Width="195">
                     <Grid>
                         <DataGrid Name="Kapa" ItemsSource="{Binding}" Margin="100,10,10,10" IsReadOnly="True"></DataGrid>
                     </Grid>
                 </TabItem>
-                    
+
                 <TabItem Header="{DynamicResource ResourceKey=DataExport}" Width="145">
                     <Grid>
                         <Grid.ColumnDefinitions>
