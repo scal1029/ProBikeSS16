@@ -10,7 +10,6 @@ namespace ProBikeSS16.Workplaces
     {
 
         int order_DirectTo8 = 0;
-        int cur_prod = 0;
         int onMachine = 0;
 
         #region Getter/Setter

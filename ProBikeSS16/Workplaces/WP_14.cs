@@ -10,7 +10,6 @@ namespace ProBikeSS16.Workplaces
     {
 
         int order_E16 = 0;
-        int cur_prod = 0;
         int onMachine = 0;
 
         #region Getter/Setter
@@ -87,7 +86,7 @@ namespace ProBikeSS16.Workplaces
             if (storage.Content[24].Quantity < prod_batch ||
                 storage.Content[40].Quantity < prod_batch ||
                 storage.Content[41].Quantity < prod_batch ||
-                storage.Content[42].Quantity < prod_batch)
+                storage.Content[42].Quantity < (2 * prod_batch))
                 return;
 
             storage.Content[24].Quantity -= (1 * prod_batch);
@@ -95,6 +94,7 @@ namespace ProBikeSS16.Workplaces
             storage.Content[41].Quantity -= (1 * prod_batch);
             storage.Content[42].Quantity -= (2 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeE16(prod_batch);
             onMachine = 0;
         }
         #endregion

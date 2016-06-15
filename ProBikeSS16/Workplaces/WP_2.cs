@@ -6,8 +6,6 @@
         int order_E50 = 0;
         int order_E55 = 0;
         int order_E30 = 0;
-        int cur_prod = 0;
-        int onMachine = 0;
 
         #region Getter/Setter
         public int ProdTimeE50
@@ -152,7 +150,8 @@
             if (cur_prod != 1)
             {
                 cur_prod = 1;
-                currentWorkTime += 30;
+                setUptime += 30;
+                setUps++;
             }
 
             if (onMachine == 0)
@@ -172,6 +171,7 @@
             storage.Content[10].Quantity -= (1 * prod_batch);
             storage.Content[4].Quantity -= (1 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeE50(prod_batch);
             onMachine = 0;
         }
         #endregion
@@ -185,7 +185,8 @@
             if (cur_prod != 2)
             {
                 cur_prod = 2;
-                currentWorkTime += 30;
+                setUptime += 30;
+                setUps++;
             }
 
             if (onMachine == 0)
@@ -206,6 +207,7 @@
             storage.Content[11].Quantity -= (1 * prod_batch);
             storage.Content[5].Quantity -= (1 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeE55(prod_batch);
             onMachine = 0;
         }
         #endregion
@@ -219,7 +221,8 @@
             if (cur_prod != 3)
             {
                 cur_prod = 3;
-                currentWorkTime += 20;
+                setUptime += 20;
+                setUps++;
             }
 
             if (onMachine == 0)
@@ -240,6 +243,7 @@
             storage.Content[12].Quantity -= (1 * prod_batch);
             storage.Content[6].Quantity -= (1 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeE30(prod_batch);
             onMachine = 0;
         }
         #endregion
