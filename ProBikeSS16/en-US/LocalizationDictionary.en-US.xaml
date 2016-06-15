@@ -12,13 +12,22 @@
     <sys:String x:Key="Language">Language</sys:String>
     <sys:String x:Key="LanguageEnglish">English</sys:String>
     <sys:String x:Key="LanguageGerman">German</sys:String>
+
+    <sys:String x:Key="Settings">Einstellungen</sys:String>
+        <sys:String x:Key="ProdCalcSettings">Production Calculation Settings</sys:String>
+            <sys:String x:Key="PartsPrio">Prefabricated Parts(E-Parts) Prioritize</sys:String>
+            <sys:String x:Key="BikePrio">Bikes(P) prioritize</sys:String>
+        <sys:String x:Key="PartSettings">Parts Settings</sys:String>
+            <sys:String x:Key="HighPrio">High Priority</sys:String>
+            <sys:String x:Key="LowPrio">Low Priority</sys:String>
+
     <sys:String x:Key="Manual">Manual</sys:String>
     <sys:String x:Key="Title">ProBike System: Production, Planning and Control</sys:String>
 
     <!-- Localized strings Tabs-->
     <sys:String x:Key="ForecastAndDataImport">Forecasts And XML-Import</sys:String>
-    <sys:String x:Key="DemandManagment">Demand-Managment</sys:String>
-    <sys:String x:Key="QuantityPlanning">Quantity-Planning</sys:String>
+    <sys:String x:Key="DemandManagment">Production-Planing</sys:String>
+    <sys:String x:Key="QuantityPlanning">Supply-Planning</sys:String>
     <sys:String x:Key="CapacityPlanning">Capacity-Planning</sys:String>
     <sys:String x:Key="DataExport">Export XML</sys:String>
 
@@ -52,5 +61,26 @@
     <sys:String x:Key="itemID">Item ID</sys:String>
     <sys:String x:Key="amount">Amount</sys:String>
     <sys:String x:Key="deleteOrder">Delete Order</sys:String>
+    
+    <!-- Localized strings DemandManagement-->
+    <sys:String x:Key="CurrentSalesOpportunitiesToolTip">Current Sales Opportunities</sys:String>
+    <sys:String x:Key="Forecast1SalesOpportunitiesToolTip">Forecast Sales Opportunities +1</sys:String>
+    <sys:String x:Key="Forecast2SalesOpportunitiesToolTip">Forecast Sales Opportunities +2</sys:String>
+    <sys:String x:Key="Forecast3SalesOpportunitiesToolTip">Forecast Sales Opportunities +3</sys:String>
+    <sys:String x:Key="SBP1ToolTip">Safety Stock for Children Bicycle</sys:String>
+    <sys:String x:Key="SBP2ToolTip">Safety Stock for Female Bicycle</sys:String>
+    <sys:String x:Key="SBP3ToolTip">Safety Stock for Male Bicycle</sys:String>
+    <sys:String x:Key="SalesP1ToolTip">Current Sales Opportunities Children Bicycle</sys:String>
+    <sys:String x:Key="SalesP2ToolTip">Current Sales Opportunities Female Bicycle</sys:String>
+    <sys:String x:Key="SalesP3ToolTip">Current Sales Opportunities Male Bicycle</sys:String>
+    <sys:String x:Key="SalesP1+1ToolTip">Forecast Sales Opportunities Children Bicycle</sys:String>
+    <sys:String x:Key="SalesP2+1ToolTip">Forecast Sales Opportunities Female Bicycle</sys:String>
+    <sys:String x:Key="SalesP3+1ToolTip">Forecast Sales Opportunities Male Bicycle</sys:String>
+    <sys:String x:Key="SalesP1+2ToolTip">Forecast Sales Opportunities Children Bicycle</sys:String>
+    <sys:String x:Key="SalesP2+2ToolTip">Forecast Sales Opportunities Female Bicycle</sys:String>
+    <sys:String x:Key="SalesP3+2ToolTip">Forecast Sales Opportunities Male Bicycle</sys:String>
+    <sys:String x:Key="SalesP1+3ToolTip">Forecast Sales Opportunities Children Bicycle</sys:String>
+    <sys:String x:Key="SalesP2+3ToolTip">Forecast Sales Opportunities Female Bicycle</sys:String>
+    <sys:String x:Key="SalesP3+3ToolTip">Forecast Sales Opportunities Male Bicycle</sys:String>
 
 </ResourceDictionary>
