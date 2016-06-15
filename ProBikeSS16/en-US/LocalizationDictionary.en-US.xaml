@@ -12,13 +12,22 @@
     <sys:String x:Key="Language">Language</sys:String>
     <sys:String x:Key="LanguageEnglish">English</sys:String>
     <sys:String x:Key="LanguageGerman">German</sys:String>
+
+    <sys:String x:Key="Settings">Einstellungen</sys:String>
+        <sys:String x:Key="ProdCalcSettings">Production Calculation Settings</sys:String>
+            <sys:String x:Key="PartsPrio">Prefabricated Parts(E-Parts) Prioritize</sys:String>
+            <sys:String x:Key="BikePrio">Bikes(P) prioritize</sys:String>
+        <sys:String x:Key="PartSettings">Parts Settings</sys:String>
+            <sys:String x:Key="HighPrio">High Priority</sys:String>
+            <sys:String x:Key="LowPrio">Low Priority</sys:String>
+
     <sys:String x:Key="Manual">Manual</sys:String>
     <sys:String x:Key="Title">ProBike System: Production, Planning and Control</sys:String>
 
     <!-- Localized strings Tabs-->
     <sys:String x:Key="ForecastAndDataImport">Forecasts And XML-Import</sys:String>
-    <sys:String x:Key="DemandManagment">Demand-Managment</sys:String>
-    <sys:String x:Key="QuantityPlanning">Quantity-Planning</sys:String>
+    <sys:String x:Key="DemandManagment">Production-Planing</sys:String>
+    <sys:String x:Key="QuantityPlanning">Supply-Planning</sys:String>
     <sys:String x:Key="CapacityPlanning">Capacity-Planning</sys:String>
     <sys:String x:Key="DataExport">Export XML</sys:String>
 

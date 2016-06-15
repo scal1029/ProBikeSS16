@@ -26,14 +26,14 @@
                 <MenuItem x:Name="germanHeader" Tag="de-DE" Header="{DynamicResource ResourceKey=LanguageGerman}" IsCheckable="True" IsChecked="True" Click="LanguageHeader_Click"></MenuItem>
                 <MenuItem x:Name="englishHeader" Tag="en-US" Header="{DynamicResource ResourceKey=LanguageEnglish}" IsCheckable="True" IsChecked="False" Click="LanguageHeader_Click"></MenuItem>
             </MenuItem>
-            <MenuItem x:Name="Settings" Header="Settings PH">
-                <MenuItem x:Name="ProdCalcSettings" Header="ProdCalcSettings PH">
-                    <MenuItem x:Name="EarlyPartsFirst" Header="Teile Prio PH" IsCheckable="True" IsChecked="False" Click="ProdCalcSettings_OnClick"></MenuItem>
-                    <MenuItem x:Name="BikesFirst" Header="Bike Prio PH" IsCheckable="True" IsChecked="True" Click="ProdCalcSettings_OnClick"></MenuItem>
+            <MenuItem x:Name="Settings" Header="{DynamicResource ResourceKey=Settings}">
+                <MenuItem x:Name="ProdCalcSettings" Header="{DynamicResource ResourceKey=ProdCalcSettings}">
+                    <MenuItem x:Name="EarlyPartsFirst" Header="{DynamicResource ResourceKey=PartsPrio}" IsCheckable="True" IsChecked="False" Click="ProdCalcSettings_OnClick"></MenuItem>
+                    <MenuItem x:Name="BikesFirst" Header="{DynamicResource ResourceKey=BikePrio}" IsCheckable="True" IsChecked="True" Click="ProdCalcSettings_OnClick"></MenuItem>
                 </MenuItem>
-                <MenuItem x:Name="HighOrLow" Header="HighOrLowSettings PH">
-                    <MenuItem x:Name="High" Header="High Prio PH" IsCheckable="True" IsChecked="False" Click="HighOrLowSettings_OnClick"></MenuItem>
-                    <MenuItem x:Name="Low" Header="Low Prio PH" IsCheckable="True" IsChecked="True" Click="HighOrLowSettings_OnClick"></MenuItem>
+                <MenuItem x:Name="HighOrLow" Header="{DynamicResource ResourceKey=PartSettings}">
+                    <MenuItem x:Name="High" Header="{DynamicResource ResourceKey=HighPrio}" IsCheckable="True" IsChecked="False" Click="HighOrLowSettings_OnClick"></MenuItem>
+                    <MenuItem x:Name="Low" Header="{DynamicResource ResourceKey=LowPrio}" IsCheckable="True" IsChecked="True" Click="HighOrLowSettings_OnClick"></MenuItem>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="{DynamicResource ResourceKey=Help}">
