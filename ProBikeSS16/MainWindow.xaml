@@ -817,7 +817,44 @@
                     </Grid>
                 </TabItem>
                     
-                <TabItem Header="{DynamicResource ResourceKey=DataExport}" Width="145"></TabItem>
+                <TabItem Header="{DynamicResource ResourceKey=DataExport}" Width="145">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="330"></ColumnDefinition>
+                            <ColumnDefinition Width="330"></ColumnDefinition>
+                            <ColumnDefinition Width="330"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="350"></RowDefinition>
+                            <RowDefinition Height="350"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.Column="0" Grid.Row="0" Name="Sellwish" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False"></DataGrid>
+                        <DataGrid Grid.Column="1" Grid.Row="0" Name="Selldirect" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False"></DataGrid>
+                        <DataGrid Grid.Column="2" Grid.Row="0" Name="Orderlist" ItemsSource="{Binding}" Margin="10,60,10,10"></DataGrid>
+                        <DataGrid Grid.Column="0" Grid.Row="1" Name="Productionlist" ItemsSource="{Binding}" Margin="10,60,10,10"></DataGrid>
+                        <!--<DataGrid Grid.Column="1" Grid.Row="1" Name="Workingtimelist" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False" PreviewTextInput="Workingtimelist_PreviewTextInput"></DataGrid>-->
+                        <DataGrid Grid.Column="1" Grid.Row="1" ItemsSource="{Binding}" Name="Workingtimelist" AutoGenerateColumns="False" Margin="10,60,10,10" CanUserAddRows="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Width="50" Header="Station" Binding="{Binding station}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="Shift" Width="120">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding shift}" MaxLength="1" PreviewTextInput="TextBox_PreviewTextInput1to3" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Overtime" Width="*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding overtime}" PreviewTextInput="TextBox_PreviewTextInput1to240" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Grid.Column="2" Grid.Row="1" Height="100" Width="200" Content="XML-Export" FontSize="30" Click="ButtonBase_OnClick"></Button>
+                    </Grid>
+                </TabItem>
                 <TabItem Header="DC" Width="50"></TabItem>
             </TabControl>
         </Grid>

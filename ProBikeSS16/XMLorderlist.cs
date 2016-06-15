@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace ProBikeSS16
 {
-    class XMLsellwish
+    class XMLorderlist
     {
         public int article;
         public int quantity;
+        public int modus;
 
-        public XMLsellwish(int a, int q)
+        public XMLorderlist(int a, int q, int m)
         {
             article = a;
             quantity = q;
+            modus = m;
         }
     }
 }

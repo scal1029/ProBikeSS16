@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
+using System.Collections.ObjectModel;
 using System.Xml.Linq;
 using ProBikeSS16;
 using Xceed.Wpf.Toolkit;
@@ -177,6 +178,21 @@ namespace ProBikeSS16
             ChildBikeOrderP1.Text = GlobalVariables.SaleChildBikeN.ToString();
             FemaleBikeOrderP2.Text = GlobalVariables.SaleFemaleBikeN.ToString();
             MaleBikeOrderP3.Text = GlobalVariables.SaleMaleBikeN.ToString();
+
+            DataTable Prognose = new DataTable();
+            Prognose.Clear();
+            if(!Prognose.Columns.Contains("article"))
+            {
+                Prognose.Columns.Add("article", typeof(int));
+                Prognose.Columns.Add("quantity", typeof(int));
+            }
+
+            Prognose.Rows.Add(1, GlobalVariables.SaleChildBikeN);
+            Prognose.Rows.Add(2, GlobalVariables.SaleFemaleBikeN);
+            Prognose.Rows.Add(3, GlobalVariables.SaleMaleBikeN);
+
+            Sellwish.DataContext = Prognose.DefaultView;
+
             //Geplanter Sicherheitsbestand
             #region SafetyStock
             //P1
@@ -3064,6 +3080,22 @@ namespace ProBikeSS16
 
             //Produktionsauftragsliste erstellen(ohne in Bearbeitung und Warteschlange)
             GridProductionOrders.DataContext = GlobalVariables.dtProdOrder.DefaultView;
+
+            DataTable ProdAufträge = new DataTable();
+            ProdAufträge.Clear();
+            if (!ProdAufträge.Columns.Contains("article"))
+            {
+                ProdAufträge.Columns.Add("article", typeof(int));
+                ProdAufträge.Columns.Add("quantity", typeof(int));
+            }
+
+            
+            foreach (DataRowView Row in GlobalVariables.dtProdOrder.DefaultView)
+            {
+                ProdAufträge.Rows.Add(int.Parse(Row[0].ToString()), int.Parse(Row[1].ToString()));
+            }
+            Productionlist.DataContext = ProdAufträge.DefaultView;
+
             #endregion DataTable
             GlobalVariables.ProduktionsAufträgeAktuellePeriode.Clear();
             foreach (DataRow Produktionsauftrag in GlobalVariables.dtProdOrder.Rows)
@@ -3244,11 +3276,35 @@ namespace ProBikeSS16
                 Console.WriteLine("Lager Vorher Artikel: " + VARIABLE.Key + " Menge: " + VARIABLE.Value);
             }
 
-            Simulation test = new Simulation();
-            while (!test.SimuVersuch3(GlobalVariables.ProduktionsAufträgeAktuellePeriode, GlobalVariables.Lagerstand, ref GlobalVariables.AlleArbeitsplätze))
+            //TODO!!! = Kappa befüllen
+            DataTable Kapaza = new DataTable();
+            Kapaza.Clear();
+            
+
+            
+            if (!Kapaza.Columns.Contains("station"))
             {
-                
+                Kapaza.Columns.Add("station", typeof(int));
+                Kapaza.Columns.Add("shift", typeof(int));
+                Kapaza.Columns.Add("overtime", typeof(int));
             }
+
+
+
+            Workingtimelist.DataContext = Kapaza;
+            Workingtimelist.ItemsSource = Kapaza.DefaultView;
+
+            for (int i=1; i < 16; i++)
+            {
+                if(i != 5)
+                    Kapaza.Rows.Add(i, 1, 0);
+
+            }
+
+            
+
+
+
 
             foreach (KeyValuePair<int, int> VARIABLE in GlobalVariables.Lagerstand)
             {
@@ -4173,6 +4229,41 @@ namespace ProBikeSS16
         }
 
 
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            List<XMLsellwish> VerkäufeImport = new List<XMLsellwish>();
+            List<XMLselldirect> DirektVerkäufe = new List<XMLselldirect>();
+            List<XMLorderlist> Bestellungen = new List<XMLorderlist>();
+            List<XMLproductionlist> Aufträge = new List<XMLproductionlist>();
+            List<XMLworkingtimelist> Schichten = new List<XMLworkingtimelist>();
 
+            foreach (System.Data.DataRowView dr in Sellwish.ItemsSource)
+                {
+                if(dr[0] != DBNull.Value && dr[1] != DBNull.Value)
+                    VerkäufeImport.Add(new XMLsellwish((int)dr[0],(int)dr[1]));
+                }
+
+
+
+
+            XMLExport Ende = new XMLExport();
+            Ende.XMLExportReal(VerkäufeImport, null, null, null, null);
+
+        }
+
+        private void Workingtimelist_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void TextBox_PreviewTextInput1to3(object sender, TextCompositionEventArgs e)
+        {
+                e.Handled = new Regex("[^1-3]{1}").IsMatch(e.Text);
+        }
+
+        private void TextBox_PreviewTextInput1to240(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^1-3]{1}").IsMatch(e.Text);
+        }
     }
 }
