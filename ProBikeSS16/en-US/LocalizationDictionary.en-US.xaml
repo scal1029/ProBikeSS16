@@ -26,8 +26,8 @@
 
     <!-- Localized strings Tabs-->
     <sys:String x:Key="ForecastAndDataImport">Forecasts And XML-Import</sys:String>
-    <sys:String x:Key="DemandManagment">Demand-Managment</sys:String>
-    <sys:String x:Key="QuantityPlanning">Quantity-Planning</sys:String>
+    <sys:String x:Key="DemandManagment">Production-Planing</sys:String>
+    <sys:String x:Key="QuantityPlanning">Supply-Planning</sys:String>
     <sys:String x:Key="CapacityPlanning">Capacity-Planning</sys:String>
     <sys:String x:Key="DataExport">Export XML</sys:String>
 

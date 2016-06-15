@@ -26,8 +26,8 @@
 
     <!-- Localized strings Tabs-->
     <sys:String x:Key="ForecastAndDataImport">Prognosen und XML-Import</sys:String>
-    <sys:String x:Key="DemandManagment">Programmplannung</sys:String>
-    <sys:String x:Key="QuantityPlanning">Mengenplannung</sys:String>
+    <sys:String x:Key="DemandManagment">Produktionsplanung</sys:String>
+    <sys:String x:Key="QuantityPlanning">Beschaffungsplanung</sys:String>
     <sys:String x:Key="CapacityPlanning">Kapazitätsplannung</sys:String>
     <sys:String x:Key="DataExport">XML exportieren</sys:String>
     
