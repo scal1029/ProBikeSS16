@@ -2,14 +2,12 @@
 {
     class WP_10 : Workplace
     {
-        int order_d11_1_p1;
-        int order_d11_2_p1;
-        int order_d11_1_p2;
-        int order_d11_2_p2;
-        int order_d11_1_p3;
-        int order_d11_2_p3;
-        int cur_prod = 0;
-        int onMachine = 0;
+        static int order_d11_1_p1;
+        static int order_d11_2_p1;
+        static int order_d11_1_p2;
+        static int order_d11_2_p2;
+        static int order_d11_1_p3;
+        static int order_d11_2_p3;
 
         #region Getter/Setter
         public int ProdTimed11_1_p1
@@ -122,7 +120,12 @@
         {
 
         }
-        
+
+        public override void fillProductionOrders()
+        {
+
+        }
+
         #region Production D11 1 P1
         public void produce_one_batch_d11_1_p1()
         {
@@ -313,5 +316,15 @@
             return 36 * k535834;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nOrder D11_1_p1: " + order_d11_1_p1
+                + "\nOrder D11_2_p1: " + order_d11_2_p1
+                + "\nOrder D11_1_p2: " + order_d11_1_p2
+                + "\nOrder D11_2_p2: " + order_d11_2_p2
+                + "\nOrder D11_1_p3: " + order_d11_1_p3
+                + "\nOrder D11_2_p3: " + order_d11_2_p3;
+        }
     }
 }

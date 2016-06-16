@@ -1,16 +1,18 @@
-﻿namespace ProBikeSS16.Workplaces
+﻿using System.Text;
+
+namespace ProBikeSS16.Workplaces
 {
     class WP_8 : Workplace
     {
-        int order_d7_1_p1 = 0;
-        int order_d7_2_p1 = 0;
-        int order_d7_3_p1 = 0;
-        int order_d7_1_p2 = 0;
-        int order_d7_2_p2 = 0;
-        int order_d7_3_p2 = 0;
-        int order_d7_1_p3 = 0;
-        int order_d7_2_p3 = 0;
-        int order_d7_3_p3 = 0;
+        static int order_d7_1_p1 = 0;
+        static int order_d7_2_p1 = 0;
+        static int order_d7_3_p1 = 0;
+        static int order_d7_1_p2 = 0;
+        static int order_d7_2_p2 = 0;
+        static int order_d7_3_p2 = 0;
+        static int order_d7_1_p3 = 0;
+        static int order_d7_2_p3 = 0;
+        static int order_d7_3_p3 = 0;
 
         #region Getter/Setter
         public int ProdTimeD7_1_p1
@@ -166,6 +168,123 @@
                 return NeedOfD6(order_d7_3_p3);
             }
         }
+
+        public static int Order_d7_1_p1
+        {
+            get
+            {
+                return order_d7_1_p1;
+            }
+
+            set
+            {
+                order_d7_1_p1 = value;
+            }
+        }
+
+        public static int Order_d7_2_p1
+        {
+            get
+            {
+                return order_d7_2_p1;
+            }
+
+            set
+            {
+                order_d7_2_p1 = value;
+            }
+        }
+
+        public static int Order_d7_3_p1
+        {
+            get
+            {
+                return order_d7_3_p1;
+            }
+
+            set
+            {
+                order_d7_3_p1 = value;
+            }
+        }
+
+        public static int Order_d7_1_p2
+        {
+            get
+            {
+                return order_d7_1_p2;
+            }
+
+            set
+            {
+                order_d7_1_p2 = value;
+            }
+        }
+
+        public static int Order_d7_2_p2
+        {
+            get
+            {
+                return order_d7_2_p2;
+            }
+
+            set
+            {
+                order_d7_2_p2 = value;
+            }
+        }
+
+        public static int Order_d7_3_p2
+        {
+            get
+            {
+                return order_d7_3_p2;
+            }
+
+            set
+            {
+                order_d7_3_p2 = value;
+            }
+        }
+
+        public static int Order_d7_1_p3
+        {
+            get
+            {
+                return order_d7_1_p3;
+            }
+
+            set
+            {
+                order_d7_1_p3 = value;
+            }
+        }
+
+        public static int Order_d7_2_p3
+        {
+            get
+            {
+                return order_d7_2_p3;
+            }
+
+            set
+            {
+                order_d7_2_p3 = value;
+            }
+        }
+
+        public static int Order_d7_3_p3
+        {
+            get
+            {
+                return order_d7_3_p3;
+            }
+
+            set
+            {
+                order_d7_3_p3 = value;
+            }
+        }
         #endregion
 
         public WP_8(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo = 1, double overTimeToDo = 0) 
@@ -173,7 +292,9 @@
         {
 
         }
-        
+
+        public override void fillProductionOrders() { }
+
         #region Production d7_1_p1
         public void produce_one_batch_d7_1_p1()
         {
@@ -500,5 +621,23 @@
             return 1 * d7Val;
         }
         #endregion
+
+        public override string ToString()
+        {
+            StringBuilder s = new StringBuilder();
+
+            s.Append(base.ToString());
+            s.AppendLine("\nOrder d7_1_p1: " + Order_d7_1_p1);
+            s.AppendLine("\nOrder d7_2_p1: " + Order_d7_2_p1);
+            s.AppendLine("\nOrder d7_3_p1: " + Order_d7_3_p1);
+            s.AppendLine("\nOrder d7_1_p2: " + Order_d7_1_p2);
+            s.AppendLine("\nOrder d7_2_p2: " + Order_d7_2_p2);
+            s.AppendLine("\nOrder d7_3_p2: " + Order_d7_3_p2);
+            s.AppendLine("\nOrder d7_1_p3: " + Order_d7_1_p3);
+            s.AppendLine("\nOrder d7_2_p3: " + Order_d7_2_p3);
+            s.AppendLine("\nOrder d7_3_p3: " + Order_d7_3_p3);
+
+            return s.ToString(); ;
+        }
     }
 }

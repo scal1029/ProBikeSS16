@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace ProBikeSS16
 {
-    class Workplace
+    abstract class Workplace
     {
         int id;
         double wage = 0, var_machineCosts, fix_machineCosts;
@@ -139,7 +139,7 @@ namespace ProBikeSS16
         }
         #endregion
 
-        public Workplace(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo=1, double overTimeToDo=0)
+        protected Workplace(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo=1, double overTimeToDo=0)
         {
             #region Guardians
             if (id > Constants.MAX_WORKPLACES)
@@ -160,6 +160,8 @@ namespace ProBikeSS16
 
             Debug.WriteLine("Created Workplace: " + id);
         }
+
+        public abstract void fillProductionOrders();
 
         public override string ToString()
         {

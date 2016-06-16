@@ -3,10 +3,8 @@
     class WP_15 : Workplace
     {
 
-        int order_E17 = 0;
-        int order_E26 = 0;
-        int cur_prod = 0;
-        int onMachine = 0;
+        static int order_E17 = 0;
+        static int order_E26 = 0;
 
         #region Getter/Setter
         public int ProdTimeE17
@@ -103,9 +101,15 @@
         public WP_15(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo = 1, double overTimeToDo = 0) 
             : base(id, var_machineCosts, fix_machineCosts, shiftsToDo, overTimeToDo)
         {
-
+            fillProductionOrders();
         }
-        
+
+        public override void fillProductionOrders()
+        {
+            Order_E17 = GlobalVariables.E17Produktionsauftrag;
+            Order_E26 = GlobalVariables.E26Produktionsauftrag;
+        }
+
         #region Production E17
         public void produce_one_bath_e17()
         {
@@ -209,5 +213,11 @@
             return 1 * k47Val;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nOrder E17: " + Order_E17
+                + "\nOrder E26: " + Order_E26;
+        }
     }
 }
