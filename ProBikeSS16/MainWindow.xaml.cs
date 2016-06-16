@@ -3079,7 +3079,24 @@ namespace ProBikeSS16
 
 
             //Produktionsauftragsliste erstellen(ohne in Bearbeitung und Warteschlange)
-            GridProductionOrders.DataContext = GlobalVariables.dtProdOrder.DefaultView;
+
+
+            GlobalVariables.Aussortierung.Clear();
+            if (!GlobalVariables.Aussortierung.Columns.Contains("Item"))
+                GlobalVariables.Aussortierung.Columns.Add("Item");
+            if (!GlobalVariables.Aussortierung.Columns.Contains("Amount"))
+                GlobalVariables.Aussortierung.Columns.Add("Amount");
+
+            foreach (DataRow Row in GlobalVariables.dtProdOrder.Rows)
+            {
+                if(Row[0] != DBNull.Value && int.Parse((string)Row[1]) != 0)
+                {
+                    GlobalVariables.Aussortierung.Rows.Add(Row[0], Row[1]);
+                }
+            }
+
+
+            GridProductionOrders.DataContext = GlobalVariables.Aussortierung.DefaultView;
 
             DataTable ProdAufträge = new DataTable();
             ProdAufträge.Clear();
@@ -3094,7 +3111,8 @@ namespace ProBikeSS16
             {
                 ProdAufträge.Rows.Add(int.Parse(Row[0].ToString()), int.Parse(Row[1].ToString()));
             }
-            Productionlist.DataContext = ProdAufträge.DefaultView;
+            //alt: Productionlist.DataContext = ProdAufträge.DefaultView;
+            Productionlist.DataContext = GridProductionOrders.DataContext;
 
             #endregion DataTable
             GlobalVariables.ProduktionsAufträgeAktuellePeriode.Clear();
@@ -3319,7 +3337,7 @@ namespace ProBikeSS16
             //    Console.WriteLine("Arbeitsplatz " + A.Value.ID.ToString() + " Arbeitszeit: " + A.Value.ArbeitszeitProTagInMinuten.ToString());
             //}
 
-
+            #region direktverkäufe
             //Direktverkäufe vorbereiten
             DataTable DirektverkäufeAnfang = new DataTable();
             if (!DirektverkäufeAnfang.Columns.Contains("article"))
@@ -3337,8 +3355,9 @@ namespace ProBikeSS16
 
             Selldirect.DataContext = DirektverkäufeAnfang;
             Selldirect.ItemsSource = DirektverkäufeAnfang.DefaultView;
+            #endregion direktverkäufe
 
-
+            #region bestellungsplannung
             //Bestellungsplannung
             DataTable Bestellungsplannung = new DataTable();
             if (!Bestellungsplannung.Columns.Contains("Teil"))
@@ -3407,7 +3426,7 @@ namespace ProBikeSS16
                 Console.WriteLine("Vergangenheit: " + DR[0].ToString() + " Artikel: " + DR[1].ToString() + " Menge: " + DR[2].ToString());
             }
 
-            DataRow[] results3 = new DataRow[4];
+
 
 
             DataTable Bestellungsliste = new DataTable();
@@ -4291,8 +4310,8 @@ namespace ProBikeSS16
             double T34LZ = 1.6;
             double T34AB = 0.3;
             double T34E = 1.6 / 2;
-            int BruttoT34P1 = ((GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 0)
-                + ((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 72)
+            int BruttoT34P1 = ((GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 72)
+                + ((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 0)
                 + ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 0);
             int BruttoT34P2 = GlobalVariables.SaleChildBikeN1.Value * 72 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
             int BruttoT34P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
@@ -6184,6 +6203,8 @@ namespace ProBikeSS16
             BestellungslisteZu.DataContext = Bestellungsliste;
             BestellungslisteZu.ItemsSource = Bestellungsliste.DefaultView;
 
+            #endregion bestellungsplannung
+
             Orderlist.DataContext = BestellungslisteZu.DataContext;
             Orderlist.ItemsSource = BestellungslisteZu.ItemsSource;
 
@@ -6538,6 +6559,3364 @@ namespace ProBikeSS16
                                                     GlobalVariables.P2E26Produktionsauftrag +
                                                     GlobalVariables.P3E26Produktionsauftrag;
             #endregion RepeatProgrammplannungKalkulation
+
+            #region DataTable
+
+            GlobalVariables.dtProdOrder.Clear();
+            if (!GlobalVariables.dtProdOrder.Columns.Contains("Item"))
+                GlobalVariables.dtProdOrder.Columns.Add("Item");
+            if (!GlobalVariables.dtProdOrder.Columns.Contains("Amount"))
+                GlobalVariables.dtProdOrder.Columns.Add("Amount");
+
+            //Enter all Rows
+            DataRow P1P = GlobalVariables.dtProdOrder.NewRow();
+            P1P["Item"] = "1";
+            if (int.Parse(ChildBikePlannedProductionP1.Text) > 0)
+                P1P["Amount"] = int.Parse(ChildBikePlannedProductionP1.Text);
+            else
+                P1P["Amount"] = 0;
+
+            DataRow P2P = GlobalVariables.dtProdOrder.NewRow();
+            P2P["Item"] = "2";
+            if (int.Parse(FemaleBikePlannedProductionP2.Text) > 0)
+                P2P["Amount"] = int.Parse(FemaleBikePlannedProductionP2.Text);
+            else
+                P2P["Amount"] = 0;
+
+            DataRow P3P = GlobalVariables.dtProdOrder.NewRow();
+            P3P["Item"] = "3";
+            if (int.Parse(MaleBikePlannedProductionP3.Text) > 0)
+                P3P["Amount"] = int.Parse(MaleBikePlannedProductionP3.Text);
+            else
+                P3P["Amount"] = 0;
+
+            DataRow E26P = GlobalVariables.dtProdOrder.NewRow();
+            E26P["Item"] = "26";
+            if (int.Parse(GlobalVariables.E26Produktionsauftrag.ToString()) > 0)
+                E26P["Amount"] = GlobalVariables.E26Produktionsauftrag;
+            else
+                E26P["Amount"] = 0;
+
+            DataRow E16P = GlobalVariables.dtProdOrder.NewRow();
+            E16P["Item"] = "16";
+            if (int.Parse(GlobalVariables.E16Produktionsauftrag.ToString()) > 0)
+                E16P["Amount"] = GlobalVariables.E16Produktionsauftrag;
+            else
+                E16P["Amount"] = 0;
+
+            DataRow E17P = GlobalVariables.dtProdOrder.NewRow();
+            E17P["Item"] = "17";
+            if (int.Parse(GlobalVariables.E17Produktionsauftrag.ToString()) > 0)
+                E17P["Amount"] = GlobalVariables.E17Produktionsauftrag;
+            else
+                E17P["Amount"] = 0;
+
+            DataRow E51P = GlobalVariables.dtProdOrder.NewRow();
+            E51P["Item"] = "51";
+            if (int.Parse(GlobalVariables.E51Produktionsauftrag.ToString()) > 0)
+                E51P["Amount"] = GlobalVariables.E51Produktionsauftrag;
+            else
+                E51P["Amount"] = 0;
+
+            DataRow E56P = GlobalVariables.dtProdOrder.NewRow();
+            E56P["Item"] = "56";
+            if (int.Parse(GlobalVariables.E56Produktionsauftrag.ToString()) > 0)
+                E56P["Amount"] = GlobalVariables.E56Produktionsauftrag;
+            else
+                E56P["Amount"] = 0;
+
+            DataRow E31P = GlobalVariables.dtProdOrder.NewRow();
+            E31P["Item"] = "31";
+            if (int.Parse(GlobalVariables.E31Produktionsauftrag.ToString()) > 0)
+                E31P["Amount"] = GlobalVariables.E31Produktionsauftrag;
+            else
+                E31P["Amount"] = 0;
+
+            DataRow E50P = GlobalVariables.dtProdOrder.NewRow();
+            E50P["Item"] = "50";
+            if (int.Parse(GlobalVariables.E50Produktionsauftrag.ToString()) > 0)
+                E50P["Amount"] = GlobalVariables.E50Produktionsauftrag;
+            else
+                E50P["Amount"] = 0;
+
+            DataRow E55P = GlobalVariables.dtProdOrder.NewRow();
+            E55P["Item"] = "55";
+            if (int.Parse(GlobalVariables.E55Produktionsauftrag.ToString()) > 0)
+                E55P["Amount"] = GlobalVariables.E55Produktionsauftrag;
+            else
+                E55P["Amount"] = 0;
+
+            DataRow E30P = GlobalVariables.dtProdOrder.NewRow();
+            E30P["Item"] = "30";
+            if (int.Parse(GlobalVariables.E30Produktionsauftrag.ToString()) > 0)
+                E30P["Amount"] = GlobalVariables.E30Produktionsauftrag;
+            else
+                E30P["Amount"] = 0;
+
+            DataRow E49P = GlobalVariables.dtProdOrder.NewRow();
+            E49P["Item"] = "49";
+            if (int.Parse(GlobalVariables.E49Produktionsauftrag.ToString()) > 0)
+                E49P["Amount"] = GlobalVariables.E49Produktionsauftrag;
+            else
+                E49P["Amount"] = 0;
+
+            DataRow E54P = GlobalVariables.dtProdOrder.NewRow();
+            E54P["Item"] = "54";
+            if (int.Parse(GlobalVariables.E54Produktionsauftrag.ToString()) > 0)
+                E54P["Amount"] = GlobalVariables.E54Produktionsauftrag;
+            else
+                E54P["Amount"] = 0;
+
+            DataRow E29P = GlobalVariables.dtProdOrder.NewRow();
+            E29P["Item"] = "29";
+            if (int.Parse(GlobalVariables.E29Produktionsauftrag.ToString()) > 0)
+                E29P["Amount"] = GlobalVariables.E29Produktionsauftrag;
+            else
+                E29P["Amount"] = 0;
+
+            DataRow E18P = GlobalVariables.dtProdOrder.NewRow();
+            E18P["Item"] = "18";
+            if (int.Parse(GlobalVariables.E18Produktionsauftrag.ToString()) > 0)
+                E18P["Amount"] = GlobalVariables.E18Produktionsauftrag;
+            else
+                E18P["Amount"] = 0;
+
+            DataRow E19P = GlobalVariables.dtProdOrder.NewRow();
+            E19P["Item"] = "19";
+            if (int.Parse(GlobalVariables.E19Produktionsauftrag.ToString()) > 0)
+                E19P["Amount"] = GlobalVariables.E19Produktionsauftrag;
+            else
+                E19P["Amount"] = 0;
+
+            DataRow E20P = GlobalVariables.dtProdOrder.NewRow();
+            E20P["Item"] = "20";
+            if (int.Parse(GlobalVariables.E20Produktionsauftrag.ToString()) > 0)
+                E20P["Amount"] = GlobalVariables.E20Produktionsauftrag;
+            else
+                E20P["Amount"] = 0;
+
+            DataRow E13P = GlobalVariables.dtProdOrder.NewRow();
+            E13P["Item"] = "13";
+            if (int.Parse(GlobalVariables.E13Produktionsauftrag.ToString()) > 0)
+                E13P["Amount"] = GlobalVariables.E13Produktionsauftrag;
+            else
+                E13P["Amount"] = 0;
+
+            DataRow E14P = GlobalVariables.dtProdOrder.NewRow();
+            E14P["Item"] = "14";
+            if (int.Parse(GlobalVariables.E14Produktionsauftrag.ToString()) > 0)
+                E14P["Amount"] = GlobalVariables.E14Produktionsauftrag;
+            else
+                E14P["Amount"] = 0;
+
+            DataRow E15P = GlobalVariables.dtProdOrder.NewRow();
+            E15P["Item"] = "15";
+            if (int.Parse(GlobalVariables.E15Produktionsauftrag.ToString()) > 0)
+                E15P["Amount"] = GlobalVariables.E15Produktionsauftrag;
+            else
+                E15P["Amount"] = 0;
+
+            DataRow E10P = GlobalVariables.dtProdOrder.NewRow();
+            E10P["Item"] = "10";
+            if (int.Parse(GlobalVariables.E10Produktionsauftrag.ToString()) > 0)
+                E10P["Amount"] = GlobalVariables.E10Produktionsauftrag;
+            else
+                E10P["Amount"] = 0;
+
+            DataRow E11P = GlobalVariables.dtProdOrder.NewRow();
+            E11P["Item"] = "11";
+            if (int.Parse(GlobalVariables.E11Produktionsauftrag.ToString()) > 0)
+                E11P["Amount"] = GlobalVariables.E11Produktionsauftrag;
+            else
+                E11P["Amount"] = 0;
+
+            DataRow E12P = GlobalVariables.dtProdOrder.NewRow();
+            E12P["Item"] = "12";
+            if (int.Parse(GlobalVariables.E12Produktionsauftrag.ToString()) > 0)
+                E12P["Amount"] = GlobalVariables.E12Produktionsauftrag;
+            else
+                E12P["Amount"] = 0;
+
+            DataRow E7P = GlobalVariables.dtProdOrder.NewRow();
+            E7P["Item"] = "7";
+            if (int.Parse(GlobalVariables.E7Produktionsauftrag.ToString()) > 0)
+                E7P["Amount"] = GlobalVariables.E7Produktionsauftrag;
+            else
+                E7P["Amount"] = 0;
+
+            DataRow E8P = GlobalVariables.dtProdOrder.NewRow();
+            E8P["Item"] = "8";
+            if (int.Parse(GlobalVariables.E8Produktionsauftrag.ToString()) > 0)
+                E8P["Amount"] = GlobalVariables.E8Produktionsauftrag;
+            else
+                E8P["Amount"] = 0;
+
+            DataRow E9P = GlobalVariables.dtProdOrder.NewRow();
+            E9P["Item"] = "9";
+            if (int.Parse(GlobalVariables.E9Produktionsauftrag.ToString()) > 0)
+                E9P["Amount"] = GlobalVariables.E9Produktionsauftrag;
+            else
+                E9P["Amount"] = 0;
+
+            DataRow E4P = GlobalVariables.dtProdOrder.NewRow();
+            E4P["Item"] = "4";
+            if (int.Parse(GlobalVariables.E4Produktionsauftrag.ToString()) > 0)
+                E4P["Amount"] = GlobalVariables.E4Produktionsauftrag;
+            else
+                E4P["Amount"] = 0;
+
+            DataRow E5P = GlobalVariables.dtProdOrder.NewRow();
+            E5P["Item"] = "5";
+            if (int.Parse(GlobalVariables.E5Produktionsauftrag.ToString()) > 0)
+                E5P["Amount"] = GlobalVariables.E5Produktionsauftrag;
+            else
+                E5P["Amount"] = 0;
+
+            DataRow E6P = GlobalVariables.dtProdOrder.NewRow();
+            E6P["Item"] = "6";
+            if (int.Parse(GlobalVariables.E6Produktionsauftrag.ToString()) > 0)
+                E6P["Amount"] = GlobalVariables.E6Produktionsauftrag;
+            else
+                E6P["Amount"] = 0;
+
+
+            #endregion wut
+
+            #region DataTable
+
+            
+            if (!GlobalVariables.dtProdOrder.Columns.Contains("Item"))
+                GlobalVariables.dtProdOrder.Columns.Add("Item");
+            if (!GlobalVariables.dtProdOrder.Columns.Contains("Amount"))
+                GlobalVariables.dtProdOrder.Columns.Add("Amount");
+
+
+            GlobalVariables.Aussortierung.Clear();
+            if (!GlobalVariables.Aussortierung.Columns.Contains("Item"))
+                GlobalVariables.Aussortierung.Columns.Add("Item");
+            if (!GlobalVariables.Aussortierung.Columns.Contains("Amount"))
+                GlobalVariables.Aussortierung.Columns.Add("Amount");
+
+            foreach (DataRow Row in GlobalVariables.dtProdOrder.Rows)
+            {
+                if (Row[0] != DBNull.Value && int.Parse((string)Row[1]) != 0)
+                {
+                    GlobalVariables.Aussortierung.Rows.Add(Row[0], Row[1]);
+                }
+            }
+
+
+            GridProductionOrders.DataContext = GlobalVariables.Aussortierung.DefaultView;
+
+
+
+
+            List<DataRow> P1P2P3 = new List<DataRow> { P1P, P2P, P3P };
+            List<DataRow> E51E56E31 = new List<DataRow> { E51P, E56P, E31P };
+            List<DataRow> E50E55E30 = new List<DataRow> { E50P, E55P, E30P };
+            List<DataRow> E49E54E29 = new List<DataRow> { E49P, E54P, E29P };
+
+            List<DataRow> E18E19E20 = new List<DataRow> { E18P, E19P, E20P };
+            List<DataRow> E16E17 = new List<DataRow> { E16P, E17P };
+
+            List<DataRow> E13E14E15 = new List<DataRow> { E13P, E14P, E15P };
+            List<DataRow> E10E11E12 = new List<DataRow> { E10P, E11P, E12P };
+            List<DataRow> E7E8E9 = new List<DataRow> { E7P, E8P, E9P };
+            List<DataRow> E4E5E6 = new List<DataRow> { E4P, E5P, E6P };
+
+
+
+            //Order Rows according to Settings
+            #region Order
+            if (BikesFirst.IsChecked)
+            {
+                if (High.IsChecked)
+                {
+                    var R123 = P1P2P3.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R123)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R515631 = E51E56E31.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R515631)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R505530 = E50E55E30.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R505530)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R495429 = E49E54E29.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R495429)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    GlobalVariables.dtProdOrder.Rows.Add(E26P);
+                    var R181920 = E18E19E20.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R181920)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R16R17 = E16E17.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R16R17)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R131415 = E13E14E15.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R131415)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R101112 = E10E11E12.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R101112)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R789 = E7E8E9.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R789)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R456 = E4E5E6.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R456)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+
+                }
+                else
+                {
+                    var R123 = P1P2P3.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R123)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R515631 = E51E56E31.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R515631)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R505530 = E50E55E30.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R505530)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R495429 = E49E54E29.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R495429)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    GlobalVariables.dtProdOrder.Rows.Add(E26P);
+                    var R181920 = E18E19E20.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R181920)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R16R17 = E16E17.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R16R17)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R131415 = E13E14E15.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R131415)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R101112 = E10E11E12.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R101112)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R789 = E7E8E9.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R789)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R456 = E4E5E6.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R456)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                }
+            }
+            else
+            {
+                if (High.IsChecked)
+                {
+                    var R456 = E4E5E6.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R456)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R789 = E7E8E9.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R789)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R101112 = E10E11E12.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R101112)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R131415 = E13E14E15.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R131415)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R16R17 = E16E17.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R16R17)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R181920 = E18E19E20.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R181920)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    GlobalVariables.dtProdOrder.Rows.Add(E26P);
+                    var R495429 = E49E54E29.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R495429)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R505530 = E50E55E30.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R505530)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R515631 = E51E56E31.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R515631)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R123 = P1P2P3.OrderByDescending(itemArray => itemArray[1]);
+                    foreach (DataRow x in R123)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                }
+                else
+                {
+                    var R456 = E4E5E6.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R456)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R789 = E7E8E9.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R789)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R101112 = E10E11E12.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R101112)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R131415 = E13E14E15.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R131415)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R16R17 = E16E17.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R16R17)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R181920 = E18E19E20.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R181920)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    GlobalVariables.dtProdOrder.Rows.Add(E26P);
+                    var R495429 = E49E54E29.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R495429)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R505530 = E50E55E30.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R505530)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R515631 = E51E56E31.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R515631)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                    var R123 = P1P2P3.OrderBy(itemArray => itemArray[1]);
+                    foreach (DataRow x in R123)
+                    {
+                        GlobalVariables.dtProdOrder.Rows.Add(x);
+                    }
+                }
+            }
+            #endregion Ordering
+            #endregion Ordering2
+
+
+            ////Umwandlung Tabelle Lager zu Dictionary
+            GlobalVariables.Lagerstand.Clear();
+            foreach (DataRow Row in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].Rows)
+            {
+                GlobalVariables.Lagerstand.Add(int.Parse((string)Row[0]), int.Parse((string)Row[1]));
+            }
+
+            Dictionary<int, int> LagerZuBeginn = ObjectCopier.Clone(GlobalVariables.Lagerstand);
+
+            #region bestellungsplannung
+            //Bestellungsplannung
+            DataTable Bestellungsplannung = new DataTable();
+            if (!Bestellungsplannung.Columns.Contains("Teil"))
+            {
+                Bestellungsplannung.Columns.Add("Teil");
+                Bestellungsplannung.Columns.Add("Lagerbestand");
+                Bestellungsplannung.Columns.Add("Brutto Periode n");
+                Bestellungsplannung.Columns.Add("Brutto Periode n+1");
+                Bestellungsplannung.Columns.Add("Brutto Periode n+2");
+                Bestellungsplannung.Columns.Add("Brutto Periode n+3");
+                Bestellungsplannung.Columns.Add("Bestellung Periode n");
+                Bestellungsplannung.Columns.Add("Bestellung Periode n+1");
+                Bestellungsplannung.Columns.Add("Bestellung Periode n+2");
+                Bestellungsplannung.Columns.Add("Bestellung Periode n+3");
+            }
+            Bestellungsplannung.Clear();
+
+
+            DataRow result2 = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["results"].Rows[0];
+            int AktuellePeriode = int.Parse(result2["period"].ToString());
+
+            DataTable AlteBestellungen = new DataTable();
+            if (!AlteBestellungen.Columns.Contains("item"))
+            {
+                AlteBestellungen.Columns.Add("Vergangenheit", typeof(int));
+                AlteBestellungen.Columns.Add("item", typeof(int));
+                AlteBestellungen.Columns.Add("Menge", typeof(int));
+                AlteBestellungen.Columns.Add("Modus", typeof(int));
+            }
+            AlteBestellungen.Clear();
+            string B1;
+            string B2;
+            string B3;
+            string B4;
+            int B11;
+            int B22;
+            int B33;
+            int B44;
+            if (GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables.Contains("order"))
+            {
+                foreach (DataRow DR in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["order"].Rows)
+                {
+
+                    if (GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["order"].Columns.Contains("futureinwardstockmovement_Id"))
+                    {
+                        if (DR["futureinwardstockmovement_Id"] != DBNull.Value)
+                        {
+                            B1 = DR["orderperiod"].ToString();
+                            B11 = int.Parse(B1) - AktuellePeriode;
+                            B2 = DR["article"].ToString();
+                            B22 = int.Parse(B2);
+                            B3 = DR["amount"].ToString();
+                            B33 = int.Parse(B3);
+                            B4 = DR["mode"].ToString();
+                            B44 = int.Parse(B4);
+                            AlteBestellungen.Rows.Add(B11, B22, B33, B44);
+                        }
+
+
+                    }
+                }
+            }
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                Console.WriteLine("Vergangenheit: " + DR[0].ToString() + " Artikel: " + DR[1].ToString() + " Menge: " + DR[2].ToString());
+            }
+
+
+
+
+            DataTable Bestellungsliste = new DataTable();
+            if (!Bestellungsliste.Columns.Contains("article"))
+            {
+                Bestellungsliste.Columns.Add("article", typeof(int));
+                Bestellungsliste.Columns.Add("quantity", typeof(int));
+                Bestellungsliste.Columns.Add("modus", typeof(int));
+            }
+            Bestellungsliste.Clear();
+
+
+
+            //Teil21
+            double T21LZ = 1.8;
+            double T21AB = 0.4;
+            double T21E = 1.8 / 2;
+            int BruttoT21P1 = GlobalVariables.SaleChildBikeN.GetValueOrDefault() * 1 + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text));
+            int BruttoT21P2 = GlobalVariables.SaleChildBikeN1.GetValueOrDefault() * 1;
+            int BruttoT21P3 = GlobalVariables.SaleChildBikeN2.GetValueOrDefault() * 1;
+            int BruttoT21P4 = GlobalVariables.SaleChildBikeN3.GetValueOrDefault() * 1;
+            int P1Zuwachs = 0;
+            int P2Zuwachs = 0;
+            int P3Zuwachs = 0;
+            int P4Zuwachs = 0;
+
+
+            DataRow[] results = AlteBestellungen.Select("item = '21'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T21LZ + T21AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T21E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            int Periode1 = LagerZuBeginn[21] - BruttoT21P1;
+            int Periode2 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 + P2Zuwachs;
+            int Periode3 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 + P3Zuwachs;
+            int Periode4 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 - BruttoT21P2 + P4Zuwachs;
+
+            int Modus = 5;
+            int Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T21LZ + T21AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(21, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(21, LagerZuBeginn[21], BruttoT21P1, BruttoT21P2, BruttoT21P3, BruttoT21P4, Periode1, Periode2, Periode3, Periode4);
+
+
+
+            //Teil22
+            double T22LZ = 1.7;
+            double T22AB = 0.4;
+            double T22E = 1.7 / 2;
+            int BruttoT22P1 = GlobalVariables.SaleFemaleBikeN.GetValueOrDefault() * 1 + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text));
+            int BruttoT22P2 = GlobalVariables.SaleFemaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT22P3 = GlobalVariables.SaleFemaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT22P4 = GlobalVariables.SaleFemaleBikeN3.GetValueOrDefault() * 1;
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '22'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T22LZ + T22AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T22E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[22] - BruttoT22P1;
+            Periode2 = LagerZuBeginn[22] - BruttoT22P1 - BruttoT22P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[22] - BruttoT22P1 - BruttoT22P2 - BruttoT22P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[22] - BruttoT22P1 - BruttoT22P2 - BruttoT22P3 - BruttoT22P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T22LZ + T22AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(22, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(22, LagerZuBeginn[22], BruttoT22P1, BruttoT22P2, BruttoT22P3, BruttoT22P4, Periode1, Periode2, Periode3, Periode4);
+
+
+            //Teil23
+            double T23LZ = 1.2;
+            double T23AB = 0.2;
+            double T23E = 1.2 / 2;
+            int BruttoT23P1 = GlobalVariables.SaleMaleBikeN.GetValueOrDefault() * 1 + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text));
+            int BruttoT23P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT23P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT23P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            results = AlteBestellungen.Select("item = '23'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T23LZ + T23AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T23E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[23] - BruttoT23P1;
+            Periode2 = LagerZuBeginn[23] - BruttoT23P1 - BruttoT23P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[23] - BruttoT23P1 - BruttoT23P2 - BruttoT23P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[23] - BruttoT23P1 - BruttoT23P2 - BruttoT23P3 - BruttoT23P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T23LZ + T23AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(23, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(23, LagerZuBeginn[23], BruttoT23P1, BruttoT23P2, BruttoT23P3, BruttoT23P4, Periode1, Periode2, Periode3, Periode4);
+
+
+            //Teil24
+            double T24LZ = 3.2;
+            double T24AB = 0.3;
+            double T24E = 3.2 / 2;
+            int BruttoT24P1 = ((GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 7)
+                + ((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 7)
+                + ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 7);
+            int BruttoT24P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN1.Value * 7 + GlobalVariables.SaleFemaleBikeN1.Value * 7;
+            int BruttoT24P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN2.Value * 7 + GlobalVariables.SaleFemaleBikeN2.Value * 7;
+            int BruttoT24P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN3.Value * 7 + GlobalVariables.SaleFemaleBikeN3.Value * 7;
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+            int P5Zuwachs = 0;
+
+
+            results = AlteBestellungen.Select("item = '24'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T24LZ + T24AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T24E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[24] - BruttoT24P1;
+            Periode2 = LagerZuBeginn[24] - BruttoT24P1 - BruttoT24P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[24] - BruttoT24P1 - BruttoT24P2 - BruttoT24P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[24] - BruttoT24P1 - BruttoT24P2 - BruttoT24P3 - BruttoT24P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = +Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                Bestellmenge = +Periode3 * (-1);
+                Modus = 4;
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                if (T24LZ + T24AB > 3)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = +Periode4 * (-1);
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(24, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(24, LagerZuBeginn[24], BruttoT24P1, BruttoT24P2, BruttoT24P3, BruttoT24P4, Periode1, Periode2, Periode3, Periode4);
+
+
+
+            //Teil25
+            double T25LZ = 0.9;
+            double T25AB = 0.2;
+            double T25E = 0.9 / 2;
+            int BruttoT25P1 = ((GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 4)
+                + ((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 4)
+                + ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 4);
+            int BruttoT25P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 4;
+            int BruttoT25P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 4;
+            int BruttoT25P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 4;
+
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+
+            results = AlteBestellungen.Select("item = '25'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T25LZ + T25AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T25E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[25] - BruttoT25P1;
+            Periode2 = LagerZuBeginn[25] - BruttoT25P1 - BruttoT25P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[25] - BruttoT25P1 - BruttoT25P2 - BruttoT25P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[25] - BruttoT25P1 - BruttoT25P2 - BruttoT25P3 - BruttoT25P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = +Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                if (T25LZ + T25AB > 1)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = +Periode2 * (-1);
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                Bestellmenge = +Periode3 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(25, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(25, LagerZuBeginn[25], BruttoT25P1, BruttoT25P2, BruttoT25P3, BruttoT25P4, Periode1, Periode2, Periode3, Periode4);
+
+
+            //Teil27
+            double T27LZ = 0.9;
+            double T27AB = 0.2;
+            double T27E = 0.9 / 2;
+            int BruttoT27P1 = ((GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 2)
+                + ((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 2)
+                + ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 2); ;
+            int BruttoT27P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2;
+            int BruttoT27P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2;
+            int BruttoT27P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2;
+
+            Bestellungsplannung.Rows.Add(27, LagerZuBeginn[27], BruttoT27P1, BruttoT27P2, BruttoT27P3, BruttoT27P4,
+                LagerZuBeginn[27] - BruttoT27P1, LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2, LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3,
+                LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3 - BruttoT27P2);
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+
+            results = AlteBestellungen.Select("item = '27'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T27LZ + T27AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T27E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[27] - BruttoT27P1;
+            Periode2 = LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3 - BruttoT27P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = +Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                if (T27LZ + T27AB > 1)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = +Periode2 * (-1);
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                Bestellmenge = +Periode3 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(27, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(27, LagerZuBeginn[27], BruttoT27P1, BruttoT27P2, BruttoT27P3, BruttoT27P4, Periode1, Periode2, Periode3, Periode4);
+
+
+            //Teil28
+            double T28LZ = 1.7;
+            double T28AB = 0.4;
+            double T28E = 1.7 / 2;
+            int BruttoT28P1 = ((GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 6)
+                + ((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 4)
+                + ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 5);
+            int BruttoT28P2 = GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 5 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 6;
+            int BruttoT28P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
+            int BruttoT28P4 = GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 5 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 6;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '28'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T28LZ + T28AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T28E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[28] - BruttoT28P1;
+            Periode2 = LagerZuBeginn[28] - BruttoT28P1 - BruttoT28P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[28] - BruttoT28P1 - BruttoT28P2 - BruttoT28P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[28] - BruttoT28P1 - BruttoT28P2 - BruttoT28P3 - BruttoT28P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T28LZ + T28AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(28, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(28, LagerZuBeginn[28], BruttoT28P1, BruttoT28P2, BruttoT28P3, BruttoT28P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil32
+            double T32LZ = 2.1;
+            double T32AB = 0.5;
+            double T32E = 2.1 / 2;
+            int BruttoT32P1 = ((GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 3)
+                + ((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 3)
+                + ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 3);
+            int BruttoT32P2 = GlobalVariables.SaleChildBikeN1.Value * 3 + GlobalVariables.SaleFemaleBikeN1.Value * 3 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 3;
+            int BruttoT32P3 = GlobalVariables.SaleChildBikeN2.Value * 3 + GlobalVariables.SaleFemaleBikeN2.Value * 3 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 3;
+            int BruttoT32P4 = GlobalVariables.SaleChildBikeN3.Value * 3 + GlobalVariables.SaleFemaleBikeN3.Value * 3 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 3;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '32'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T32LZ + T32AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T32E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[32] - BruttoT32P1;
+            Periode2 = LagerZuBeginn[32] - BruttoT32P1 - BruttoT32P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[32] - BruttoT32P1 - BruttoT32P2 - BruttoT32P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[32] - BruttoT32P1 - BruttoT32P2 - BruttoT32P3 - BruttoT32P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = +Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T32LZ + T32AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(32, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(32, LagerZuBeginn[32], BruttoT32P1, BruttoT32P2, BruttoT32P3, BruttoT32P4, Periode1, Periode2, Periode3, Periode4);
+
+
+            //Teil33
+            double T33LZ = 1.9;
+            double T33AB = 0.5;
+            double T33E = 1.9 / 2;
+            int BruttoT33P1 = ((GlobalVariables.SaleMaleBikeN.GetValueOrDefault() +
+                                +(int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 2);
+            int BruttoT33P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT33P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT33P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '33'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T33LZ + T33AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T33E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[33] - BruttoT33P1;
+            Periode2 = LagerZuBeginn[33] - BruttoT33P1 - BruttoT33P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[33] - BruttoT33P1 - BruttoT33P2 - BruttoT33P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[33] - BruttoT33P1 - BruttoT33P2 - BruttoT33P3 - BruttoT33P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T33LZ + T33AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(33, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(33, LagerZuBeginn[33], BruttoT33P1, BruttoT33P2, BruttoT33P3, BruttoT33P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil34
+            double T34LZ = 1.6;
+            double T34AB = 0.3;
+            double T34E = 1.6 / 2;
+            int BruttoT34P1 = ((GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 72)
+                + ((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 0)
+                + ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 0);
+            int BruttoT34P2 = GlobalVariables.SaleChildBikeN1.Value * 72 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT34P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT34P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '34'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T34LZ + T34AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T34E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[34] - BruttoT34P1;
+            Periode2 = LagerZuBeginn[34] - BruttoT34P1 - BruttoT34P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[34] - BruttoT34P1 - BruttoT34P2 - BruttoT34P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[34] - BruttoT34P1 - BruttoT34P2 - BruttoT34P3 - BruttoT34P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T34LZ + T34AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(34, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(34, LagerZuBeginn[34], BruttoT34P1, BruttoT34P2, BruttoT34P3, BruttoT34P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil35
+            double T35LZ = 2.2;
+            double T35AB = 0.4;
+            double T35E = 2.2 / 2;
+            int BruttoT35P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 4) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 5) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 6);
+            int BruttoT35P2 = GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 5 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 6;
+            int BruttoT35P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
+            int BruttoT35P4 = GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 5 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 6;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '35'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T35LZ + T35AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T35E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[35] - BruttoT35P1;
+            Periode2 = LagerZuBeginn[35] - BruttoT35P1 - BruttoT35P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[35] - BruttoT35P1 - BruttoT35P2 - BruttoT35P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[35] - BruttoT35P1 - BruttoT35P2 - BruttoT35P3 - BruttoT35P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = +Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T35LZ + T35AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(35, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(35, LagerZuBeginn[35], BruttoT35P1, BruttoT35P2, BruttoT35P3, BruttoT35P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil36
+            double T36LZ = 1.2;
+            double T36AB = 0.1;
+            double T36E = 1.2 / 2;
+            int BruttoT36P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 1) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 1) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 1);
+            int BruttoT36P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT36P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT36P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            results = AlteBestellungen.Select("item = '36'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T36LZ + T36AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T36E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[36] - BruttoT36P1;
+            Periode2 = LagerZuBeginn[36] - BruttoT36P1 - BruttoT36P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[36] - BruttoT36P1 - BruttoT36P2 - BruttoT36P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[36] - BruttoT36P1 - BruttoT36P2 - BruttoT36P3 - BruttoT36P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T36LZ + T36AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(36, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(36, LagerZuBeginn[36], BruttoT36P1, BruttoT36P2, BruttoT36P3, BruttoT36P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil37
+            double T37LZ = 1.5;
+            double T37AB = 0.3;
+            double T37E = 1.5 / 2;
+            int BruttoT37P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 1) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 1) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 1);
+            int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            results = AlteBestellungen.Select("item = '37'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T37LZ + T37AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T37E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[37] - BruttoT37P1;
+            Periode2 = LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[37] - BruttoT37P1 - BruttoT37P2 - BruttoT37P3 - BruttoT37P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T37LZ + T37AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(37, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(37, LagerZuBeginn[37], BruttoT37P1, BruttoT37P2, BruttoT37P3, BruttoT37P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil38
+            double T38LZ = 1.7;
+            double T38AB = 0.4;
+            double T38E = 1.7 / 2;
+            int BruttoT38P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 1) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 1) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 1);
+            int BruttoT38P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT38P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT38P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '38'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T38LZ + T38AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T38E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[38] - BruttoT38P1;
+            Periode2 = LagerZuBeginn[38] - BruttoT38P1 - BruttoT38P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[38] - BruttoT38P1 - BruttoT38P2 - BruttoT38P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[38] - BruttoT38P1 - BruttoT38P2 - BruttoT38P3 - BruttoT38P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T38LZ + T38AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(38, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(38, LagerZuBeginn[38], BruttoT38P1, BruttoT38P2, BruttoT38P3, BruttoT38P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil39
+            double T39LZ = 1.5;
+            double T39AB = 0.3;
+            double T39E = 1.5 / 2;
+            int BruttoT39P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 2) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 2) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 2);
+            int BruttoT39P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT39P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT39P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            results = AlteBestellungen.Select("item = '39'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T39LZ + T39AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T39E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[39] - BruttoT39P1;
+            Periode2 = LagerZuBeginn[39] - BruttoT39P1 - BruttoT39P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[39] - BruttoT39P1 - BruttoT39P2 - BruttoT39P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[39] - BruttoT39P1 - BruttoT39P2 - BruttoT39P3 - BruttoT39P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T39LZ + T39AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(39, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(39, LagerZuBeginn[39], BruttoT39P1, BruttoT39P2, BruttoT39P3, BruttoT39P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil40
+            double T40LZ = 1.7;
+            double T40AB = 0.2;
+            double T40E = 1.7 / 2;
+            int BruttoT40P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 1) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 1) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 1);
+            int BruttoT40P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT40P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT40P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            results = AlteBestellungen.Select("item = '40'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T40LZ + T40AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T40E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[40] - BruttoT40P1;
+            Periode2 = LagerZuBeginn[40] - BruttoT40P1 - BruttoT40P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[40] - BruttoT40P1 - BruttoT40P2 - BruttoT40P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[40] - BruttoT40P1 - BruttoT40P2 - BruttoT40P3 - BruttoT40P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T40LZ + T40AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(40, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(40, LagerZuBeginn[40], BruttoT40P1, BruttoT40P2, BruttoT40P3, BruttoT40P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil41
+            double T41LZ = 0.9;
+            double T41AB = 0.2;
+            double T41E = 0.9 / 2;
+
+            int BruttoT41P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 1) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 1) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 1);
+            int BruttoT41P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT41P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT41P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+
+            results = AlteBestellungen.Select("item = '41'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T41LZ + T41AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T41E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[41] - BruttoT41P1;
+            Periode2 = LagerZuBeginn[41] - BruttoT41P1 - BruttoT41P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[41] - BruttoT41P1 - BruttoT41P2 - BruttoT41P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[41] - BruttoT41P1 - BruttoT41P2 - BruttoT41P3 - BruttoT41P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = +Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                if (T41LZ + T41AB > 1)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = +Periode2 * (-1);
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                Bestellmenge = +Periode3 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(41, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(41, LagerZuBeginn[41], BruttoT41P1, BruttoT41P2, BruttoT41P3, BruttoT41P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil42
+            double T42LZ = 1.2;
+            double T42AB = 0.3;
+            double T42E = 1.2 / 2;
+
+            int BruttoT42P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 2) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 2) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 2);
+            int BruttoT42P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT42P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT42P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+
+            results = AlteBestellungen.Select("item = '42'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T42LZ + T42AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T42E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[42] - BruttoT42P1;
+            Periode2 = LagerZuBeginn[42] - BruttoT42P1 - BruttoT42P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[42] - BruttoT42P1 - BruttoT42P2 - BruttoT42P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[42] - BruttoT42P1 - BruttoT42P2 - BruttoT42P3 - BruttoT42P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = +Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                if (T42LZ + T42AB > 1)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = +Periode2 * (-1);
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                Bestellmenge = +Periode3 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(42, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(42, LagerZuBeginn[42], BruttoT42P1, BruttoT42P2, BruttoT42P3, BruttoT42P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil43
+            double T43LZ = 2.0;
+            double T43AB = 0.5;
+            double T43E = 2.0 / 2;
+
+            int BruttoT43P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 1) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 1) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 1);
+            int BruttoT43P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT43P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT43P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '43'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T43LZ + T43AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T43E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[43] - BruttoT43P1;
+            Periode2 = LagerZuBeginn[43] - BruttoT43P1 - BruttoT43P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[43] - BruttoT43P1 - BruttoT43P2 - BruttoT43P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[43] - BruttoT43P1 - BruttoT43P2 - BruttoT43P3 - BruttoT43P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = +Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T43LZ + T43AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(43, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(43, LagerZuBeginn[43], BruttoT43P1, BruttoT43P2, BruttoT43P3, BruttoT43P4, Periode1, Periode2, Periode3, Periode4);
+
+
+            //Teil44
+            double T44LZ = 1.0;
+            double T44AB = 0.2;
+            double T44E = 1.0 / 2;
+            int BruttoT44P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 3) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 3) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 3);
+            int BruttoT44P2 = GlobalVariables.SaleChildBikeN1.Value * 3 + GlobalVariables.SaleFemaleBikeN1.Value * 3 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 3;
+            int BruttoT44P3 = GlobalVariables.SaleChildBikeN2.Value * 3 + GlobalVariables.SaleFemaleBikeN2.Value * 3 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 3;
+            int BruttoT44P4 = GlobalVariables.SaleChildBikeN3.Value * 3 + GlobalVariables.SaleFemaleBikeN3.Value * 3 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 3;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+
+            results = AlteBestellungen.Select("item = '44'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T44LZ + T44AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T44E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[44] - BruttoT44P1;
+            Periode2 = LagerZuBeginn[44] - BruttoT44P1 - BruttoT44P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[44] - BruttoT44P1 - BruttoT44P2 - BruttoT44P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[44] - BruttoT44P1 - BruttoT44P2 - BruttoT44P3 - BruttoT44P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = +Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                if (T44LZ + T44AB > 1)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = +Periode2 * (-1);
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                Bestellmenge = +Periode3 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(44, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(44, LagerZuBeginn[44], BruttoT44P1, BruttoT44P2, BruttoT44P3, BruttoT44P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil45
+            double T45LZ = 1.7;
+            double T45AB = 0.3;
+            double T45E = 1.7 / 2;
+            int BruttoT45P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 1) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 1) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 1);
+            int BruttoT45P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT45P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT45P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '45'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T45LZ + T45AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T45E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[45] - BruttoT45P1;
+            Periode2 = LagerZuBeginn[45] - BruttoT45P1 - BruttoT45P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[45] - BruttoT45P1 - BruttoT45P2 - BruttoT45P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[45] - BruttoT45P1 - BruttoT45P2 - BruttoT45P3 - BruttoT45P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T45LZ + T45AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(45, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(45, LagerZuBeginn[45], BruttoT45P1, BruttoT45P2, BruttoT45P3, BruttoT45P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil46
+            double T46LZ = 0.9;
+            double T46AB = 0.3;
+            double T46E = 0.9 / 2;
+            int BruttoT46P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 1) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 1) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 1);
+            int BruttoT46P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT46P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT46P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+
+            results = AlteBestellungen.Select("item = '46'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T46LZ + T46AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T46E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[46] - BruttoT46P1;
+            Periode2 = LagerZuBeginn[46] - BruttoT46P1 - BruttoT46P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[46] - BruttoT46P1 - BruttoT46P2 - BruttoT46P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[46] - BruttoT46P1 - BruttoT46P2 - BruttoT46P3 - BruttoT46P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = +Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                if (T46LZ + T46AB > 1)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = +Periode2 * (-1);
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                Bestellmenge = +Periode3 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(46, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(46, LagerZuBeginn[46], BruttoT46P1, BruttoT46P2, BruttoT46P3, BruttoT46P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil47
+            double T47LZ = 1.1;
+            double T47AB = 0.1;
+            double T47E = 1.1 / 2;
+            int BruttoT47P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 1) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 1) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 1);
+            int BruttoT47P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
+            int BruttoT47P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
+            int BruttoT47P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+
+            results = AlteBestellungen.Select("item = '47'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T47LZ + T47AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T47E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[47] - BruttoT47P1;
+            Periode2 = LagerZuBeginn[47] - BruttoT47P1 - BruttoT47P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[47] - BruttoT47P1 - BruttoT47P2 - BruttoT47P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[47] - BruttoT47P1 - BruttoT47P2 - BruttoT47P3 - BruttoT47P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = +Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                if (T47LZ + T47AB > 1)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = +Periode2 * (-1);
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                Bestellmenge = +Periode3 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(47, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(47, LagerZuBeginn[47], BruttoT47P1, BruttoT47P2, BruttoT47P3, BruttoT47P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil48
+            double T48LZ = 1.0;
+            double T48AB = 0.2;
+            double T48E = 1.0 / 2;
+            int BruttoT48P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 2) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 2) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 2);
+            int BruttoT48P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT48P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT48P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+
+            results = AlteBestellungen.Select("item = '48'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T48LZ + T48AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T48E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[48] - BruttoT48P1;
+            Periode2 = LagerZuBeginn[48] - BruttoT48P1 - BruttoT48P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[48] - BruttoT48P1 - BruttoT48P2 - BruttoT48P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[48] - BruttoT48P1 - BruttoT48P2 - BruttoT48P3 - BruttoT48P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = +Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                if (T48LZ + T48AB > 1)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = +Periode2 * (-1);
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                Bestellmenge = +Periode3 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(48, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(48, LagerZuBeginn[48], BruttoT48P1, BruttoT48P2, BruttoT48P3, BruttoT48P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil52
+            double T52LZ = 2.0;
+            double T52AB = 0.4;
+            double T52E = 1.6 / 2;
+            int BruttoT52P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 2) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 0) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 0);
+            int BruttoT52P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT52P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT52P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            foreach (DataRow DR in AlteBestellungen.Rows)
+            {
+                results = AlteBestellungen.Select("item = '52'");
+                foreach (var row in results)
+                {
+                    if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T52LZ + T52AB);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                    else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                    {
+                        double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T52E);
+                        if (ZeitCheck <= 1)
+                        {
+                            P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                        }
+                        if (ZeitCheck <= 2)
+                        {
+                            P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                        if (ZeitCheck <= 3)
+                        {
+                            P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                        }
+                    }
+                }
+            }
+
+            Periode1 = LagerZuBeginn[52] - BruttoT52P1;
+            Periode2 = LagerZuBeginn[52] - BruttoT52P1 - BruttoT52P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[52] - BruttoT52P1 - BruttoT52P2 - BruttoT52P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[52] - BruttoT52P1 - BruttoT52P2 - BruttoT52P3 - BruttoT52P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T52LZ + T52AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(52, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(52, LagerZuBeginn[52], BruttoT52P1, BruttoT52P2, BruttoT52P3, BruttoT52P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil53
+            double T53LZ = 1.6;
+            double T53AB = 0.2;
+            double T53E = 1.6 / 2;
+            int BruttoT53P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 72) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 0) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 0);
+            int BruttoT53P2 = GlobalVariables.SaleChildBikeN1.Value * 72 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT53P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT53P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            results = AlteBestellungen.Select("item = '53'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T53LZ + T53AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T53E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[53] - BruttoT53P1;
+            Periode2 = LagerZuBeginn[53] - BruttoT53P1 - BruttoT53P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[53] - BruttoT53P1 - BruttoT53P2 - BruttoT53P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[53] - BruttoT53P1 - BruttoT53P2 - BruttoT53P3 - BruttoT53P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T53LZ + T53AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(53, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(53, LagerZuBeginn[53], BruttoT53P1, BruttoT53P2, BruttoT53P3, BruttoT53P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil57
+            double T57LZ = 1.7;
+            double T57AB = 0.3;
+            double T57E = 1.7 / 2;
+            int BruttoT57P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 0) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 2) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 0);
+            int BruttoT57P2 = GlobalVariables.SaleChildBikeN1.Value * 0 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT57P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT57P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            results = AlteBestellungen.Select("item = '57'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T57LZ + T57AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T57E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[57] - BruttoT57P1;
+            Periode2 = LagerZuBeginn[57] - BruttoT57P1 - BruttoT57P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[57] - BruttoT57P1 - BruttoT57P2 - BruttoT57P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[57] - BruttoT57P1 - BruttoT57P2 - BruttoT57P3 - BruttoT57P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T57LZ + T57AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(57, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(57, LagerZuBeginn[57], BruttoT57P1, BruttoT57P2, BruttoT57P3, BruttoT57P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil58
+            double T58LZ = 1.6;
+            double T58AB = 0.5;
+            double T58E = 1.6 / 2;
+            int BruttoT58P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 0) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 72) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 0);
+            int BruttoT58P2 = GlobalVariables.SaleChildBikeN1.Value * 0 + GlobalVariables.SaleFemaleBikeN1.Value * 72 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
+            int BruttoT58P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 72 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
+            int BruttoT58P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 72 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            results = AlteBestellungen.Select("item = '58'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T58LZ + T58AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T58E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[58] - BruttoT58P1;
+            Periode2 = LagerZuBeginn[58] - BruttoT58P1 - BruttoT58P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[58] - BruttoT58P1 - BruttoT58P2 - BruttoT58P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[58] - BruttoT58P1 - BruttoT58P2 - BruttoT58P3 - BruttoT58P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                Bestellmenge = Periode2 * (-1);
+                Modus = 4;
+            }
+            if (Periode3 < 0 && Bestellmenge < Periode3 * (-1))
+            {
+                if (T58LZ + T58AB > 2)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode3 * (-1);
+            }
+            if (Periode4 < 0 && Bestellmenge < Periode4 * (-1))
+            {
+                Bestellmenge = Periode4 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(58, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(58, LagerZuBeginn[58], BruttoT58P1, BruttoT58P2, BruttoT58P3, BruttoT58P4, Periode1, Periode2, Periode3, Periode4);
+
+            //Teil59
+            double T59LZ = 0.7;
+            double T59AB = 0.2;
+            double T59E = 0.7 / 2;
+            int BruttoT59P1 = (((GlobalVariables.SaleChildBikeN.Value + (int.Parse(ChildBikeSafetyP1.Text) - int.Parse(ChildBikeStockP1.Text))) * 2) +
+                ((GlobalVariables.SaleFemaleBikeN.Value + (int.Parse(FemaleBikeSafetyP2.Text) - int.Parse(FemaleBikeStockP2.Text))) * 2) +
+                (GlobalVariables.SaleMaleBikeN.GetValueOrDefault() + (int.Parse(MaleBikeSafetyP3.Text) - int.Parse(MaleBikeStockP3.Text))) * 2);
+            int BruttoT59P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
+            int BruttoT59P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
+            int BruttoT59P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
+
+            P1Zuwachs = 0;
+            P2Zuwachs = 0;
+            P3Zuwachs = 0;
+            P4Zuwachs = 0;
+
+            results = AlteBestellungen.Select("item = '59'");
+            foreach (var row in results)
+            {
+                if (int.Parse(row["Modus"].ToString()) == 5) //5 normal
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T59LZ + T59AB);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+                else if (int.Parse(row["Modus"].ToString()) == 4) //4 Eil
+                {
+                    double ZeitCheck = (int.Parse(row["Vergangenheit"].ToString()) + T59E);
+                    if (ZeitCheck <= 1)
+                    {
+                        P2Zuwachs = (P2Zuwachs + int.Parse(row["Menge"].ToString()));
+                    }
+                    if (ZeitCheck <= 2)
+                    {
+                        P3Zuwachs = P3Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                    if (ZeitCheck <= 3)
+                    {
+                        P4Zuwachs = P4Zuwachs + int.Parse(row["Menge"].ToString());
+                    }
+                }
+            }
+
+
+            Periode1 = LagerZuBeginn[59] - BruttoT59P1;
+            Periode2 = LagerZuBeginn[59] - BruttoT59P1 - BruttoT59P2 + P2Zuwachs;
+            Periode3 = LagerZuBeginn[59] - BruttoT59P1 - BruttoT59P2 - BruttoT59P3 + P3Zuwachs;
+            Periode4 = LagerZuBeginn[59] - BruttoT59P1 - BruttoT59P2 - BruttoT59P3 - BruttoT59P2 + P4Zuwachs;
+
+            Modus = 5;
+            Bestellmenge = 0;
+            if (Periode1 < 0)
+            {
+                Bestellmenge = Bestellmenge + Periode1 * (-1);
+                Modus = 4;
+            }
+            if (Periode2 < 0 && Bestellmenge < Periode2 * (-1))
+            {
+                if (T59LZ + T59AB > 1)
+                    Modus = 4;
+                else
+                {
+                    if (Modus != 4)
+                        Modus = 5;
+                }
+                Bestellmenge = Periode2 * (-1);
+            }
+            if (Periode3 < 0)
+            {
+                Bestellmenge = +Periode3 * (-1);
+                if (Modus != 4)
+                    Modus = 5;
+            }
+
+            if (Bestellmenge > 0)
+            {
+                Bestellungsliste.Rows.Add(59, Bestellmenge, Modus);
+            }
+
+            Bestellungsplannung.Rows.Add(59, LagerZuBeginn[59], BruttoT59P1, BruttoT59P2, BruttoT59P3, BruttoT59P4, Periode1, Periode2, Periode3, Periode4);
+
+
+
+            ////Lager befüllen
+            //foreach (DataRow r1Row in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].Rows)
+            //{
+            //    foreach (DataRow r2Row in Bestellungsplannung.Rows)
+            //    {
+            //        if (r2Row["Teil"].ToString() == r1Row["id"].ToString())
+            //        {
+            //            r2Row["Lagerbestand"] = int.Parse(r1Row["amount"].ToString());
+            //        }
+            //    }
+            //}
+
+
+            Bestellung.DataContext = Bestellungsplannung.DefaultView;
+
+            BestellungslisteZu.DataContext = Bestellungsliste;
+            BestellungslisteZu.ItemsSource = Bestellungsliste.DefaultView;
+
+            #endregion bestellungsplannung
+
+
+            Orderlist.DataContext = BestellungslisteZu.DataContext;
+            Orderlist.ItemsSource = BestellungslisteZu.ItemsSource;
         }
 
         #endregion Data
@@ -6557,10 +9936,10 @@ namespace ProBikeSS16
                 string amount;
                 ItemID = AddItemBox.Text;
                 amount = AddAmountBox.Text;
-                DataRow AddRow = GlobalVariables.dtProdOrder.NewRow();
+                DataRow AddRow = GlobalVariables.Aussortierung.NewRow();
                 AddRow["Item"] = ItemID;
                 AddRow["Amount"] = amount;
-                GlobalVariables.dtProdOrder.Rows.Add(AddRow);
+                GlobalVariables.Aussortierung.Rows.Add(AddRow);
             }
             else
             {
@@ -6573,14 +9952,14 @@ namespace ProBikeSS16
         {
             int CurrentRow = GridProductionOrders.SelectedIndex;
             int old = CurrentRow;
-            DataRow row = GlobalVariables.dtProdOrder.Rows[old];
-            DataRow row2 = GlobalVariables.dtProdOrder.NewRow();
+            DataRow row = GlobalVariables.Aussortierung.Rows[old];
+            DataRow row2 = GlobalVariables.Aussortierung.NewRow();
             row2.ItemArray = row.ItemArray;
 
             if (old - 1 >= 0)
             {
-                GlobalVariables.dtProdOrder.Rows.Remove(GlobalVariables.dtProdOrder.Rows[old]);
-                GlobalVariables.dtProdOrder.Rows.InsertAt(row2, old - 1);
+                GlobalVariables.Aussortierung.Rows.Remove(GlobalVariables.Aussortierung.Rows[old]);
+                GlobalVariables.Aussortierung.Rows.InsertAt(row2, old - 1);
                 this.GridProductionOrders.SelectedIndex = old - 1;
             }
             else
@@ -6593,16 +9972,16 @@ namespace ProBikeSS16
         {
             int CurrentRow = GridProductionOrders.SelectedIndex;
             int old = CurrentRow;
-            if (old < GlobalVariables.dtProdOrder.Rows.Count - 1)
+            if (old < GlobalVariables.Aussortierung.Rows.Count - 1)
             {
-                DataRow row = GlobalVariables.dtProdOrder.Rows[old];
-                DataRow row2 = GlobalVariables.dtProdOrder.NewRow();
+                DataRow row = GlobalVariables.Aussortierung.Rows[old];
+                DataRow row2 = GlobalVariables.Aussortierung.NewRow();
                 row2.ItemArray = row.ItemArray;
 
-                if (old + 1 <= GlobalVariables.dtProdOrder.Rows.Count)
+                if (old + 1 <= GlobalVariables.Aussortierung.Rows.Count)
                 {
-                    GlobalVariables.dtProdOrder.Rows.Remove(GlobalVariables.dtProdOrder.Rows[old]);
-                    GlobalVariables.dtProdOrder.Rows.InsertAt(row2, old + 1);
+                    GlobalVariables.Aussortierung.Rows.Remove(GlobalVariables.Aussortierung.Rows[old]);
+                    GlobalVariables.Aussortierung.Rows.InsertAt(row2, old + 1);
                     this.GridProductionOrders.SelectedIndex = old + 1;
                 }
                 else

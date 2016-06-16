@@ -326,7 +326,7 @@
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="ChildBikePlannedProductionE7" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="ChildBikePlannedProductionE13" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="ChildBikePlannedProductionE18" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <Button Content="{DynamicResource ResourceKey=refreshChild}" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="ChildProgrammRecalculate" Click="ProgrammplannungRepeat"/>
+                                    <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="13" Grid.Row="17" Grid.ColumnSpan="3" Height="20" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" x:Name="ChildProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="{DynamicResource ResourceKey=FemaleBike}">
@@ -543,7 +543,7 @@
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE8" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE14" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="FemaleBikePlannedProductionE19" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="FemaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
+                                    <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="13" Grid.Row="17" Grid.ColumnSpan="3" Height="20" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" x:Name="FemaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="{DynamicResource ResourceKey=MaleBike}">
@@ -760,7 +760,7 @@
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="14" Height="20" Width="60" x:Name="MaleBikePlannedProductionE9" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="15" Height="20" Width="60" x:Name="MaleBikePlannedProductionE15" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox TextAlignment="Center" Cursor="No" Grid.Column="14" Grid.Row="16" Height="20" Width="60" x:Name="MaleBikePlannedProductionE20" IsReadOnly="True" Background="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="14" Grid.Row="17" Height="20" VerticalAlignment="Top" Margin="10" x:Name="MaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
+                                    <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="13" Grid.Row="17" Grid.ColumnSpan="3" Height="20" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" x:Name="MaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="{DynamicResource ResourceKey=currentStock}">
@@ -776,7 +776,24 @@
                                         <RowDefinition Height="600"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <DataGrid SelectionMode="Single" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10" Name="GridProductionOrders" ItemsSource="{Binding}"></DataGrid>
+                                    <DataGrid SelectionMode="Single" Grid.Column="0" AutoGenerateColumns="False" Grid.Row="0" Margin="10,10,10,10" Name="GridProductionOrders" ItemsSource="{Binding}" CanUserAddRows="False" >
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="Item" Width="120">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBox Text="{Binding Item}" MaxLength="2" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                            <DataGridTemplateColumn Header="Amount" Width="*">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBox Text="{Binding Amount}"  />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                     <Button Grid.Column="1" Grid.Row="0" Height="20" Width="200" Name="AddOrder" Content="{DynamicResource ResourceKey=addOrder}" Margin="0,-150,0,0" Click="AddOrder_OnClick"></Button>
                                     <Label Grid.Column="1" Grid.Row="0" Height="30" Name="AddItem" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource ResourceKey=itemID}" Margin="0,-100,100,0"></Label>
                                     <TextBox Grid.Column="1" Grid.Row="0" Height="20" Name="AddAmountBox" Width="100" PreviewTextInput="NumberValidationTextBox" Margin="0,-50,-100,0"></TextBox>
@@ -854,10 +871,62 @@
                             <RowDefinition Height="350"></RowDefinition>
                             <RowDefinition Height="350"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <DataGrid Grid.Column="0" Grid.Row="0" Name="Sellwish" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False"></DataGrid>
-                        <DataGrid Grid.Column="1" Grid.Row="0" Name="Selldirect" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False"></DataGrid>
-                        <DataGrid Grid.Column="2" Grid.Row="0" Name="Orderlist" ItemsSource="{Binding}" Margin="10,60,10,10"></DataGrid>
-                        <DataGrid Grid.Column="0" Grid.Row="1" Name="Productionlist" ItemsSource="{Binding}" Margin="10,60,10,10"></DataGrid>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Marktprognose" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="1" Grid.Row="0" Content="Direktverkäufe" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="2" Grid.Row="0" Content="Bestellungen" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="0" Grid.Row="1" Content="Produktionsaufträge" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="1" Grid.Row="1" Content="Kapazitäten" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <DataGrid Grid.Column="0" Grid.Row="0" Name="Sellwish" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Width="120" Header="Article" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="Quantity" Width="*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding quantity}"  />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <DataGrid Grid.Column="1" Grid.Row="0" Name="Selldirect" AutoGenerateColumns="False"  ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False" >
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Quantity" Width="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding quantity}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Width="80" Header="Article" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="penalty" Width="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding penalty}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Price" Width="*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding price}"  />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <DataGrid Grid.Column="2" Grid.Row="0" AutoGenerateColumns="False" Name="Orderlist" ItemsSource="{Binding}" CanUserAddRows="False" Margin="10,60,10,10">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Width="100" Header="Article" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="100" Header="Quantity" Binding="{Binding quantity}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Header="Modus" Binding="{Binding modus}" IsReadOnly="True" ></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <DataGrid Grid.Column="0" Grid.Row="1" Name="Productionlist" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" Margin="10,60,10,10">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Width="120" Header="Item" Binding="{Binding Item}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Header="Amount" Binding="{Binding Amount}" IsReadOnly="True" ></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                         <!--<DataGrid Grid.Column="1" Grid.Row="1" Name="Workingtimelist" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False" PreviewTextInput="Workingtimelist_PreviewTextInput"></DataGrid>-->
                         <DataGrid Grid.Column="1" Grid.Row="1" ItemsSource="{Binding}" Name="Workingtimelist" AutoGenerateColumns="False" Margin="10,60,10,10" CanUserAddRows="False" >
                             <DataGrid.Columns>

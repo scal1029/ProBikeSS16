@@ -104,6 +104,7 @@ namespace ProBikeSS16
         public static int E20Produktionsauftrag;
 
         public static DataTable dtProdOrder = new DataTable();
+        public static DataTable Aussortierung = new DataTable();
 
         public static List<OrderPrototyp> ProduktionsAufträgeAktuellePeriode = new List<OrderPrototyp>();
 
