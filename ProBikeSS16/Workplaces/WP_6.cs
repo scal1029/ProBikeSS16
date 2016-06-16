@@ -8,8 +8,6 @@
         int order_d14_p2 = 0;
         int order_d8_p3 = 0;
         int order_d14_p3 = 0;
-        int cur_prod = 0;
-        int onMachine = 0;
 
         #region Getter/Setter
         public int ProdTimeD8_p1
@@ -208,7 +206,8 @@
             if (cur_prod != 1)
             {
                 cur_prod = 1;
-                currentWorkTime += 15;
+                setUptime += 15;
+                setUps++;
             }
 
             if (onMachine == 0)
@@ -221,7 +220,8 @@
                     return;
 
             storage.Content[28].Quantity -= (3 * prod_batch);
-            
+
+            currentWorkTime += getApproxProdTimeOd8_p1(prod_batch);
             onMachine = 0;
         }
         #endregion
@@ -232,10 +232,11 @@
             if (order_d14_p1 <= 0 && onMachine == 0)
                 return;
 
-            if (cur_prod != 1)
+            if (cur_prod != 2)
             {
-                cur_prod = 1;
-                currentWorkTime += 15;
+                cur_prod = 2;
+                setUptime += 15;
+                setUps++;
             }
 
             if (onMachine == 0)
@@ -249,6 +250,7 @@
 
             storage.Content[28].Quantity -= (1 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeOd14_p1(prod_batch);
             onMachine = 0;
         }
         #endregion
@@ -259,10 +261,11 @@
             if (order_d8_p2 <= 0 && onMachine == 0)
                 return;
 
-            if (cur_prod != 1)
+            if (cur_prod != 3)
             {
-                cur_prod = 1;
+                cur_prod = 3;
                 currentWorkTime += 15;
+                setUps++;
             }
 
             if (onMachine == 0)
@@ -276,6 +279,7 @@
 
             storage.Content[28].Quantity -= (4 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeOd8_p2(prod_batch);
             onMachine = 0;
         }
         #endregion
@@ -286,10 +290,11 @@
             if (order_d14_p2 <= 0 && onMachine == 0)
                 return;
 
-            if (cur_prod != 1)
+            if (cur_prod != 4)
             {
-                cur_prod = 1;
-                currentWorkTime += 15;
+                cur_prod = 4;
+                setUptime += 15;
+                setUps++;
             }
 
             if (onMachine == 0)
@@ -303,6 +308,7 @@
 
             storage.Content[28].Quantity -= (1 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeOd14_p2(prod_batch);
             onMachine = 0;
         }
         #endregion
@@ -313,10 +319,11 @@
             if (order_d8_p3 <= 0 && onMachine == 0)
                 return;
 
-            if (cur_prod != 1)
+            if (cur_prod != 5)
             {
-                cur_prod = 1;
+                cur_prod = 5;
                 currentWorkTime += 15;
+                setUps++;
             }
 
             if (onMachine == 0)
@@ -330,6 +337,7 @@
 
             storage.Content[28].Quantity -= (5 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeOd8_p3(prod_batch);
             onMachine = 0;
         }
         #endregion
@@ -340,10 +348,11 @@
             if (order_d14_p3 <= 0 && onMachine == 0)
                 return;
 
-            if (cur_prod != 1)
+            if (cur_prod != 6)
             {
-                cur_prod = 1;
-                currentWorkTime += 15;
+                cur_prod = 6;
+                setUptime += 15;
+                setUps++;
             }
 
             if (onMachine == 0)
@@ -357,6 +366,7 @@
 
             storage.Content[28].Quantity -= (1 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeOd14_p3(prod_batch);
             onMachine = 0;
         }
         #endregion

@@ -61,7 +61,26 @@
     <sys:String x:Key="itemID">Artikel ID</sys:String>
     <sys:String x:Key="amount">Menge</sys:String>
     <sys:String x:Key="deleteOrder">Auftrag löschen</sys:String>
-    
-    
+
+    <!-- Localized strings DemandManagement-->
+    <sys:String x:Key="CurrentSalesOpportunitiesToolTip">Absatzpotensial in der aktuellen Periode</sys:String>
+    <sys:String x:Key="Forecast1SalesOpportunitiesToolTip">Absatzprognose in einer Periode</sys:String>
+    <sys:String x:Key="Forecast2SalesOpportunitiesToolTip">Abstazprognose in zwei Perioden</sys:String>
+    <sys:String x:Key="Forecast3SalesOpportunitiesToolTip">Absatzprognose in drei Perioden</sys:String>
+    <sys:String x:Key="SBP1ToolTip">Sicherheitsbestand für Kinderfahrräder</sys:String>
+    <sys:String x:Key="SBP2ToolTip">Sicherheitsbestand für Frauenfahrräder</sys:String>
+    <sys:String x:Key="SBP3ToolTip">Sicherheitsbestand für Männerfahrräder</sys:String>
+    <sys:String x:Key="SalesP1ToolTip">Absatzpotensial an Kinderfarrädern in der aktuellen Periode</sys:String>
+    <sys:String x:Key="SalesP2ToolTip">Absatzpotensial an Frauenfahrrädern in der aktuellen Periode</sys:String>
+    <sys:String x:Key="SalesP3ToolTip">Absatzpotensial an Männerfahrrädern in der aktuellen Periode</sys:String>
+    <sys:String x:Key="SalesP1+1ToolTip">Absatzprognose an Kinderfahrrädern</sys:String>
+    <sys:String x:Key="SalesP2+1ToolTip">Absatzprognose an Frauenfahrrädern</sys:String>
+    <sys:String x:Key="SalesP3+1ToolTip">Absatzprognose an Männerfahrrädern</sys:String>
+    <sys:String x:Key="SalesP1+2ToolTip">Absatzprognose an Kinderfahrrädern</sys:String>
+    <sys:String x:Key="SalesP2+2ToolTip">Absatzprognose an Frauenfahrrädern</sys:String>
+    <sys:String x:Key="SalesP3+2ToolTip">Absatzprognose an Männerfahrrädern</sys:String>
+    <sys:String x:Key="SalesP1+3ToolTip">Absatzprognose an Kinderfahrrädern</sys:String>
+    <sys:String x:Key="SalesP2+3ToolTip">Absatzprognose an Frauenfahrrädern</sys:String>
+    <sys:String x:Key="SalesP3+3ToolTip">Absatzprognose an Männerfahrrädern</sys:String>
 
 </ResourceDictionary>

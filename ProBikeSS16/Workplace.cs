@@ -12,7 +12,11 @@ namespace ProBikeSS16
         int id;
         double wage = 0, var_machineCosts, fix_machineCosts;
         protected int currentWorkTime=0, shiftsToDo;
-        protected double overTimeToDo;
+        protected double overTimeToDo = 0;
+        protected int setUptime = 0, setUps = 0;
+        protected int[] workTimePerDay = new int[5];
+        protected int cur_prod = 0;
+        protected int onMachine = 0;
 
         protected int prod_batch = 10;
 
@@ -115,6 +119,22 @@ namespace ProBikeSS16
             get
             {
                 return Math.Round((currentWorkTime / (shiftsToDo * Constants.WHOLE_SHIFT_TIME + overTimeToDo)) * 100, 2);
+            }
+        }
+
+        public int SetUpTime
+        {
+            get
+            {
+                return setUptime;
+            }
+        }
+
+        public int[] WorkTimePerDay
+        {
+            get
+            {
+                return workTimePerDay;
             }
         }
         #endregion

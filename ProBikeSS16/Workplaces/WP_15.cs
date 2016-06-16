@@ -115,7 +115,7 @@
             if (cur_prod != 1)
             {
                 cur_prod = 1;
-                currentWorkTime += 15;
+                setUptime += 15;
             }
 
             if (onMachine == 0)
@@ -135,6 +135,7 @@
             storage.Content[45].Quantity -= (1 * prod_batch);
             storage.Content[46].Quantity -= (1 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeE17(prod_batch);
             onMachine = 0;
         }
         #endregion
@@ -148,7 +149,7 @@
             if (cur_prod != 2)
             {
                 cur_prod = 2;
-                currentWorkTime += 15;
+                setUptime += 15;
             }
 
             if (onMachine == 0)
@@ -162,6 +163,7 @@
 
             storage.Content[47].Quantity -= (1 * prod_batch);
 
+            currentWorkTime += getApproxProdTimeE26(prod_batch);
             onMachine = 0;
         }
         #endregion
