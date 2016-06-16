@@ -56,7 +56,14 @@ namespace ProBikeSS16
             wp_7.Order_d15_p1 += wp_15.NeedOf7DirectTo15_P1;
 
             wp_4.produce_one_bath_p1(); //Einmal zehn Einheiten von P1 produzieren
+        }
 
+        //Alle Arbeitsplätze mit den gewünschten Produktionen aus GlobalVariables befüllen
+        //Direkte Produktionen sind noch nicht implementiert 7 zu 15 z.B.
+        public void fillProductionOrdersIntoWorkplaces()
+        {
+            foreach (Workplace w in workplaces.Values)
+                w.fillProductionOrders();
         }
 
         private void initWorkplaces()
