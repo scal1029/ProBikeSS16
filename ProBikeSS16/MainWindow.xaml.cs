@@ -2651,7 +2651,7 @@ namespace ProBikeSS16
             GlobalVariables.AlleArbeitsplätze.Add(13,A13);
             GlobalVariables.AlleArbeitsplätze.Add(14,A14);
             GlobalVariables.AlleArbeitsplätze.Add(15,A15);
-            Console.WriteLine("Test1");
+
             //2. Arbeitsstationen initialisieren und zu Kette machen
             //Arbeitsstationen P123
             //E26
@@ -2972,7 +2972,7 @@ namespace ProBikeSS16
             TeileE3_1.Add(24, 1);
             TeileE3_1.Add(27, 1);
             ArbeitsstationPrototyp E31 = new ArbeitsstationPrototyp("Teil3Station1Arbeitsplatz4", A4, 30, 7, TeileE3_1, "Init", 3);
-            Console.WriteLine("Test2");
+
             //P123
             List<ArbeitsstationPrototyp> KetteE26 = new List<ArbeitsstationPrototyp> {E261, E262};
             List<ArbeitsstationPrototyp> KetteE16 = new List<ArbeitsstationPrototyp> { E161, E162 };
@@ -3008,7 +3008,7 @@ namespace ProBikeSS16
             List<ArbeitsstationPrototyp> KetteE31 = new List<ArbeitsstationPrototyp> { E311 };
             List<ArbeitsstationPrototyp> KetteE3 = new List<ArbeitsstationPrototyp> { E31 };
 
-            Console.WriteLine("Test3");
+
             //3. Produzierbare Teile Initialisieren und zu Liste hinzufügen
             //P123
             TeilPrototyp Teil26 = new TeilPrototyp(26, KetteE26);
@@ -3074,7 +3074,7 @@ namespace ProBikeSS16
             GlobalVariables.AlleTeile.Add(Teil30);
             GlobalVariables.AlleTeile.Add(Teil31);
             GlobalVariables.AlleTeile.Add(Teil3);
-            Console.WriteLine("Test4");
+
 
             
 
@@ -3111,12 +3111,12 @@ namespace ProBikeSS16
                 }
             }
 
-            foreach (OrderPrototyp O in GlobalVariables.ProduktionsAufträgeAktuellePeriode)
-            {
-                Console.WriteLine("Artikel: " + O.Artikel+ " Menge: " + O.Menge + " ID: " + O.TeilPrototyp.TeilID.ToString());
-            }
+            //foreach (OrderPrototyp O in GlobalVariables.ProduktionsAufträgeAktuellePeriode)
+            //{
+            //    Console.WriteLine("Artikel: " + O.Artikel+ " Menge: " + O.Menge + " ID: " + O.TeilPrototyp.TeilID.ToString());
+            //}
 
-            Console.WriteLine("Test5");
+
 
             //Warteschlange und Bearbeitung hinzufügen
             //Warteschlange
@@ -3141,8 +3141,8 @@ namespace ProBikeSS16
                 {
                     int i = ((int) dr.Row["order"]);
                     int i2 = ((int) dr.Row["period"]);
-                    Console.WriteLine("Periode: " + i2.ToString() + " Order: " + i.ToString() + " Item: " +
-                                      (string) dr.Row["item"]);
+                    //Console.WriteLine("Periode: " + i2.ToString() + " Order: " + i.ToString() + " Item: " +
+                    //                  (string) dr.Row["item"]);
                 }
 
                 foreach (DataRowView dr in wsReal)
