@@ -142,7 +142,7 @@ namespace ProBikeSS16
         public Workplace(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo=1, double overTimeToDo=0)
         {
             #region Guardians
-            if (id >= Constants.MAX_WORKPLACES)
+            if (id > Constants.MAX_WORKPLACES)
                 throw new ArgumentOutOfRangeException("Higher Workplace ID than available");
             
             if (var_machineCosts < 0 && var_machineCosts > 2)

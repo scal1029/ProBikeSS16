@@ -27,7 +27,7 @@ namespace ProBikeSS16
         public static readonly double[] FIX_MACHINE_COSTS       = { 0.01, 0.01, 0.01, 0.01, 0, 0.1, 0.1, 0.1, 0.25, 0.1, 0.1, 0.1, 0.15, 0.01, 0.01 };
 
         public const uint MAX_WORKPLACES                        = 15;
-        public enum WORKPLACES                                  { A1=0, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15 };
+        public enum WORKPLACES                                  { A1=1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15 };
     }
 
     public static class GlobalVariables

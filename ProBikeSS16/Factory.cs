@@ -92,7 +92,7 @@ namespace ProBikeSS16
                 new Workplaces.WP_13((int)Constants.WORKPLACES.A13,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A13],
                 Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A13]));
-
+                
             workplaces.Add((int)Constants.WORKPLACES.A14,
                 new Workplaces.WP_14((int)Constants.WORKPLACES.A14,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A14],
@@ -102,7 +102,7 @@ namespace ProBikeSS16
                 new Workplaces.WP_15((int)Constants.WORKPLACES.A15,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A15],
                 Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A15]));
-
+            
             foreach (Workplace w in workplaces.Values)
                 Console.WriteLine(w);
         }
