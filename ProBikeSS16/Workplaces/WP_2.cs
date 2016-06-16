@@ -141,7 +141,7 @@
             fillProductionOrders();
         }
 
-        new public void fillProductionOrders()
+        public override void fillProductionOrders()
         {
             Order_E50 = GlobalVariables.E50Produktionsauftrag;
             Order_E55 = GlobalVariables.E55Produktionsauftrag;

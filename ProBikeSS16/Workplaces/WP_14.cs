@@ -83,7 +83,7 @@ namespace ProBikeSS16.Workplaces
             fillProductionOrders();
         }
 
-        new public void fillProductionOrders()
+        public override void fillProductionOrders()
         {
             Order_E16 = GlobalVariables.E16Produktionsauftrag;
         }

@@ -51,7 +51,12 @@ namespace ProBikeSS16.Workplaces
             : base(id, var_machineCosts, fix_machineCosts, shiftsToDo, overTimeToDo)
         {
         }
-        
+
+        public override void fillProductionOrders()
+        {
+
+        }
+
         #region Production DirectTo12
         public void produce_one_bath_DirectTo12()
         {

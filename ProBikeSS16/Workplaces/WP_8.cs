@@ -292,7 +292,9 @@ namespace ProBikeSS16.Workplaces
         {
 
         }
-        
+
+        public override void fillProductionOrders() { }
+
         #region Production d7_1_p1
         public void produce_one_batch_d7_1_p1()
         {
