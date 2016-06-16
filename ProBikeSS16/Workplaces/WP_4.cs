@@ -3,9 +3,9 @@
     class WP_4 : Workplace
     {
 
-        int order_p1 = 0;
-        int order_p2 = 0;
-        int order_p3 = 0;
+        static int order_p1 = 0;
+        static int order_p2 = 0;
+        static int order_p3 = 0;
 
         #region Getter/Setter
         public int ProdTimeP1
@@ -128,9 +128,16 @@
         public WP_4(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo = 1, double overTimeToDo = 0) 
             : base(id, var_machineCosts, fix_machineCosts, shiftsToDo, overTimeToDo)
         {
-
+            fillProductionOrders();
         }
-        
+
+        new public void fillProductionOrders()
+        {
+            Order_p1 = GlobalVariables.P1Produktionsauftrag;
+            Order_p2 = GlobalVariables.P2Produktionsauftrag;
+            Order_p3 = GlobalVariables.P3Produktionsauftrag;
+        }
+
         #region Production P1
         public void produce_one_bath_p1()
         {
@@ -323,5 +330,12 @@
             return 1 * p1Val + 1 * p2Val + 1 * p3Val;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nOrder P1: " + Order_p1
+                + "\nOrder P2: " + Order_p2
+                + "\nOrder P3: " + Order_p3;
+        }
     }
 }

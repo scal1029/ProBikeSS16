@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProBikeSS16.Workplaces;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -12,6 +13,21 @@ namespace ProBikeSS16
         static readonly Factory instance = new Factory();
 
         Dictionary<int, Workplace> workplaces = new Dictionary<int, Workplace>();
+        WP_1 wp_1;
+        WP_2 wp_2;
+        WP_3 wp_3;
+        WP_4 wp_4;
+        WP_6 wp_6;
+        WP_7 wp_7;
+        WP_8 wp_8;
+        WP_9 wp_9;
+        WP_10 wp_10;
+        WP_11 wp_11;
+        WP_12 wp_12;
+        WP_13 wp_13;
+        WP_14 wp_14;
+        WP_15 wp_15;
+
 
         Storage storage;
 
@@ -28,81 +44,93 @@ namespace ProBikeSS16
             initWorkplaces();
         }
 
+        public void simulateWork(DataTable productionOrders)
+        {
+            //Beispiel Produktion P1 --> 100 Stück 
+            wp_4.Order_p1 = 100;
+            wp_3.Order_E51 = wp_4.NeedOfE51; //Automatisch berechnet aus Order_p1
+            wp_15.Order_E17 += wp_3.NeedOfE17;
+            wp_14.Order_E16 += wp_3.NeedOfE16;
+            wp_2.Order_E50 += wp_3.NeedOfE50;
+            wp_15.Order_E26 += wp_4.NeedOfE26;
+            wp_7.Order_d15_p1 += wp_15.NeedOf7DirectTo15_P1;
+
+            wp_4.produce_one_bath_p1(); //Einmal zehn Einheiten von P1 produzieren
+
+        }
+
         private void initWorkplaces()
         {
-            //workplaces.Add(i, (new WP_1(i, Constants.VARIABLE_MACHINE_COSTS[i], Constants.FIX_MACHINE_COSTS[i]));
-            //Console.WriteLine(workplaces[i]);
+            wp_1 = new WP_1((int)Constants.WORKPLACES.A1,
+                Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A1],
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A1]);
+            workplaces.Add((int)Constants.WORKPLACES.A1, wp_1);
 
-            workplaces.Add((int)Constants.WORKPLACES.A1, 
-                new Workplaces.WP_1((int)Constants.WORKPLACES.A1, 
-                Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A1], 
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A1]));
-
-            workplaces.Add((int)Constants.WORKPLACES.A2,
-                new Workplaces.WP_2((int)Constants.WORKPLACES.A2,
+            wp_2 = new WP_2((int)Constants.WORKPLACES.A2,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A2],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A2]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A2]);
+            workplaces.Add((int)Constants.WORKPLACES.A2, wp_2);
 
-            workplaces.Add((int)Constants.WORKPLACES.A3,
-                new Workplaces.WP_3((int)Constants.WORKPLACES.A3,
+            wp_3 = new WP_3((int)Constants.WORKPLACES.A3,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A3],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A3]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A3]);
+            workplaces.Add((int)Constants.WORKPLACES.A3, wp_3);
 
-            workplaces.Add((int)Constants.WORKPLACES.A4,
-                new Workplaces.WP_4((int)Constants.WORKPLACES.A4,
+            wp_4 = new WP_4((int)Constants.WORKPLACES.A4,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A4],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A4]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A4]);
+            workplaces.Add((int)Constants.WORKPLACES.A4, wp_4);
 
-            workplaces.Add((int)Constants.WORKPLACES.A6,
-                new Workplaces.WP_6((int)Constants.WORKPLACES.A6,
+            wp_6 = new WP_6((int)Constants.WORKPLACES.A6,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A6],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A6]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A6]);
+            workplaces.Add((int)Constants.WORKPLACES.A6, wp_6);
 
-            workplaces.Add((int)Constants.WORKPLACES.A7,
-                new Workplaces.WP_7((int)Constants.WORKPLACES.A7,
+            wp_7 = new WP_7((int)Constants.WORKPLACES.A7,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A7],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A7]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A7]);
+            workplaces.Add((int)Constants.WORKPLACES.A7, wp_7);
 
-            workplaces.Add((int)Constants.WORKPLACES.A8,
-                new Workplaces.WP_8((int)Constants.WORKPLACES.A8,
+            wp_8 = new WP_8((int)Constants.WORKPLACES.A8,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A8],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A8]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A8]);
+            workplaces.Add((int)Constants.WORKPLACES.A8, wp_8);
 
-            workplaces.Add((int)Constants.WORKPLACES.A9,
-                new Workplaces.WP_9((int)Constants.WORKPLACES.A9,
+            wp_9 = new WP_9((int)Constants.WORKPLACES.A9,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A9],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A9]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A9]);
+            workplaces.Add((int)Constants.WORKPLACES.A9, wp_9);
 
-            workplaces.Add((int)Constants.WORKPLACES.A10,
-                new Workplaces.WP_10((int)Constants.WORKPLACES.A10,
+            wp_10 = new WP_10((int)Constants.WORKPLACES.A10,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A10],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A10]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A10]);
+            workplaces.Add((int)Constants.WORKPLACES.A10, wp_10);
 
-            workplaces.Add((int)Constants.WORKPLACES.A11,
-                new Workplaces.WP_11((int)Constants.WORKPLACES.A11,
+            wp_11 = new WP_11((int)Constants.WORKPLACES.A11,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A11],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A11]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A11]);
+            workplaces.Add((int)Constants.WORKPLACES.A11, wp_11);
 
-            workplaces.Add((int)Constants.WORKPLACES.A12,
-                new Workplaces.WP_12((int)Constants.WORKPLACES.A12,
+            wp_12 = new WP_12((int)Constants.WORKPLACES.A12,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A12],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A12]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A12]);
+            workplaces.Add((int)Constants.WORKPLACES.A12, wp_12);
 
-            workplaces.Add((int)Constants.WORKPLACES.A13,
-                new Workplaces.WP_13((int)Constants.WORKPLACES.A13,
+            wp_13 = new WP_13((int)Constants.WORKPLACES.A13,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A13],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A13]));
-                
-            workplaces.Add((int)Constants.WORKPLACES.A14,
-                new Workplaces.WP_14((int)Constants.WORKPLACES.A14,
-                Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A14],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A14]));
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A13]);
+            workplaces.Add((int)Constants.WORKPLACES.A13, wp_13);
 
-            workplaces.Add((int)Constants.WORKPLACES.A15,
-                new Workplaces.WP_15((int)Constants.WORKPLACES.A15,
+            wp_14 = new WP_14((int)Constants.WORKPLACES.A14,
+                Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A14],
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A14]);
+            workplaces.Add((int)Constants.WORKPLACES.A14, wp_14);
+
+            wp_15 = new WP_15((int)Constants.WORKPLACES.A15,
                 Constants.VARIABLE_MACHINE_COSTS[(int)Constants.WORKPLACES.A15],
-                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A15]));
-            
+                Constants.FIX_MACHINE_COSTS[(int)Constants.WORKPLACES.A15]);
+            workplaces.Add((int)Constants.WORKPLACES.A15, wp_15);
+
             foreach (Workplace w in workplaces.Values)
                 Console.WriteLine(w);
         }

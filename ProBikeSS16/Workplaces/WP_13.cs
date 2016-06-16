@@ -9,9 +9,7 @@ namespace ProBikeSS16.Workplaces
     class WP_13 : Workplace
     {
 
-        int order_DirectTo12 = 0;
-        int cur_prod = 0;
-        int onMachine = 0;
+        static int order_DirectTo12 = 0;
 
         #region Getter/Setter
         public int ProdTimeDirectTo12
@@ -33,6 +31,19 @@ namespace ProBikeSS16.Workplaces
         public int NeedOfK39
         {
             get { return getNeedOfK39(order_DirectTo12); }
+        }
+
+        public static int Order_DirectTo12
+        {
+            get
+            {
+                return order_DirectTo12;
+            }
+
+            set
+            {
+                order_DirectTo12 = value;
+            }
         }
         #endregion
 
@@ -73,5 +84,10 @@ namespace ProBikeSS16.Workplaces
             return 1 * k39Val;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nOrder D12: " + Order_DirectTo12;
+        }
     }
 }

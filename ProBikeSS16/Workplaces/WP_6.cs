@@ -2,12 +2,12 @@
 {
     class WP_6 : Workplace
     {
-        int order_d8_p1 = 0;
-        int order_d14_p1 = 0;
-        int order_d8_p2 = 0;
-        int order_d14_p2 = 0;
-        int order_d8_p3 = 0;
-        int order_d14_p3 = 0;
+        static int order_d8_p1 = 0;
+        static int order_d14_p1 = 0;
+        static int order_d8_p2 = 0;
+        static int order_d14_p2 = 0;
+        static int order_d8_p3 = 0;
+        static int order_d14_p3 = 0;
 
         #region Getter/Setter
         public int ProdTimeD8_p1
@@ -432,5 +432,15 @@
             return 1 * d14Val_p3;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nOrder d8_p1: " + Order_d8_p1
+                + "\nOrder d14_p1: " + Order_d14_p1
+                + "\nOrder d8_p1: " + Order_d8_p2
+                + "\nOrder d14_p1: " + Order_d14_p2
+                +"\nOrder d8_p1: " + Order_d8_p3
+                + "\nOrder d14_p1: " + Order_d14_p3; 
+        }
     }
 }

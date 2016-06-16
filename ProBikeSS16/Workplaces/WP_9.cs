@@ -1,16 +1,18 @@
-﻿namespace ProBikeSS16.Workplaces
+﻿using System.Text;
+
+namespace ProBikeSS16.Workplaces
 {
     class WP_9 : Workplace
     {
-        int order_e10 = 0;
-        int order_e11 = 0;
-        int order_e12 = 0;
-        int order_e13 = 0;
-        int order_e14 = 0;
-        int order_e15 = 0;
-        int order_e18 = 0;
-        int order_e19 = 0;
-        int order_e20 = 0;
+        static int order_e10 = 0;
+        static int order_e11 = 0;
+        static int order_e12 = 0;
+        static int order_e13 = 0;
+        static int order_e14 = 0;
+        static int order_e15 = 0;
+        static int order_e18 = 0;
+        static int order_e19 = 0;
+        static int order_e20 = 0;
 
         #region Getter/Setter
         public int ProdTimeE10
@@ -176,14 +178,144 @@
                     + getNeedOfK32(order_e18) + getNeedOfK32(order_e19) + getNeedOfK32(order_e20);
             }
         }
+
+        public static int Order_e10
+        {
+            get
+            {
+                return order_e10;
+            }
+
+            set
+            {
+                order_e10 = value;
+            }
+        }
+
+        public static int Order_e11
+        {
+            get
+            {
+                return order_e11;
+            }
+
+            set
+            {
+                order_e11 = value;
+            }
+        }
+
+        public static int Order_e12
+        {
+            get
+            {
+                return order_e12;
+            }
+
+            set
+            {
+                order_e12 = value;
+            }
+        }
+
+        public static int Order_e13
+        {
+            get
+            {
+                return order_e13;
+            }
+
+            set
+            {
+                order_e13 = value;
+            }
+        }
+
+        public static int Order_e14
+        {
+            get
+            {
+                return order_e14;
+            }
+
+            set
+            {
+                order_e14 = value;
+            }
+        }
+
+        public static int Order_e15
+        {
+            get
+            {
+                return order_e15;
+            }
+
+            set
+            {
+                order_e15 = value;
+            }
+        }
+
+        public static int Order_e18
+        {
+            get
+            {
+                return order_e18;
+            }
+
+            set
+            {
+                order_e18 = value;
+            }
+        }
+
+        public static int Order_e19
+        {
+            get
+            {
+                return order_e19;
+            }
+
+            set
+            {
+                order_e19 = value;
+            }
+        }
+
+        public static int Order_e20
+        {
+            get
+            {
+                return order_e20;
+            }
+
+            set
+            {
+                order_e20 = value;
+            }
+        }
         #endregion
 
         public WP_9(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo = 1, double overTimeToDo = 0) 
             : base(id, var_machineCosts, fix_machineCosts, shiftsToDo, overTimeToDo)
         {
-
+            fillProductionOrders();
         }
-        
+
+        new public void fillProductionOrders()
+        {
+            Order_e10 = GlobalVariables.E10Produktionsauftrag;
+            Order_e11 = GlobalVariables.E11Produktionsauftrag;
+            Order_e12 = GlobalVariables.E12Produktionsauftrag;
+            Order_e13 = GlobalVariables.E13Produktionsauftrag;
+            Order_e14 = GlobalVariables.E14Produktionsauftrag;
+            Order_e15 = GlobalVariables.E15Produktionsauftrag;
+            Order_e18 = GlobalVariables.E18Produktionsauftrag;
+            Order_e19 = GlobalVariables.E19Produktionsauftrag;
+            Order_e20 = GlobalVariables.E20Produktionsauftrag;
+        }
+
         #region Production E10
         public void produce_one_batch_e10()
         {
@@ -467,5 +599,23 @@
             return 1 * k32Val;
         }
         #endregion
+
+        public override string ToString()
+        {
+            StringBuilder s = new StringBuilder();
+
+            s.Append(base.ToString());
+            s.AppendLine("Order E10: " + Order_e10);
+            s.AppendLine("Order E11: " + Order_e11);
+            s.AppendLine("Order E12: " + Order_e12);
+            s.AppendLine("Order E13: " + Order_e13);
+            s.AppendLine("Order E14: " + Order_e14);
+            s.AppendLine("Order E15: " + Order_e15);
+            s.AppendLine("Order E18: " + Order_e18);
+            s.AppendLine("Order E19: " + Order_e19);
+            s.AppendLine("Order E20: " + Order_e20);
+
+            return s.ToString();
+        }
     }
 }

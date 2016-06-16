@@ -2,18 +2,18 @@
 {
     class WP_7 : Workplace
     {
-        int order_d9_1_p1 = 0;
-        int order_d9_2_p1 = 0;
-        int order_d9_3_p1 = 0;
-        int order_d9_1_p2 = 0;
-        int order_d9_2_p2 = 0;
-        int order_d9_3_p2 = 0;
-        int order_d9_1_p3 = 0;
-        int order_d9_2_p3 = 0;
-        int order_d9_3_p3 = 0;
-        int order_d15_p1 = 0;
-        int order_d15_p2 = 0;
-        int order_d15_p3 = 0;
+        static int order_d9_1_p1 = 0;
+        static int order_d9_2_p1 = 0;
+        static int order_d9_3_p1 = 0;
+        static int order_d9_1_p2 = 0;
+        static int order_d9_2_p2 = 0;
+        static int order_d9_3_p2 = 0;
+        static int order_d9_1_p3 = 0;
+        static int order_d9_2_p3 = 0;
+        static int order_d9_3_p3 = 0;
+        static int order_d15_p1 = 0;
+        static int order_d15_p2 = 0;
+        static int order_d15_p3 = 0;
 
         #region Getter/Setter
         public int ProdTimeD9_1_p1
@@ -744,7 +744,6 @@
         }
         #endregion
 
-
         #region Methods
         public int getApproxProdTimeOd9(int val)
         {
@@ -771,5 +770,21 @@
             return 2 * k59Val;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nOrder d9_1_p1: " + Order_d9_1_p1
+                + "\nOrder d9_2_p1: " + Order_d9_2_p1
+                + "\nOrder d9_3_p1: " + Order_d9_3_p1
+                + "\nOrder d9_1_p2: " + Order_d9_1_p2
+                + "\nOrder d9_2_p2: " + Order_d9_2_p2
+                + "\nOrder d9_3_p2: " + Order_d9_3_p2
+                + "\nOrder d9_1_p3: " + Order_d9_1_p3
+                + "\nOrder d9_2_p3: " + Order_d9_2_p3
+                + "\nOrder d9_3_p3: " + Order_d9_3_p3 
+                + "\nOrder d15_p1: " + Order_d15_p1
+                + "\nOrder d15_p2: " + Order_d15_p2
+                + "\nOrder d15_p3: " + Order_d15_p3;
+        }
     }
 }

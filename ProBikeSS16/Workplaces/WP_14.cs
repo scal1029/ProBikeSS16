@@ -9,8 +9,7 @@ namespace ProBikeSS16.Workplaces
     class WP_14 : Workplace
     {
 
-        int order_E16 = 0;
-        int onMachine = 0;
+        static int order_E16 = 0;
 
         #region Getter/Setter
         public int ProdTimeE16
@@ -49,7 +48,7 @@ namespace ProBikeSS16.Workplaces
             get { return getNeedOfK24(order_E16); }
         }
 
-        public int NeedOfE40
+        public int NeedOfK40
         {
             get { return getNeedOfK40(order_E16); }
         }
@@ -63,14 +62,32 @@ namespace ProBikeSS16.Workplaces
         {
             get { return getNeedOfK42(order_E16); }
         }
+
+        public int Order_E16
+        {
+            get
+            {
+                return order_E16;
+            }
+
+            set
+            {
+                order_E16 = value;
+            }
+        }
         #endregion
 
         public WP_14(int id, double var_machineCosts, double fix_machineCosts, int shiftsToDo = 1, double overTimeToDo = 0) 
             : base(id, var_machineCosts, fix_machineCosts, shiftsToDo, overTimeToDo)
         {
-
+            fillProductionOrders();
         }
-        
+
+        new public void fillProductionOrders()
+        {
+            Order_E16 = GlobalVariables.E16Produktionsauftrag;
+        }
+
         #region Production E16
         public void produce_one_bath_e16()
         {
@@ -130,5 +147,10 @@ namespace ProBikeSS16.Workplaces
             return 2 * k42Val;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nOrder E16: " + Order_E16;
+        }
     }
 }

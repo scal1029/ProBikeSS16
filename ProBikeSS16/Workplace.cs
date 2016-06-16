@@ -161,6 +161,8 @@ namespace ProBikeSS16
             Debug.WriteLine("Created Workplace: " + id);
         }
 
+        public virtual void fillProductionOrders() { }
+
         public override string ToString()
         {
             StringBuilder s = new StringBuilder();
