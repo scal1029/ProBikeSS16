@@ -18,7 +18,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{DynamicResource ResourceKey=File}">
-                <MenuItem Header="{DynamicResource ResourceKey=Help}"></MenuItem>
+                <MenuItem Header="{DynamicResource ResourceKey=Help}" Click="Handbuch"></MenuItem>
                 <Separator></Separator>
                 <MenuItem x:Name="ExitButton" Header="{DynamicResource ResourceKey=Exit}" Click="MenuItem_Exit_Click"></MenuItem>
             </MenuItem>
@@ -37,7 +37,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="{DynamicResource ResourceKey=Help}">
-                <MenuItem Header="{DynamicResource ResourceKey=Manual}"></MenuItem>
+                <MenuItem Header="{DynamicResource ResourceKey=Manual}" Click="Handbuch"></MenuItem>
             </MenuItem>
         </Menu>
         <Grid>

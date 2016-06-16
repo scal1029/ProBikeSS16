@@ -6699,5 +6699,12 @@ namespace ProBikeSS16
         {
             e.Handled = new Regex("[^1-3]{1}").IsMatch(e.Text);
         }
+
+        private void Handbuch(object sender, RoutedEventArgs e)
+        {
+            string Pfad = System.AppDomain.CurrentDomain.BaseDirectory;
+
+            System.Diagnostics.Process.Start(Pfad + @"Handbuch.pdf");
+        }
     }
 }
