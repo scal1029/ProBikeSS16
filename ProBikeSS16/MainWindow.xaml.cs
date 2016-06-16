@@ -3377,27 +3377,31 @@ namespace ProBikeSS16
             int B22;
             int B33;
             int B44;
-            foreach (DataRow DR in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["order"].Rows)
+            if (GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables.Contains("order"))
             {
-
-                if (GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["order"].Columns.Contains("futureinwardstockmovement_Id"))
+                foreach (DataRow DR in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["order"].Rows)
                 {
-                    if (DR["futureinwardstockmovement_Id"] != DBNull.Value)
+
+                    if (GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["order"].Columns.Contains("futureinwardstockmovement_Id"))
                     {
-                        B1 = DR["orderperiod"].ToString();
-                        B11 = int.Parse(B1) - AktuellePeriode;
-                        B2 = DR["article"].ToString();
-                        B22 = int.Parse(B2);
-                        B3 = DR["amount"].ToString();
-                        B33 = int.Parse(B3);
-                        B4 = DR["mode"].ToString();
-                        B44 = int.Parse(B4);
-                        AlteBestellungen.Rows.Add(B11, B22, B33, B44);
+                        if (DR["futureinwardstockmovement_Id"] != DBNull.Value)
+                        {
+                            B1 = DR["orderperiod"].ToString();
+                            B11 = int.Parse(B1) - AktuellePeriode;
+                            B2 = DR["article"].ToString();
+                            B22 = int.Parse(B2);
+                            B3 = DR["amount"].ToString();
+                            B33 = int.Parse(B3);
+                            B4 = DR["mode"].ToString();
+                            B44 = int.Parse(B4);
+                            AlteBestellungen.Rows.Add(B11, B22, B33, B44);
+                        }
+
+
                     }
-
-
                 }
             }
+
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
                 Console.WriteLine("Vergangenheit: " + DR[0].ToString() + " Artikel: " + DR[1].ToString() + " Menge: " + DR[2].ToString());
