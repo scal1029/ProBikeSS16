@@ -374,7 +374,7 @@
             }
 
             /** TODO DIRECTS **/
-            if (storage.Content[28].Quantity < (3 * prod_batch)
+            if (storage.Content[28].Quantity < (3 * prod_batch))
                 return;
 
             storage.Content[28].Quantity -= (3 * prod_batch);
