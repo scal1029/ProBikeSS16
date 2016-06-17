@@ -99,8 +99,9 @@
                         <Image Grid.Column="0" Grid.Row="7" Visibility="Hidden" Grid.ColumnSpan="2" x:Name="XMLImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/File Adobe Dreamweaver XML-01.png"/>
                         <TextBox Grid.Column="1" Grid.Row="8" Visibility="Hidden" Grid.ColumnSpan="2" IsReadOnly="True" x:Name="XMLPath" Height="20" Width="280"/>
                         <Button Grid.Column="3" Grid.Row="8" Visibility="Hidden" x:Name="XmlUpload" Height="20" Width="100" HorizontalAlignment="Left" Margin="-10,0,0,0" Content="{DynamicResource ResourceKey=UploadXml}" Click="XmlUpload_OnClick"/>
-                        <Image Grid.Column="7" Grid.Row="5" x:Name="Okay1" HorizontalAlignment="Left" Source="Images/haken.bmp" Visibility="Hidden"/>
-                        <Image Grid.Column="6" Grid.Row="8" x:Name="Okay2" HorizontalAlignment="Left" Source="Images/haken.bmp" Visibility="Hidden"/>
+                        <Image Grid.Column="6" Grid.Row="6" HorizontalAlignment="Center" x:Name="Okay1" Source="Images/haken2.png" Visibility="Hidden" Margin="0,0,0,0"/>
+                        <Image Grid.Column="3" Grid.Row="9" x:Name="Okay2" Margin="0,10,65,0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="Images/haken2.png" Visibility="Hidden"/>
+                        <Image Grid.Column="4" Grid.Row="9" x:Name="Okay3" Margin="0,10,0,0" HorizontalAlignment="Center" Source="Images/haken2.png" Visibility="Hidden"/>
                         <Button Grid.Column="4" Grid.Row="8" Visibility="Hidden" Content="{DynamicResource ResourceKey=Calculation}" x:Name="CalculationStart" Height="20" Click="CalculationStart_OnClick"></Button>
                     </Grid>
                 </TabItem>
@@ -907,7 +908,7 @@
                                     <Label Grid.Column="1" Height="25" Width="50" Content="58"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 30,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
                                     <Label Grid.Column="1" Height="25" Width="50" Content="59"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 70,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
 
-                                    <Button Grid.Column="1" Content="Evaluierung" Margin="10,10,10,600" Height="20" Width="180"></Button>
+                                    <Button Grid.Column="1" Content="Evaluierung" Click="Evaluierung2" Margin="10,10,10,600" Height="20" Width="180"></Button>
                                     <Label Content="{DynamicResource ResourceKey=Need}" Margin="185,25,0,0" FontWeight="Bold" HorizontalAlignment="Left"></Label>
                                     <Label Content="{DynamicResource ResourceKey=ForecastStock}" Margin="460,25,0,0" FontWeight="Bold" HorizontalAlignment="Left"></Label>
 
@@ -953,9 +954,9 @@
                                         <ComboBoxItem Content="Eilbestellung(4)"></ComboBoxItem>
                                         <ComboBoxItem Content="Bestellung(5)"></ComboBoxItem>
                                     </ComboBox>
-                                    <Button Grid.Column="1" Content="{DynamicResource ResourceKey=AddOrder}" Margin="10,10,10,400" Height="20" Width="180"></Button>
-                                    <Button Grid.Column="1" Content="{DynamicResource ResourceKey=DeleteOrder}" Margin="10,10,10,350" Height="20" Width="180"></Button>
-                                    <DataGrid Grid.Column="0" CanUserAddRows="False" IsReadOnly="True" Name="BestellungslisteZu" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="100,50,10,10">
+                                    <Button Grid.Column="1" Click="AddOrderBestellung_OnClick" Content="{DynamicResource ResourceKey=AddOrder}" Margin="10,10,10,400" Height="20" Width="180"></Button>
+                                    <Button Grid.Column="1" Click="DeleteOrderBestellung_OnClick" Content="{DynamicResource ResourceKey=DeleteOrder}" Margin="10,10,10,350" Height="20" Width="180"></Button>
+                                    <DataGrid SelectionMode="Single" Grid.Column="0" CanUserAddRows="False" IsReadOnly="True" Name="BestellungslisteZu" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="100,50,10,10">
                                         <DataGrid.Columns>
                                             <DataGridTemplateColumn IsReadOnly="True" Width="120">
                                                 <DataGridTemplateColumn.Header>
