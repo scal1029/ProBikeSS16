@@ -13,7 +13,7 @@
     <sys:String x:Key="LanguageEnglish">English</sys:String>
     <sys:String x:Key="LanguageGerman">German</sys:String>
 
-    <sys:String x:Key="Settings">Einstellungen</sys:String>
+    <sys:String x:Key="Settings">Settings</sys:String>
         <sys:String x:Key="ProdCalcSettings">Production Calculation Settings</sys:String>
             <sys:String x:Key="PartsPrio">Prefabricated Parts(E-Parts) Prioritize</sys:String>
             <sys:String x:Key="BikePrio">Bikes(P) prioritize</sys:String>
@@ -32,10 +32,11 @@
     <sys:String x:Key="DataExport">Export XML</sys:String>
 
     <!-- Localized strings ForecastAndDataImport-->
+    <sys:String x:Key="Calculation">Calculation</sys:String>
     <sys:String x:Key="Forecast">Forecast</sys:String>
-    <sys:String x:Key="ChildBike">Children's Bike</sys:String>
-    <sys:String x:Key="FemaleBike">Ladies' Bike</sys:String>
-    <sys:String x:Key="MaleBike">Men's Bike</sys:String>
+    <sys:String x:Key="ChildBike">Children Bicycle</sys:String>
+    <sys:String x:Key="FemaleBike">Female Bicycle</sys:String>
+    <sys:String x:Key="MaleBike">Male Bicycle</sys:String>
     <sys:String x:Key="SafetyStock">Safety-Stock</sys:String>
     <sys:String x:Key="PeriodN">Period n</sys:String>
     <sys:String x:Key="PeriodN1">Period n+1</sys:String>
@@ -82,5 +83,32 @@
     <sys:String x:Key="SalesP1+3ToolTip">Forecast Sales Opportunities Children Bicycle</sys:String>
     <sys:String x:Key="SalesP2+3ToolTip">Forecast Sales Opportunities Female Bicycle</sys:String>
     <sys:String x:Key="SalesP3+3ToolTip">Forecast Sales Opportunities Male Bicycle</sys:String>
+
+    <!-- Localized strings CurrentStock-->
+    <sys:String x:Key="Article">Article</sys:String>
+    <sys:String x:Key="Startamount">Startamount</sys:String>
+    <sys:String x:Key="Amount">Amount</sys:String>
+    <sys:String x:Key="Percent">Percent (in %)</sys:String>
+    <sys:String x:Key="Price">Price (in €)</sys:String>
+    <sys:String x:Key="Stockvalue">Stockvalue (in €)</sys:String>
+    <sys:String x:Key="Evaluation">Evaluation</sys:String>
+
+    <!-- Localized strings Manufactoring Orders-->
+    <sys:String x:Key="Item">Item</sys:String>
+    <sys:String x:Key="Amount2">Amount</sys:String>
+
+    <!-- Localized strings Supply-Planning-->
+    <sys:String x:Key="Planning">Planning</sys:String>
+    <sys:String x:Key="Listing">Listing</sys:String>
+    <!--Planning-->
+    <sys:String x:Key="Article2">Article</sys:String>
+    <sys:String x:Key="Stock2">Stock</sys:String>
+    <sys:String x:Key="Need">Gross Demand (in Period):</sys:String>
+    <sys:String x:Key="ForecastStock">Stock (in Period):</sys:String>
+    <!--Listing-->
+    <sys:String x:Key="Article3">Article</sys:String>
+    <sys:String x:Key="Quantity">Quantity</sys:String>
+    <sys:String x:Key="Mode">Mode</sys:String>
+
 
 </ResourceDictionary>
