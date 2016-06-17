@@ -95,7 +95,18 @@ namespace ProBikeSS16
                 XmlUpload.Visibility = Visibility.Visible;
                 Okay1.Visibility = Visibility.Visible;
                 DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(3));
+
+                animation.Completed += (s, t) =>
+                {
+                    Okay1.BeginAnimation(Image.OpacityProperty, null);
+                    Okay1.Visibility = Visibility.Hidden;
+                };
+
                 Okay1.BeginAnimation(Image.OpacityProperty, animation);
+
+
+
+
             }
 
         }
@@ -136,7 +147,16 @@ namespace ProBikeSS16
                     CalculationStart.Visibility = Visibility.Visible;
                     Okay2.Visibility = Visibility.Visible;
                     DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(3));
+
+                    animation.Completed += (s, t) =>
+                    {
+                        Okay2.BeginAnimation(Image.OpacityProperty, null);
+                        Okay2.Visibility = Visibility.Hidden;
+                    };
+
                     Okay2.BeginAnimation(Image.OpacityProperty, animation);
+
+
                 }
                 catch (XmlException exception)
                 {
@@ -168,6 +188,16 @@ namespace ProBikeSS16
             {
                 MessageBox.Show("Mistakes");
             }
+            Okay3.Visibility = Visibility.Visible;
+            DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(3));
+
+            animation.Completed += (s, t) =>
+            {
+                Okay3.BeginAnimation(Image.OpacityProperty, null);
+                Okay3.Visibility = Visibility.Hidden;
+            };
+
+            Okay3.BeginAnimation(Image.OpacityProperty, animation);
 
             refreshKapaPlanInputs();
             refreshAmountKapaPlan();
@@ -6472,12 +6502,12 @@ namespace ProBikeSS16
             //        }
             //    }
             //}
-
+            GlobalVariables.Bestellungsspeicher = Bestellungsliste;
 
             Bestellung.DataContext = Bestellungsplannung.DefaultView;
 
-            BestellungslisteZu.DataContext = Bestellungsliste;
-            BestellungslisteZu.ItemsSource = Bestellungsliste.DefaultView;
+            BestellungslisteZu.DataContext = GlobalVariables.Bestellungsspeicher;
+            BestellungslisteZu.ItemsSource = GlobalVariables.Bestellungsspeicher.DefaultView;
 
             #endregion bestellungsplannung
 
@@ -10186,10 +10216,12 @@ namespace ProBikeSS16
             //}
 
 
+            GlobalVariables.Bestellungsspeicher = Bestellungsliste;
+
             Bestellung.DataContext = Bestellungsplannung.DefaultView;
 
-            BestellungslisteZu.DataContext = Bestellungsliste;
-            BestellungslisteZu.ItemsSource = Bestellungsliste.DefaultView;
+            BestellungslisteZu.DataContext = GlobalVariables.Bestellungsspeicher;
+            BestellungslisteZu.ItemsSource = GlobalVariables.Bestellungsspeicher.DefaultView;
 
             #endregion bestellungsplannung
 
@@ -10396,5 +10428,71 @@ namespace ProBikeSS16
             }
         }
 
+        private void Evaluierung2(object sender, RoutedEventArgs e)
+        {
+            foreach (System.Data.DataRowView dr in Bestellung.ItemsSource)
+            {
+                var row = Bestellung.ItemContainerGenerator.ContainerFromItem(dr) as DataGridRow;
+                if ((int.Parse((string)dr["Bestellung Periode n+3"])) > 0)
+                {
+                    row.Background = Brushes.Green;
+                }
+                if ((int.Parse((string)dr["Bestellung Periode n+3"])) <= 0)
+                {
+                    row.Background = Brushes.Yellow;
+                }
+                if ((int.Parse((string)dr["Bestellung Periode n+2"])) <= 0)
+                {
+                    row.Background = Brushes.Orange;
+                }
+                if ((int.Parse((string)dr["Bestellung Periode n+1"])) <= 0)
+                {
+                    row.Background = Brushes.OrangeRed;
+                }
+                if ((int.Parse((string)dr["Bestellung Periode n"])) <= 0)
+                {
+                    row.Background = Brushes.Red;
+                }
+            }
+        }
+
+        private void DeleteOrderBestellung_OnClick(object sender, RoutedEventArgs e)
+        {
+            DataRowView row = (DataRowView)BestellungslisteZu.SelectedItems[0];
+            row.Delete();
+        }
+
+
+        private void AddOrderBestellung_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (OrderArticle.Text.Length > 0 && OrderAmount.Text.Length > 0 && BestellungModus.SelectedIndex > -1)
+            {
+                int ItemID;
+                int amount;
+                int modus;
+                ItemID = int.Parse(OrderArticle.Text);
+                amount = int.Parse(OrderAmount.Text);
+                if(BestellungModus.SelectedIndex == 0)
+                {
+                    modus = 4;
+                }
+                else
+                {
+                    modus = 5;
+                }
+                DataRow AddRow = GlobalVariables.Bestellungsspeicher.NewRow();
+                AddRow["article"] = ItemID;
+                AddRow["quantity"] = amount;
+                AddRow["modus"] = modus;
+                
+
+                GlobalVariables.Bestellungsspeicher.Rows.Add(AddRow);
+            }
+            else
+            {
+                MessageBox.Show("Fehler");
+            }
+
+        }
     }
 }
