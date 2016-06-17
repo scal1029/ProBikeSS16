@@ -168,6 +168,14 @@ namespace ProBikeSS16
             {
                 MessageBox.Show("Mistakes");
             }
+
+            E4A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E4Produktionsauftrag).ToString();
+            E5A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E5Produktionsauftrag).ToString();
+            E6A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E6Produktionsauftrag).ToString();
+            E7A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E7Produktionsauftrag).ToString();
+            E8A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E8Produktionsauftrag).ToString();
+            E9A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E9Produktionsauftrag).ToString();
+
         }
 
         #region Data
