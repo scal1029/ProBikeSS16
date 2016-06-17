@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
+using ProBikeSS16.Workplaces;
 
 namespace ProBikeSS16
 {
@@ -17,6 +16,9 @@ namespace ProBikeSS16
         protected int[] workTimePerDay = new int[5];
         protected int cur_prod = 0;
         protected int onMachine = 0;
+        public MissingMaterial missingMaterial;
+        public WaitList waitList;
+        public int curBatch;
 
         protected int prod_batch = 10;
 
