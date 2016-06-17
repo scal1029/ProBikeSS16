@@ -168,7 +168,283 @@ namespace ProBikeSS16
             {
                 MessageBox.Show("Mistakes");
             }
+
+            refreshKapaPlanInputs();
+            refreshAmountKapaPlan();
+            calculateCapNeed();
         }
+
+        #region Refreshing Functions
+        public void refreshKapaPlanInputs()
+        {
+            E4A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E4Produktionsauftrag).ToString();
+            E5A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E5Produktionsauftrag).ToString();
+            E6A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E6Produktionsauftrag).ToString();
+            E7A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E7Produktionsauftrag).ToString();
+            E8A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E8Produktionsauftrag).ToString();
+            E9A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E9Produktionsauftrag).ToString();
+
+            E4A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE4(GlobalVariables.E4Produktionsauftrag).ToString();
+            E5A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE5(GlobalVariables.E5Produktionsauftrag).ToString();
+            E6A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE6(GlobalVariables.E6Produktionsauftrag).ToString();
+            E7A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE7(GlobalVariables.E7Produktionsauftrag).ToString();
+            E8A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE8(GlobalVariables.E8Produktionsauftrag).ToString();
+            E9A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE9(GlobalVariables.E9Produktionsauftrag).ToString();
+
+            E10A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E15Produktionsauftrag).ToString();
+
+            E10A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_1_p1(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_1_p2(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_1_p3(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_3_p1(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_3_p2(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_3_p3(GlobalVariables.E15Produktionsauftrag).ToString();
+
+            E10A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E15Produktionsauftrag).ToString();
+
+            E10A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E15Produktionsauftrag).ToString();
+
+            E10A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E15Produktionsauftrag).ToString();
+
+            E16A6.Text = GlobalVariables.factory.Wp_6.getApproxProdTimeOd14_p1(GlobalVariables.E16Produktionsauftrag).ToString();
+            E16A14.Text = GlobalVariables.factory.Wp_14.getApproxProdTimeE16(GlobalVariables.E16Produktionsauftrag).ToString();
+
+            E17A15.Text = GlobalVariables.factory.Wp_15.getApproxProdTimeE17(GlobalVariables.E17Produktionsauftrag).ToString();
+
+            E18A6.Text = GlobalVariables.factory.Wp_6.getApproxProdTimeOd8_p1(GlobalVariables.E18Produktionsauftrag).ToString();
+            E19A6.Text = GlobalVariables.factory.Wp_6.getApproxProdTimeOd8_p2(GlobalVariables.E19Produktionsauftrag).ToString();
+            E20A6.Text = GlobalVariables.factory.Wp_6.getApproxProdTimeOd8_p3(GlobalVariables.E20Produktionsauftrag).ToString();
+
+            E18A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E18Produktionsauftrag).ToString();
+            E19A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E19Produktionsauftrag).ToString();
+            E20A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E20Produktionsauftrag).ToString();
+
+            E18A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_2_p1(GlobalVariables.E18Produktionsauftrag).ToString();
+            E19A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_2_p2(GlobalVariables.E19Produktionsauftrag).ToString();
+            E20A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_2_p3(GlobalVariables.E20Produktionsauftrag).ToString();
+
+            E18A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime2(GlobalVariables.E18Produktionsauftrag).ToString();
+            E19A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime2(GlobalVariables.E19Produktionsauftrag).ToString();
+            E20A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime2(GlobalVariables.E20Produktionsauftrag).ToString();
+
+            E26A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E26Produktionsauftrag).ToString();
+            E26A15.Text = GlobalVariables.factory.Wp_15.getApproxProdTimeE26(GlobalVariables.E26Produktionsauftrag).ToString();
+
+            E49A1.Text = GlobalVariables.factory.Wp_1.getApproxProdTimeE49(GlobalVariables.E49Produktionsauftrag).ToString();
+            E54A1.Text = GlobalVariables.factory.Wp_1.getApproxProdTimeE54(GlobalVariables.E54Produktionsauftrag).ToString();
+            E29A1.Text = GlobalVariables.factory.Wp_1.getApproxProdTimeE29(GlobalVariables.E29Produktionsauftrag).ToString();
+
+            E50A2.Text = GlobalVariables.factory.Wp_2.getApproxProdTimeE50(GlobalVariables.E50Produktionsauftrag).ToString();
+            E55A2.Text = GlobalVariables.factory.Wp_2.getApproxProdTimeE55(GlobalVariables.E55Produktionsauftrag).ToString();
+            E30A2.Text = GlobalVariables.factory.Wp_2.getApproxProdTimeE30(GlobalVariables.E30Produktionsauftrag).ToString();
+
+            E51A3.Text = GlobalVariables.factory.Wp_3.getApproxProdTimeE51(GlobalVariables.E51Produktionsauftrag).ToString();
+            E56A3.Text = GlobalVariables.factory.Wp_3.getApproxProdTimeE56(GlobalVariables.E56Produktionsauftrag).ToString();
+            E31A3.Text = GlobalVariables.factory.Wp_3.getApproxProdTimeE31(GlobalVariables.E31Produktionsauftrag).ToString();
+
+            P1A4.Text = GlobalVariables.factory.Wp_4.getApproxProdTimeP1(GlobalVariables.P1Produktionsauftrag).ToString();
+            P2A4.Text = GlobalVariables.factory.Wp_4.getApproxProdTimeP2(GlobalVariables.P2Produktionsauftrag).ToString();
+            P3A4.Text = GlobalVariables.factory.Wp_4.getApproxProdTimeP3(GlobalVariables.P3Produktionsauftrag).ToString();
+        }
+
+        public void refreshAmountKapaPlan()
+        {
+            AmE4.Text = GlobalVariables.E4Produktionsauftrag.ToString();
+            AmE5.Text = GlobalVariables.E5Produktionsauftrag.ToString();
+            AmE6.Text = GlobalVariables.E6Produktionsauftrag.ToString();
+            AmE7.Text = GlobalVariables.E7Produktionsauftrag.ToString();
+            AmE8.Text = GlobalVariables.E8Produktionsauftrag.ToString();
+            AmE9.Text = GlobalVariables.E9Produktionsauftrag.ToString();
+            AmE10.Text = GlobalVariables.E10Produktionsauftrag.ToString();
+            AmE11.Text = GlobalVariables.E11Produktionsauftrag.ToString();
+            AmE12.Text = GlobalVariables.E12Produktionsauftrag.ToString();
+            AmE13.Text = GlobalVariables.E13Produktionsauftrag.ToString();
+            AmE14.Text = GlobalVariables.E14Produktionsauftrag.ToString();
+            AmE15.Text = GlobalVariables.E15Produktionsauftrag.ToString();
+            AmE16.Text = GlobalVariables.E16Produktionsauftrag.ToString();
+            AmE17.Text = GlobalVariables.E17Produktionsauftrag.ToString();
+            AmE18.Text = GlobalVariables.E18Produktionsauftrag.ToString();
+            AmE19.Text = GlobalVariables.E19Produktionsauftrag.ToString();
+            AmE20.Text = GlobalVariables.E20Produktionsauftrag.ToString();
+
+            AmE26.Text = GlobalVariables.E26Produktionsauftrag.ToString();
+
+            AmE49.Text = GlobalVariables.E49Produktionsauftrag.ToString();
+            AmE54.Text = GlobalVariables.E54Produktionsauftrag.ToString();
+            AmE29.Text = GlobalVariables.E29Produktionsauftrag.ToString();
+
+            AmE50.Text = GlobalVariables.E50Produktionsauftrag.ToString();
+            AmE55.Text = GlobalVariables.E55Produktionsauftrag.ToString();
+            AmE30.Text = GlobalVariables.E30Produktionsauftrag.ToString();
+
+            AmE51.Text = GlobalVariables.E51Produktionsauftrag.ToString();
+            AmE56.Text = GlobalVariables.E56Produktionsauftrag.ToString();
+            AmE31.Text = GlobalVariables.E31Produktionsauftrag.ToString();
+
+            AmP1.Text = GlobalVariables.P1Produktionsauftrag.ToString();
+            AmP2.Text = GlobalVariables.P2Produktionsauftrag.ToString();
+            AmP3.Text = GlobalVariables.P3Produktionsauftrag.ToString();
+        }
+
+        public void calculateCapNeed()
+        {
+            calculateCapNeedA1();
+            calculateCapNeedA2();
+            calculateCapNeedA3();
+            calculateCapNeedA4();
+            calculateCapNeedA6();
+            calculateCapNeedA7();
+            calculateCapNeedA8();
+            calculateCapNeedA9();
+            calculateCapNeedA10();
+            calculateCapNeedA11();
+            calculateCapNeedA12();
+            calculateCapNeedA13();
+            calculateCapNeedA14();
+            calculateCapNeedA15();
+        }
+
+        public void calculateCapNeedA1()
+        {
+            kapA1.Text = (Int32.Parse(E49A1.Text) + Int32.Parse(E54A1.Text) + Int32.Parse(E29A1.Text)).ToString();
+        }
+
+        public void calculateCapNeedA2()
+        {
+            kapA2.Text = (Int32.Parse(E50A2.Text) + Int32.Parse(E55A2.Text) + Int32.Parse(E30A2.Text)).ToString();
+        }
+
+        public void calculateCapNeedA3()
+        {
+            kapA3.Text = (Int32.Parse(E51A3.Text) + Int32.Parse(E56A3.Text) + Int32.Parse(E31A3.Text)).ToString();
+        }
+
+        public void calculateCapNeedA4()
+        {
+            kapA4.Text = (Int32.Parse(P1A4.Text) + Int32.Parse(P2A4.Text) + Int32.Parse(P3A4.Text)).ToString();
+        }
+
+        public void calculateCapNeedA6()
+        {
+            kapA6.Text = (Int32.Parse(E16A6.Text) 
+                + Int32.Parse(E18A6.Text) 
+                + Int32.Parse(E19A6.Text)
+                + Int32.Parse(E20A6.Text)).ToString();
+        }
+
+        public void calculateCapNeedA7()
+        {
+            kapA7.Text = (Int32.Parse(E10A7.Text)
+                + Int32.Parse(E11A7.Text)
+                + Int32.Parse(E12A7.Text)
+                + Int32.Parse(E13A7.Text)
+                + Int32.Parse(E14A7.Text)
+                + Int32.Parse(E15A7.Text)
+                + Int32.Parse(E18A7.Text)
+                + Int32.Parse(E19A7.Text)
+                + Int32.Parse(E20A7.Text)
+                + Int32.Parse(E26A7.Text)).ToString();
+        }
+
+        public void calculateCapNeedA8()
+        {
+            kapA8.Text = (Int32.Parse(E10A8.Text)
+                + Int32.Parse(E11A8.Text)
+                + Int32.Parse(E12A8.Text)
+                + Int32.Parse(E13A8.Text)
+                + Int32.Parse(E14A8.Text)
+                + Int32.Parse(E15A8.Text)
+                + Int32.Parse(E18A8.Text)
+                + Int32.Parse(E19A8.Text)
+                + Int32.Parse(E20A8.Text)).ToString();
+        }
+
+        public void calculateCapNeedA9()
+        {
+            kapA9.Text = (Int32.Parse(E10A9.Text)
+                + Int32.Parse(E11A9.Text)
+                + Int32.Parse(E12A9.Text)
+                + Int32.Parse(E13A9.Text)
+                + Int32.Parse(E14A9.Text)
+                + Int32.Parse(E15A9.Text)
+                + Int32.Parse(E18A9.Text)
+                + Int32.Parse(E19A9.Text)
+                + Int32.Parse(E20A9.Text)).ToString();
+        }
+
+        public void calculateCapNeedA10()
+        {
+            kapA10.Text = (Int32.Parse(E4A10.Text)
+                + Int32.Parse(E5A10.Text)
+                + Int32.Parse(E6A10.Text)
+                + Int32.Parse(E7A10.Text)
+                + Int32.Parse(E8A10.Text)
+                + Int32.Parse(E9A10.Text)).ToString();
+        }
+
+        public void calculateCapNeedA11()
+        {
+            kapA11.Text = (Int32.Parse(E4A11.Text)
+                + Int32.Parse(E5A11.Text)
+                + Int32.Parse(E6A11.Text)
+                + Int32.Parse(E7A11.Text)
+                + Int32.Parse(E8A11.Text)
+                + Int32.Parse(E9A11.Text)).ToString();
+        }
+
+        public void calculateCapNeedA12()
+        {
+            kapA12.Text = (Int32.Parse(E10A12.Text)
+                + Int32.Parse(E11A12.Text)
+                + Int32.Parse(E12A12.Text)
+                + Int32.Parse(E13A12.Text)
+                + Int32.Parse(E14A12.Text)
+                + Int32.Parse(E15A12.Text)).ToString();
+        }
+
+        public void calculateCapNeedA13()
+        {
+            kapA13.Text = (Int32.Parse(E10A13.Text)
+                + Int32.Parse(E11A13.Text)
+                + Int32.Parse(E12A13.Text)
+                + Int32.Parse(E13A13.Text)
+                + Int32.Parse(E14A13.Text)
+                + Int32.Parse(E15A13.Text)).ToString();
+        }
+
+        public void calculateCapNeedA14()
+        {
+            kapA14.Text = (Int32.Parse(E16A14.Text)).ToString();
+        }
+
+        public void calculateCapNeedA15()
+        {
+            kapA15.Text = (Int32.Parse(E17A15.Text)
+                + Int32.Parse(E26A15.Text)).ToString();
+        }
+
+
+        #endregion
 
         #region Data
 
@@ -6387,13 +6663,13 @@ namespace ProBikeSS16
             FemaleBikePassedWaitlistE11.Text = FemaleBikeWaitlistE55.Text;
             FemaleBikePassedWaitlistE54.Text = FemaleBikeWaitlistE55.Text;
             //7.-9. Zeile ausrechnen und Warteschlange und geplante Produktion durchreichen
-            GlobalVariables.E4Produktionsauftrag = int.Parse(FemaleBikeOrderE5.Text) +
+            GlobalVariables.E5Produktionsauftrag = int.Parse(FemaleBikeOrderE5.Text) +
                                                       int.Parse(FemaleBikePassedWaitlistE5.Text) +
                                                       int.Parse(FemaleBikeSafetyE5.Text) -
                                                       int.Parse(FemaleBikeStockE5.Text) -
                                                       int.Parse(FemaleBikeWaitlistE5.Text) -
                                                       int.Parse(FemaleBikeInProductionE5.Text);
-            FemaleBikePlannedProductionE5.Text = GlobalVariables.E4Produktionsauftrag.ToString();
+            FemaleBikePlannedProductionE5.Text = GlobalVariables.E5Produktionsauftrag.ToString();
             GlobalVariables.E11Produktionsauftrag = int.Parse(FemaleBikeOrderE11.Text) +
                                                       int.Parse(FemaleBikePassedWaitlistE11.Text) +
                                                       int.Parse(FemaleBikeSafetyE11.Text) -
@@ -6497,13 +6773,13 @@ namespace ProBikeSS16
             MaleBikePassedWaitlistE12.Text = MaleBikeWaitlistE30.Text;
             MaleBikePassedWaitlistE29.Text = MaleBikeWaitlistE30.Text;
             //7.-9. Zeile ausrechnen und Warteschlange und geplante Produktion durchreichen
-            GlobalVariables.E4Produktionsauftrag = int.Parse(MaleBikeOrderE6.Text) +
+            GlobalVariables.E6Produktionsauftrag = int.Parse(MaleBikeOrderE6.Text) +
                                                       int.Parse(MaleBikePassedWaitlistE6.Text) +
                                                       int.Parse(MaleBikeSafetyE6.Text) -
                                                       int.Parse(MaleBikeStockE6.Text) -
                                                       int.Parse(MaleBikeWaitlistE6.Text) -
                                                       int.Parse(MaleBikeInProductionE6.Text);
-            MaleBikePlannedProductionE6.Text = GlobalVariables.E4Produktionsauftrag.ToString();
+            MaleBikePlannedProductionE6.Text = GlobalVariables.E6Produktionsauftrag.ToString();
             GlobalVariables.E12Produktionsauftrag = int.Parse(MaleBikeOrderE12.Text) +
                                                       int.Parse(MaleBikePassedWaitlistE12.Text) +
                                                       int.Parse(MaleBikeSafetyE12.Text) -
@@ -6525,13 +6801,13 @@ namespace ProBikeSS16
             MaleBikePassedWaitlistE15.Text = MaleBikeWaitlistE29.Text;
             MaleBikePassedWaitlistE20.Text = MaleBikeWaitlistE29.Text;
             //10.-12. Zeile ausrechnen
-            GlobalVariables.E8Produktionsauftrag = int.Parse(MaleBikeOrderE9.Text) +
+            GlobalVariables.E9Produktionsauftrag = int.Parse(MaleBikeOrderE9.Text) +
                                                       int.Parse(MaleBikePassedWaitlistE9.Text) +
                                                       int.Parse(MaleBikeSafetyE9.Text) -
                                                       int.Parse(MaleBikeStockE9.Text) -
                                                       int.Parse(MaleBikeWaitlistE9.Text) -
                                                       int.Parse(MaleBikeInProductionE9.Text);
-            MaleBikePlannedProductionE9.Text = GlobalVariables.E8Produktionsauftrag.ToString();
+            MaleBikePlannedProductionE9.Text = GlobalVariables.E9Produktionsauftrag.ToString();
             GlobalVariables.E15Produktionsauftrag = int.Parse(MaleBikeOrderE15.Text) +
                                                       int.Parse(MaleBikePassedWaitlistE15.Text) +
                                                       int.Parse(MaleBikeSafetyE15.Text) -
@@ -9917,6 +10193,8 @@ namespace ProBikeSS16
 
             Orderlist.DataContext = BestellungslisteZu.DataContext;
             Orderlist.ItemsSource = BestellungslisteZu.ItemsSource;
+
+            refreshKapaPlanInputs();
         }
 
         #endregion Data

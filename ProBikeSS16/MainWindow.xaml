@@ -14,7 +14,7 @@
             <GradientStop Offset="0" Color="Gray"/>
             <GradientStop Offset="1" Color="White"/>
         </LinearGradientBrush>
-        
+
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -775,7 +775,7 @@
                                     </Grid.RowDefinitions>
                                     <Button Grid.Column="1" Height="20" Width="150" Content="{DynamicResource ResourceKey=Evaluation}" Margin="10,10,10,500" Click="Evaluierung"/>
                                     <DataGrid Name="GridOldStock" VirtualizingStackPanel.IsVirtualizing="False"  ItemsSource="{Binding}" Margin="10,10,10,10" IsReadOnly="True" AutoGenerateColumns="False">
-                                        <DataGrid.Columns>  
+                                        <DataGrid.Columns>
                                             <DataGridTextColumn Width="100" Binding="{Binding id}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Article}"></TextBlock>
@@ -833,7 +833,7 @@
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
-                                            
+
                                             <DataGridTemplateColumn Width="*">
                                                 <DataGridTemplateColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Amount}"></TextBlock>
@@ -1182,262 +1182,209 @@
                                     <TextBox Name="E7A10" Grid.Column="13" Grid.Row="6" Margin="15,0,0,0"></TextBox>
                                     <TextBox Name="E8A10" Grid.Column="13" Grid.Row="7" Margin="15,0,0,0"></TextBox>
                                     <TextBox Name="E9A10" Grid.Column="13" Grid.Row="8" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="13" Height="54" Width="25" Grid.Row="3" Margin="0,0,35,0" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="13" Height="54" Width="25" Grid.Row="4" Margin="0,0,35,0" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="13" Height="54" Width="25" Grid.Row="5" Margin="0,0,35,0" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="13" Height="54" Width="25" Grid.Row="6" Margin="0,0,35,0" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="13" Height="54" Width="25" Grid.Row="7" Margin="0,0,35,0" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="13" Height="54" Width="25" Grid.Row="8" Margin="0,0,35,0" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E4A11" Grid.Column="14" Grid.Row="3" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E5A11" Grid.Column="14" Grid.Row="4" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E6A11" Grid.Column="14" Grid.Row="5" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E7A11" Grid.Column="14" Grid.Row="6" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E8A11" Grid.Column="14" Grid.Row="7" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E9A11" Grid.Column="14" Grid.Row="8" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="14" Height="54" Width="25" Grid.Row="3" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="14" Height="54" Width="25" Grid.Row="4" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="14" Height="54" Width="25" Grid.Row="5" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="14" Height="54" Width="25" Grid.Row="6" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="14" Height="54" Width="25" Grid.Row="7" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="14" Height="54" Width="25" Grid.Row="8" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E10A7" Grid.Column="10" Grid.Row="9" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E11A7" Grid.Column="10" Grid.Row="10" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E12A7" Grid.Column="10" Grid.Row="11" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E13A7" Grid.Column="10" Grid.Row="12" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E14A7" Grid.Column="10" Grid.Row="13" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E15A7" Grid.Column="10" Grid.Row="14" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="9" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="10" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="11" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="12" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="13" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="14" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E10A8" Grid.Column="11" Grid.Row="9" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E11A8" Grid.Column="11" Grid.Row="10" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E12A8" Grid.Column="11" Grid.Row="11" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E13A8" Grid.Column="11" Grid.Row="12" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E14A8" Grid.Column="11" Grid.Row="13" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E15A8" Grid.Column="11" Grid.Row="14" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="11" Height="54" Width="25" Grid.Row="9" Margin="0,0,35,0" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="11" Height="54" Width="25" Grid.Row="10" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="11" Height="54" Width="25" Grid.Row="11" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="11" Height="54" Width="25" Grid.Row="12" Margin="0,0,35,0" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="11" Height="54" Width="25" Grid.Row="13" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="11" Height="54" Width="25" Grid.Row="14" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E10A9" Grid.Column="12" Grid.Row="9" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E11A9" Grid.Column="12" Grid.Row="10" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E12A9" Grid.Column="12" Grid.Row="11" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E13A9" Grid.Column="12" Grid.Row="12" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E14A9" Grid.Column="12" Grid.Row="13" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E15A9" Grid.Column="12" Grid.Row="14" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="12" Height="54" Width="25" Grid.Row="9" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="12" Height="54" Width="25" Grid.Row="10" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="12" Height="54" Width="25" Grid.Row="11" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="12" Height="54" Width="25" Grid.Row="12" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="12" Height="54" Width="25" Grid.Row="13" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="12" Height="54" Width="25" Grid.Row="14" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E10A12" Grid.Column="15" Grid.Row="9" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E11A12" Grid.Column="15" Grid.Row="10" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E12A12" Grid.Column="15" Grid.Row="11" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E13A12" Grid.Column="15" Grid.Row="12" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E14A12" Grid.Column="15" Grid.Row="13" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E15A12" Grid.Column="15" Grid.Row="14" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="15" Height="54" Width="25" Grid.Row="9" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="15" Height="54" Width="25" Grid.Row="10" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="15" Height="54" Width="25" Grid.Row="11" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="15" Height="54" Width="25" Grid.Row="12" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="15" Height="54" Width="25" Grid.Row="13" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="15" Height="54" Width="25" Grid.Row="14" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E10A13" Grid.Column="16" Grid.Row="9" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E11A13" Grid.Column="16" Grid.Row="10" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E12A13" Grid.Column="16" Grid.Row="11" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E13A13" Grid.Column="16" Grid.Row="12" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E14A13" Grid.Column="16" Grid.Row="13" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E15A13" Grid.Column="16" Grid.Row="14" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="16" Height="54" Width="25" Grid.Row="9" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="16" Height="54" Width="25" Grid.Row="10" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="16" Height="54" Width="25" Grid.Row="11" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="16" Height="54" Width="25" Grid.Row="12" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="16" Height="54" Width="25" Grid.Row="13" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="16" Height="54" Width="25" Grid.Row="14" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E16A6" Grid.Column="9" Grid.Row="15" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="9" Height="54" Width="25" Grid.Row="15" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E16A14" Grid.Column="17" Grid.Row="15" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="17" Height="54" Width="25" Grid.Row="15" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E17A15" Grid.Column="18" Grid.Row="16" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="18" Height="54" Width="25" Grid.Row="16" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E18A6" Grid.Column="9" Grid.Row="17" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E19A6" Grid.Column="9" Grid.Row="18" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E20A6" Grid.Column="9" Grid.Row="19" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="9" Height="54" Width="25" Grid.Row="17" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="9" Height="54" Width="25" Grid.Row="18" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="9" Height="54" Width="25" Grid.Row="19" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E18A7" Grid.Column="10" Grid.Row="17" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E19A7" Grid.Column="10" Grid.Row="18" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E20A7" Grid.Column="10" Grid.Row="19" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="17" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="18" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="19" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E18A8" Grid.Column="11" Grid.Row="17" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E19A8" Grid.Column="11" Grid.Row="18" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E20A8" Grid.Column="11" Grid.Row="19" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="11" Height="54" Width="25" Grid.Row="17" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="11" Height="54" Width="25" Grid.Row="18" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="11" Height="54" Width="25" Grid.Row="19" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E18A9" Grid.Column="12" Grid.Row="17" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E19A9" Grid.Column="12" Grid.Row="18" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E20A9" Grid.Column="12" Grid.Row="19" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="12" Height="54" Width="25" Grid.Row="17" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="12" Height="54" Width="25" Grid.Row="18" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="12" Height="54" Width="25" Grid.Row="19" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E26A7" Grid.Column="10" Grid.Row="20" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="10" Height="54" Width="25" Grid.Row="20" Margin="0,0,35,0" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E26A15" Grid.Column="18" Grid.Row="20" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="18" Height="54" Width="25" Grid.Row="20" Margin="0,0,35,0" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E49A7" Grid.Column="4" Grid.Row="21" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E54A7" Grid.Column="4" Grid.Row="22" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E29A7" Grid.Column="4" Grid.Row="23" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="4" Height="54" Width="25" Grid.Row="21" Margin="0,0,35,0" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="4" Height="54" Width="25" Grid.Row="22" Margin="0,0,35,0" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="4" Height="54" Width="25" Grid.Row="23" Margin="0,0,35,0" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E50A2" Grid.Column="5" Grid.Row="24" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E55A2" Grid.Column="5" Grid.Row="25" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E30A2" Grid.Column="5" Grid.Row="26" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="5" Height="54" Width="25" Grid.Row="24" Margin="0,0,35,0" Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="5" Height="54" Width="25" Grid.Row="25" Margin="0,0,35,0" Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="5" Height="54" Width="25" Grid.Row="26" Margin="0,0,35,0" Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="E51A3" Grid.Column="6" Grid.Row="27" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E56A3" Grid.Column="6" Grid.Row="28" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="E31A3" Grid.Column="6" Grid.Row="29" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="6" Height="54" Width="25" Grid.Row="27" Margin="0,0,35,0" Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="6" Height="54" Width="25" Grid.Row="28" Margin="0,0,35,0" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="6" Height="54" Width="25" Grid.Row="29" Margin="0,0,35,0" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="P1A4" Grid.Column="7" Grid.Row="30" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="P2A4" Grid.Column="7" Grid.Row="31" Margin="15,0,0,0"></TextBox>
-                                    <TextBox Name="P3A4" Grid.Column="7" Grid.Row="32" Margin="15,0,0,0"></TextBox>
-                                    <Label Grid.Column="7" Height="54" Width="25" Grid.Row="30" Margin="0,0,35,0" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="7" Height="54" Width="25" Grid.Row="31" Margin="0,0,35,0" Content="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <Label Grid.Column="7" Height="54" Width="25" Grid.Row="32" Margin="0,0,35,0" Content="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                    <TextBox Name="PrAE4" Grid.Column="3" Grid.Row="3" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE5" Grid.Column="3" Grid.Row="4" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE6" Grid.Column="3" Grid.Row="5" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE7" Grid.Column="3" Grid.Row="6" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE8" Grid.Column="3" Grid.Row="7" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE9" Grid.Column="3" Grid.Row="8" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE10" Grid.Column="3" Grid.Row="9" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE11" Grid.Column="3" Grid.Row="10" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE12" Grid.Column="3" Grid.Row="11" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE13" Grid.Column="3" Grid.Row="12" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE14" Grid.Column="3" Grid.Row="13" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE15" Grid.Column="3" Grid.Row="14" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE16" Grid.Column="3" Grid.Row="15" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE17" Grid.Column="3" Grid.Row="16" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE18" Grid.Column="3" Grid.Row="17" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE19" Grid.Column="3" Grid.Row="18" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE20" Grid.Column="3" Grid.Row="19" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE26" Grid.Column="3" Grid.Row="20" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE49" Grid.Column="3" Grid.Row="21" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE54" Grid.Column="3" Grid.Row="22" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE29" Grid.Column="3" Grid.Row="23" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE50" Grid.Column="3" Grid.Row="24" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE55" Grid.Column="3" Grid.Row="25" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE30" Grid.Column="3" Grid.Row="26" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE51" Grid.Column="3" Grid.Row="27" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE56" Grid.Column="3" Grid.Row="28" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAE31" Grid.Column="3" Grid.Row="29" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAP1" Grid.Column="3" Grid.Row="30" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAP2" Grid.Column="3" Grid.Row="31" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="PrAP3" Grid.Column="3" Grid.Row="32" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA1" Grid.Column="4" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA1" Grid.Column="4" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA1" Grid.Column="4" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA1" Grid.Column="4" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA1" Grid.Column="4" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA1" Grid.Column="4" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA2" Grid.Column="5" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA2" Grid.Column="5" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA2" Grid.Column="5" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA2" Grid.Column="5" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA2" Grid.Column="5" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA2" Grid.Column="5" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA3" Grid.Column="6" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA3" Grid.Column="6" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA3" Grid.Column="6" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA3" Grid.Column="6" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA3" Grid.Column="6" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA3" Grid.Column="6" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA4" Grid.Column="7" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA4" Grid.Column="7" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA4" Grid.Column="7" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA4" Grid.Column="7" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA4" Grid.Column="7" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA4" Grid.Column="7" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA5" IsReadOnly="True" Background="SlateGray" Cursor="No" Grid.Column="8" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA5" IsReadOnly="True" Background="SlateGray" Cursor="No" Grid.Column="8" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA5" IsReadOnly="True" Background="SlateGray" Cursor="No" Grid.Column="8" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA5" IsReadOnly="True" Background="SlateGray" Cursor="No" Grid.Column="8" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA5" IsReadOnly="True" Background="SlateGray" Cursor="No" Grid.Column="8" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA5" IsReadOnly="True" Background="SlateGray" Cursor="No" Grid.Column="8" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA6" Grid.Column="9" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA6" Grid.Column="9" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA6" Grid.Column="9" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA6" Grid.Column="9" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA6" Grid.Column="9" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA6" Grid.Column="9" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA7" Grid.Column="10" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA7" Grid.Column="10" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA7" Grid.Column="10" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA7" Grid.Column="10" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA7" Grid.Column="10" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA7" Grid.Column="10" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA8" Grid.Column="11" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA8" Grid.Column="11" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA8" Grid.Column="11" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA8" Grid.Column="11" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA8" Grid.Column="11" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA8" Grid.Column="11" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA9" Grid.Column="12" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA9" Grid.Column="12" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA9" Grid.Column="12" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA9" Grid.Column="12" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA9" Grid.Column="12" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA9" Grid.Column="12" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA10" Grid.Column="13" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA10" Grid.Column="13" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA10" Grid.Column="13" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA10" Grid.Column="13" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA10" Grid.Column="13" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA10" Grid.Column="13" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA11" Grid.Column="14" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA11" Grid.Column="14" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA11" Grid.Column="14" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA11" Grid.Column="14" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA11" Grid.Column="14" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA11" Grid.Column="14" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA12" Grid.Column="15" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA12" Grid.Column="15" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA12" Grid.Column="15" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA12" Grid.Column="15" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA12" Grid.Column="15" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA12" Grid.Column="15" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA13" Grid.Column="16" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA13" Grid.Column="16" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA13" Grid.Column="16" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA13" Grid.Column="16" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA13" Grid.Column="16" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA13" Grid.Column="16" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA14" Grid.Column="17" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA14" Grid.Column="17" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA14" Grid.Column="17" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA14" Grid.Column="17" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA14" Grid.Column="17" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA14" Grid.Column="17" Grid.Row="38" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPBA15" Grid.Column="18" Grid.Row="33" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüBA15" Grid.Column="18" Grid.Row="34" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="KPVBA15" Grid.Column="18" Grid.Row="35" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="RüVBA15" Grid.Column="18" Grid.Row="36" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="MBA15" Grid.Column="18" Grid.Row="37" Margin="0,0,0,0"></TextBox>
-                                    <TextBox Name="SÜA15" Grid.Column="18" Grid.Row="38" Margin="0,0,0,0"></TextBox>
+
+                                    <TextBox Name="E4A11" Grid.Column="14" Grid.Row="3" Margin="15,0,0,0"/>
+                                    <TextBox Name="E5A11" Grid.Column="14" Grid.Row="4" Margin="15,0,0,0"/>
+                                    <TextBox Name="E6A11" Grid.Column="14" Grid.Row="5" Margin="15,0,0,0"/>
+                                    <TextBox Name="E7A11" Grid.Column="14" Grid.Row="6" Margin="15,0,0,0"/>
+                                    <TextBox Name="E8A11" Grid.Column="14" Grid.Row="7" Margin="15,0,0,0"/>
+                                    <TextBox Name="E9A11" Grid.Column="14" Grid.Row="8" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E10A7" Grid.Column="10" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A7" Grid.Column="10" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A7" Grid.Column="10" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A7" Grid.Column="10" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A7" Grid.Column="10" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A7" Grid.Column="10" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E10A8" Grid.Column="11" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A8" Grid.Column="11" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A8" Grid.Column="11" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A8" Grid.Column="11" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A8" Grid.Column="11" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A8" Grid.Column="11" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E10A9" Grid.Column="12" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A9" Grid.Column="12" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A9" Grid.Column="12" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A9" Grid.Column="12" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A9" Grid.Column="12" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A9" Grid.Column="12" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E10A12" Grid.Column="15" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A12" Grid.Column="15" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A12" Grid.Column="15" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A12" Grid.Column="15" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A12" Grid.Column="15" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A12" Grid.Column="15" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E10A13" Grid.Column="16" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A13" Grid.Column="16" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A13" Grid.Column="16" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A13" Grid.Column="16" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A13" Grid.Column="16" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A13" Grid.Column="16" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E16A6" Grid.Column="9" Grid.Row="15" Margin="15,0,0,0"/>
+                                    <TextBox Name="E16A14" Grid.Column="17" Grid.Row="15" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E17A15" Grid.Column="18" Grid.Row="16" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E18A6" Grid.Column="9" Grid.Row="17" Margin="15,0,0,0"/>
+                                    <TextBox Name="E19A6" Grid.Column="9" Grid.Row="18" Margin="15,0,0,0"/>
+                                    <TextBox Name="E20A6" Grid.Column="9" Grid.Row="19" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E18A7" Grid.Column="10" Grid.Row="17" Margin="15,0,0,0"/>
+                                    <TextBox Name="E19A7" Grid.Column="10" Grid.Row="18" Margin="15,0,0,0"/>
+                                    <TextBox Name="E20A7" Grid.Column="10" Grid.Row="19" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E18A8" Grid.Column="11" Grid.Row="17" Margin="15,0,0,0"/>
+                                    <TextBox Name="E19A8" Grid.Column="11" Grid.Row="18" Margin="15,0,0,0"/>
+                                    <TextBox Name="E20A8" Grid.Column="11" Grid.Row="19" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E18A9" Grid.Column="12" Grid.Row="17" Margin="15,0,0,0"/>
+                                    <TextBox Name="E19A9" Grid.Column="12" Grid.Row="18" Margin="15,0,0,0"/>
+                                    <TextBox Name="E20A9" Grid.Column="12" Grid.Row="19" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E26A7" Grid.Column="10" Grid.Row="20" Margin="15,0,0,0"/>
+                                    <TextBox Name="E26A15" Grid.Column="18" Grid.Row="20" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E49A1" Grid.Column="4" Grid.Row="21" Margin="15,0,0,0"/>
+                                    <TextBox Name="E54A1" Grid.Column="4" Grid.Row="22" Margin="15,0,0,0"/>
+                                    <TextBox Name="E29A1" Grid.Column="4" Grid.Row="23" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E50A2" Grid.Column="5" Grid.Row="24" Margin="15,0,0,0"/>
+                                    <TextBox Name="E55A2" Grid.Column="5" Grid.Row="25" Margin="15,0,0,0"/>
+                                    <TextBox Name="E30A2" Grid.Column="5" Grid.Row="26" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E51A3" Grid.Column="6" Grid.Row="27" Margin="15,0,0,0"/>
+                                    <TextBox Name="E56A3" Grid.Column="6" Grid.Row="28" Margin="15,0,0,0"/>
+                                    <TextBox Name="E31A3" Grid.Column="6" Grid.Row="29" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="P1A4" Grid.Column="7" Grid.Row="30" Margin="15,0,0,0"/>
+                                    <TextBox Name="P2A4" Grid.Column="7" Grid.Row="31" Margin="15,0,0,0"/>
+                                    <TextBox Name="P3A4" Grid.Column="7" Grid.Row="32" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="AmE4" Grid.Column="3" Grid.Row="3" />
+                                    <TextBox Name="AmE5" Grid.Column="3" Grid.Row="4" />
+                                    <TextBox Name="AmE6" Grid.Column="3" Grid.Row="5" />
+                                    <TextBox Name="AmE7" Grid.Column="3" Grid.Row="6" />
+                                    <TextBox Name="AmE8" Grid.Column="3" Grid.Row="7" />
+                                    <TextBox Name="AmE9" Grid.Column="3" Grid.Row="8" />
+                                    <TextBox Name="AmE10" Grid.Column="3" Grid.Row="9" />
+                                    <TextBox Name="AmE11" Grid.Column="3" Grid.Row="10" />
+                                    <TextBox Name="AmE12" Grid.Column="3" Grid.Row="11" />
+                                    <TextBox Name="AmE13" Grid.Column="3" Grid.Row="12" />
+                                    <TextBox Name="AmE14" Grid.Column="3" Grid.Row="13" />
+                                    <TextBox Name="AmE15" Grid.Column="3" Grid.Row="14" />
+                                    <TextBox Name="AmE16" Grid.Column="3" Grid.Row="15" />
+                                    <TextBox Name="AmE17" Grid.Column="3" Grid.Row="16" />
+                                    <TextBox Name="AmE18" Grid.Column="3" Grid.Row="17" />
+                                    <TextBox Name="AmE19" Grid.Column="3" Grid.Row="18" />
+                                    <TextBox Name="AmE20" Grid.Column="3" Grid.Row="19" />
+                                    <TextBox Name="AmE26" Grid.Column="3" Grid.Row="20" />
+                                    <TextBox Name="AmE49" Grid.Column="3" Grid.Row="21" />
+                                    <TextBox Name="AmE54" Grid.Column="3" Grid.Row="22" />
+                                    <TextBox Name="AmE29" Grid.Column="3" Grid.Row="23" />
+                                    <TextBox Name="AmE50" Grid.Column="3" Grid.Row="24" />
+                                    <TextBox Name="AmE55" Grid.Column="3" Grid.Row="25" />
+                                    <TextBox Name="AmE30" Grid.Column="3" Grid.Row="26" />
+                                    <TextBox Name="AmE51" Grid.Column="3" Grid.Row="27" />
+                                    <TextBox Name="AmE56" Grid.Column="3" Grid.Row="28" />
+                                    <TextBox Name="AmE31" Grid.Column="3" Grid.Row="29" />
+                                    <TextBox Name="AmP1" Grid.Column="3" Grid.Row="30" />
+                                    <TextBox Name="AmP2" Grid.Column="3" Grid.Row="31" />
+                                    <TextBox Name="AmP3" Grid.Column="3" Grid.Row="32" />
+
+                                    <TextBox Name="kapA1" Grid.Column="4" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA2" Grid.Column="5" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA3" Grid.Column="6" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA4" Grid.Column="7" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA6" Grid.Column="9" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA7" Grid.Column="10" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA8" Grid.Column="11" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA9" Grid.Column="12" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA10" Grid.Column="13" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA11" Grid.Column="14" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA12" Grid.Column="15" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA13" Grid.Column="16" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA14" Grid.Column="17" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapA15" Grid.Column="18" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+
+                                    <TextBox Name="setUpTimeA1" Grid.Column="4" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA2" Grid.Column="5" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA3" Grid.Column="6" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA4" Grid.Column="7" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA6" Grid.Column="9" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA7" Grid.Column="10" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA8" Grid.Column="11" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA9" Grid.Column="12" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA10" Grid.Column="13" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA11" Grid.Column="14" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA12" Grid.Column="15" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA13" Grid.Column="16" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA14" Grid.Column="17" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpTimeA15" Grid.Column="18" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+
+                                    <TextBox Name="kapOldA1" Grid.Column="4" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA2" Grid.Column="5" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA3" Grid.Column="6" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA4" Grid.Column="7" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA6" Grid.Column="9" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA7" Grid.Column="10" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA8" Grid.Column="11" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA9" Grid.Column="12" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA10" Grid.Column="13" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA11" Grid.Column="14" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA12" Grid.Column="15" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA13" Grid.Column="16" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA14" Grid.Column="17" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="kapOldA15" Grid.Column="18" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+
+                                    <TextBox Name="setUpOldTimeA1" Grid.Column="4" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA2" Grid.Column="5" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA3" Grid.Column="6" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA4" Grid.Column="7" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA6" Grid.Column="9" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA7" Grid.Column="10" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA8" Grid.Column="11" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA9" Grid.Column="12" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA10" Grid.Column="13" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA11" Grid.Column="14" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA12" Grid.Column="15" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA13" Grid.Column="16" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA14" Grid.Column="17" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="setUpOldTimeA15" Grid.Column="18" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+
+                                    <TextBox Name="wholeKapA1" Grid.Column="4" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA2" Grid.Column="5" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA3" Grid.Column="6" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA4" Grid.Column="7" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA6" Grid.Column="9" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA7" Grid.Column="10" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA8" Grid.Column="11" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA9" Grid.Column="12" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA10" Grid.Column="13" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA11" Grid.Column="14" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA12" Grid.Column="15" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA13" Grid.Column="16" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA14" Grid.Column="17" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="wholeKapA15" Grid.Column="18" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+
+                                    <TextBox Name="SuOTimeA1" Grid.Column="4" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA2" Grid.Column="5" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA3" Grid.Column="6" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA4" Grid.Column="7" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA6" Grid.Column="9" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA7" Grid.Column="10" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA8" Grid.Column="11" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA9" Grid.Column="12" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA10" Grid.Column="13" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA11" Grid.Column="14" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA12" Grid.Column="15" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA13" Grid.Column="16" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA14" Grid.Column="17" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
+                                    <TextBox Name="SuOTimeA15" Grid.Column="18" Grid.Row="38" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Auflistung">
@@ -1472,7 +1419,7 @@
                                         <TextBlock Text="{DynamicResource ResourceKey=Article}"></TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                
+
                                 <DataGridTemplateColumn Width="*">
                                     <DataGridTemplateColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Quantity}"></TextBlock>
@@ -1497,13 +1444,13 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                
+
                                 <DataGridTextColumn Width="50" Binding="{Binding article}" IsReadOnly="True" >
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Article}"/>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                
+
                                 <DataGridTemplateColumn Width="80">
                                     <DataGridTemplateColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Penalty}"/>
@@ -1514,7 +1461,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                
+
                                 <DataGridTemplateColumn Width="*">
                                     <DataGridTemplateColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Price}"/>
@@ -1568,7 +1515,7 @@
                                         <TextBlock Text="{DynamicResource ResourceKey=Station}"/>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                
+
                                 <DataGridTemplateColumn Width="120">
                                     <DataGridTemplateColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Shift}"></TextBlock>

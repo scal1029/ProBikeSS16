@@ -28,7 +28,7 @@ namespace ProBikeSS16.domain
         public Unit(int id, type ti)
         {
             this.id = id;
-            this.t = t;
+            this.t = ti;
             lUnits = null;
 
         }
