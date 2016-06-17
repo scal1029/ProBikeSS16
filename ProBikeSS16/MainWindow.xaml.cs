@@ -10050,7 +10050,7 @@ namespace ProBikeSS16
             foreach (System.Data.DataRowView dr in Productionlist.ItemsSource)
             {
                 if (dr[0] != DBNull.Value && dr[1] != DBNull.Value)
-                    Aufträge.Add(new XMLproductionlist((int)dr[0], (int)dr[1]));
+                    Aufträge.Add(new XMLproductionlist(int.Parse((string)dr[0]), (int.Parse((string)dr[1]))));
             }
 
             foreach (System.Data.DataRowView dr in Workingtimelist.ItemsSource)
@@ -10089,5 +10089,31 @@ namespace ProBikeSS16
 
             System.Diagnostics.Process.Start(Pfad + @"Handbuch.pdf");
         }
+
+        private void Evaluierung(object sender, RoutedEventArgs e)
+        {
+
+            foreach (System.Data.DataRowView dr in GridOldStock.ItemsSource)
+            {
+                var row = GridOldStock.ItemContainerGenerator.ContainerFromItem(dr) as DataGridRow;
+                if ((double.Parse((string)dr["pct"])) >= 80)
+                {
+                    row.Background = Brushes.Green;
+                }
+                if ((double.Parse((string)dr["pct"])) < 80)
+                {
+                    row.Background = Brushes.Yellow;
+                }
+                if ((double.Parse((string)dr["pct"])) < 60)
+                {
+                    row.Background = Brushes.Orange;
+                }
+                if ((double.Parse((string)dr["pct"])) < 40)
+                {
+                    row.Background = Brushes.Red;
+                }
+            }
+        }
+
     }
 }

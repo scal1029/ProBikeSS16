@@ -144,6 +144,10 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\down-arrow.png" />
+    <Resource Include="Images\up-arrow.png" />
+    <Resource Include="Images\icon-forecast.png" />
+    <Resource Include="Images\File Adobe Dreamweaver XML-01.png" />
     <Resource Include="multi.txt" />
     <Resource Include="Images\Arrow Up.png" />
     <Resource Include="Images\Down.png" />

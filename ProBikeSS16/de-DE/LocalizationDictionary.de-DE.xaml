@@ -32,6 +32,7 @@
     <sys:String x:Key="DataExport">XML exportieren</sys:String>
     
     <!-- Localized strings ForecastAndDataImport-->
+    <sys:String x:Key="Calculation">Berechnung</sys:String>
     <sys:String x:Key="Forecast">Prognose</sys:String>
     <sys:String x:Key="ChildBike">Kinderfahrrad</sys:String>
     <sys:String x:Key="FemaleBike">Damenfahrrad</sys:String>
@@ -82,5 +83,38 @@
     <sys:String x:Key="SalesP1+3ToolTip">Absatzprognose an Kinderfahrrädern</sys:String>
     <sys:String x:Key="SalesP2+3ToolTip">Absatzprognose an Frauenfahrrädern</sys:String>
     <sys:String x:Key="SalesP3+3ToolTip">Absatzprognose an Männerfahrrädern</sys:String>
+
+    <!-- Localized strings CurrentStock-->
+    <sys:String x:Key="Article">Artikel</sys:String>
+    <sys:String x:Key="Startamount">Menge Start</sys:String>
+    <sys:String x:Key="Amount">Menge aktuell</sys:String>
+    <sys:String x:Key="Percent">Prozent (in %)</sys:String>
+    <sys:String x:Key="Price">Preis (in €)</sys:String>
+    <sys:String x:Key="Stockvalue">Lagerwert (in €)</sys:String>
+    <sys:String x:Key="Evaluation">Evaluation</sys:String>
+
+    <!-- Localized strings Manufactoring Orders-->
+    <sys:String x:Key="Item">Teil</sys:String>
+
+    <!-- Localized strings Supply-Planning-->
+    <sys:String x:Key="Planning">Planung</sys:String>
+    <sys:String x:Key="Listing">Auflistung</sys:String>
+    <!--Planning-->
+    <sys:String x:Key="Need">Bruttobedarf (in Periode):</sys:String>
+    <sys:String x:Key="ForecastStock">Prognose Bestand (in Periode):</sys:String>
+    <!--Listing-->
+    <sys:String x:Key="Quantity">Menge</sys:String>
+    <sys:String x:Key="Mode">Modus</sys:String>
+
+    <!--XMLExport/Overview-->
+    <sys:String x:Key="MarketForecast">Marktprognose</sys:String>
+    <sys:String x:Key="DirectSales">Direktverkäufe</sys:String>
+    <sys:String x:Key="Orders">Bestellungen</sys:String>
+    <sys:String x:Key="ManufactoryOrders">Produktionsaufträge</sys:String>
+    <sys:String x:Key="Capacity">Kapazitäten</sys:String>
+    <sys:String x:Key="Penalty">Strafe</sys:String>
+    <sys:String x:Key="Station">Station</sys:String>
+    <sys:String x:Key="Shift">Verschiebung</sys:String>
+    <sys:String x:Key="Overtime">Überstunden</sys:String>
 
 </ResourceDictionary>

@@ -14,6 +14,7 @@
             <GradientStop Offset="0" Color="Gray"/>
             <GradientStop Offset="1" Color="White"/>
         </LinearGradientBrush>
+        
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -41,9 +42,9 @@
             </MenuItem>
         </Menu>
         <Grid>
-            <TabControl>
+            <TabControl >
                 <TabItem Header="{DynamicResource ResourceKey=ForecastAndDataImport}" Width="195" HorizontalAlignment="Left" Margin="0,-2,0,0">
-                    <Grid>
+                    <Grid Margin="20,20,20,20" Background="#E6C46D">
                         <Grid.Resources>
                         </Grid.Resources>
                         <Grid.RowDefinitions>
@@ -69,7 +70,7 @@
                             <ColumnDefinition Width="50"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" x:Name="ForecastLabel" Content="{DynamicResource ResourceKey=Forecast}" HorizontalAlignment="Left" Margin="90,0,0,0" VerticalAlignment="Center" FontSize="30"/>
-                        <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" x:Name="ForecastImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/icon-forecast.bmp"/>
+                        <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" x:Name="ForecastImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/icon-forecast.png"/>
                         <Label Grid.Column="2" Grid.Row="1" x:Name="SafetyStock" Content="{DynamicResource ResourceKey=SafetyStock}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="{DynamicResource ResourceKey=SafetyStockToolTip}"/>
                         <Label Grid.Column="3" Grid.Row="1" x:Name="PeriodeNLabel" Content="{DynamicResource ResourceKey=PeriodN}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="{DynamicResource ResourceKey=CurrentSalesOpportunitiesToolTip}"/>
                         <Label Grid.Column="4" Grid.Row="1" x:Name="PeriodeN1Label" Content="{DynamicResource ResourceKey=PeriodN1}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="{DynamicResource ResourceKey=Forecast1SalesOpportunitiesToolTip}"/>
@@ -95,12 +96,12 @@
                         <wpfTool:IntegerUpDown Grid.Column="6" Grid.Row="4" x:Name="SalesMaleBikeN3" ToolTip="{DynamicResource ResourceKey=SalesP3+3ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" DefaultValue="0"  />
                         <Button Grid.Column="6" Grid.Row="5" x:Name="SaveSafetyStockAndSales" Height="20" Width="100" Content="{DynamicResource ResourceKey=Save}" Click="SaveSafetyStockAndSales_OnClick"/>
                         <Label Grid.Column="1" Grid.Row="7" Visibility="Hidden" Grid.ColumnSpan="2" x:Name="XMLLabel" Content="XML" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0" FontSize="30"/>
-                        <Image Grid.Column="0" Grid.Row="7" Visibility="Hidden" Grid.ColumnSpan="2" x:Name="XMLImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/File Adobe Dreamweaver XML-01.bmp"/>
+                        <Image Grid.Column="0" Grid.Row="7" Visibility="Hidden" Grid.ColumnSpan="2" x:Name="XMLImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/File Adobe Dreamweaver XML-01.png"/>
                         <TextBox Grid.Column="1" Grid.Row="8" Visibility="Hidden" Grid.ColumnSpan="2" IsReadOnly="True" x:Name="XMLPath" Height="20" Width="280"/>
                         <Button Grid.Column="3" Grid.Row="8" Visibility="Hidden" x:Name="XmlUpload" Height="20" Width="100" HorizontalAlignment="Left" Margin="-10,0,0,0" Content="{DynamicResource ResourceKey=UploadXml}" Click="XmlUpload_OnClick"/>
                         <Image Grid.Column="7" Grid.Row="5" x:Name="Okay1" HorizontalAlignment="Left" Source="Images/haken.bmp" Visibility="Hidden"/>
                         <Image Grid.Column="6" Grid.Row="8" x:Name="Okay2" HorizontalAlignment="Left" Source="Images/haken.bmp" Visibility="Hidden"/>
-                        <Button Grid.Column="4" Grid.Row="8" Visibility="Hidden" Content="Platzhalterberechnung" x:Name="CalculationStart" Height="20" Click="CalculationStart_OnClick"></Button>
+                        <Button Grid.Column="4" Grid.Row="8" Visibility="Hidden" Content="{DynamicResource ResourceKey=Calculation}" x:Name="CalculationStart" Height="20" Click="CalculationStart_OnClick"></Button>
                     </Grid>
                 </TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=DemandManagment}" Width="195">
@@ -111,9 +112,9 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TabControl>
+                        <TabControl Background="#80C887">
                             <TabItem Header="{DynamicResource ResourceKey=ChildBike}">
-                                <Grid Margin="10,10,10,10" Width="850">
+                                <Grid Background="#80C887" Margin="10,10,10,10" Width="850">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="100"/>
                                         <RowDefinition Height="30"/>
@@ -764,7 +765,27 @@
                                 </Grid>
                             </TabItem>
                             <TabItem Header="{DynamicResource ResourceKey=currentStock}">
-                                <DataGrid Name="GridOldStock" ItemsSource="{Binding}" Margin="10,10,10,10"></DataGrid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="740"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Button Grid.Column="1" Height="20" Width="150" Content="{DynamicResource ResourceKey=Evaluation}" Margin="10,10,10,500" Click="Evaluierung"/>
+                                    <DataGrid Name="GridOldStock" VirtualizingStackPanel.IsVirtualizing="False"  ItemsSource="{Binding}" Margin="10,10,10,10" IsReadOnly="True" AutoGenerateColumns="False">
+                                        <DataGrid.Columns>  
+                                            <DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding id}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <!--<DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding id}" IsReadOnly="True" ></DataGridTextColumn>-->
+                                            <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Startamount}" Binding="{Binding startamount}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Amount2}" Binding="{Binding amount}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Percent}" Binding="{Binding pct}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Price}" Binding="{Binding price}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="*" Header="{DynamicResource ResourceKey=Stockvalue}" Binding="{Binding stockvalue}" IsReadOnly="True" ></DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Grid>
                             </TabItem>
                             <TabItem Header="{DynamicResource ResourceKey=manufactoringOrders}">
                                 <Grid>
@@ -776,16 +797,16 @@
                                         <RowDefinition Height="600"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <DataGrid SelectionMode="Single" Grid.Column="0" AutoGenerateColumns="False" Grid.Row="0" Margin="10,10,10,10" Name="GridProductionOrders" ItemsSource="{Binding}" CanUserAddRows="False" >
+                                    <DataGrid CanUserSortColumns="False" SelectionMode="Single" Grid.Column="0" AutoGenerateColumns="False" Grid.Row="0" Margin="10,10,10,10" Name="GridProductionOrders" ItemsSource="{Binding}" CanUserAddRows="False" >
                                         <DataGrid.Columns>
-                                            <DataGridTemplateColumn Header="Item" Width="120">
+                                            <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Item}" Width="120">
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <TextBox Text="{Binding Item}" MaxLength="2" />
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="Amount" Width="*">
+                                            <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Amount2}" Width="*">
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <TextBox Text="{Binding Amount}"  />
@@ -801,10 +822,10 @@
                                     <TextBox Grid.Column="1" Grid.Row="0" Height="20" Name="AddItemBox" Width="100" PreviewTextInput="NumberValidationTextBox" Margin="0,-100,-100,0"></TextBox>
                                     <Button Grid.Column="1" Grid.Row="0" Height="20" Width="200" Name="DeleteOrder" Content="{DynamicResource ResourceKey=deleteOrder}" Margin="0,0,0,0" Click="DeleteOrder_OnClick"></Button>
                                     <Button Name="Up" Grid.Column="1" Grid.Row="0" Height="40" Width="40" Margin="0,150,0,0" Click="Up_OnClick">
-                                        <Image Source="Images/Arrow Up.png"></Image>
+                                        <Image Source="Images/up-arrow.png"></Image>
                                     </Button>
                                     <Button Name="Down" Grid.Column="1" Grid.Row="0" Height="40" Width="40" Margin="0,250,0,0" Click="Down_OnClick">
-                                        <Image Source="Images/Down.png"></Image>
+                                        <Image Source="Images/down-arrow.png"></Image>
                                     </Button>
                                 </Grid>
                             </TabItem>
@@ -812,34 +833,106 @@
                     </Grid>
                 </TabItem>
                 <TabItem Header="{DynamicResource ResourceKey=QuantityPlanning}" Width="195">
-                    <Grid>
+                    <Grid Margin="20,20,20,20">
                         <TabControl>
-                            <TabItem Header="Plannung">
-                                <Grid>
-                                    <DataGrid Name="Bestellung" ItemsSource="{Binding}" Margin="100,10,100,10" IsReadOnly="True">
+                            <TabItem Header="{DynamicResource ResourceKey=Planning}">
+                                <Grid Background="#80C887">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="200"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Column="1" Height="25" Width="150" Content="Infos Kaufteile(ID):"  Margin="0,-500,0,0" HorizontalAlignment="Center" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="21"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-450,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="22"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-410,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="23"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-370,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="24"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-330,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="25"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-290,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="27"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-250,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="28"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-210,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="32"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-170,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="33"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-130,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="34"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-90,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="35"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-50,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="36"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-10,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="37"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,30,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="38"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,70,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="39"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 110,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
 
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="40"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-450,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="41"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-410,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="42"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-370,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="43"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-330,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="44"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-290,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="45"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-250,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="46"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-210,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="47"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-170,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="48"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-130,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="52"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-90,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="53"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-50,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="57"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-10,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="58"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 30,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="59"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 70,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+
+                                    <Button Grid.Column="1" Content="Evaluierung" Margin="10,10,10,600" Height="20" Width="180"></Button>
+                                    <Label Content="{DynamicResource ResourceKey=Need}" Margin="185,25,0,0" FontWeight="Bold" HorizontalAlignment="Left"></Label>
+                                    <Label Content="{DynamicResource ResourceKey=ForecastStock}" Margin="460,25,0,0" FontWeight="Bold" HorizontalAlignment="Left"></Label>
+
+                                    <DataGrid Grid.Column="0" Name="Bestellung" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="70,50,10,10" IsReadOnly="True" CanUserAddRows="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Width="50" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding Teil}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="{DynamicResource ResourceKey=Stock}" Binding="{Binding Lagerbestand}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="80" Header="N" Binding="{Binding Brutto Periode n}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+1" Binding="{Binding Brutto Periode n+1}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+2" Binding="{Binding Brutto Periode n+2}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+3" Binding="{Binding Brutto Periode n+3}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="80" Header="N" Binding="{Binding Bestellung Periode n}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+1" Binding="{Binding Bestellung Periode n+1}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+2" Binding="{Binding Bestellung Periode n+2}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="*" Header="N+3" Binding="{Binding Bestellung Periode n+3}" IsReadOnly="True" ></DataGridTextColumn>
+                                        </DataGrid.Columns>
                                     </DataGrid>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="Auflistung">
-                                <Grid>
-                                    <DataGrid Name="BestellungslisteZu" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="100,10,100,10">
+                            <TabItem Header="{DynamicResource ResourceKey=Listing}">
+                                <Grid Background="#80C887">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="200"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Column="1" Margin="-130,10,10,550" Content="ID:" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Margin="-130,10,10,500" Content="Menge:" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Margin="-130,10,10,450" Content="Modus:" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                                    <TextBox Grid.Column="1" Name="BestelungArtikel" Margin="60,10,10,550" Height="20" Width="130"></TextBox>
+                                    <TextBox Grid.Column="1" Name="BestellungMEnge" Margin="60,10,10,500" Height="20" Width="130"></TextBox>
+                                    <ComboBox Grid.Column="1" Height="20" Width="130" Name="BestellungModus" Margin="60,10,10,450">
+                                        <ComboBoxItem Content="Eilbestellung(4)"></ComboBoxItem>
+                                        <ComboBoxItem Content="Bestellung(5)"></ComboBoxItem>
+                                    </ComboBox>
+                                    <Button Grid.Column="1" Content="Bestellung hinzufügen" Margin="10,10,10,400" Height="20" Width="180"></Button>
+                                    <Button Grid.Column="1" Content="Bestellung löschen" Margin="10,10,10,350" Height="20" Width="180"></Button>
+                                    <DataGrid Grid.Column="0" CanUserAddRows="False" IsReadOnly="True" Name="BestellungslisteZu" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="100,50,10,10">
                                         <DataGrid.Columns>
-                                            <DataGridTemplateColumn Header="Article" Width="120">
+                                            <DataGridTemplateColumn IsReadOnly="True" Header="{DynamicResource ResourceKey=Article}" Width="120">
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox Text="{Binding article}" MaxLength="2"/>
+                                                        <TextBox Text="{Binding article}" IsReadOnly="True" IsReadOnlyCaretVisible="True" MaxLength="2"/>
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="Quantity" Width="120">
+                                            <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Quantity}" IsReadOnly="True" Width="120">
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox Text="{Binding quantity}"/>
+                                                        <TextBox Text="{Binding quantity}" IsReadOnly="True" />
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="Modus" Width="*">
+                                            <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Mode}" Width="*">
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <TextBox Text="{Binding modus}" MaxLength="1"/>
@@ -855,31 +948,111 @@
                 </TabItem>
 
                 <TabItem Header="{DynamicResource ResourceKey=CapacityPlanning}" Width="195">
-                    <Grid>
-                        <DataGrid Name="Kapa" ItemsSource="{Binding}" Margin="100,10,10,10" IsReadOnly="True"></DataGrid>
+                    <Grid Margin="20,20,20,20">
+                        <TabControl>
+                            <TabItem Header="Kapazitätsplannung">
+                                <Grid Background="#80C887">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="90"></ColumnDefinition>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                        <RowDefinition Height="18"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="1" Content="Periode N" FontWeight="Bold" FontSize="12" Height="90" Width="90" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="2" Grid.RowSpan="1" Content="Bezeichnung" FontSize="12" FontWeight="Bold" Height="54" Width="90" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Grid.RowSpan="3" Content="Hinterrad" FontSize="12" FontWeight="Bold" Height="54" Width="90" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="6" Grid.RowSpan="3" Content="Vorderrad" FontSize="12" FontWeight="Bold" Height="54" Width="90" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="9" Grid.RowSpan="3" Content="Schutzblech&#10;hinten" FontSize="12" FontWeight="Bold" Height="54" Width="90" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="12" Grid.RowSpan="3" Content="Schutzblech&#10;vorne" FontSize="12" FontWeight="Bold" Height="54" Width="90" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="15" Grid.RowSpan="1" Content="Lenker" FontSize="12" FontWeight="Bold" Height="54" Width="90" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Auflistung">
+                                <Grid Background="#80C887">
+
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                        <DataGrid Visibility="Hidden" Name="Kapa" ItemsSource="{Binding}" Margin="100,10,10,10" IsReadOnly="True"></DataGrid>
                     </Grid>
                 </TabItem>
-
-                <TabItem Header="{DynamicResource ResourceKey=DataExport}" Width="145">
-                    <Grid>
+                <TabItem Header="{DynamicResource ResourceKey=DataExport}" Width="195">
+                    <Grid Margin="20,20,20,20" Background="#969FA7">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="330"></ColumnDefinition>
-                            <ColumnDefinition Width="330"></ColumnDefinition>
-                            <ColumnDefinition Width="330"></ColumnDefinition>
+                            <ColumnDefinition Width="310"></ColumnDefinition>
+                            <ColumnDefinition Width="310"></ColumnDefinition>
+                            <ColumnDefinition Width="310"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="350"></RowDefinition>
-                            <RowDefinition Height="350"></RowDefinition>
+                            <RowDefinition Height="330"></RowDefinition>
+                            <RowDefinition Height="330"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Content="Marktprognose" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
-                        <Label Grid.Column="1" Grid.Row="0" Content="Direktverkäufe" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
-                        <Label Grid.Column="2" Grid.Row="0" Content="Bestellungen" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
-                        <Label Grid.Column="0" Grid.Row="1" Content="Produktionsaufträge" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
-                        <Label Grid.Column="1" Grid.Row="1" Content="Kapazitäten" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="0" Grid.Row="0" Content="{DynamicResource ResourceKey=MarketForecast}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="1" Grid.Row="0" Content="{DynamicResource ResourceKey=DirectSales}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="2" Grid.Row="0" Content="{DynamicResource ResourceKey=Orders}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="0" Grid.Row="1" Content="{DynamicResource ResourceKey=ManufactoryOrders}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="1" Grid.Row="1" Content="{DynamicResource ResourceKey=Capacity}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
                         <DataGrid Grid.Column="0" Grid.Row="0" Name="Sellwish" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="120" Header="Article" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTemplateColumn Header="Quantity" Width="*">
+                                <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Quantity}" Width="*">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding quantity}"  />
@@ -890,14 +1063,21 @@
                         </DataGrid>
                         <DataGrid Grid.Column="1" Grid.Row="0" Name="Selldirect" AutoGenerateColumns="False"  ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False" >
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Quantity" Width="80">
+                                <DataGridTemplateColumn Width="80">
+                                    <DataGridTemplateColumn.Header>
+                                        <TextBlock Text="{DynamicResource ResourceKey=Quantity}"></TextBlock>
+                                    </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding quantity}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Width="80" Header="Article" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="50" Binding="{Binding article}" IsReadOnly="True" >
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock Text="{DynamicResource ResourceKey=Article3}"/>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
                                 <DataGridTemplateColumn Header="penalty" Width="80">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
@@ -905,7 +1085,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="Price" Width="*">
+                                <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Price}" Width="*">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding price}"  />
@@ -916,29 +1096,29 @@
                         </DataGrid>
                         <DataGrid Grid.Column="2" Grid.Row="0" AutoGenerateColumns="False" Name="Orderlist" ItemsSource="{Binding}" CanUserAddRows="False" Margin="10,60,10,10">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="100" Header="Article" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTextColumn Width="100" Header="Quantity" Binding="{Binding quantity}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Header="Modus" Binding="{Binding modus}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Quantity}" Binding="{Binding quantity}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Header="{DynamicResource ResourceKey=Mode}" Binding="{Binding modus}" IsReadOnly="True" ></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                         <DataGrid Grid.Column="0" Grid.Row="1" Name="Productionlist" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" Margin="10,60,10,10">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="120" Header="Item" Binding="{Binding Item}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Header="Amount" Binding="{Binding Amount}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Item}" Binding="{Binding Item}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Header="{DynamicResource ResourceKey=Amount}" Binding="{Binding Amount}" IsReadOnly="True" ></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                         <!--<DataGrid Grid.Column="1" Grid.Row="1" Name="Workingtimelist" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False" PreviewTextInput="Workingtimelist_PreviewTextInput"></DataGrid>-->
                         <DataGrid Grid.Column="1" Grid.Row="1" ItemsSource="{Binding}" Name="Workingtimelist" AutoGenerateColumns="False" Margin="10,60,10,10" CanUserAddRows="False" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="50" Header="Station" Binding="{Binding station}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTemplateColumn Header="Shift" Width="120">
+                                <DataGridTextColumn Width="50" Header="{DynamicResource ResourceKey=Station}" Binding="{Binding station}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Shift}" Width="120">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding shift}" MaxLength="1" PreviewTextInput="TextBox_PreviewTextInput1to3" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="Overtime" Width="*">
+                                <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Overtime}" Width="*">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding overtime}" PreviewTextInput="TextBox_PreviewTextInput1to240" />
@@ -950,7 +1130,6 @@
                         <Button Grid.Column="2" Grid.Row="1" Height="100" Width="200" Content="XML-Export" FontSize="30" Click="ButtonBase_OnClick"></Button>
                     </Grid>
                 </TabItem>
-                <TabItem Header="DC" Width="50"></TabItem>
             </TabControl>
         </Grid>
     </DockPanel>
