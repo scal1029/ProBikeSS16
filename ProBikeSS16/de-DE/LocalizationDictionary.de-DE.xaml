@@ -116,5 +116,10 @@
     <sys:String x:Key="Station">Station</sys:String>
     <sys:String x:Key="Shift">Verschiebung</sys:String>
     <sys:String x:Key="Overtime">Überstunden</sys:String>
+    <sys:String x:Key="Stock">Lagerbestand</sys:String>
 
+    <sys:String x:Key="OrderArticle"> Lagerbestand</sys:String>
+    <sys:String x:Key="OrderAmount">Lagerbestand</sys:String>
+    <sys:String x:Key="AddOrder">Auftrag hinzufügen</sys:String>
+    <sys:String x:Key="DeleteOrder">Auftrag löschen</sys:String>
 </ResourceDictionary>
