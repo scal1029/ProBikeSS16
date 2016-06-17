@@ -170,6 +170,8 @@ namespace ProBikeSS16
             }
 
             refreshKapaPlanInputs();
+            refreshAmountKapaPlan();
+            calculateCapNeed();
         }
 
         #region Refreshing Functions
@@ -263,6 +265,182 @@ namespace ProBikeSS16
             P1A4.Text = GlobalVariables.factory.Wp_4.getApproxProdTimeP1(GlobalVariables.P1Produktionsauftrag).ToString();
             P2A4.Text = GlobalVariables.factory.Wp_4.getApproxProdTimeP2(GlobalVariables.P2Produktionsauftrag).ToString();
             P3A4.Text = GlobalVariables.factory.Wp_4.getApproxProdTimeP3(GlobalVariables.P3Produktionsauftrag).ToString();
+        }
+
+        public void refreshAmountKapaPlan()
+        {
+            AmE4.Text = GlobalVariables.E4Produktionsauftrag.ToString();
+            AmE5.Text = GlobalVariables.E5Produktionsauftrag.ToString();
+            AmE6.Text = GlobalVariables.E6Produktionsauftrag.ToString();
+            AmE7.Text = GlobalVariables.E7Produktionsauftrag.ToString();
+            AmE8.Text = GlobalVariables.E8Produktionsauftrag.ToString();
+            AmE9.Text = GlobalVariables.E9Produktionsauftrag.ToString();
+            AmE10.Text = GlobalVariables.E10Produktionsauftrag.ToString();
+            AmE11.Text = GlobalVariables.E11Produktionsauftrag.ToString();
+            AmE12.Text = GlobalVariables.E12Produktionsauftrag.ToString();
+            AmE13.Text = GlobalVariables.E13Produktionsauftrag.ToString();
+            AmE14.Text = GlobalVariables.E14Produktionsauftrag.ToString();
+            AmE15.Text = GlobalVariables.E15Produktionsauftrag.ToString();
+            AmE16.Text = GlobalVariables.E16Produktionsauftrag.ToString();
+            AmE17.Text = GlobalVariables.E17Produktionsauftrag.ToString();
+            AmE18.Text = GlobalVariables.E18Produktionsauftrag.ToString();
+            AmE19.Text = GlobalVariables.E19Produktionsauftrag.ToString();
+            AmE20.Text = GlobalVariables.E20Produktionsauftrag.ToString();
+
+            AmE26.Text = GlobalVariables.E26Produktionsauftrag.ToString();
+
+            AmE49.Text = GlobalVariables.E49Produktionsauftrag.ToString();
+            AmE54.Text = GlobalVariables.E54Produktionsauftrag.ToString();
+            AmE29.Text = GlobalVariables.E29Produktionsauftrag.ToString();
+
+            AmE50.Text = GlobalVariables.E50Produktionsauftrag.ToString();
+            AmE55.Text = GlobalVariables.E55Produktionsauftrag.ToString();
+            AmE30.Text = GlobalVariables.E30Produktionsauftrag.ToString();
+
+            AmE51.Text = GlobalVariables.E51Produktionsauftrag.ToString();
+            AmE56.Text = GlobalVariables.E56Produktionsauftrag.ToString();
+            AmE31.Text = GlobalVariables.E31Produktionsauftrag.ToString();
+
+            AmP1.Text = GlobalVariables.P1Produktionsauftrag.ToString();
+            AmP2.Text = GlobalVariables.P2Produktionsauftrag.ToString();
+            AmP3.Text = GlobalVariables.P3Produktionsauftrag.ToString();
+        }
+
+        public void calculateCapNeed()
+        {
+            calculateCapNeedA1();
+            calculateCapNeedA2();
+            calculateCapNeedA3();
+            calculateCapNeedA4();
+            calculateCapNeedA6();
+            calculateCapNeedA7();
+            calculateCapNeedA8();
+            calculateCapNeedA9();
+            calculateCapNeedA10();
+            calculateCapNeedA11();
+            calculateCapNeedA12();
+            calculateCapNeedA13();
+            calculateCapNeedA14();
+            calculateCapNeedA15();
+        }
+
+        public void calculateCapNeedA1()
+        {
+            kapA1.Text = (Int32.Parse(E49A1.Text) + Int32.Parse(E54A1.Text) + Int32.Parse(E29A1.Text)).ToString();
+        }
+
+        public void calculateCapNeedA2()
+        {
+            kapA2.Text = (Int32.Parse(E50A2.Text) + Int32.Parse(E55A2.Text) + Int32.Parse(E30A2.Text)).ToString();
+        }
+
+        public void calculateCapNeedA3()
+        {
+            kapA3.Text = (Int32.Parse(E51A3.Text) + Int32.Parse(E56A3.Text) + Int32.Parse(E31A3.Text)).ToString();
+        }
+
+        public void calculateCapNeedA4()
+        {
+            kapA4.Text = (Int32.Parse(P1A4.Text) + Int32.Parse(P2A4.Text) + Int32.Parse(P3A4.Text)).ToString();
+        }
+
+        public void calculateCapNeedA6()
+        {
+            kapA6.Text = (Int32.Parse(E16A6.Text) 
+                + Int32.Parse(E18A6.Text) 
+                + Int32.Parse(E19A6.Text)
+                + Int32.Parse(E20A6.Text)).ToString();
+        }
+
+        public void calculateCapNeedA7()
+        {
+            kapA7.Text = (Int32.Parse(E10A7.Text)
+                + Int32.Parse(E11A7.Text)
+                + Int32.Parse(E12A7.Text)
+                + Int32.Parse(E13A7.Text)
+                + Int32.Parse(E14A7.Text)
+                + Int32.Parse(E15A7.Text)
+                + Int32.Parse(E18A7.Text)
+                + Int32.Parse(E19A7.Text)
+                + Int32.Parse(E20A7.Text)
+                + Int32.Parse(E26A7.Text)).ToString();
+        }
+
+        public void calculateCapNeedA8()
+        {
+            kapA8.Text = (Int32.Parse(E10A8.Text)
+                + Int32.Parse(E11A8.Text)
+                + Int32.Parse(E12A8.Text)
+                + Int32.Parse(E13A8.Text)
+                + Int32.Parse(E14A8.Text)
+                + Int32.Parse(E15A8.Text)
+                + Int32.Parse(E18A8.Text)
+                + Int32.Parse(E19A8.Text)
+                + Int32.Parse(E20A8.Text)).ToString();
+        }
+
+        public void calculateCapNeedA9()
+        {
+            kapA9.Text = (Int32.Parse(E10A9.Text)
+                + Int32.Parse(E11A9.Text)
+                + Int32.Parse(E12A9.Text)
+                + Int32.Parse(E13A9.Text)
+                + Int32.Parse(E14A9.Text)
+                + Int32.Parse(E15A9.Text)
+                + Int32.Parse(E18A9.Text)
+                + Int32.Parse(E19A9.Text)
+                + Int32.Parse(E20A9.Text)).ToString();
+        }
+
+        public void calculateCapNeedA10()
+        {
+            kapA10.Text = (Int32.Parse(E4A10.Text)
+                + Int32.Parse(E5A10.Text)
+                + Int32.Parse(E6A10.Text)
+                + Int32.Parse(E7A10.Text)
+                + Int32.Parse(E8A10.Text)
+                + Int32.Parse(E9A10.Text)).ToString();
+        }
+
+        public void calculateCapNeedA11()
+        {
+            kapA11.Text = (Int32.Parse(E4A11.Text)
+                + Int32.Parse(E5A11.Text)
+                + Int32.Parse(E6A11.Text)
+                + Int32.Parse(E7A11.Text)
+                + Int32.Parse(E8A11.Text)
+                + Int32.Parse(E9A11.Text)).ToString();
+        }
+
+        public void calculateCapNeedA12()
+        {
+            kapA12.Text = (Int32.Parse(E10A12.Text)
+                + Int32.Parse(E11A12.Text)
+                + Int32.Parse(E12A12.Text)
+                + Int32.Parse(E13A12.Text)
+                + Int32.Parse(E14A12.Text)
+                + Int32.Parse(E15A12.Text)).ToString();
+        }
+
+        public void calculateCapNeedA13()
+        {
+            kapA13.Text = (Int32.Parse(E10A13.Text)
+                + Int32.Parse(E11A13.Text)
+                + Int32.Parse(E12A13.Text)
+                + Int32.Parse(E13A13.Text)
+                + Int32.Parse(E14A13.Text)
+                + Int32.Parse(E15A13.Text)).ToString();
+        }
+
+        public void calculateCapNeedA14()
+        {
+            kapA14.Text = (Int32.Parse(E16A14.Text)).ToString();
+        }
+
+        public void calculateCapNeedA15()
+        {
+            kapA15.Text = (Int32.Parse(E17A15.Text)
+                + Int32.Parse(E26A15.Text)).ToString();
         }
 
 
