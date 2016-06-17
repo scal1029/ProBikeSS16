@@ -779,7 +779,7 @@
                                             <DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding id}" IsReadOnly="True" ></DataGridTextColumn>
                                             <!--<DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding id}" IsReadOnly="True" ></DataGridTextColumn>-->
                                             <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Startamount}" Binding="{Binding startamount}" IsReadOnly="True" ></DataGridTextColumn>
-                                            <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Amount}" Binding="{Binding amount}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Amount2}" Binding="{Binding amount}" IsReadOnly="True" ></DataGridTextColumn>
                                             <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Percent}" Binding="{Binding pct}" IsReadOnly="True" ></DataGridTextColumn>
                                             <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Price}" Binding="{Binding price}" IsReadOnly="True" ></DataGridTextColumn>
                                             <DataGridTextColumn Width="*" Header="{DynamicResource ResourceKey=Stockvalue}" Binding="{Binding stockvalue}" IsReadOnly="True" ></DataGridTextColumn>
@@ -882,8 +882,8 @@
 
                                     <DataGrid Grid.Column="0" Name="Bestellung" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="70,50,10,10" IsReadOnly="True" CanUserAddRows="False">
                                         <DataGrid.Columns>
-                                            <DataGridTextColumn Width="50" Header="{DynamicResource ResourceKey=Article2}" Binding="{Binding Teil}" IsReadOnly="True" ></DataGridTextColumn>
-                                            <DataGridTextColumn Width="65" Header="{DynamicResource ResourceKey=Stock2}" Binding="{Binding Lagerbestand}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="50" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding Teil}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="{DynamicResource ResourceKey=Stock}" Binding="{Binding Lagerbestand}" IsReadOnly="True" ></DataGridTextColumn>
                                             <DataGridTextColumn Width="80" Header="N" Binding="{Binding Brutto Periode n}" IsReadOnly="True" ></DataGridTextColumn>
                                             <DataGridTextColumn Width="65" Header="N+1" Binding="{Binding Brutto Periode n+1}" IsReadOnly="True" ></DataGridTextColumn>
                                             <DataGridTextColumn Width="65" Header="N+2" Binding="{Binding Brutto Periode n+2}" IsReadOnly="True" ></DataGridTextColumn>
@@ -918,7 +918,7 @@
                                     <Button Grid.Column="1" Content="Bestellung löschen" Margin="10,10,10,350" Height="20" Width="180"></Button>
                                     <DataGrid Grid.Column="0" CanUserAddRows="False" IsReadOnly="True" Name="BestellungslisteZu" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="100,50,10,10">
                                         <DataGrid.Columns>
-                                            <DataGridTemplateColumn IsReadOnly="True" Header="{DynamicResource ResourceKey=Article3}" Width="120">
+                                            <DataGridTemplateColumn IsReadOnly="True" Header="{DynamicResource ResourceKey=Article}" Width="120">
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <TextBox Text="{Binding article}" IsReadOnly="True" IsReadOnlyCaretVisible="True" MaxLength="2"/>
@@ -1044,15 +1044,15 @@
                             <RowDefinition Height="330"></RowDefinition>
                             <RowDefinition Height="330"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Content="Marktprognose" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
-                        <Label Grid.Column="1" Grid.Row="0" Content="Direktverkäufe" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
-                        <Label Grid.Column="2" Grid.Row="0" Content="Bestellungen" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
-                        <Label Grid.Column="0" Grid.Row="1" Content="Produktionsaufträge" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
-                        <Label Grid.Column="1" Grid.Row="1" Content="Kapazitäten" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="0" Grid.Row="0" Content="{DynamicResource ResourceKey=MarketForecast}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="1" Grid.Row="0" Content="{DynamicResource ResourceKey=DirectSales}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="2" Grid.Row="0" Content="{DynamicResource ResourceKey=Orders}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="0" Grid.Row="1" Content="{DynamicResource ResourceKey=ManufactoryOrders}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        <Label Grid.Column="1" Grid.Row="1" Content="{DynamicResource ResourceKey=Capacity}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
                         <DataGrid Grid.Column="0" Grid.Row="0" Name="Sellwish" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="120" Header="Article" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTemplateColumn Header="Quantity" Width="*">
+                                <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Quantity}" Width="*">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding quantity}"  />
@@ -1085,7 +1085,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="Price" Width="*">
+                                <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Price}" Width="*">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding price}"  />
@@ -1096,29 +1096,29 @@
                         </DataGrid>
                         <DataGrid Grid.Column="2" Grid.Row="0" AutoGenerateColumns="False" Name="Orderlist" ItemsSource="{Binding}" CanUserAddRows="False" Margin="10,60,10,10">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="100" Header="Article" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTextColumn Width="100" Header="Quantity" Binding="{Binding quantity}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Header="Modus" Binding="{Binding modus}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Quantity}" Binding="{Binding quantity}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Header="{DynamicResource ResourceKey=Mode}" Binding="{Binding modus}" IsReadOnly="True" ></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                         <DataGrid Grid.Column="0" Grid.Row="1" Name="Productionlist" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" Margin="10,60,10,10">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="120" Header="Item" Binding="{Binding Item}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Header="Amount" Binding="{Binding Amount}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Item}" Binding="{Binding Item}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Header="{DynamicResource ResourceKey=Amount}" Binding="{Binding Amount}" IsReadOnly="True" ></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                         <!--<DataGrid Grid.Column="1" Grid.Row="1" Name="Workingtimelist" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False" PreviewTextInput="Workingtimelist_PreviewTextInput"></DataGrid>-->
                         <DataGrid Grid.Column="1" Grid.Row="1" ItemsSource="{Binding}" Name="Workingtimelist" AutoGenerateColumns="False" Margin="10,60,10,10" CanUserAddRows="False" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="50" Header="Station" Binding="{Binding station}" IsReadOnly="True" ></DataGridTextColumn>
-                                <DataGridTemplateColumn Header="Shift" Width="120">
+                                <DataGridTextColumn Width="50" Header="{DynamicResource ResourceKey=Station}" Binding="{Binding station}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Shift}" Width="120">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding shift}" MaxLength="1" PreviewTextInput="TextBox_PreviewTextInput1to3" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="Overtime" Width="*">
+                                <DataGridTemplateColumn Header="{DynamicResource ResourceKey=Overtime}" Width="*">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding overtime}" PreviewTextInput="TextBox_PreviewTextInput1to240" />
