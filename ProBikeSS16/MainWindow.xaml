@@ -14,6 +14,7 @@
             <GradientStop Offset="0" Color="Gray"/>
             <GradientStop Offset="1" Color="White"/>
         </LinearGradientBrush>
+        
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -774,8 +775,9 @@
                                     </Grid.RowDefinitions>
                                     <Button Grid.Column="1" Height="20" Width="150" Content="{DynamicResource ResourceKey=Evaluation}" Margin="10,10,10,500" Click="Evaluierung"/>
                                     <DataGrid Name="GridOldStock" VirtualizingStackPanel.IsVirtualizing="False"  ItemsSource="{Binding}" Margin="10,10,10,10" IsReadOnly="True" AutoGenerateColumns="False">
-                                        <DataGrid.Columns>
+                                        <DataGrid.Columns>  
                                             <DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding id}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <!--<DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding id}" IsReadOnly="True" ></DataGridTextColumn>-->
                                             <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Startamount}" Binding="{Binding startamount}" IsReadOnly="True" ></DataGridTextColumn>
                                             <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Amount}" Binding="{Binding amount}" IsReadOnly="True" ></DataGridTextColumn>
                                             <DataGridTextColumn Width="120" Header="{DynamicResource ResourceKey=Percent}" Binding="{Binding pct}" IsReadOnly="True" ></DataGridTextColumn>
@@ -1061,14 +1063,21 @@
                         </DataGrid>
                         <DataGrid Grid.Column="1" Grid.Row="0" Name="Selldirect" AutoGenerateColumns="False"  ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False" >
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Quantity" Width="80">
+                                <DataGridTemplateColumn Width="80">
+                                    <DataGridTemplateColumn.Header>
+                                        <TextBlock Text="{DynamicResource ResourceKey=Quantity}"></TextBlock>
+                                    </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox Text="{Binding quantity}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Width="50" Header="Article" Binding="{Binding article}" IsReadOnly="True" ></DataGridTextColumn>
+                                <DataGridTextColumn Width="50" Binding="{Binding article}" IsReadOnly="True" >
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock Text="{DynamicResource ResourceKey=Article3}"/>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
                                 <DataGridTemplateColumn Header="penalty" Width="80">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
