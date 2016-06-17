@@ -101,14 +101,21 @@
     <sys:String x:Key="Planning">Planning</sys:String>
     <sys:String x:Key="Listing">Listing</sys:String>
     <!--Planning-->
-    <sys:String x:Key="Article2">Article</sys:String>
-    <sys:String x:Key="Stock2">Stock</sys:String>
     <sys:String x:Key="Need">Gross Demand (in Period):</sys:String>
     <sys:String x:Key="ForecastStock">Stock (in Period):</sys:String>
     <!--Listing-->
-    <sys:String x:Key="Article3">Article</sys:String>
     <sys:String x:Key="Quantity">Quantity</sys:String>
     <sys:String x:Key="Mode">Mode</sys:String>
 
+    <!--XMLExport/Overview-->
+    <sys:String x:Key="MarketForecast">Market Forecast</sys:String>
+    <sys:String x:Key="DirectSales">Direct Sales</sys:String>
+    <sys:String x:Key="Orders">Orders</sys:String>
+    <sys:String x:Key="ManufactoryOrders">Manufactory Orders</sys:String>
+    <sys:String x:Key="Capacity">Capacity</sys:String>
+    <sys:String x:Key="Penalty">Penalty</sys:String>
+    <sys:String x:Key="Station">Station</sys:String>
+    <sys:String x:Key="Shift">Shift</sys:String>
+    <sys:String x:Key="Overtime">Overtime</sys:String>
 
 </ResourceDictionary>
