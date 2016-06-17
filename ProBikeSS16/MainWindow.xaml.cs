@@ -10050,7 +10050,7 @@ namespace ProBikeSS16
             foreach (System.Data.DataRowView dr in Productionlist.ItemsSource)
             {
                 if (dr[0] != DBNull.Value && dr[1] != DBNull.Value)
-                    Aufträge.Add(new XMLproductionlist((int)dr[0], (int)dr[1]));
+                    Aufträge.Add(new XMLproductionlist(int.Parse((string)dr[0]), (int.Parse((string)dr[1]))));
             }
 
             foreach (System.Data.DataRowView dr in Workingtimelist.ItemsSource)

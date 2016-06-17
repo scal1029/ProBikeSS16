@@ -842,38 +842,39 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"></RowDefinition>
                                     </Grid.RowDefinitions>
-                                    <Label Grid.Column="1" Content="21" FontWeight="Bold"  Margin="0,150,0,0" HorizontalAlignment="Center"></Label>
-                                    <Label Grid.Column="0" Content="21" FontWeight="Bold"  Margin="10,55,680,610" HorizontalAlignment="Center"></Label>
-                                    <Label Content="22" FontWeight="Bold"  Margin="10,75,680,590" HorizontalAlignment="Center"></Label>
-                                    <Label Content="23" FontWeight="Bold"  Margin="10,95,680,570" HorizontalAlignment="Center"></Label>
-                                    <Label Content="24" FontWeight="Bold"  Margin="10,115,680,550" HorizontalAlignment="Center"></Label>
-                                    <Label Content="25" FontWeight="Bold"  Margin="10,135,680,530" HorizontalAlignment="Center"></Label>
-                                    <Label Content="27" FontWeight="Bold"  Margin="10,155,680,510" HorizontalAlignment="Center"></Label>
-                                    <Label Content="28" FontWeight="Bold"  Margin="10,175,680,490" HorizontalAlignment="Center"></Label>
-                                    <Label Content="32" FontWeight="Bold"  Margin="10,195,680,470" HorizontalAlignment="Center"></Label>
-                                    <Label Content="33" FontWeight="Bold"  Margin="10,215,680,450" HorizontalAlignment="Center"></Label>
-                                    <Label Content="34" FontWeight="Bold"  Margin="10,235,680,430" HorizontalAlignment="Center"></Label>
-                                    <Label Content="35" FontWeight="Bold"  Margin="10,255,680,410" HorizontalAlignment="Center"></Label>
-                                    <Label Content="36" FontWeight="Bold"  Margin="10,275,680,390" HorizontalAlignment="Center"></Label>
-                                    <Label Content="37" FontWeight="Bold"  Margin="10,295,680,370" HorizontalAlignment="Center"></Label>
-                                    <Label Content="38" FontWeight="Bold"  Margin="10,315,680,350" HorizontalAlignment="Center"></Label>
-                                    <Label Content="39" FontWeight="Bold"  Margin="10,335,680,330" HorizontalAlignment="Center"></Label>
-                                    <Label Content="40" FontWeight="Bold"  Margin="10,355,680,310" HorizontalAlignment="Center"></Label>
-                                    <Label Content="41" FontWeight="Bold"  Margin="10,375,680,290" HorizontalAlignment="Center"></Label>
-                                    <Label Content="42" FontWeight="Bold"  Margin="10,395,680,270" HorizontalAlignment="Center"></Label>
-                                    <Label Content="43" FontWeight="Bold"  Margin="10,415,680,250" HorizontalAlignment="Center"></Label>
-                                    <Label Content="44" FontWeight="Bold"  Margin="10,435,680,230" HorizontalAlignment="Center"></Label>
-                                    <Label Content="45" FontWeight="Bold"  Margin="10,455,680,210" HorizontalAlignment="Center"></Label>
-                                    <Label Content="46" FontWeight="Bold"  Margin="10,475,680,190" HorizontalAlignment="Center"></Label>
-                                    <Label Content="47" FontWeight="Bold"  Margin="10,495,680,170" HorizontalAlignment="Center"></Label>
-                                    <Label Content="48" FontWeight="Bold"  Margin="10,515,680,150" HorizontalAlignment="Center"></Label>
-                                    <Label Content="52" FontWeight="Bold"  Margin="10,535,680,130" HorizontalAlignment="Center"></Label>
-                                    <Label Content="53" FontWeight="Bold"  Margin="10,555,680,110" HorizontalAlignment="Center"></Label>
-                                    <Label Content="57" FontWeight="Bold"  Margin="10,575,680,90" HorizontalAlignment="Center"></Label>
-                                    <Label Content="58" FontWeight="Bold"  Margin="10,595,680,70" HorizontalAlignment="Center"></Label>
-                                    <Label Content="59" FontWeight="Bold"  Margin="10,615,680,50" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="150" Content="Infos Kaufteile(ID):"  Margin="0,-500,0,0" HorizontalAlignment="Center" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="21"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-450,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="22"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-410,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="23"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-370,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="24"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-330,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="25"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-290,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="27"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-250,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="28"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-210,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="32"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-170,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="33"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-130,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="34"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-90,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="35"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-50,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="36"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-10,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="37"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,30,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="38"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,70,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="39"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 110,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="40"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-450,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="41"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-410,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="42"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-370,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="43"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-330,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="44"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-290,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="45"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-250,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="46"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-210,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="47"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-170,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="48"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-130,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="52"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-90,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="53"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-50,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="57"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-10,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="58"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 30,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="50" Content="59"  FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 70,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+
                                     <Button Grid.Column="1" Content="Evaluierung" Margin="10,10,10,600" Height="20" Width="180"></Button>
-                                    <Label Grid.Column="0" Content="Infos Kaufteile(ID):"  Margin="5,25,0,635" FontWeight="Bold" HorizontalAlignment="Left"></Label>
                                     <Label Content="Bruttobedarf (in Periode):" Margin="185,25,0,0" FontWeight="Bold" HorizontalAlignment="Left"></Label>
                                     <Label Content="Prognose Bestand (in Periode):" Margin="460,25,0,0" FontWeight="Bold" HorizontalAlignment="Left"></Label>
 
