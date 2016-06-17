@@ -6579,7 +6579,7 @@ namespace ProBikeSS16
             Orderlist.DataContext = BestellungslisteZu.DataContext;
             Orderlist.ItemsSource = BestellungslisteZu.ItemsSource;
             
-            foreach (DataRow row in data.Tables[7].Rows)
+            foreach (DataRow row in data.Tables["workplace"].Rows)
             {
                 int id = Convert.ToInt32((string)row["id"]);
                 int setUps = -1;
@@ -6644,6 +6644,70 @@ namespace ProBikeSS16
                 }
             }
 
+            foreach (DataRow row in data.Tables["workplace"].Rows)
+            {
+                int id = Convert.ToInt32((string)row["id"]);
+                int timeneed = -1;
+                if (!(row["timeneed"] is DBNull))
+                    timeneed = Convert.ToInt32((string)row["timeneed"]);
+
+                if (id == 1 && timeneed >= 0)
+                {
+                    kapOldA1.Text = (Int32.Parse(kapOldA1.Text) + timeneed).ToString();
+                }
+                if (id == 2 && timeneed >= 0)
+                {
+                    kapOldA2.Text = (Int32.Parse(kapOldA2.Text) + timeneed).ToString();
+                }
+                if (id == 3 && timeneed >= 0)
+                {
+                    kapOldA3.Text = (Int32.Parse(kapOldA3.Text) + timeneed).ToString();
+                }
+                if (id == 4 && timeneed >= 0)
+                {
+                    kapOldA4.Text = (Int32.Parse(kapOldA4.Text) + timeneed).ToString();
+                }
+                if (id == 6 && timeneed >= 0)
+                {
+                    kapOldA6.Text = (Int32.Parse(kapOldA6.Text) + timeneed).ToString();
+                }
+                if (id == 7 && timeneed >= 0)
+                {
+                    kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + timeneed).ToString();
+                }
+                if (id == 8 && timeneed >= 0)
+                {
+                    kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + timeneed).ToString();
+                }
+                if (id == 9 && timeneed >= 0)
+                {
+                    kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + timeneed).ToString();
+                }
+                if (id == 10 && timeneed >= 0)
+                {
+                    kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + timeneed).ToString();
+                }
+                if (id == 11 && timeneed >= 0)
+                {
+                    kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + timeneed).ToString();
+                }
+                if (id == 12 && timeneed >= 0)
+                {
+                    kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + timeneed).ToString();
+                }
+                if (id == 13 && timeneed >= 0)
+                {
+                    kapOldA13.Text = (Int32.Parse(kapOldA13.Text) + timeneed).ToString();
+                }
+                if (id == 14 && timeneed >= 0)
+                {
+                    kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + timeneed).ToString();
+                }
+                if (id == 15 && timeneed >= 0)
+                {
+                    kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + timeneed).ToString();
+                }
+            }
         }
 
 
