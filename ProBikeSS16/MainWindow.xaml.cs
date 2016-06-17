@@ -7073,16 +7073,8 @@ namespace ProBikeSS16
             if (!GlobalVariables.Aussortierung.Columns.Contains("Amount"))
                 GlobalVariables.Aussortierung.Columns.Add("Amount");
 
-            foreach (DataRow Row in GlobalVariables.dtProdOrder.Rows)
-            {
-                if (Row[0] != DBNull.Value && int.Parse((string)Row[1]) != 0)
-                {
-                    GlobalVariables.Aussortierung.Rows.Add(Row[0], Row[1]);
-                }
-            }
 
-
-            GridProductionOrders.DataContext = GlobalVariables.Aussortierung.DefaultView;
+            
 
 
 
@@ -7330,6 +7322,17 @@ namespace ProBikeSS16
             #endregion Ordering
             #endregion Ordering2
 
+
+            foreach (DataRow Row in GlobalVariables.dtProdOrder.Rows)
+            {
+                if (Row[0] != DBNull.Value && int.Parse((string)Row[1]) != 0)
+                {
+                    GlobalVariables.Aussortierung.Rows.Add(Row[0], Row[1]);
+                }
+            }
+
+
+            GridProductionOrders.DataContext = GlobalVariables.Aussortierung.DefaultView;
 
             ////Umwandlung Tabelle Lager zu Dictionary
             GlobalVariables.Lagerstand.Clear();

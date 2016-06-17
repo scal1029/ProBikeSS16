@@ -1581,7 +1581,37 @@
                             </TabItem>
                             <TabItem Header="Auflistung">
                                 <Grid Background="#80C887">
+                                    <DataGrid Margin="50,50,200,50">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Width="50" Binding="{Binding station}" IsReadOnly="True" >
+                                                <DataGridTextColumn.Header>
+                                                    <TextBlock Text="{DynamicResource ResourceKey=Station}"/>
+                                                </DataGridTextColumn.Header>
+                                            </DataGridTextColumn>
 
+                                            <DataGridTemplateColumn Width="120">
+                                                <DataGridTemplateColumn.Header>
+                                                    <TextBlock Text="{DynamicResource ResourceKey=Shift}"></TextBlock>
+                                                </DataGridTemplateColumn.Header>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBox Text="{Binding shift}" MaxLength="1" PreviewTextInput="TextBox_PreviewTextInput1to3" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                            <DataGridTemplateColumn Width="*">
+                                                <DataGridTemplateColumn.Header>
+                                                    <TextBlock Text="{DynamicResource ResourceKey=Overtime}"></TextBlock>
+                                                </DataGridTemplateColumn.Header>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBox Text="{Binding overtime}" PreviewTextInput="TextBox_PreviewTextInput1to240" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                 </Grid>
                             </TabItem>
                         </TabControl>
