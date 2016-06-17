@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProBikeSS16
 {
@@ -36,6 +33,118 @@ namespace ProBikeSS16
             get
             {
                 return instance;
+            }
+        }
+
+        internal WP_1 Wp_1
+        {
+            get
+            {
+                return wp_1;
+            }
+        }
+
+        internal WP_2 Wp_2
+        {
+            get
+            {
+                return wp_2;
+            }
+        }
+
+        internal WP_3 Wp_3
+        {
+            get
+            {
+                return wp_3;
+            }
+        }
+
+        internal WP_4 Wp_4
+        {
+            get
+            {
+                return wp_4;
+            }
+        }
+
+        internal WP_6 Wp_6
+        {
+            get
+            {
+                return wp_6;
+            }
+        }
+
+        internal WP_7 Wp_7
+        {
+            get
+            {
+                return wp_7;
+            }
+        }
+
+        internal WP_8 Wp_8
+        {
+            get
+            {
+                return wp_8;
+            }
+        }
+
+        internal WP_9 Wp_9
+        {
+            get
+            {
+                return wp_9;
+            }
+        }
+
+        internal WP_10 Wp_10
+        {
+            get
+            {
+                return wp_10;
+            }
+        }
+
+        internal WP_11 Wp_11
+        {
+            get
+            {
+                return wp_11;
+            }
+        }
+
+        internal WP_12 Wp_12
+        {
+            get
+            {
+                return wp_12;
+            }
+        }
+
+        internal WP_13 Wp_13
+        {
+            get
+            {
+                return wp_13;
+            }
+        }
+
+        internal WP_14 Wp_14
+        {
+            get
+            {
+                return wp_14;
+            }
+        }
+
+        internal WP_15 Wp_15
+        {
+            get
+            {
+                return wp_15;
             }
         }
 

@@ -117,5 +117,10 @@
     <sys:String x:Key="Station">Station</sys:String>
     <sys:String x:Key="Shift">Shift</sys:String>
     <sys:String x:Key="Overtime">Overtime</sys:String>
+    <sys:String x:Key="Stock">Stock</sys:String>
 
+    <sys:String x:Key="OrderArticle">Order Article</sys:String>
+    <sys:String x:Key="OrderAmount">Order Amount</sys:String>
+    <sys:String x:Key="AddOrder">Add Order</sys:String>
+    <sys:String x:Key="DeleteOrder">Delete Order </sys:String>
 </ResourceDictionary>
