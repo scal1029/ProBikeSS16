@@ -1181,6 +1181,119 @@
                                     <TextBox Name="E7A10" Grid.Column="13" Grid.Row="6" Margin="15,0,0,0"></TextBox>
                                     <TextBox Name="E8A10" Grid.Column="13" Grid.Row="7" Margin="15,0,0,0"></TextBox>
                                     <TextBox Name="E9A10" Grid.Column="13" Grid.Row="8" Margin="15,0,0,0"></TextBox>
+                                    
+                                    <TextBox Name="E4A11" Grid.Column="14" Grid.Row="3" Margin="15,0,0,0"/>
+                                    <TextBox Name="E5A11" Grid.Column="14" Grid.Row="4" Margin="15,0,0,0"/>
+                                    <TextBox Name="E6A11" Grid.Column="14" Grid.Row="5" Margin="15,0,0,0"/>
+                                    <TextBox Name="E7A11" Grid.Column="14" Grid.Row="6" Margin="15,0,0,0"/>
+                                    <TextBox Name="E8A11" Grid.Column="14" Grid.Row="7" Margin="15,0,0,0"/>
+                                    <TextBox Name="E9A11" Grid.Column="14" Grid.Row="8" Margin="15,0,0,0"/>
+                                    
+                                    <TextBox Name="E10A7" Grid.Column="10" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A7" Grid.Column="10" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A7" Grid.Column="10" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A7" Grid.Column="10" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A7" Grid.Column="10" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A7" Grid.Column="10" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E10A8" Grid.Column="11" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A8" Grid.Column="11" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A8" Grid.Column="11" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A8" Grid.Column="11" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A8" Grid.Column="11" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A8" Grid.Column="11" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E10A9" Grid.Column="12" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A9" Grid.Column="12" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A9" Grid.Column="12" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A9" Grid.Column="12" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A9" Grid.Column="12" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A9" Grid.Column="12" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E10A12" Grid.Column="15" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A12" Grid.Column="15" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A12" Grid.Column="15" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A12" Grid.Column="15" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A12" Grid.Column="15" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A12" Grid.Column="15" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E10A13" Grid.Column="16" Grid.Row="9" Margin="15,0,0,0"/>
+                                    <TextBox Name="E11A13" Grid.Column="16" Grid.Row="10" Margin="15,0,0,0"/>
+                                    <TextBox Name="E12A13" Grid.Column="16" Grid.Row="11" Margin="15,0,0,0"/>
+                                    <TextBox Name="E13A13" Grid.Column="16" Grid.Row="12" Margin="15,0,0,0"/>
+                                    <TextBox Name="E14A13" Grid.Column="16" Grid.Row="13" Margin="15,0,0,0"/>
+                                    <TextBox Name="E15A13" Grid.Column="16" Grid.Row="14" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E16A6" Grid.Column="9" Grid.Row="15" Margin="15,0,0,0"/>
+                                    <TextBox Name="E16A14" Grid.Column="17" Grid.Row="15" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E17A15" Grid.Column="18" Grid.Row="16" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E18A6" Grid.Column="9" Grid.Row="17" Margin="15,0,0,0"/>
+                                    <TextBox Name="E19A6" Grid.Column="9" Grid.Row="18" Margin="15,0,0,0"/>
+                                    <TextBox Name="E20A6" Grid.Column="9" Grid.Row="19" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E18A7" Grid.Column="10" Grid.Row="17" Margin="15,0,0,0"/>
+                                    <TextBox Name="E19A7" Grid.Column="10" Grid.Row="18" Margin="15,0,0,0"/>
+                                    <TextBox Name="E20A7" Grid.Column="10" Grid.Row="19" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E18A8" Grid.Column="11" Grid.Row="17" Margin="15,0,0,0"/>
+                                    <TextBox Name="E19A8" Grid.Column="11" Grid.Row="18" Margin="15,0,0,0"/>
+                                    <TextBox Name="E20A8" Grid.Column="11" Grid.Row="19" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E18A9" Grid.Column="12" Grid.Row="17" Margin="15,0,0,0"/>
+                                    <TextBox Name="E19A9" Grid.Column="12" Grid.Row="18" Margin="15,0,0,0"/>
+                                    <TextBox Name="E20A9" Grid.Column="12" Grid.Row="19" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E26A7" Grid.Column="10" Grid.Row="20" Margin="15,0,0,0"/>
+                                    <TextBox Name="E26A15" Grid.Column="18" Grid.Row="20" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E49A1" Grid.Column="4" Grid.Row="21" Margin="15,0,0,0"/>
+                                    <TextBox Name="E54A1" Grid.Column="4" Grid.Row="22" Margin="15,0,0,0"/>
+                                    <TextBox Name="E29A1" Grid.Column="4" Grid.Row="23" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E50A2" Grid.Column="5" Grid.Row="24" Margin="15,0,0,0"/>
+                                    <TextBox Name="E55A2" Grid.Column="5" Grid.Row="25" Margin="15,0,0,0"/>
+                                    <TextBox Name="E30A2" Grid.Column="5" Grid.Row="26" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="E51A3" Grid.Column="6" Grid.Row="27" Margin="15,0,0,0"/>
+                                    <TextBox Name="E56A3" Grid.Column="6" Grid.Row="28" Margin="15,0,0,0"/>
+                                    <TextBox Name="E31A3" Grid.Column="6" Grid.Row="29" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="P1A4" Grid.Column="7" Grid.Row="30" Margin="15,0,0,0"/>
+                                    <TextBox Name="P2A4" Grid.Column="7" Grid.Row="31" Margin="15,0,0,0"/>
+                                    <TextBox Name="P3A4" Grid.Column="7" Grid.Row="32" Margin="15,0,0,0"/>
+
+                                    <TextBox Name="AmE4" Grid.Column="3" Grid.Row="3" />
+                                    <TextBox Name="AmE5" Grid.Column="3" Grid.Row="4" />
+                                    <TextBox Name="AmE6" Grid.Column="3" Grid.Row="5" />
+                                    <TextBox Name="AmE7" Grid.Column="3" Grid.Row="6" />
+                                    <TextBox Name="AmE8" Grid.Column="3" Grid.Row="7" />
+                                    <TextBox Name="AmE9" Grid.Column="3" Grid.Row="8" />
+                                    <TextBox Name="AmE10" Grid.Column="3" Grid.Row="9" />
+                                    <TextBox Name="AmE11" Grid.Column="3" Grid.Row="10" />
+                                    <TextBox Name="AmE12" Grid.Column="3" Grid.Row="11" />
+                                    <TextBox Name="AmE13" Grid.Column="3" Grid.Row="12" />
+                                    <TextBox Name="AmE14" Grid.Column="3" Grid.Row="13" />
+                                    <TextBox Name="AmE15" Grid.Column="3" Grid.Row="14" />
+                                    <TextBox Name="AmE16" Grid.Column="3" Grid.Row="15" />
+                                    <TextBox Name="AmE17" Grid.Column="3" Grid.Row="16" />
+                                    <TextBox Name="AmE18" Grid.Column="3" Grid.Row="17" />
+                                    <TextBox Name="AmE19" Grid.Column="3" Grid.Row="18" />
+                                    <TextBox Name="AmE20" Grid.Column="3" Grid.Row="19" />
+                                    <TextBox Name="AmE26" Grid.Column="3" Grid.Row="20" />
+                                    <TextBox Name="AmE49" Grid.Column="3" Grid.Row="21" />
+                                    <TextBox Name="AmE54" Grid.Column="3" Grid.Row="22" />
+                                    <TextBox Name="AmE29" Grid.Column="3" Grid.Row="23" />
+                                    <TextBox Name="AmE50" Grid.Column="3" Grid.Row="24" />
+                                    <TextBox Name="AmE55" Grid.Column="3" Grid.Row="25" />
+                                    <TextBox Name="AmE30" Grid.Column="3" Grid.Row="26" />
+                                    <TextBox Name="AmE51" Grid.Column="3" Grid.Row="27" />
+                                    <TextBox Name="AmE56" Grid.Column="3" Grid.Row="28" />
+                                    <TextBox Name="AmE31" Grid.Column="3" Grid.Row="29" />
+                                    <TextBox Name="AmP1" Grid.Column="3" Grid.Row="30" />
+                                    <TextBox Name="AmP2" Grid.Column="3" Grid.Row="31" />
+                                    <TextBox Name="AmP3" Grid.Column="3" Grid.Row="32" />
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Auflistung">
