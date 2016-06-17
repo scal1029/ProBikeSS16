@@ -41,7 +41,7 @@ namespace ProBikeSS16
 
         internal void fillData(DataSet data)
         {
-            foreach (DataRow row in data.Tables[2].Rows)
+            foreach (DataRow row in data.Tables["article"].Rows)
             {
                 int id = Convert.ToInt32((string)row["id"]);
                 int a = Convert.ToInt32((string)row["amount"]);

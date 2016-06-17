@@ -202,6 +202,9 @@ namespace ProBikeSS16
             refreshKapaPlanInputs();
             refreshAmountKapaPlan();
             calculateCapNeed();
+            calculateShiftAndOverDo();
+            calcWholeCap();
+            fillOldTimings();
         }
 
         #region Refreshing Functions
@@ -336,6 +339,11 @@ namespace ProBikeSS16
             AmP3.Text = GlobalVariables.P3Produktionsauftrag.ToString();
         }
 
+        public void fillOldTimings()
+        {
+            //kapOldA1.Text = 
+        }
+
         public void calculateCapNeed()
         {
             calculateCapNeedA1();
@@ -352,6 +360,93 @@ namespace ProBikeSS16
             calculateCapNeedA13();
             calculateCapNeedA14();
             calculateCapNeedA15();
+        }
+
+        public void calculateShiftAndOverDo()
+        {
+            SuOTimeA1.Text = calcShift(Int32.Parse(kapA1.Text));
+            SuOTimeA2.Text = calcShift(Int32.Parse(kapA2.Text));
+            SuOTimeA3.Text = calcShift(Int32.Parse(kapA3.Text));
+            SuOTimeA4.Text = calcShift(Int32.Parse(kapA4.Text));
+            SuOTimeA6.Text = calcShift(Int32.Parse(kapA6.Text));
+            SuOTimeA7.Text = calcShift(Int32.Parse(kapA7.Text));
+            SuOTimeA8.Text = calcShift(Int32.Parse(kapA8.Text));
+            SuOTimeA9.Text = calcShift(Int32.Parse(kapA9.Text));
+            SuOTimeA10.Text = calcShift(Int32.Parse(kapA10.Text));
+            SuOTimeA11.Text = calcShift(Int32.Parse(kapA11.Text));
+            SuOTimeA12.Text = calcShift(Int32.Parse(kapA12.Text));
+            SuOTimeA13.Text = calcShift(Int32.Parse(kapA13.Text));
+            SuOTimeA14.Text = calcShift(Int32.Parse(kapA14.Text));
+            SuOTimeA15.Text = calcShift(Int32.Parse(kapA15.Text));
+
+            OTimeA1.Text = calcOverDo(Int32.Parse(kapA1.Text));
+            OTimeA2.Text = calcOverDo(Int32.Parse(kapA2.Text));
+            OTimeA3.Text = calcOverDo(Int32.Parse(kapA3.Text));
+            OTimeA4.Text = calcOverDo(Int32.Parse(kapA4.Text));
+            OTimeA6.Text = calcOverDo(Int32.Parse(kapA6.Text));
+            OTimeA7.Text = calcOverDo(Int32.Parse(kapA7.Text));
+            OTimeA8.Text = calcOverDo(Int32.Parse(kapA8.Text));
+            OTimeA9.Text = calcOverDo(Int32.Parse(kapA9.Text));
+            OTimeA10.Text = calcOverDo(Int32.Parse(kapA10.Text));
+            OTimeA11.Text = calcOverDo(Int32.Parse(kapA11.Text));
+            OTimeA12.Text = calcOverDo(Int32.Parse(kapA12.Text));
+            OTimeA13.Text = calcOverDo(Int32.Parse(kapA13.Text));
+            OTimeA14.Text = calcOverDo(Int32.Parse(kapA14.Text));
+            OTimeA15.Text = calcOverDo(Int32.Parse(kapA15.Text));
+        }
+
+        public void calcWholeCap()
+        {
+            wholeKapA1.Text = (Int32.Parse(kapA1.Text) + Int32.Parse(setUpTimeA1.Text) + Int32.Parse(kapOldA1.Text) + Int32.Parse(setUpOldTimeA1.Text)).ToString();
+            wholeKapA2.Text = (Int32.Parse(kapA2.Text) + Int32.Parse(setUpTimeA2.Text) + Int32.Parse(kapOldA2.Text) + Int32.Parse(setUpOldTimeA2.Text)).ToString();
+            wholeKapA3.Text = (Int32.Parse(kapA3.Text) + Int32.Parse(setUpTimeA3.Text) + Int32.Parse(kapOldA3.Text) + Int32.Parse(setUpOldTimeA3.Text)).ToString();
+            wholeKapA4.Text = (Int32.Parse(kapA4.Text) + Int32.Parse(setUpTimeA4.Text) + Int32.Parse(kapOldA4.Text) + Int32.Parse(setUpOldTimeA4.Text)).ToString();
+            wholeKapA6.Text = (Int32.Parse(kapA6.Text) + Int32.Parse(setUpTimeA6.Text) + Int32.Parse(kapOldA6.Text) + Int32.Parse(setUpOldTimeA6.Text)).ToString();
+            wholeKapA7.Text = (Int32.Parse(kapA7.Text) + Int32.Parse(setUpTimeA7.Text) + Int32.Parse(kapOldA7.Text) + Int32.Parse(setUpOldTimeA7.Text)).ToString();
+            wholeKapA8.Text = (Int32.Parse(kapA8.Text) + Int32.Parse(setUpTimeA8.Text) + Int32.Parse(kapOldA8.Text) + Int32.Parse(setUpOldTimeA8.Text)).ToString();
+            wholeKapA9.Text = (Int32.Parse(kapA9.Text) + Int32.Parse(setUpTimeA9.Text) + Int32.Parse(kapOldA9.Text) + Int32.Parse(setUpOldTimeA9.Text)).ToString();
+            wholeKapA10.Text = (Int32.Parse(kapA10.Text) + Int32.Parse(setUpTimeA10.Text) + Int32.Parse(kapOldA10.Text) + Int32.Parse(setUpOldTimeA10.Text)).ToString();
+            wholeKapA11.Text = (Int32.Parse(kapA11.Text) + Int32.Parse(setUpTimeA11.Text) + Int32.Parse(kapOldA11.Text) + Int32.Parse(setUpOldTimeA11.Text)).ToString();
+            wholeKapA12.Text = (Int32.Parse(kapA12.Text) + Int32.Parse(setUpTimeA12.Text) + Int32.Parse(kapOldA12.Text) + Int32.Parse(setUpOldTimeA12.Text)).ToString();
+            wholeKapA13.Text = (Int32.Parse(kapA13.Text) + Int32.Parse(setUpTimeA13.Text) + Int32.Parse(kapOldA13.Text) + Int32.Parse(setUpOldTimeA13.Text)).ToString();
+            wholeKapA14.Text = (Int32.Parse(kapA14.Text) + Int32.Parse(setUpTimeA14.Text) + Int32.Parse(kapOldA14.Text) + Int32.Parse(setUpOldTimeA14.Text)).ToString();
+            wholeKapA15.Text = (Int32.Parse(kapA15.Text) + Int32.Parse(setUpTimeA15.Text) + Int32.Parse(kapOldA15.Text) + Int32.Parse(setUpOldTimeA15.Text)).ToString();
+        }
+
+        public string calcShift(int sum)
+        {
+            int shift = 0;
+            if (sum > 7200)
+                throw new ArgumentOutOfRangeException();
+            else if (sum > 6000)
+            {
+                shift = 3; 
+            }
+            else if (sum > 4800 && sum <= 6000)
+            {
+                shift = 2;
+            }
+            else
+                shift = 1;
+
+            return "S " + shift;
+        }
+
+        public string calcOverDo(int sum)
+        {
+            int timeToOverDo = 0;
+            if (sum > 7200)
+                throw new ArgumentOutOfRangeException();
+            if (sum > 4800 && sum <= 6000)
+            {
+                timeToOverDo = sum - 4800;
+            }
+            else if(sum > 2400 && sum <= 3600)
+            {
+                timeToOverDo = sum - 2400;
+            }
+
+            return timeToOverDo.ToString();
         }
 
         public void calculateCapNeedA1()
@@ -6513,6 +6608,71 @@ namespace ProBikeSS16
 
             Orderlist.DataContext = BestellungslisteZu.DataContext;
             Orderlist.ItemsSource = BestellungslisteZu.ItemsSource;
+            
+            foreach (DataRow row in data.Tables[7].Rows)
+            {
+                int id = Convert.ToInt32((string)row["id"]);
+                int setUps = -1;
+                if (!(row["setupevents"] is DBNull))
+                    setUps = Convert.ToInt32((string)row["setupevents"]);
+
+                if(id == 1 && setUps >= 0)
+                {
+                    setUpOldTimeA1.Text = (setUps * 20).ToString();
+                }
+                if (id == 2 && setUps >= 0)
+                {
+                    setUpOldTimeA2.Text = (setUps * 30).ToString();
+                }
+                if (id == 3 && setUps >= 0)
+                {
+                    setUpOldTimeA3.Text = (setUps * 20).ToString();
+                }
+                if (id == 4 && setUps >= 0)
+                {
+                    setUpOldTimeA4.Text = (setUps * 30).ToString();
+                }
+                if (id == 6 && setUps >= 0)
+                {
+                    setUpOldTimeA6.Text = (setUps * 15).ToString();
+                }
+                if (id == 7 && setUps >= 0)
+                {
+                    setUpOldTimeA7.Text = (setUps * 25).ToString();
+                }
+                if (id == 8 && setUps >= 0)
+                {
+                    setUpOldTimeA8.Text = (setUps * 20).ToString();
+                }
+                if (id == 9 && setUps >= 0)
+                {
+                    setUpOldTimeA9.Text = (setUps * 15).ToString();
+                }
+                if (id == 10 && setUps >= 0)
+                {
+                    setUpOldTimeA10.Text = (setUps * 20).ToString();
+                }
+                if (id == 11 && setUps >= 0)
+                {
+                    setUpOldTimeA11.Text = (setUps * 15).ToString();
+                }
+                if (id == 12 && setUps >= 0)
+                {
+                    setUpOldTimeA12.Text = (setUps * 0).ToString();
+                }
+                if (id == 13 && setUps >= 0)
+                {
+                    setUpOldTimeA13.Text = (setUps * 0).ToString();
+                }
+                if (id == 14 && setUps >= 0)
+                {
+                    setUpOldTimeA14.Text = (setUps * 0).ToString();
+                }
+                if (id == 15 && setUps >= 0)
+                {
+                    setUpOldTimeA15.Text = (setUps * 15).ToString();
+                }
+            }
 
         }
 
