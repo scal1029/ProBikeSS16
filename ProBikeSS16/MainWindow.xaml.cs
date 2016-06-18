@@ -6657,6 +6657,25 @@ namespace ProBikeSS16
             BestellungslisteZu.DataContext = GlobalVariables.Bestellungsspeicher;
             BestellungslisteZu.ItemsSource = GlobalVariables.Bestellungsspeicher.DefaultView;
 
+            //LagerZuProdCheck
+            DataTable VerbrauchInPeriode = new DataTable();
+            if (!VerbrauchInPeriode.Columns.Contains("Teil"))
+            {
+                VerbrauchInPeriode.Columns.Add("Teil");
+                VerbrauchInPeriode.Columns.Add("Verbrauch");
+            }
+            VerbrauchInPeriode.Clear();
+
+            int t21 = GlobalVariables.P1Produktionsauftrag;
+            int t22 = GlobalVariables.P2Produktionsauftrag;
+
+
+
+            VerbrauchInPeriode.Rows.Add();
+
+
+
+
             #endregion bestellungsplannung
 
             Orderlist.DataContext = BestellungslisteZu.DataContext;
