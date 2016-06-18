@@ -850,7 +850,8 @@ namespace ProBikeSS16
             Prognose.Rows.Add(2, GlobalVariables.SaleFemaleBikeN);
             Prognose.Rows.Add(3, GlobalVariables.SaleMaleBikeN);
 
-            Sellwish.DataContext = Prognose.DefaultView;
+            Sellwish.DataContext = Prognose;
+            Sellwish.ItemsSource = Prognose.DefaultView;
 
             //Geplanter Sicherheitsbestand
             #region SafetyStock
@@ -3755,7 +3756,7 @@ namespace ProBikeSS16
             }
 
 
-            GridProductionOrders.DataContext = GlobalVariables.Aussortierung.DefaultView;
+            GridProductionOrders.DataContext = GlobalVariables.Aussortierung;
 
             DataTable ProdAufträge = new DataTable();
             ProdAufträge.Clear();
@@ -3937,7 +3938,7 @@ namespace ProBikeSS16
 
             //test2.SimulationPrototypDurchführung(GlobalVariables.ProduktionsAufträgeAktuellePeriode, GlobalVariables.Lagerstand, 1);
 
-            Kapa.DataContext = GlobalVariables.KPErg.DefaultView;
+            Kapa.DataContext = GlobalVariables.KPErg;
 
             //foreach (var O in GlobalVariables.ProduktionsAufträgeAktuellePeriode)
             //{
@@ -4102,6 +4103,15 @@ namespace ProBikeSS16
             int P3Zuwachs = 0;
             int P4Zuwachs = 0;
 
+            if (BruttoT21P1 < 0)
+                BruttoT21P1 = 0;
+            if (BruttoT21P2 < 0)
+                BruttoT21P2 = 0;
+            if (BruttoT21P3 < 0)
+                BruttoT21P3 = 0;
+            if (BruttoT21P4 < 0)
+                BruttoT21P4 = 0;
+
 
             results = AlteBestellungen.Select("item = '21'");
             foreach (var row in results)
@@ -4139,12 +4149,13 @@ namespace ProBikeSS16
                     }
                 }
             }
-
+            
 
             int Periode1 = LagerZuBeginn[21] - BruttoT21P1;
             int Periode2 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 + P2Zuwachs;
             int Periode3 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 + P3Zuwachs;
             int Periode4 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 - BruttoT21P2 + P4Zuwachs;
+
 
             int Modus = 5;
             int Bestellmenge = 0;
@@ -4197,6 +4208,15 @@ namespace ProBikeSS16
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT22P1 < 0)
+                BruttoT22P1 = 0;
+            if (BruttoT22P2 < 0)
+                BruttoT22P2 = 0;
+            if (BruttoT22P3 < 0)
+                BruttoT22P3 = 0;
+            if (BruttoT22P4 < 0)
+                BruttoT22P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -4295,6 +4315,15 @@ namespace ProBikeSS16
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT23P1 < 0)
+                BruttoT23P1 = 0;
+            if (BruttoT23P2 < 0)
+                BruttoT23P2 = 0;
+            if (BruttoT23P3 < 0)
+                BruttoT23P3 = 0;
+            if (BruttoT23P4 < 0)
+                BruttoT23P4 = 0;
+
             results = AlteBestellungen.Select("item = '23'");
             foreach (var row in results)
             {
@@ -4386,6 +4415,14 @@ namespace ProBikeSS16
             P4Zuwachs = 0;
             int P5Zuwachs = 0;
 
+            if (BruttoT24P1 < 0)
+                BruttoT24P1 = 0;
+            if (BruttoT24P2 < 0)
+                BruttoT24P2 = 0;
+            if (BruttoT24P3 < 0)
+                BruttoT24P3 = 0;
+            if (BruttoT24P4 < 0)
+                BruttoT24P4 = 0;
 
             results = AlteBestellungen.Select("item = '24'");
             foreach (var row in results)
@@ -4484,6 +4521,14 @@ namespace ProBikeSS16
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT25P1 < 0)
+                BruttoT25P1 = 0;
+            if (BruttoT25P2 < 0)
+                BruttoT25P2 = 0;
+            if (BruttoT25P3 < 0)
+                BruttoT25P3 = 0;
+            if (BruttoT25P4 < 0)
+                BruttoT25P4 = 0;
 
             results = AlteBestellungen.Select("item = '25'");
             foreach (var row in results)
@@ -4581,6 +4626,14 @@ namespace ProBikeSS16
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT27P1 < 0)
+                BruttoT27P1 = 0;
+            if (BruttoT27P2 < 0)
+                BruttoT27P2 = 0;
+            if (BruttoT27P3 < 0)
+                BruttoT27P3 = 0;
+            if (BruttoT27P4 < 0)
+                BruttoT27P4 = 0;
 
             results = AlteBestellungen.Select("item = '27'");
             foreach (var row in results)
@@ -4673,6 +4726,14 @@ namespace ProBikeSS16
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+            if (BruttoT28P1 < 0)
+                BruttoT28P1 = 0;
+            if (BruttoT28P2 < 0)
+                BruttoT28P2 = 0;
+            if (BruttoT28P3 < 0)
+                BruttoT28P3 = 0;
+            if (BruttoT28P4 < 0)
+                BruttoT28P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -4771,6 +4832,15 @@ namespace ProBikeSS16
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT32P1 < 0)
+                BruttoT32P1 = 0;
+            if (BruttoT32P2 < 0)
+                BruttoT32P2 = 0;
+            if (BruttoT32P3 < 0)
+                BruttoT32P3 = 0;
+            if (BruttoT32P4 < 0)
+                BruttoT32P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -4874,6 +4944,15 @@ namespace ProBikeSS16
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT21P1 < 0)
+                BruttoT21P1 = 0;
+            if (BruttoT21P2 < 0)
+                BruttoT21P2 = 0;
+            if (BruttoT21P3 < 0)
+                BruttoT21P3 = 0;
+            if (BruttoT21P4 < 0)
+                BruttoT21P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -11020,6 +11099,9 @@ namespace ProBikeSS16
             List<XMLproductionlist> Aufträge = new List<XMLproductionlist>();
             List<XMLworkingtimelist> Schichten = new List<XMLworkingtimelist>();
 
+
+            //DataGridView 
+            Sellwish.Items.Refresh();
             foreach (DataRowView dr in Sellwish.ItemsSource)
             {
                 if (dr[0] != DBNull.Value && dr[1] != DBNull.Value)
