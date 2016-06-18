@@ -792,6 +792,8 @@ namespace ProBikeSS16
             sum += zSum = calcCostsWP(15, Int32.Parse(wholeKapA15.Text));
             wholeKapA15.ToolTip = "Approximate Costs " + zSum + "€";
 
+            wholeKapLabel.ToolTip = "Whole Costs: " + sum + "€ | Average Costs per WP: " + Math.Round(sum / 14, 2) + "€";
+
         }
 
         public double calcCostsWP(int id, int wholeCap)
