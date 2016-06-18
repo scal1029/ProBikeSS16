@@ -151,4 +151,8 @@
     <sys:String x:Key="M">H</sys:String>
     <sys:String x:Key="CLM">KDH</sys:String>
     <sys:String x:Key="OvertimeInMin">Überstunden (in Min)</sys:String>
+
+    <!--Kaufteile-->
+    <sys:String xml:space="preserve" x:Key="K21">Bezeichnung: Kette&#xa;Wiedereschaffungszeit: 1,8</sys:String>
+
 </ResourceDictionary>
