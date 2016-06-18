@@ -106,7 +106,7 @@
                         <Image Grid.Column="3" Grid.Row="9" x:Name="Okay2" Margin="0,10,65,0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="Images/haken2.png" Visibility="Hidden"/>
                         <Image Grid.Column="4" Grid.Row="9" x:Name="Okay3" Margin="0,10,0,0" HorizontalAlignment="Center" Source="Images/haken2.png" Visibility="Hidden"/>
                         <Button Grid.Column="4" Grid.Row="8" Visibility="Hidden" Content="{DynamicResource ResourceKey=Calculation}" x:Name="CalculationStart" Height="20" Click="CalculationStart_OnClick"></Button>
-                        <Label Grid.Column="5" Grid.Row="10" x:Name="groupNumber" Content="NUMMER" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="{DynamicResource ResourceKey=Forecast3SalesOpportunitiesToolTip}" Margin="70,189,98,49" Grid.ColumnSpan="2" Height="29" Width="132"/>
+                        <Label Grid.Column="4" Grid.Row="10" x:Name="groupNumber" Content="NUMMER" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="{DynamicResource ResourceKey=Forecast3SalesOpportunitiesToolTip}" Margin="0,114,18,124" Height="29" Width="132"/>
                     </Grid>
                 </TabItem>
                 <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=DemandManagment}" Width="195">
@@ -118,7 +118,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <TabControl Background="#80C887">
-                            <TabItem Header="{DynamicResource ResourceKey=ChildBike}">
+                            <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=ChildBike}">
                                 <Grid Background="#80C887" Margin="10,10,10,10" Width="850">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="100"/>
@@ -335,7 +335,7 @@
                                     <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="13" Grid.Row="17" Grid.ColumnSpan="3" Height="20" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" x:Name="ChildProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="{DynamicResource ResourceKey=FemaleBike}">
+                            <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=FemaleBike}">
                                 <Grid Margin="10,10,10,10" Width="850">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="100"/>
@@ -552,7 +552,7 @@
                                     <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="13" Grid.Row="17" Grid.ColumnSpan="3" Height="20" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" x:Name="FemaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="{DynamicResource ResourceKey=MaleBike}">
+                            <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=MaleBike}">
                                 <Grid Margin="10,10,10,10" Width="850">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="100"/>
@@ -769,7 +769,7 @@
                                     <Button Content="{DynamicResource ResourceKey=refresh}" Grid.Column="13" Grid.Row="17" Grid.ColumnSpan="3" Height="20" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" x:Name="MaleProgrammRecalculate" Click="ProgrammplannungRepeat"/>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="{DynamicResource ResourceKey=currentStock}">
+                            <TabItem Background="#c8ac80" Header="{DynamicResource ResourceKey=currentStock}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="740"/>
@@ -816,7 +816,7 @@
                                     </DataGrid>
                                 </Grid>
                             </TabItem>
-                            <TabItem Header="{DynamicResource ResourceKey=manufactoringOrders}">
+                            <TabItem Background="#c8ac80" Header="{DynamicResource ResourceKey=manufactoringOrders}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="700"/>
@@ -897,6 +897,11 @@
                                     <Label Grid.Column="1" Height="25" Width="50" Content="38"  ToolTip="{DynamicResource ResourceKey=K38}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,70,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
                                     <Label Grid.Column="1" Height="25" Width="50" Content="39"  ToolTip="{DynamicResource ResourceKey=K39}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 110,85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
 
+                                    <Label Grid.Column="1" Height="25" Width="150" Background="Green" Content="Green"  ToolTip="über 80% StartMenge" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,210,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="150" Background="Yellow" Content="Yellow"  ToolTip="{DynamicResource ResourceKey=K39}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="150" Background="OrangeRed" Content="OrangeRed"  ToolTip="{DynamicResource ResourceKey=K39}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,330,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                                    <Label Grid.Column="1" Height="25" Width="150" Background="Red" Content="Red"  ToolTip="{DynamicResource ResourceKey=K39}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,390,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+
                                     <Label Grid.Column="1" Height="25" Width="50" Content="40"  ToolTip="{DynamicResource ResourceKey=K40}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-450,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
                                     <Label Grid.Column="1" Height="25" Width="50" Content="41"  ToolTip="{DynamicResource ResourceKey=K41}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-410,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
                                     <Label Grid.Column="1" Height="25" Width="50" Content="42"  ToolTip="{DynamicResource ResourceKey=K42}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0,-370,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
@@ -912,7 +917,7 @@
                                     <Label Grid.Column="1" Height="25" Width="50" Content="58"  ToolTip="{DynamicResource ResourceKey=K58}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 30,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
                                     <Label Grid.Column="1" Height="25" Width="50" Content="59"  ToolTip="{DynamicResource ResourceKey=K59}" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="0, 70,-85,0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
 
-                                    <Button Grid.Column="1" Content="Evaluierung" Click="Evaluierung2" Margin="10,10,10,600" Height="20" Width="180"></Button>
+                                    <Button Grid.Column="1" Content="{DynamicResource ResourceKey=Evaluation}" Click="Evaluierung2" Margin="10,10,10,600" Height="20" Width="180"></Button>
                                     <Label Content="{DynamicResource ResourceKey=Need}" Margin="185,25,0,0" FontWeight="Bold" HorizontalAlignment="Left"></Label>
                                     <Label Content="{DynamicResource ResourceKey=ForecastStock}" Margin="460,25,0,0" FontWeight="Bold" HorizontalAlignment="Left"></Label>
 
