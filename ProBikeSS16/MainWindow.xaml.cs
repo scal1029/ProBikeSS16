@@ -458,30 +458,158 @@ namespace ProBikeSS16
 
         public void calcWholeCap()
         {
-            wholeKapA1.Text = (Int32.Parse(kapA1.Text) + Int32.Parse(setUpTimeA1.Text) + Int32.Parse(kapOldA1.Text) + Int32.Parse(setUpOldTimeA1.Text)).ToString();
-            wholeKapA2.Text = (Int32.Parse(kapA2.Text) + Int32.Parse(setUpTimeA2.Text) + Int32.Parse(kapOldA2.Text) + Int32.Parse(setUpOldTimeA2.Text)).ToString();
-            wholeKapA3.Text = (Int32.Parse(kapA3.Text) + Int32.Parse(setUpTimeA3.Text) + Int32.Parse(kapOldA3.Text) + Int32.Parse(setUpOldTimeA3.Text)).ToString();
-            wholeKapA4.Text = (Int32.Parse(kapA4.Text) + Int32.Parse(setUpTimeA4.Text) + Int32.Parse(kapOldA4.Text) + Int32.Parse(setUpOldTimeA4.Text)).ToString();
-            wholeKapA6.Text = (Int32.Parse(kapA6.Text) + Int32.Parse(setUpTimeA6.Text) + Int32.Parse(kapOldA6.Text) + Int32.Parse(setUpOldTimeA6.Text)).ToString();
-            wholeKapA7.Text = (Int32.Parse(kapA7.Text) + Int32.Parse(setUpTimeA7.Text) + Int32.Parse(kapOldA7.Text) + Int32.Parse(setUpOldTimeA7.Text)).ToString();
-            wholeKapA8.Text = (Int32.Parse(kapA8.Text) + Int32.Parse(setUpTimeA8.Text) + Int32.Parse(kapOldA8.Text) + Int32.Parse(setUpOldTimeA8.Text)).ToString();
-            wholeKapA9.Text = (Int32.Parse(kapA9.Text) + Int32.Parse(setUpTimeA9.Text) + Int32.Parse(kapOldA9.Text) + Int32.Parse(setUpOldTimeA9.Text)).ToString();
-            wholeKapA10.Text = (Int32.Parse(kapA10.Text) + Int32.Parse(setUpTimeA10.Text) + Int32.Parse(kapOldA10.Text) + Int32.Parse(setUpOldTimeA10.Text)).ToString();
-            wholeKapA11.Text = (Int32.Parse(kapA11.Text) + Int32.Parse(setUpTimeA11.Text) + Int32.Parse(kapOldA11.Text) + Int32.Parse(setUpOldTimeA11.Text)).ToString();
-            wholeKapA12.Text = (Int32.Parse(kapA12.Text) + Int32.Parse(setUpTimeA12.Text) + Int32.Parse(kapOldA12.Text) + Int32.Parse(setUpOldTimeA12.Text)).ToString();
-            wholeKapA13.Text = (Int32.Parse(kapA13.Text) + Int32.Parse(setUpTimeA13.Text) + Int32.Parse(kapOldA13.Text) + Int32.Parse(setUpOldTimeA13.Text)).ToString();
-            wholeKapA14.Text = (Int32.Parse(kapA14.Text) + Int32.Parse(setUpTimeA14.Text) + Int32.Parse(kapOldA14.Text) + Int32.Parse(setUpOldTimeA14.Text)).ToString();
-            wholeKapA15.Text = (Int32.Parse(kapA15.Text) + Int32.Parse(setUpTimeA15.Text) + Int32.Parse(kapOldA15.Text) + Int32.Parse(setUpOldTimeA15.Text)).ToString();
+            GlobalVariables.blockingErrorKapaPlan = false;
+            int sum = Int32.Parse(kapA1.Text) + Int32.Parse(setUpTimeA1.Text) + Int32.Parse(kapOldA1.Text) + Int32.Parse(setUpOldTimeA1.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 1 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA1.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA1.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA2.Text) + Int32.Parse(setUpTimeA2.Text) + Int32.Parse(kapOldA2.Text) + Int32.Parse(setUpOldTimeA2.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 2 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA2.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA2.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA3.Text) + Int32.Parse(setUpTimeA3.Text) + Int32.Parse(kapOldA3.Text) + Int32.Parse(setUpOldTimeA3.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 3 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA3.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA3.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA4.Text) + Int32.Parse(setUpTimeA4.Text) + Int32.Parse(kapOldA4.Text) + Int32.Parse(setUpOldTimeA4.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 4 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA4.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA4.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA6.Text) + Int32.Parse(setUpTimeA6.Text) + Int32.Parse(kapOldA6.Text) + Int32.Parse(setUpOldTimeA6.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 6 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA6.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA6.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA7.Text) + Int32.Parse(setUpTimeA7.Text) + Int32.Parse(kapOldA7.Text) + Int32.Parse(setUpOldTimeA7.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 7 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA7.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA7.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA8.Text) + Int32.Parse(setUpTimeA8.Text) + Int32.Parse(kapOldA8.Text) + Int32.Parse(setUpOldTimeA8.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 8 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA8.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA8.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA9.Text) + Int32.Parse(setUpTimeA9.Text) + Int32.Parse(kapOldA9.Text) + Int32.Parse(setUpOldTimeA9.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 9 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA9.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA9.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA10.Text) + Int32.Parse(setUpTimeA10.Text) + Int32.Parse(kapOldA10.Text) + Int32.Parse(setUpOldTimeA10.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 10 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA10.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA10.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA11.Text) + Int32.Parse(setUpTimeA11.Text) + Int32.Parse(kapOldA11.Text) + Int32.Parse(setUpOldTimeA11.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 11 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA11.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA11.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA12.Text) + Int32.Parse(setUpTimeA12.Text) + Int32.Parse(kapOldA12.Text) + Int32.Parse(setUpOldTimeA12.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 12 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA12.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA12.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA13.Text) + Int32.Parse(setUpTimeA13.Text) + Int32.Parse(kapOldA13.Text) + Int32.Parse(setUpOldTimeA13.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 13 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA13.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA13.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA14.Text) + Int32.Parse(setUpTimeA14.Text) + Int32.Parse(kapOldA14.Text) + Int32.Parse(setUpOldTimeA14.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 14 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA14.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA14.Text = sum.ToString();
+
+            sum = Int32.Parse(kapA15.Text) + Int32.Parse(setUpTimeA15.Text) + Int32.Parse(kapOldA15.Text) + Int32.Parse(setUpOldTimeA15.Text);
+            if (sum > 7200)
+            {
+                MessageBox.Show("Workplace 15 has an overload in worktime (" + Math.Abs(7200- sum) + " minutes), please reduce the specific production");
+                GlobalVariables.blockingErrorKapaPlan = true;
+                wholeKapA15.Text = (7200 - sum).ToString();
+            }
+            else
+                wholeKapA15.Text = sum.ToString();
         }
 
         public string calcShift(int sum)
         {
             int shift = 0;
-            if (sum > 7200)
-                throw new ArgumentOutOfRangeException();
+            if (sum > 7200 || sum < 0)
+            {
+                shift = -1;
+            }
             else if (sum > 6000)
             {
-                shift = 3; 
+                shift = 3;
             }
             else if (sum > 3600 && sum <= 6000)
             {
@@ -496,8 +624,10 @@ namespace ProBikeSS16
         public string calcOverDo(int sum)
         {
             int timeToOverDo = 0;
-            if (sum > 7200)
-                throw new ArgumentOutOfRangeException();
+            if (sum > 7200 || sum < 0)
+            {
+                timeToOverDo = -1;
+            }
             if (sum > 4800 && sum <= 6000)
             {
                 timeToOverDo = sum - 4800;
@@ -10618,19 +10748,25 @@ namespace ProBikeSS16
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
+            if(GlobalVariables.blockingErrorKapaPlan)
+            {
+                MessageBox.Show("Overtime for at least one Workstation exist! (Please correct the production in the Capa-Plan-Section, to Export the XML properly)");
+                return;
+            }
+
             List<XMLsellwish> VerkäufeImport = new List<XMLsellwish>();
             List<XMLselldirect> DirektVerkäufe = new List<XMLselldirect>();
             List<XMLorderlist> Bestellungen = new List<XMLorderlist>();
             List<XMLproductionlist> Aufträge = new List<XMLproductionlist>();
             List<XMLworkingtimelist> Schichten = new List<XMLworkingtimelist>();
 
-            foreach (System.Data.DataRowView dr in Sellwish.ItemsSource)
+            foreach (DataRowView dr in Sellwish.ItemsSource)
             {
                 if (dr[0] != DBNull.Value && dr[1] != DBNull.Value)
                     VerkäufeImport.Add(new XMLsellwish((int)dr[0], (int)dr[1]));
             }
 
-            foreach (System.Data.DataRowView dr in Orderlist.ItemsSource)
+            foreach (DataRowView dr in Orderlist.ItemsSource)
             {
                 if (dr[0] != DBNull.Value && dr[1] != DBNull.Value && dr[2] != DBNull.Value)
                     Bestellungen.Add(new XMLorderlist((int)dr[0], (int)dr[1], (int)dr[2]));
