@@ -662,38 +662,56 @@ namespace ProBikeSS16
 
         public void calcWorkLoad()
         {
-            LabelWP1.ToolTip = specWorkLoad(1, Int32.Parse(wholeKapA1.Text));
-            LabelWP2.ToolTip = specWorkLoad(2, Int32.Parse(wholeKapA2.Text));
-            LabelWP3.ToolTip = specWorkLoad(3, Int32.Parse(wholeKapA3.Text));
-            LabelWP4.ToolTip = specWorkLoad(4, Int32.Parse(wholeKapA4.Text));
-            LabelWP6.ToolTip = specWorkLoad(6, Int32.Parse(wholeKapA6.Text));
-            LabelWP7.ToolTip = specWorkLoad(7, Int32.Parse(wholeKapA7.Text));
-            LabelWP8.ToolTip = specWorkLoad(8, Int32.Parse(wholeKapA8.Text));
-            LabelWP9.ToolTip = specWorkLoad(9, Int32.Parse(wholeKapA9.Text));
-            LabelWP10.ToolTip = specWorkLoad(10, Int32.Parse(wholeKapA10.Text));
-            LabelWP11.ToolTip = specWorkLoad(11, Int32.Parse(wholeKapA11.Text));
-            LabelWP12.ToolTip = specWorkLoad(12, Int32.Parse(wholeKapA12.Text));
-            LabelWP13.ToolTip = specWorkLoad(13, Int32.Parse(wholeKapA13.Text));
-            LabelWP14.ToolTip = specWorkLoad(14, Int32.Parse(wholeKapA14.Text));
-            LabelWP15.ToolTip = specWorkLoad(15, Int32.Parse(wholeKapA15.Text));
+            int sum = 0;
+            int zSum = 0;
+            sum += zSum = specWorkLoad(1, Int32.Parse(wholeKapA1.Text));
+            LabelWP1.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(2, Int32.Parse(wholeKapA2.Text));
+            LabelWP2.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(3, Int32.Parse(wholeKapA3.Text));
+            LabelWP3.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(4, Int32.Parse(wholeKapA4.Text));
+            LabelWP4.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(6, Int32.Parse(wholeKapA6.Text));
+            LabelWP6.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(7, Int32.Parse(wholeKapA7.Text));
+            LabelWP7.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(8, Int32.Parse(wholeKapA8.Text));
+            LabelWP8.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(9, Int32.Parse(wholeKapA9.Text));
+            LabelWP9.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(10, Int32.Parse(wholeKapA10.Text));
+            LabelWP10.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(11, Int32.Parse(wholeKapA11.Text));
+            LabelWP11.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(12, Int32.Parse(wholeKapA12.Text));
+            LabelWP12.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(13, Int32.Parse(wholeKapA13.Text));
+            LabelWP13.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(14, Int32.Parse(wholeKapA14.Text));
+            LabelWP14.ToolTip = "Workload " + zSum + "%";
+            sum += zSum = specWorkLoad(15, Int32.Parse(wholeKapA15.Text));
+            LabelWP15.ToolTip = "Workload " + zSum + "%";
+
+            LabelWP.ToolTip = "Average Workload " + (int)(Math.Round(((double)sum / 14))) + "%";
         }
 
-        public string specWorkLoad(int wp, int wholeCap)
+        public int specWorkLoad(int wp, int wholeCap)
         {
             if (wholeCap > 7200)
-                return "";
+                return 0;
             else if (wholeCap <= 7200 && wholeCap > 6000)
-                return "Workload " + (int)(Math.Round(((double)wholeCap / 7200) * 100)) + "%";
+                return (int)(Math.Round(((double)wholeCap / 7200) * 100));
             else if(wholeCap <= 6000 && wholeCap > 4800)
-                return "Workload " + (int)(Math.Round(((double)wholeCap / 6000) * 100)) + "%";
+                return (int)(Math.Round(((double)wholeCap / 6000) * 100));
             else if (wholeCap <= 4800 && wholeCap > 3600)
-                return "Workload " + (int)(Math.Round(((double)wholeCap / 4800) * 100)) + "%";
+                return (int)(Math.Round(((double)wholeCap / 4800) * 100));
             else if (wholeCap <= 3600 && wholeCap > 2400)
-                return "Workload " + (int)(Math.Round(((double)wholeCap / 3600) * 100)) + "%";
+                return (int)(Math.Round(((double)wholeCap / 3600) * 100));
             else if (wholeCap <= 2400 && wholeCap >= 0)
-                return "Workload " + (int)(Math.Round(((double)wholeCap / 2400) * 100)) + "%";
+                return (int)(Math.Round(((double)wholeCap / 2400) * 100));
 
-            return "";
+            return 0;
         }
 
         public string calcShift(int sum)
