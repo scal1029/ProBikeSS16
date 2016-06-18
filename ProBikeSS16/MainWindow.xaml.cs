@@ -199,6 +199,7 @@ namespace ProBikeSS16
             calculateSetUpTime();
             calculateOldSetUpTime();
             calcWholeCap();
+            calcWorkLoad();
             calculateShiftAndOverDo();
         }
 
@@ -657,6 +658,42 @@ namespace ProBikeSS16
             }
             else
                 wholeKapA15.Text = sum.ToString();
+        }
+
+        public void calcWorkLoad()
+        {
+            LabelWP1.ToolTip = specWorkLoad(1, Int32.Parse(wholeKapA1.Text));
+            LabelWP2.ToolTip = specWorkLoad(2, Int32.Parse(wholeKapA2.Text));
+            LabelWP3.ToolTip = specWorkLoad(3, Int32.Parse(wholeKapA3.Text));
+            LabelWP4.ToolTip = specWorkLoad(4, Int32.Parse(wholeKapA4.Text));
+            LabelWP6.ToolTip = specWorkLoad(6, Int32.Parse(wholeKapA6.Text));
+            LabelWP7.ToolTip = specWorkLoad(7, Int32.Parse(wholeKapA7.Text));
+            LabelWP8.ToolTip = specWorkLoad(8, Int32.Parse(wholeKapA8.Text));
+            LabelWP9.ToolTip = specWorkLoad(9, Int32.Parse(wholeKapA9.Text));
+            LabelWP10.ToolTip = specWorkLoad(10, Int32.Parse(wholeKapA10.Text));
+            LabelWP11.ToolTip = specWorkLoad(11, Int32.Parse(wholeKapA11.Text));
+            LabelWP12.ToolTip = specWorkLoad(12, Int32.Parse(wholeKapA12.Text));
+            LabelWP13.ToolTip = specWorkLoad(13, Int32.Parse(wholeKapA13.Text));
+            LabelWP14.ToolTip = specWorkLoad(14, Int32.Parse(wholeKapA14.Text));
+            LabelWP15.ToolTip = specWorkLoad(15, Int32.Parse(wholeKapA15.Text));
+        }
+
+        public string specWorkLoad(int wp, int wholeCap)
+        {
+            if (wholeCap > 7200)
+                return "";
+            else if (wholeCap <= 7200 && wholeCap > 6000)
+                return "Workload " + (int)(Math.Round(((double)wholeCap / 7200) * 100)) + "%";
+            else if(wholeCap <= 6000 && wholeCap > 4800)
+                return "Workload " + (int)(Math.Round(((double)wholeCap / 6000) * 100)) + "%";
+            else if (wholeCap <= 4800 && wholeCap > 3600)
+                return "Workload " + (int)(Math.Round(((double)wholeCap / 4800) * 100)) + "%";
+            else if (wholeCap <= 3600 && wholeCap > 2400)
+                return "Workload " + (int)(Math.Round(((double)wholeCap / 3600) * 100)) + "%";
+            else if (wholeCap <= 2400 && wholeCap >= 0)
+                return "Workload " + (int)(Math.Round(((double)wholeCap / 2400) * 100)) + "%";
+
+            return "";
         }
 
         public string calcShift(int sum)
@@ -10916,6 +10953,7 @@ namespace ProBikeSS16
             calculateCapNeed();
             calculateSetUpTime();
             calcWholeCap();
+            calcWorkLoad();
             calculateShiftAndOverDo();
         }
 
