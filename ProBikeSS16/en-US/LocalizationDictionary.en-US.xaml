@@ -56,7 +56,7 @@
     <sys:String x:Key="ordersProcessing">Orders in processing</sys:String>
     <sys:String x:Key="comingPeriod">Production orders for the upcoming period</sys:String>
     <sys:String x:Key="refresh">Refresh</sys:String>
-    <sys:String x:Key="currentStock">Current Stock</sys:String>
+    <sys:String x:Key="currentStock">Stock</sys:String>
     <sys:String x:Key="manufactoringOrders">Manufactoring Orders</sys:String>
     <sys:String x:Key="addOrder">Add order</sys:String>
     <sys:String x:Key="itemID">Item ID</sys:String>
@@ -152,5 +152,36 @@
     <sys:String x:Key="M">M</sys:String>
     <sys:String x:Key="CLM">CLM</sys:String>
     <sys:String x:Key="OvertimeInMin">Overtime (in min)</sys:String>
+
+    <!--Kaufteile-->
+    <sys:String xml:space="preserve" x:Key="K21">Designation: Chain&#xa;Use: P1&#xa;Lead time: 1,8&#xa;Deviation: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K22">Designation: Chain&#xa;Use: P2&#xa;Lead time:  1,7&#xa;Deviation: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K23">Designation: Chain&#xa;Use: P3&#xa;Lead time:  1,2&#xa;Deviation: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K24">Designation: Mother 3/8&#xa;Use: P1,2,3&#xa;Lead time:  3,2&#xa;Deviation: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K25">Designation: Disc 3/8&#xa;Use: P1,2,3&#xa;Lead time:  0,9&#xa;Deviation: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K27">Designation: Screw 3/8&#xa;Use: P1,2,3&#xa;Lead time: 0,9&#xa;Deviation: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K28">Designation: Pipe 3/4&#xa;Use: P1,2,3&#xa;Lead time: 1,7&#xa;Deviation: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K32">Designation: Color&#xa;Use: P1,2,3&#xa;Lead time: 2,1&#xa;Deviation: 0,5</sys:String>
+    <sys:String xml:space="preserve" x:Key="K33">Designation: Rim cpl.&#xa;Use: P3&#xa;Lead time: 1,9&#xa;Deviation: 0,5</sys:String>
+    <sys:String xml:space="preserve" x:Key="K34">Designation: Spoke&#xa;Use: P3&#xa;Lead time: 1,6&#xa;Deviation: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K35">Designation: Hub&#xa;Use: P1,2,3&#xa;Lead time: 2,2&#xa;Deviation: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K36">Designation: Freewheel&#xa;Use: P1,2,3&#xa;Lead time: 1,2&#xa;Deviation: 0,1</sys:String>
+    <sys:String xml:space="preserve" x:Key="K37">Designation: Fork&#xa;Use: P1,2,3&#xa;Lead time: 1,5&#xa;Deviation: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K38">Designation: Wave&#xa;Use: P1,2,3&#xa;Lead time: 1,7&#xa;Deviation: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K39">Designation: Sheet&#xa;Use: P1,2,3&#xa;Lead time: 1,5&#xa;Deviation: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K40">Designation: Handlebars&#xa;Use: P1,2,3&#xa;Lead time: 1,7&#xa;Deviation: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K41">Designation: Mother 3/4&#xa;Use: P1,2,3&#xa;Lead time: 0,9&#xa;Deviation: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K42">Designation: Handle&#xa;Use: P1,2,3&#xa;Lead time: 1,2&#xa;Deviation: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K43">Designation: Saddle&#xa;Use: P1,2,3&#xa;Lead time: 2,0&#xa;Deviation: 0,5</sys:String>
+    <sys:String xml:space="preserve" x:Key="K44">Designation: Rod 1/2&#xa;Use: P1,2,3&#xa;Lead time: 1,0&#xa;Deviation: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K45">Designation: Mother 1/4&#xa;Use: P1,2,3&#xa;Lead time: 1,7&#xa;Deviation: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K46">Designation: Screw 1/4&#xa;Use: P1,2,3&#xa;Lead time: 0,9&#xa;Deviation: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K47">Designation: Sprocket&#xa;Use: P1,2,3&#xa;Lead time: 1,1&#xa;Deviation: 0,1</sys:String>
+    <sys:String xml:space="preserve" x:Key="K48">Designation: Pedal&#xa;Use: P1,2,3&#xa;Lead time: 1,0&#xa;Deviation: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K52">Designation: Rim cpl.&#xa;Use: P1&#xa;Lead time: 1,6&#xa;Deviation: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K53">Designation: Spoke&#xa;Use: P1&#xa;Lead time: 1,6&#xa;Deviation: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K57">Designation: Rim cpl.&#xa;Use: P2&#xa;Lead time: 1,7&#xa;Deviation: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K58">Designation: Spoke&#xa;Use: P2&#xa;Lead time: 1,6&#xa;Deviation: 0,5</sys:String>
+    <sys:String xml:space="preserve" x:Key="K59">Designation: Welding Wire&#xa;Use: P1,2,3&#xa;Lead time: 0,7&#xa;Deviation: 0,2</sys:String>
     
 </ResourceDictionary>
