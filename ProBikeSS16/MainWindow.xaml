@@ -784,33 +784,33 @@
                                     <Button Grid.Column="1" Height="20" Width="150" Content="{DynamicResource ResourceKey=Evaluation}" Margin="10,10,10,500" Click="Evaluierung"/>
                                     <DataGrid Name="GridOldStock" VirtualizingStackPanel.IsVirtualizing="False"  ItemsSource="{Binding}" Margin="10,10,10,10" IsReadOnly="True" AutoGenerateColumns="False">
                                         <DataGrid.Columns>
-                                            <DataGridTextColumn Width="100" Binding="{Binding id}" IsReadOnly="True" >
+                                            <DataGridTextColumn Width="100" Binding="{Binding id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Article}"></TextBlock>
                                                 </DataGridTextColumn.Header>
                                             </DataGridTextColumn>
                                             <!--<DataGridTextColumn Width="100" Header="{DynamicResource ResourceKey=Article}" Binding="{Binding id}" IsReadOnly="True" ></DataGridTextColumn>-->
-                                            <DataGridTextColumn Width="120" Binding="{Binding startamount}" IsReadOnly="True" >
+                                            <DataGridTextColumn Width="120" Binding="{Binding startamount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Startamount}"></TextBlock>
                                                 </DataGridTextColumn.Header>
                                             </DataGridTextColumn>
-                                            <DataGridTextColumn Width="120" Binding="{Binding amount}" IsReadOnly="True" >
+                                            <DataGridTextColumn Width="120" Binding="{Binding amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Amount}"></TextBlock>
                                                 </DataGridTextColumn.Header>
                                             </DataGridTextColumn>
-                                            <DataGridTextColumn Width="120" Binding="{Binding pct}" IsReadOnly="True" >
+                                            <DataGridTextColumn Width="120" Binding="{Binding pct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Percent}"></TextBlock>
                                                 </DataGridTextColumn.Header>
                                             </DataGridTextColumn>
-                                            <DataGridTextColumn Width="120" Binding="{Binding price}" IsReadOnly="True" >
+                                            <DataGridTextColumn Width="120" Binding="{Binding price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Price}"></TextBlock>
                                                 </DataGridTextColumn.Header>
                                             </DataGridTextColumn>
-                                            <DataGridTextColumn Width="*" Binding="{Binding stockvalue}" IsReadOnly="True" >
+                                            <DataGridTextColumn Width="*" Binding="{Binding stockvalue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Stockvalue}"></TextBlock>
                                                 </DataGridTextColumn.Header>
@@ -837,7 +837,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox Text="{Binding Item}" MaxLength="2" />
+                                                        <TextBox Text="{Binding Item, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="2" />
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -848,7 +848,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox Text="{Binding Amount}"  />
+                                                        <TextBox Text="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -926,24 +926,24 @@
 
                                     <DataGrid Grid.Column="0" Name="Bestellung" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="70,50,10,10" IsReadOnly="True" CanUserAddRows="False">
                                         <DataGrid.Columns>
-                                            <DataGridTextColumn Width="50" Binding="{Binding Teil}" IsReadOnly="True" >
+                                            <DataGridTextColumn Width="50" Binding="{Binding Teil, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Article}"></TextBlock>
                                                 </DataGridTextColumn.Header>
                                             </DataGridTextColumn>
-                                            <DataGridTextColumn Width="65" Binding="{Binding Lagerbestand}" IsReadOnly="True" >
+                                            <DataGridTextColumn Width="65" Binding="{Binding Lagerbestand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Stock}"></TextBlock>
                                                 </DataGridTextColumn.Header>
                                             </DataGridTextColumn>
-                                            <DataGridTextColumn Width="80" Header="N" Binding="{Binding Brutto Periode n}" IsReadOnly="True" ></DataGridTextColumn>
-                                            <DataGridTextColumn Width="65" Header="N+1" Binding="{Binding Brutto Periode n+1}" IsReadOnly="True" ></DataGridTextColumn>
-                                            <DataGridTextColumn Width="65" Header="N+2" Binding="{Binding Brutto Periode n+2}" IsReadOnly="True" ></DataGridTextColumn>
-                                            <DataGridTextColumn Width="65" Header="N+3" Binding="{Binding Brutto Periode n+3}" IsReadOnly="True" ></DataGridTextColumn>
-                                            <DataGridTextColumn Width="80" Header="N" Binding="{Binding Bestellung Periode n}" IsReadOnly="True" ></DataGridTextColumn>
-                                            <DataGridTextColumn Width="65" Header="N+1" Binding="{Binding Bestellung Periode n+1}" IsReadOnly="True" ></DataGridTextColumn>
-                                            <DataGridTextColumn Width="65" Header="N+2" Binding="{Binding Bestellung Periode n+2}" IsReadOnly="True" ></DataGridTextColumn>
-                                            <DataGridTextColumn Width="*" Header="N+3" Binding="{Binding Bestellung Periode n+3}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="80" Header="N" Binding="{Binding Brutto Periode n, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+1" Binding="{Binding Brutto Periode n+1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+2" Binding="{Binding Brutto Periode n+2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+3" Binding="{Binding Brutto Periode n+3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="80" Header="N" Binding="{Binding Bestellung Periode n, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+1" Binding="{Binding Bestellung Periode n+1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="65" Header="N+2" Binding="{Binding Bestellung Periode n+2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" ></DataGridTextColumn>
+                                            <DataGridTextColumn Width="*" Header="N+3" Binding="{Binding Bestellung Periode n+3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" ></DataGridTextColumn>
                                         </DataGrid.Columns>
                                     </DataGrid>
                                 </Grid>
@@ -976,7 +976,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox Text="{Binding article}" IsReadOnly="True" IsReadOnlyCaretVisible="True" MaxLength="2"/>
+                                                        <TextBox Text="{Binding article, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" IsReadOnlyCaretVisible="True" MaxLength="2"/>
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -986,7 +986,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox Text="{Binding quantity}" IsReadOnly="True" />
+                                                        <TextBox Text="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -996,7 +996,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox Text="{Binding modus}" MaxLength="1"/>
+                                                        <TextBox Text="{Binding modus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="1"/>
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -1527,7 +1527,7 @@
                                 <Grid Background="#80C887">
                                     <DataGrid Grid.Column="1" Grid.Row="1" ItemsSource="{Binding}" Name="Workingtimelist1" AutoGenerateColumns="False" Margin="50,50,200,50" CanUserAddRows="False" >
                                         <DataGrid.Columns>
-                                            <DataGridTextColumn Width="50" Binding="{Binding station}" IsReadOnly="True" >
+                                            <DataGridTextColumn Width="50" Binding="{Binding station, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                                 <DataGridTextColumn.Header>
                                                     <TextBlock Text="{DynamicResource ResourceKey=Station}"/>
                                                 </DataGridTextColumn.Header>
@@ -1539,7 +1539,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox Text="{Binding shift}" MaxLength="1" PreviewTextInput="TextBox_PreviewTextInput1to3" />
+                                                        <TextBox Text="{Binding shift, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="1" PreviewTextInput="TextBox_PreviewTextInput1to3" />
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -1550,7 +1550,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox Text="{Binding overtime}" PreviewTextInput="TextBox_PreviewTextInput1to240" />
+                                                        <TextBox Text="{Binding overtime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="TextBox_PreviewTextInput1to240" />
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -1580,7 +1580,7 @@
                         <Label Grid.Column="1" Grid.Row="1" Content="{DynamicResource ResourceKey=Capacity}" Margin="20" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"></Label>
                         <DataGrid Grid.Column="0" Grid.Row="0" Name="Sellwish" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="120" Binding="{Binding article}" IsReadOnly="True" >
+                                <DataGridTextColumn Width="120" Binding="{Binding article, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Article}"></TextBlock>
                                     </DataGridTextColumn.Header>
@@ -1592,7 +1592,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Text="{Binding quantity}"  />
+                                            <TextBox Text="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1606,12 +1606,12 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Text="{Binding quantity}" />
+                                            <TextBox Text="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
 
-                                <DataGridTextColumn Width="50" Binding="{Binding article}" IsReadOnly="True" >
+                                <DataGridTextColumn Width="50" Binding="{Binding article, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Article}"/>
                                     </DataGridTextColumn.Header>
@@ -1623,7 +1623,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Text="{Binding penalty}" />
+                                            <TextBox Text="{Binding penalty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1634,25 +1634,25 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Text="{Binding price}"  />
+                                            <TextBox Text="{Binding price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <DataGrid Grid.Column="2" Grid.Row="0" AutoGenerateColumns="False" Name="Orderlist" ItemsSource="{Binding}" CanUserAddRows="False" Margin="10,60,10,10">
+                        <DataGrid Grid.Column="2"  Grid.Row="0" AutoGenerateColumns="False" Name="Orderlist" ItemsSource="{Binding}" CanUserAddRows="False" Margin="10,60,10,10">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="100" Binding="{Binding article}" IsReadOnly="True" >
+                                <DataGridTextColumn Width="100" Binding="{Binding article, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Article}"/>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="100" Binding="{Binding quantity}" IsReadOnly="True" >
+                                <DataGridTextColumn Width="100" Binding="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Quantity}"/>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Binding="{Binding modus}" IsReadOnly="True" >
+                                <DataGridTextColumn Width="*" Binding="{Binding modus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Mode}"/>
                                     </DataGridTextColumn.Header>
@@ -1661,12 +1661,12 @@
                         </DataGrid>
                         <DataGrid Grid.Column="0" Grid.Row="1" Name="Productionlist" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" Margin="10,60,10,10">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="120" Binding="{Binding Item}" IsReadOnly="True" >
+                                <DataGridTextColumn Width="120" Binding="{Binding Item, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Item}"/>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Binding="{Binding Amount}" IsReadOnly="True" >
+                                <DataGridTextColumn Width="*" Binding="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Amount}"/>
                                     </DataGridTextColumn.Header>
@@ -1676,7 +1676,7 @@
                         <!--<DataGrid Grid.Column="1" Grid.Row="1" Name="Workingtimelist" ItemsSource="{Binding}" Margin="10,60,10,10" CanUserAddRows="False" PreviewTextInput="Workingtimelist_PreviewTextInput"></DataGrid>-->
                         <DataGrid Grid.Column="1" Grid.Row="1" ItemsSource="{Binding}" Name="Workingtimelist" AutoGenerateColumns="False" Margin="10,60,10,10" CanUserAddRows="False" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="50" Binding="{Binding station}" IsReadOnly="True" >
+                                <DataGridTextColumn Width="50" Binding="{Binding station , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" >
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="{DynamicResource ResourceKey=Station}"/>
                                     </DataGridTextColumn.Header>
@@ -1688,7 +1688,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Text="{Binding shift}" MaxLength="1" PreviewTextInput="TextBox_PreviewTextInput1to3" />
+                                            <TextBox Text="{Binding shift, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="1" PreviewTextInput="TextBox_PreviewTextInput1to3" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1699,7 +1699,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Text="{Binding overtime}" PreviewTextInput="TextBox_PreviewTextInput1to240" />
+                                            <TextBox Text="{Binding overtime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="TextBox_PreviewTextInput1to240" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
