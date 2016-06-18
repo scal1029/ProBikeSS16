@@ -109,7 +109,7 @@
                         <Label Grid.Column="4" Grid.Row="10" x:Name="groupNumber" Content="NUMMER" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="{DynamicResource ResourceKey=Forecast3SalesOpportunitiesToolTip}" Margin="0,114,18,124" Height="29" Width="132"/>
                     </Grid>
                 </TabItem>
-                <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=DemandManagment}" Width="195">
+                <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=DemandManagment}" Name="Tab2" IsEnabled="False" Width="195">
                     <Grid Margin="20,20,20,20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -868,7 +868,7 @@
                         </TabControl>
                     </Grid>
                 </TabItem>
-                <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=QuantityPlanning}" Width="195">
+                <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=QuantityPlanning}" Name="Tab3" IsEnabled="False" Width="195">
                     <Grid Margin="20,20,20,20">
                         <TabControl>
                             <TabItem Header="{DynamicResource ResourceKey=Planning}">
@@ -1005,7 +1005,7 @@
                     </Grid>
                 </TabItem>
 
-                <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=CapacityPlanning}" Width="195">
+                <TabItem Background="#80C887" Header="{DynamicResource ResourceKey=CapacityPlanning}" Name="Tab4" IsEnabled="False" Width="195">
                     <Grid Margin="20,20,20,2">
                         <TabControl>
                             <TabItem Header="{DynamicResource ResourceKey=CapacityPlanning}">
@@ -1558,7 +1558,7 @@
                         <DataGrid Visibility="Hidden" Name="Kapa" ItemsSource="{Binding}" Margin="100,10,10,10" IsReadOnly="True"></DataGrid>
                     </Grid>
                 </TabItem>
-                <TabItem Background="#969FA7" Header="{DynamicResource ResourceKey=DataExport}" Width="195">
+                <TabItem Background="#969FA7" Header="{DynamicResource ResourceKey=DataExport}" Name="Tab5" IsEnabled="False" Width="195">
                     <Grid Margin="20,20,20,20" Background="#969FA7">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="310"></ColumnDefinition>
