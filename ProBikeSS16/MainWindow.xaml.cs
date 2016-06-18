@@ -11313,9 +11313,5 @@ namespace ProBikeSS16
 
         }
 
-        private void Sellwish_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
-        {
-            Console.WriteLine();
-        }
     }
 }
