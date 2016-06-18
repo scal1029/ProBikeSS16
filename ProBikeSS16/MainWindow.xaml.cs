@@ -173,6 +173,10 @@ namespace ProBikeSS16
                 GridOldStock.DataContext = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].DefaultView;
                 Programmplannung(GlobalVariables.InputDataSetWithoutOldBatchCalc);
                 GlobalVariables.factory.initStorage(GlobalVariables.InputDataSetWithoutOldBatchCalc);
+                Tab2.IsEnabled = true;
+                Tab3.IsEnabled = true;
+                Tab4.IsEnabled = true;
+                Tab5.IsEnabled = true;
             }
             else
             {
@@ -10919,8 +10923,13 @@ namespace ProBikeSS16
 
         private void DeleteOrder_OnClick(object sender, RoutedEventArgs e)
         {
-            DataRowView row = (DataRowView)GridProductionOrders.SelectedItems[0];
-            row.Delete();
+            var currentRowIndex = GridProductionOrders.SelectedIndex;
+            if(!(currentRowIndex < 0))
+            {
+                DataRowView row = (DataRowView)GridProductionOrders.SelectedItems[0];
+                row.Delete();
+            }
+                
         }
 
 
