@@ -152,5 +152,9 @@
     <sys:String x:Key="M">M</sys:String>
     <sys:String x:Key="CLM">CLM</sys:String>
     <sys:String x:Key="OvertimeInMin">Overtime (in min)</sys:String>
-    
+
+    //Misc
+    <sys:String x:Key="curPeriod">}</sys:String>
+
+
 </ResourceDictionary>

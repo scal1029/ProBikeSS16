@@ -32,6 +32,8 @@ namespace ProBikeSS16
 
     public static class GlobalVariables
     {
+        public static int curPeriod = 0;
+
         public static int? StockChildBike;
         public static int? StockMaleBike;
         public static int? StockFemaleBike;
@@ -156,5 +158,6 @@ namespace ProBikeSS16
 
         //Ausgabe
         public static DataTable KPErg = new DataTable();
+        internal static int groupNumber;
     }
 }

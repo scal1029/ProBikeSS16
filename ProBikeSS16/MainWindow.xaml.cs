@@ -201,133 +201,133 @@ namespace ProBikeSS16
         #region Refreshing Functions
         public void refreshKapaPlanInputs()
         {
-            E4A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E4Produktionsauftrag).ToString();
-            E5A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E5Produktionsauftrag).ToString();
-            E6A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E6Produktionsauftrag).ToString();
-            E7A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E7Produktionsauftrag).ToString();
-            E8A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E8Produktionsauftrag).ToString();
-            E9A10.Text = GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E9Produktionsauftrag).ToString();
+            E4A10.Text = GlobalVariables.E4Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E4Produktionsauftrag).ToString();
+            E5A10.Text = GlobalVariables.E5Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E5Produktionsauftrag).ToString();
+            E6A10.Text = GlobalVariables.E6Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E6Produktionsauftrag).ToString();
+            E7A10.Text = GlobalVariables.E7Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E7Produktionsauftrag).ToString();
+            E8A10.Text = GlobalVariables.E8Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E8Produktionsauftrag).ToString();
+            E9A10.Text = GlobalVariables.E9Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_10.getApproxProdTimed11(GlobalVariables.E9Produktionsauftrag).ToString();
 
-            E4A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE4(GlobalVariables.E4Produktionsauftrag).ToString();
-            E5A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE5(GlobalVariables.E5Produktionsauftrag).ToString();
-            E6A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE6(GlobalVariables.E6Produktionsauftrag).ToString();
-            E7A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE7(GlobalVariables.E7Produktionsauftrag).ToString();
-            E8A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE8(GlobalVariables.E8Produktionsauftrag).ToString();
-            E9A11.Text = GlobalVariables.factory.Wp_11.getApproxProdTimeE9(GlobalVariables.E9Produktionsauftrag).ToString();
+            E4A11.Text = GlobalVariables.E4Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_11.getApproxProdTimeE4(GlobalVariables.E4Produktionsauftrag).ToString();
+            E5A11.Text = GlobalVariables.E5Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_11.getApproxProdTimeE5(GlobalVariables.E5Produktionsauftrag).ToString();
+            E6A11.Text = GlobalVariables.E6Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_11.getApproxProdTimeE6(GlobalVariables.E6Produktionsauftrag).ToString();
+            E7A11.Text = GlobalVariables.E7Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_11.getApproxProdTimeE7(GlobalVariables.E7Produktionsauftrag).ToString();
+            E8A11.Text = GlobalVariables.E8Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_11.getApproxProdTimeE8(GlobalVariables.E8Produktionsauftrag).ToString();
+            E9A11.Text = GlobalVariables.E9Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_11.getApproxProdTimeE9(GlobalVariables.E9Produktionsauftrag).ToString();
 
-            E10A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E10Produktionsauftrag).ToString();
-            E11A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E11Produktionsauftrag).ToString();
-            E12A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E12Produktionsauftrag).ToString();
-            E13A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E13Produktionsauftrag).ToString();
-            E14A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E14Produktionsauftrag).ToString();
-            E15A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E15Produktionsauftrag).ToString();
+            E10A7.Text = GlobalVariables.E10Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A7.Text = GlobalVariables.E11Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A7.Text = GlobalVariables.E12Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A7.Text = GlobalVariables.E13Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A7.Text = GlobalVariables.E14Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A7.Text = GlobalVariables.E15Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E15Produktionsauftrag).ToString();
 
-            E10A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_1_p1(GlobalVariables.E10Produktionsauftrag).ToString();
-            E11A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_1_p2(GlobalVariables.E11Produktionsauftrag).ToString();
-            E12A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_1_p3(GlobalVariables.E12Produktionsauftrag).ToString();
-            E13A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_3_p1(GlobalVariables.E13Produktionsauftrag).ToString();
-            E14A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_3_p2(GlobalVariables.E14Produktionsauftrag).ToString();
-            E15A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_3_p3(GlobalVariables.E15Produktionsauftrag).ToString();
+            E10A8.Text = GlobalVariables.E10Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_1_p1(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A8.Text = GlobalVariables.E11Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_1_p2(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A8.Text = GlobalVariables.E12Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_1_p3(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A8.Text = GlobalVariables.E13Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_3_p1(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A8.Text = GlobalVariables.E14Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_3_p2(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A8.Text = GlobalVariables.E15Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_3_p3(GlobalVariables.E15Produktionsauftrag).ToString();
 
-            E10A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E10Produktionsauftrag).ToString();
-            E11A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E11Produktionsauftrag).ToString();
-            E12A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E12Produktionsauftrag).ToString();
-            E13A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E13Produktionsauftrag).ToString();
-            E14A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E14Produktionsauftrag).ToString();
-            E15A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E15Produktionsauftrag).ToString();
+            E10A9.Text = GlobalVariables.E10Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A9.Text = GlobalVariables.E11Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A9.Text = GlobalVariables.E12Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A9.Text = GlobalVariables.E13Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A9.Text = GlobalVariables.E14Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A9.Text = GlobalVariables.E15Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_9.getApproxProdTime3(GlobalVariables.E15Produktionsauftrag).ToString();
 
-            E10A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E10Produktionsauftrag).ToString();
-            E11A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E11Produktionsauftrag).ToString();
-            E12A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E12Produktionsauftrag).ToString();
-            E13A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E13Produktionsauftrag).ToString();
-            E14A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E14Produktionsauftrag).ToString();
-            E15A12.Text = GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E15Produktionsauftrag).ToString();
+            E10A12.Text = GlobalVariables.E10Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A12.Text = GlobalVariables.E11Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A12.Text = GlobalVariables.E12Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A12.Text = GlobalVariables.E13Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A12.Text = GlobalVariables.E14Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A12.Text = GlobalVariables.E15Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_12.getApproxProdTimeDirectTo8(GlobalVariables.E15Produktionsauftrag).ToString();
 
-            E10A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E10Produktionsauftrag).ToString();
-            E11A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E11Produktionsauftrag).ToString();
-            E12A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E12Produktionsauftrag).ToString();
-            E13A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E13Produktionsauftrag).ToString();
-            E14A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E14Produktionsauftrag).ToString();
-            E15A13.Text = GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E15Produktionsauftrag).ToString();
+            E10A13.Text = GlobalVariables.E10Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E10Produktionsauftrag).ToString();
+            E11A13.Text = GlobalVariables.E11Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E11Produktionsauftrag).ToString();
+            E12A13.Text = GlobalVariables.E12Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E12Produktionsauftrag).ToString();
+            E13A13.Text = GlobalVariables.E13Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E13Produktionsauftrag).ToString();
+            E14A13.Text = GlobalVariables.E14Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E14Produktionsauftrag).ToString();
+            E15A13.Text = GlobalVariables.E15Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_13.getApproxProdTimeDirectTo12(GlobalVariables.E15Produktionsauftrag).ToString();
 
-            E16A6.Text = GlobalVariables.factory.Wp_6.getApproxProdTimeOd14_p1(GlobalVariables.E16Produktionsauftrag).ToString();
-            E16A14.Text = GlobalVariables.factory.Wp_14.getApproxProdTimeE16(GlobalVariables.E16Produktionsauftrag).ToString();
+            E16A6.Text = GlobalVariables.E16Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_6.getApproxProdTimeOd14_p1(GlobalVariables.E16Produktionsauftrag).ToString();
+            E16A14.Text = GlobalVariables.E16Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_14.getApproxProdTimeE16(GlobalVariables.E16Produktionsauftrag).ToString();
 
-            E17A15.Text = GlobalVariables.factory.Wp_15.getApproxProdTimeE17(GlobalVariables.E17Produktionsauftrag).ToString();
+            E17A15.Text = GlobalVariables.E17Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_15.getApproxProdTimeE17(GlobalVariables.E17Produktionsauftrag).ToString();
 
-            E18A6.Text = GlobalVariables.factory.Wp_6.getApproxProdTimeOd8_p1(GlobalVariables.E18Produktionsauftrag).ToString();
-            E19A6.Text = GlobalVariables.factory.Wp_6.getApproxProdTimeOd8_p2(GlobalVariables.E19Produktionsauftrag).ToString();
-            E20A6.Text = GlobalVariables.factory.Wp_6.getApproxProdTimeOd8_p3(GlobalVariables.E20Produktionsauftrag).ToString();
+            E18A6.Text = GlobalVariables.E18Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_6.getApproxProdTimeOd8_p1(GlobalVariables.E18Produktionsauftrag).ToString();
+            E19A6.Text = GlobalVariables.E19Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_6.getApproxProdTimeOd8_p2(GlobalVariables.E19Produktionsauftrag).ToString();
+            E20A6.Text = GlobalVariables.E20Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_6.getApproxProdTimeOd8_p3(GlobalVariables.E20Produktionsauftrag).ToString();
 
-            E18A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E18Produktionsauftrag).ToString();
-            E19A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E19Produktionsauftrag).ToString();
-            E20A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E20Produktionsauftrag).ToString();
+            E18A7.Text = GlobalVariables.E18Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E18Produktionsauftrag).ToString();
+            E19A7.Text = GlobalVariables.E19Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E19Produktionsauftrag).ToString();
+            E20A7.Text = GlobalVariables.E20Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E20Produktionsauftrag).ToString();
 
-            E18A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_2_p1(GlobalVariables.E18Produktionsauftrag).ToString();
-            E19A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_2_p2(GlobalVariables.E19Produktionsauftrag).ToString();
-            E20A8.Text = GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_2_p3(GlobalVariables.E20Produktionsauftrag).ToString();
+            E18A8.Text = GlobalVariables.E18Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_2_p1(GlobalVariables.E18Produktionsauftrag).ToString();
+            E19A8.Text = GlobalVariables.E19Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_2_p2(GlobalVariables.E19Produktionsauftrag).ToString();
+            E20A8.Text = GlobalVariables.E20Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_8.getApproxProdTimeOd7_2_p3(GlobalVariables.E20Produktionsauftrag).ToString();
 
-            E18A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime2(GlobalVariables.E18Produktionsauftrag).ToString();
-            E19A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime2(GlobalVariables.E19Produktionsauftrag).ToString();
-            E20A9.Text = GlobalVariables.factory.Wp_9.getApproxProdTime2(GlobalVariables.E20Produktionsauftrag).ToString();
+            E18A9.Text = GlobalVariables.E18Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_9.getApproxProdTime2(GlobalVariables.E18Produktionsauftrag).ToString();
+            E19A9.Text = GlobalVariables.E19Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_9.getApproxProdTime2(GlobalVariables.E19Produktionsauftrag).ToString();
+            E20A9.Text = GlobalVariables.E20Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_9.getApproxProdTime2(GlobalVariables.E20Produktionsauftrag).ToString();
 
-            E26A7.Text = GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E26Produktionsauftrag).ToString();
-            E26A15.Text = GlobalVariables.factory.Wp_15.getApproxProdTimeE26(GlobalVariables.E26Produktionsauftrag).ToString();
+            E26A7.Text = GlobalVariables.E26Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_7.getApproxProdTimeOd9(GlobalVariables.E26Produktionsauftrag).ToString();
+            E26A15.Text = GlobalVariables.E26Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_15.getApproxProdTimeE26(GlobalVariables.E26Produktionsauftrag).ToString();
 
-            E49A1.Text = GlobalVariables.factory.Wp_1.getApproxProdTimeE49(GlobalVariables.E49Produktionsauftrag).ToString();
-            E54A1.Text = GlobalVariables.factory.Wp_1.getApproxProdTimeE54(GlobalVariables.E54Produktionsauftrag).ToString();
-            E29A1.Text = GlobalVariables.factory.Wp_1.getApproxProdTimeE29(GlobalVariables.E29Produktionsauftrag).ToString();
+            E49A1.Text = GlobalVariables.E49Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_1.getApproxProdTimeE49(GlobalVariables.E49Produktionsauftrag).ToString();
+            E54A1.Text = GlobalVariables.E54Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_1.getApproxProdTimeE54(GlobalVariables.E54Produktionsauftrag).ToString();
+            E29A1.Text = GlobalVariables.E29Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_1.getApproxProdTimeE29(GlobalVariables.E29Produktionsauftrag).ToString();
 
-            E50A2.Text = GlobalVariables.factory.Wp_2.getApproxProdTimeE50(GlobalVariables.E50Produktionsauftrag).ToString();
-            E55A2.Text = GlobalVariables.factory.Wp_2.getApproxProdTimeE55(GlobalVariables.E55Produktionsauftrag).ToString();
-            E30A2.Text = GlobalVariables.factory.Wp_2.getApproxProdTimeE30(GlobalVariables.E30Produktionsauftrag).ToString();
+            E50A2.Text = GlobalVariables.E50Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_2.getApproxProdTimeE50(GlobalVariables.E50Produktionsauftrag).ToString();
+            E55A2.Text = GlobalVariables.E55Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_2.getApproxProdTimeE55(GlobalVariables.E55Produktionsauftrag).ToString();
+            E30A2.Text = GlobalVariables.E30Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_2.getApproxProdTimeE30(GlobalVariables.E30Produktionsauftrag).ToString();
 
-            E51A3.Text = GlobalVariables.factory.Wp_3.getApproxProdTimeE51(GlobalVariables.E51Produktionsauftrag).ToString();
-            E56A3.Text = GlobalVariables.factory.Wp_3.getApproxProdTimeE56(GlobalVariables.E56Produktionsauftrag).ToString();
-            E31A3.Text = GlobalVariables.factory.Wp_3.getApproxProdTimeE31(GlobalVariables.E31Produktionsauftrag).ToString();
+            E51A3.Text = GlobalVariables.E51Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_3.getApproxProdTimeE51(GlobalVariables.E51Produktionsauftrag).ToString();
+            E56A3.Text = GlobalVariables.E56Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_3.getApproxProdTimeE56(GlobalVariables.E56Produktionsauftrag).ToString();
+            E31A3.Text = GlobalVariables.E31Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_3.getApproxProdTimeE31(GlobalVariables.E31Produktionsauftrag).ToString();
 
-            P1A4.Text = GlobalVariables.factory.Wp_4.getApproxProdTimeP1(GlobalVariables.P1Produktionsauftrag).ToString();
-            P2A4.Text = GlobalVariables.factory.Wp_4.getApproxProdTimeP2(GlobalVariables.P2Produktionsauftrag).ToString();
-            P3A4.Text = GlobalVariables.factory.Wp_4.getApproxProdTimeP3(GlobalVariables.P3Produktionsauftrag).ToString();
+            P1A4.Text = GlobalVariables.P1Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_4.getApproxProdTimeP1(GlobalVariables.P1Produktionsauftrag).ToString();
+            P2A4.Text = GlobalVariables.P2Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_4.getApproxProdTimeP2(GlobalVariables.P2Produktionsauftrag).ToString();
+            P3A4.Text = GlobalVariables.P3Produktionsauftrag < 0 ? "0" : GlobalVariables.factory.Wp_4.getApproxProdTimeP3(GlobalVariables.P3Produktionsauftrag).ToString();
         }
 
         public void refreshAmountKapaPlan()
         {
-            AmE4.Text = GlobalVariables.E4Produktionsauftrag.ToString();
-            AmE5.Text = GlobalVariables.E5Produktionsauftrag.ToString();
-            AmE6.Text = GlobalVariables.E6Produktionsauftrag.ToString();
-            AmE7.Text = GlobalVariables.E7Produktionsauftrag.ToString();
-            AmE8.Text = GlobalVariables.E8Produktionsauftrag.ToString();
-            AmE9.Text = GlobalVariables.E9Produktionsauftrag.ToString();
-            AmE10.Text = GlobalVariables.E10Produktionsauftrag.ToString();
-            AmE11.Text = GlobalVariables.E11Produktionsauftrag.ToString();
-            AmE12.Text = GlobalVariables.E12Produktionsauftrag.ToString();
-            AmE13.Text = GlobalVariables.E13Produktionsauftrag.ToString();
-            AmE14.Text = GlobalVariables.E14Produktionsauftrag.ToString();
-            AmE15.Text = GlobalVariables.E15Produktionsauftrag.ToString();
-            AmE16.Text = GlobalVariables.E16Produktionsauftrag.ToString();
-            AmE17.Text = GlobalVariables.E17Produktionsauftrag.ToString();
-            AmE18.Text = GlobalVariables.E18Produktionsauftrag.ToString();
-            AmE19.Text = GlobalVariables.E19Produktionsauftrag.ToString();
-            AmE20.Text = GlobalVariables.E20Produktionsauftrag.ToString();
+            AmE4.Text = GlobalVariables.E4Produktionsauftrag < 0 ? "0" : GlobalVariables.E4Produktionsauftrag.ToString();
+            AmE5.Text = GlobalVariables.E5Produktionsauftrag < 0 ? "0" : GlobalVariables.E5Produktionsauftrag.ToString();
+            AmE6.Text = GlobalVariables.E6Produktionsauftrag < 0 ? "0" : GlobalVariables.E6Produktionsauftrag.ToString();
+            AmE7.Text = GlobalVariables.E7Produktionsauftrag < 0 ? "0" : GlobalVariables.E7Produktionsauftrag.ToString();
+            AmE8.Text = GlobalVariables.E8Produktionsauftrag < 0 ? "0" : GlobalVariables.E8Produktionsauftrag.ToString();
+            AmE9.Text = GlobalVariables.E9Produktionsauftrag < 0 ? "0" : GlobalVariables.E9Produktionsauftrag.ToString();
+            AmE10.Text = GlobalVariables.E10Produktionsauftrag < 0 ? "0" : GlobalVariables.E10Produktionsauftrag.ToString();
+            AmE11.Text = GlobalVariables.E11Produktionsauftrag < 0 ? "0" : GlobalVariables.E11Produktionsauftrag.ToString();
+            AmE12.Text = GlobalVariables.E12Produktionsauftrag < 0 ? "0" : GlobalVariables.E12Produktionsauftrag.ToString();
+            AmE13.Text = GlobalVariables.E13Produktionsauftrag < 0 ? "0" : GlobalVariables.E13Produktionsauftrag.ToString();
+            AmE14.Text = GlobalVariables.E14Produktionsauftrag < 0 ? "0" : GlobalVariables.E14Produktionsauftrag.ToString();
+            AmE15.Text = GlobalVariables.E15Produktionsauftrag < 0 ? "0" : GlobalVariables.E15Produktionsauftrag.ToString();
+            AmE16.Text = GlobalVariables.E16Produktionsauftrag < 0 ? "0" : GlobalVariables.E16Produktionsauftrag.ToString();
+            AmE17.Text = GlobalVariables.E17Produktionsauftrag < 0 ? "0" : GlobalVariables.E17Produktionsauftrag.ToString();
+            AmE18.Text = GlobalVariables.E18Produktionsauftrag < 0 ? "0" : GlobalVariables.E18Produktionsauftrag.ToString();
+            AmE19.Text = GlobalVariables.E19Produktionsauftrag < 0 ? "0" : GlobalVariables.E19Produktionsauftrag.ToString();
+            AmE20.Text = GlobalVariables.E20Produktionsauftrag < 0 ? "0" : GlobalVariables.E20Produktionsauftrag.ToString();
 
-            AmE26.Text = GlobalVariables.E26Produktionsauftrag.ToString();
+            AmE26.Text = GlobalVariables.E26Produktionsauftrag < 0 ? "0" : GlobalVariables.E26Produktionsauftrag.ToString();
 
-            AmE49.Text = GlobalVariables.E49Produktionsauftrag.ToString();
-            AmE54.Text = GlobalVariables.E54Produktionsauftrag.ToString();
-            AmE29.Text = GlobalVariables.E29Produktionsauftrag.ToString();
+            AmE49.Text = GlobalVariables.E49Produktionsauftrag < 0 ? "0" : GlobalVariables.E49Produktionsauftrag.ToString();
+            AmE54.Text = GlobalVariables.E54Produktionsauftrag < 0 ? "0" : GlobalVariables.E54Produktionsauftrag.ToString();
+            AmE29.Text = GlobalVariables.E29Produktionsauftrag < 0 ? "0" : GlobalVariables.E29Produktionsauftrag.ToString();
 
-            AmE50.Text = GlobalVariables.E50Produktionsauftrag.ToString();
-            AmE55.Text = GlobalVariables.E55Produktionsauftrag.ToString();
-            AmE30.Text = GlobalVariables.E30Produktionsauftrag.ToString();
+            AmE50.Text = GlobalVariables.E50Produktionsauftrag < 0 ? "0" : GlobalVariables.E50Produktionsauftrag.ToString();
+            AmE55.Text = GlobalVariables.E55Produktionsauftrag < 0 ? "0" : GlobalVariables.E55Produktionsauftrag.ToString();
+            AmE30.Text = GlobalVariables.E30Produktionsauftrag < 0 ? "0" : GlobalVariables.E30Produktionsauftrag.ToString();
 
-            AmE51.Text = GlobalVariables.E51Produktionsauftrag.ToString();
-            AmE56.Text = GlobalVariables.E56Produktionsauftrag.ToString();
-            AmE31.Text = GlobalVariables.E31Produktionsauftrag.ToString();
+            AmE51.Text = GlobalVariables.E51Produktionsauftrag < 0 ? "0" : GlobalVariables.E51Produktionsauftrag.ToString();
+            AmE56.Text = GlobalVariables.E56Produktionsauftrag < 0 ? "0" : GlobalVariables.E56Produktionsauftrag.ToString();
+            AmE31.Text = GlobalVariables.E31Produktionsauftrag < 0 ? "0" : GlobalVariables.E31Produktionsauftrag.ToString();
 
-            AmP1.Text = GlobalVariables.P1Produktionsauftrag.ToString();
-            AmP2.Text = GlobalVariables.P2Produktionsauftrag.ToString();
-            AmP3.Text = GlobalVariables.P3Produktionsauftrag.ToString();
+            AmP1.Text = GlobalVariables.P1Produktionsauftrag < 0 ? "0" : GlobalVariables.P1Produktionsauftrag.ToString();
+            AmP2.Text = GlobalVariables.P2Produktionsauftrag < 0 ? "0" : GlobalVariables.P2Produktionsauftrag.ToString();
+            AmP3.Text = GlobalVariables.P3Produktionsauftrag < 0 ? "0" : GlobalVariables.P3Produktionsauftrag.ToString();
         }
 
         public void calculateCapNeed()
@@ -465,6 +465,9 @@ namespace ProBikeSS16
                 MessageBox.Show("Workplace 1 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA1.Text = (7200 - sum).ToString();
+            } else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 1 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
             }
             else
                 wholeKapA1.Text = sum.ToString();
@@ -476,6 +479,10 @@ namespace ProBikeSS16
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA2.Text = (7200 - sum).ToString();
             }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 2 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+            }
             else
                 wholeKapA2.Text = sum.ToString();
 
@@ -485,6 +492,10 @@ namespace ProBikeSS16
                 MessageBox.Show("Workplace 3 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA3.Text = (7200 - sum).ToString();
+            }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 3 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
             }
             else
                 wholeKapA3.Text = sum.ToString();
@@ -496,6 +507,10 @@ namespace ProBikeSS16
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA4.Text = (7200 - sum).ToString();
             }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 4 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+            }
             else
                 wholeKapA4.Text = sum.ToString();
 
@@ -505,6 +520,10 @@ namespace ProBikeSS16
                 MessageBox.Show("Workplace 6 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA6.Text = (7200 - sum).ToString();
+            }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 6 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
             }
             else
                 wholeKapA6.Text = sum.ToString();
@@ -516,6 +535,10 @@ namespace ProBikeSS16
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA7.Text = (7200 - sum).ToString();
             }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 7 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+            }
             else
                 wholeKapA7.Text = sum.ToString();
 
@@ -525,6 +548,10 @@ namespace ProBikeSS16
                 MessageBox.Show("Workplace 8 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA8.Text = (7200 - sum).ToString();
+            }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 8 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
             }
             else
                 wholeKapA8.Text = sum.ToString();
@@ -536,6 +563,10 @@ namespace ProBikeSS16
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA9.Text = (7200 - sum).ToString();
             }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 9 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+            }
             else
                 wholeKapA9.Text = sum.ToString();
 
@@ -545,6 +576,10 @@ namespace ProBikeSS16
                 MessageBox.Show("Workplace 10 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA10.Text = (7200 - sum).ToString();
+            }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 10 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
             }
             else
                 wholeKapA10.Text = sum.ToString();
@@ -556,6 +591,10 @@ namespace ProBikeSS16
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA11.Text = (7200 - sum).ToString();
             }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 11 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+            }
             else
                 wholeKapA11.Text = sum.ToString();
 
@@ -565,6 +604,10 @@ namespace ProBikeSS16
                 MessageBox.Show("Workplace 12 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA12.Text = (7200 - sum).ToString();
+            }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 12 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
             }
             else
                 wholeKapA12.Text = sum.ToString();
@@ -576,6 +619,10 @@ namespace ProBikeSS16
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA13.Text = (7200 - sum).ToString();
             }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 13 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+            }
             else
                 wholeKapA13.Text = sum.ToString();
 
@@ -586,6 +633,10 @@ namespace ProBikeSS16
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA14.Text = (7200 - sum).ToString();
             }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 14 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+            }
             else
                 wholeKapA14.Text = sum.ToString();
 
@@ -595,6 +646,10 @@ namespace ProBikeSS16
                 MessageBox.Show("Workplace 15 has an overload in worktime (" + Math.Abs(7200- sum) + " minutes), please reduce the specific production");
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA15.Text = (7200 - sum).ToString();
+            }
+            else if (sum < 1200)
+            {
+                MessageBox.Show("WARNING | Workplace 15 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
             }
             else
                 wholeKapA15.Text = sum.ToString();
@@ -766,6 +821,14 @@ namespace ProBikeSS16
 
         private void Programmplannung(DataSet data)
         {
+
+
+            DataRow result_0 = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["results"].Rows[0];
+            GlobalVariables.curPeriod = int.Parse(result_0["period"].ToString());
+            GlobalVariables.groupNumber = int.Parse(result_0["period"].ToString());
+
+            groupNumber.Content = "Gruppe " + groupNumber;
+
             //GeplanterVerkauf
             ChildBikeOrderP1.Text = GlobalVariables.SaleChildBikeN.ToString();
             FemaleBikeOrderP2.Text = GlobalVariables.SaleFemaleBikeN.ToString();
