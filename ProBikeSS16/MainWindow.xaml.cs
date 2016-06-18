@@ -3,24 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml;
-using System.Collections.ObjectModel;
 using System.Xml.Linq;
-using ProBikeSS16;
-using Xceed.Wpf.Toolkit;
 using MessageBox = System.Windows.MessageBox;
 
 namespace ProBikeSS16
@@ -202,9 +192,10 @@ namespace ProBikeSS16
             refreshKapaPlanInputs();
             refreshAmountKapaPlan();
             calculateCapNeed();
-            calculateShiftAndOverDo();
+            calculateSetUpTime();
+            calculateOldSetUpTime();
             calcWholeCap();
-            fillOldTimings();
+            calculateShiftAndOverDo();
         }
 
         #region Refreshing Functions
@@ -339,11 +330,6 @@ namespace ProBikeSS16
             AmP3.Text = GlobalVariables.P3Produktionsauftrag.ToString();
         }
 
-        public void fillOldTimings()
-        {
-            //kapOldA1.Text = 
-        }
-
         public void calculateCapNeed()
         {
             calculateCapNeedA1();
@@ -362,37 +348,112 @@ namespace ProBikeSS16
             calculateCapNeedA15();
         }
 
+        public void calculateSetUpTime()
+        {
+            setUpTimeA1.Text = (Math.Round(GlobalVariables.A1SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA2.Text = (Math.Round(GlobalVariables.A2SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA3.Text = (Math.Round(GlobalVariables.A3SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA4.Text = (Math.Round(GlobalVariables.A4SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA6.Text = (Math.Round(GlobalVariables.A6SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA7.Text = (Math.Round(GlobalVariables.A7SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA8.Text = (Math.Round(GlobalVariables.A8SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA9.Text = (Math.Round(GlobalVariables.A9SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA10.Text = (Math.Round(GlobalVariables.A10SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA11.Text = (Math.Round(GlobalVariables.A11SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA12.Text = (Math.Round(GlobalVariables.A12SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA13.Text = (Math.Round(GlobalVariables.A13SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA14.Text = (Math.Round(GlobalVariables.A14SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA15.Text = (Math.Round(GlobalVariables.A15SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+        }
+
+        public void calculateOldSetUpTime()
+        {
+            if (Int32.Parse(kapOldA1.Text) > 0)
+                setUpOldTimeA1.Text = (Math.Round((double)Int32.Parse(kapOldA1.Text) / 100) * 20).ToString();
+            if (Int32.Parse(kapOldA2.Text) > 0)
+                setUpOldTimeA2.Text = (Math.Round((double)Int32.Parse(kapOldA2.Text) / 100) * 30).ToString();
+            if (Int32.Parse(kapOldA3.Text) > 0)
+                setUpOldTimeA3.Text = (Math.Round((double)Int32.Parse(kapOldA3.Text) / 100) * 20).ToString();
+            if (Int32.Parse(kapOldA4.Text) > 0)
+                setUpOldTimeA4.Text = (Math.Round((double)Int32.Parse(kapOldA4.Text) / 100) * 30).ToString();
+            if (Int32.Parse(kapOldA6.Text) > 0)
+                setUpOldTimeA6.Text = (Math.Round((double)Int32.Parse(kapOldA6.Text) / 100) * 15).ToString();
+            if (Int32.Parse(kapOldA7.Text) > 0)
+                setUpOldTimeA7.Text = (Math.Round((double)Int32.Parse(kapOldA7.Text) / 100) * 20).ToString();
+            if (Int32.Parse(kapOldA8.Text) > 0)
+                setUpOldTimeA8.Text = (Math.Round((double)Int32.Parse(kapOldA8.Text) / 100) * 20).ToString();
+            if (Int32.Parse(kapOldA9.Text) > 0)
+                setUpOldTimeA9.Text = (Math.Round((double)Int32.Parse(kapOldA9.Text) / 100) * 15).ToString();
+            if (Int32.Parse(kapOldA10.Text) > 0)
+                setUpOldTimeA10.Text = (Math.Round((double)Int32.Parse(kapOldA10.Text) / 100) * 20).ToString();
+            if (Int32.Parse(kapOldA11.Text) > 0)
+                setUpOldTimeA11.Text = (Math.Round((double)Int32.Parse(kapOldA11.Text) / 100) * 15).ToString();
+            if (Int32.Parse(kapOldA14.Text) > 0)
+                setUpOldTimeA15.Text = (Math.Round((double)Int32.Parse(kapOldA15.Text) / 100) * 15).ToString();
+        }
+
         public void calculateShiftAndOverDo()
         {
-            SuOTimeA1.Text = calcShift(Int32.Parse(kapA1.Text));
-            SuOTimeA2.Text = calcShift(Int32.Parse(kapA2.Text));
-            SuOTimeA3.Text = calcShift(Int32.Parse(kapA3.Text));
-            SuOTimeA4.Text = calcShift(Int32.Parse(kapA4.Text));
-            SuOTimeA6.Text = calcShift(Int32.Parse(kapA6.Text));
-            SuOTimeA7.Text = calcShift(Int32.Parse(kapA7.Text));
-            SuOTimeA8.Text = calcShift(Int32.Parse(kapA8.Text));
-            SuOTimeA9.Text = calcShift(Int32.Parse(kapA9.Text));
-            SuOTimeA10.Text = calcShift(Int32.Parse(kapA10.Text));
-            SuOTimeA11.Text = calcShift(Int32.Parse(kapA11.Text));
-            SuOTimeA12.Text = calcShift(Int32.Parse(kapA12.Text));
-            SuOTimeA13.Text = calcShift(Int32.Parse(kapA13.Text));
-            SuOTimeA14.Text = calcShift(Int32.Parse(kapA14.Text));
-            SuOTimeA15.Text = calcShift(Int32.Parse(kapA15.Text));
+            SuOTimeA1.Text = calcShift(Int32.Parse(wholeKapA1.Text));
+            SuOTimeA2.Text = calcShift(Int32.Parse(wholeKapA2.Text));
+            SuOTimeA3.Text = calcShift(Int32.Parse(wholeKapA3.Text));
+            SuOTimeA4.Text = calcShift(Int32.Parse(wholeKapA4.Text));
+            SuOTimeA6.Text = calcShift(Int32.Parse(wholeKapA6.Text));
+            SuOTimeA7.Text = calcShift(Int32.Parse(wholeKapA7.Text));
+            SuOTimeA8.Text = calcShift(Int32.Parse(wholeKapA8.Text));
+            SuOTimeA9.Text = calcShift(Int32.Parse(wholeKapA9.Text));
+            SuOTimeA10.Text = calcShift(Int32.Parse(wholeKapA10.Text));
+            SuOTimeA11.Text = calcShift(Int32.Parse(wholeKapA11.Text));
+            SuOTimeA12.Text = calcShift(Int32.Parse(wholeKapA12.Text));
+            SuOTimeA13.Text = calcShift(Int32.Parse(wholeKapA13.Text));
+            SuOTimeA14.Text = calcShift(Int32.Parse(wholeKapA14.Text));
+            SuOTimeA15.Text = calcShift(Int32.Parse(wholeKapA15.Text));
 
-            OTimeA1.Text = calcOverDo(Int32.Parse(kapA1.Text));
-            OTimeA2.Text = calcOverDo(Int32.Parse(kapA2.Text));
-            OTimeA3.Text = calcOverDo(Int32.Parse(kapA3.Text));
-            OTimeA4.Text = calcOverDo(Int32.Parse(kapA4.Text));
-            OTimeA6.Text = calcOverDo(Int32.Parse(kapA6.Text));
-            OTimeA7.Text = calcOverDo(Int32.Parse(kapA7.Text));
-            OTimeA8.Text = calcOverDo(Int32.Parse(kapA8.Text));
-            OTimeA9.Text = calcOverDo(Int32.Parse(kapA9.Text));
-            OTimeA10.Text = calcOverDo(Int32.Parse(kapA10.Text));
-            OTimeA11.Text = calcOverDo(Int32.Parse(kapA11.Text));
-            OTimeA12.Text = calcOverDo(Int32.Parse(kapA12.Text));
-            OTimeA13.Text = calcOverDo(Int32.Parse(kapA13.Text));
-            OTimeA14.Text = calcOverDo(Int32.Parse(kapA14.Text));
-            OTimeA15.Text = calcOverDo(Int32.Parse(kapA15.Text));
+            OTimeA1.Text = calcOverDo(Int32.Parse(wholeKapA1.Text));
+            OTimeA2.Text = calcOverDo(Int32.Parse(wholeKapA2.Text));
+            OTimeA3.Text = calcOverDo(Int32.Parse(wholeKapA3.Text));
+            OTimeA4.Text = calcOverDo(Int32.Parse(wholeKapA4.Text));
+            OTimeA6.Text = calcOverDo(Int32.Parse(wholeKapA6.Text));
+            OTimeA7.Text = calcOverDo(Int32.Parse(wholeKapA7.Text));
+            OTimeA8.Text = calcOverDo(Int32.Parse(wholeKapA8.Text));
+            OTimeA9.Text = calcOverDo(Int32.Parse(wholeKapA9.Text));
+            OTimeA10.Text = calcOverDo(Int32.Parse(wholeKapA10.Text));
+            OTimeA11.Text = calcOverDo(Int32.Parse(wholeKapA11.Text));
+            OTimeA12.Text = calcOverDo(Int32.Parse(wholeKapA12.Text));
+            OTimeA13.Text = calcOverDo(Int32.Parse(wholeKapA13.Text));
+            OTimeA14.Text = calcOverDo(Int32.Parse(wholeKapA14.Text));
+            OTimeA15.Text = calcOverDo(Int32.Parse(wholeKapA15.Text));
+
+
+            GlobalVariables.Kapaza.Rows.Clear();
+            double overtime = Math.Ceiling((double)Int32.Parse(OTimeA1.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(1, Int32.Parse(SuOTimeA1.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA2.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(2, Int32.Parse(SuOTimeA2.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA3.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(3, Int32.Parse(SuOTimeA3.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA4.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(4, Int32.Parse(SuOTimeA4.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA6.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(6, Int32.Parse(SuOTimeA6.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA7.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(7, Int32.Parse(SuOTimeA7.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA8.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(8, Int32.Parse(SuOTimeA8.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA9.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(9, Int32.Parse(SuOTimeA9.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA10.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(10, Int32.Parse(SuOTimeA10.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA11.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(11, Int32.Parse(SuOTimeA11.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA12.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(12, Int32.Parse(SuOTimeA12.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA13.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(13, Int32.Parse(SuOTimeA13.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA14.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(14, Int32.Parse(SuOTimeA14.Text), overtime > 240 ? 240 : overtime);
+            overtime = Math.Ceiling((double)Int32.Parse(OTimeA15.Text) / 50) * 10;
+            GlobalVariables.Kapaza.Rows.Add(15, Int32.Parse(SuOTimeA15.Text), overtime > 240 ? 240 : overtime);
         }
 
         public void calcWholeCap()
@@ -422,14 +483,14 @@ namespace ProBikeSS16
             {
                 shift = 3; 
             }
-            else if (sum > 4800 && sum <= 6000)
+            else if (sum > 3600 && sum <= 6000)
             {
                 shift = 2;
             }
             else
                 shift = 1;
 
-            return "S " + shift;
+            return shift.ToString();
         }
 
         public string calcOverDo(int sum)
@@ -3696,32 +3757,24 @@ namespace ProBikeSS16
             }
 
             //TODO!!! = Kappa befüllen
-            DataTable Kapaza = new DataTable();
-            Kapaza.Clear();
+            GlobalVariables.Kapaza = new DataTable();
+            GlobalVariables.Kapaza.Clear();
 
 
 
-            if (!Kapaza.Columns.Contains("station"))
+            if (!GlobalVariables.Kapaza.Columns.Contains("station"))
             {
-                Kapaza.Columns.Add("station", typeof(int));
-                Kapaza.Columns.Add("shift", typeof(int));
-                Kapaza.Columns.Add("overtime", typeof(int));
+                GlobalVariables.Kapaza.Columns.Add("station", typeof(int));
+                GlobalVariables.Kapaza.Columns.Add("shift", typeof(int));
+                GlobalVariables.Kapaza.Columns.Add("overtime", typeof(int));
             }
 
 
 
-            Workingtimelist.DataContext = Kapaza;
-            Workingtimelist.ItemsSource = Kapaza.DefaultView;
-
-            for (int i = 1; i < 16; i++)
-            {
-                if (i != 5)
-                    Kapaza.Rows.Add(i, 1, 0);
-
-            }
-
-
-
+            Workingtimelist.DataContext = GlobalVariables.Kapaza;
+            Workingtimelist.ItemsSource = GlobalVariables.Kapaza.DefaultView;
+            Workingtimelist1.DataContext = GlobalVariables.Kapaza;
+            Workingtimelist1.ItemsSource = GlobalVariables.Kapaza.DefaultView;
 
 
 
@@ -6618,59 +6671,59 @@ namespace ProBikeSS16
 
                 if(id == 1 && setUps >= 0)
                 {
-                    setUpOldTimeA1.Text = (setUps * 20).ToString();
+                    GlobalVariables.A1SetUpsLastPeriod = (setUps * 20);
                 }
                 if (id == 2 && setUps >= 0)
                 {
-                    setUpOldTimeA2.Text = (setUps * 30).ToString();
+                    GlobalVariables.A2SetUpsLastPeriod = (setUps * 30);
                 }
                 if (id == 3 && setUps >= 0)
                 {
-                    setUpOldTimeA3.Text = (setUps * 20).ToString();
+                    GlobalVariables.A3SetUpsLastPeriod = (setUps * 20);
                 }
                 if (id == 4 && setUps >= 0)
                 {
-                    setUpOldTimeA4.Text = (setUps * 30).ToString();
+                    GlobalVariables.A4SetUpsLastPeriod = (setUps * 30);
                 }
                 if (id == 6 && setUps >= 0)
                 {
-                    setUpOldTimeA6.Text = (setUps * 15).ToString();
+                    GlobalVariables.A6SetUpsLastPeriod = (setUps * 15);
                 }
                 if (id == 7 && setUps >= 0)
                 {
-                    setUpOldTimeA7.Text = (setUps * 25).ToString();
+                    GlobalVariables.A7SetUpsLastPeriod = (setUps * 25);
                 }
                 if (id == 8 && setUps >= 0)
                 {
-                    setUpOldTimeA8.Text = (setUps * 20).ToString();
+                    GlobalVariables.A8SetUpsLastPeriod = (setUps * 20);
                 }
                 if (id == 9 && setUps >= 0)
                 {
-                    setUpOldTimeA9.Text = (setUps * 15).ToString();
+                    GlobalVariables.A9SetUpsLastPeriod = (setUps * 15);
                 }
                 if (id == 10 && setUps >= 0)
                 {
-                    setUpOldTimeA10.Text = (setUps * 20).ToString();
+                    GlobalVariables.A10SetUpsLastPeriod = (setUps * 20);
                 }
                 if (id == 11 && setUps >= 0)
                 {
-                    setUpOldTimeA11.Text = (setUps * 15).ToString();
+                    GlobalVariables.A11SetUpsLastPeriod = (setUps * 15);
                 }
                 if (id == 12 && setUps >= 0)
                 {
-                    setUpOldTimeA12.Text = (setUps * 0).ToString();
+                    GlobalVariables.A12SetUpsLastPeriod = (setUps * 0);
                 }
                 if (id == 13 && setUps >= 0)
                 {
-                    setUpOldTimeA13.Text = (setUps * 0).ToString();
+                    GlobalVariables.A13SetUpsLastPeriod = (setUps * 0);
                 }
                 if (id == 14 && setUps >= 0)
                 {
-                    setUpOldTimeA14.Text = (setUps * 0).ToString();
+                    GlobalVariables.A14SetUpsLastPeriod = (setUps * 0);
                 }
                 if (id == 15 && setUps >= 0)
                 {
-                    setUpOldTimeA15.Text = (setUps * 15).ToString();
+                    GlobalVariables.A15SetUpsLastPeriod = (setUps * 15);
                 }
             }
 
@@ -10454,6 +10507,11 @@ namespace ProBikeSS16
             Orderlist.ItemsSource = BestellungslisteZu.ItemsSource;
 
             refreshKapaPlanInputs();
+            refreshAmountKapaPlan();
+            calculateCapNeed();
+            calculateSetUpTime();
+            calcWholeCap();
+            calculateShiftAndOverDo();
         }
 
         #endregion Data

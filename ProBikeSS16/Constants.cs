@@ -58,6 +58,24 @@ namespace ProBikeSS16
         //Fabrik for Simulation
         public static Factory factory = Factory.Instance;
 
+        public static DataTable Kapaza;
+
+        //SetUpLastPeriod
+        public static int A1SetUpsLastPeriod;
+        public static int A2SetUpsLastPeriod;
+        public static int A3SetUpsLastPeriod;
+        public static int A4SetUpsLastPeriod;
+        public static int A6SetUpsLastPeriod;
+        public static int A7SetUpsLastPeriod;
+        public static int A8SetUpsLastPeriod;
+        public static int A9SetUpsLastPeriod;
+        public static int A10SetUpsLastPeriod;
+        public static int A11SetUpsLastPeriod;
+        public static int A12SetUpsLastPeriod;
+        public static int A13SetUpsLastPeriod;
+        public static int A14SetUpsLastPeriod;
+        public static int A15SetUpsLastPeriod;
+
         //Produktionsaufträge
         public static int E26Produktionsauftrag;
         public static int P1E26Produktionsauftrag;

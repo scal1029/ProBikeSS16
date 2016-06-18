@@ -114,7 +114,7 @@
     <sys:String x:Key="Capacity">Kapazitäten</sys:String>
     <sys:String x:Key="Penalty">Strafe</sys:String>
     <sys:String x:Key="Station">Station</sys:String>
-    <sys:String x:Key="Shift">Verschiebung</sys:String>
+    <sys:String x:Key="Shifts">Schichten</sys:String>
     <sys:String x:Key="Overtime">Überstunden</sys:String>
     <sys:String x:Key="Stock">Lagerbestand</sys:String>
 
@@ -122,4 +122,33 @@
     <sys:String x:Key="OrderAmount">Lagerbestand</sys:String>
     <sys:String x:Key="AddOrder">Auftrag hinzufügen</sys:String>
     <sys:String x:Key="DeleteOrder">Auftrag löschen</sys:String>
+
+    <!--Kapazitätsplanung-->
+    <sys:String x:Key="Workplace">Arbeitsplatz</sys:String>
+    <sys:String x:Key="Item_No">Sach-Nr.</sys:String>
+    <sys:String x:Key="OrderQuantity">Auftrags-menge</sys:String>
+    <sys:String x:Key="Period">Periode</sys:String>
+    <sys:String x:Key="Description">Bezeichnung</sys:String>
+    <sys:String x:Key="RearWheel">Hinterrad</sys:String>
+    <sys:String x:Key="FrontWheel">Vorderrad</sys:String>
+    <sys:String x:Key="MudguardRear">Schutzblech hinten</sys:String>
+    <sys:String x:Key="MudguardFront">Schutzblech vorne</sys:String>
+    <sys:String x:Key="HandleBar">Lenker</sys:String>
+    <sys:String x:Key="Seat">Sattel</sys:String>
+    <sys:String x:Key="Frame">Rahmen</sys:String>
+    <sys:String x:Key="Pedal">Pedale</sys:String>
+    <sys:String x:Key="FrontWheelComplete">Vorderrad komplett</sys:String>
+    <sys:String x:Key="FrameAndWheels">Rahmen und Räder</sys:String>
+    <sys:String x:Key="BicycleWOPedal">Fahrrad ohne Pedale</sys:String>
+    <sys:String x:Key="BicycleComplete">Fahrrad komplett</sys:String>
+    <sys:String x:Key="CapacityRequirementsNEW">Kapazitätsbedarf (neu)</sys:String>
+    <sys:String x:Key="SetupTimeNEW">Rüstzeit (neu)</sys:String>
+    <sys:String x:Key="CapReqBACK">Kap. bed. (Rückstand Vorperiode)</sys:String>
+    <sys:String x:Key="SetupBACK">Rüstzeit (Rückstand Vorperiode)</sys:String>
+    <sys:String x:Key="TotalCapReq">Gesamt-Kapazitätsbedarf</sys:String>
+    <sys:String x:Key="C">K</sys:String>
+    <sys:String x:Key="L">D</sys:String>
+    <sys:String x:Key="M">H</sys:String>
+    <sys:String x:Key="CLM">KDH</sys:String>
+    <sys:String x:Key="OvertimeInMin">Überstunden (in Min)</sys:String>
 </ResourceDictionary>

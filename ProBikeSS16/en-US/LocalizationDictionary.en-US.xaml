@@ -115,12 +115,42 @@
     <sys:String x:Key="Capacity">Capacity</sys:String>
     <sys:String x:Key="Penalty">Penalty</sys:String>
     <sys:String x:Key="Station">Station</sys:String>
-    <sys:String x:Key="Shift">Shift</sys:String>
+    <sys:String x:Key="Shifts">Shifts</sys:String>
     <sys:String x:Key="Overtime">Overtime</sys:String>
     <sys:String x:Key="Stock">Stock</sys:String>
 
     <sys:String x:Key="OrderArticle">Order Article</sys:String>
     <sys:String x:Key="OrderAmount">Order Amount</sys:String>
     <sys:String x:Key="AddOrder">Add Order</sys:String>
-    <sys:String x:Key="DeleteOrder">Delete Order </sys:String>
+    <sys:String x:Key="DeleteOrder">Delete Order</sys:String>
+
+    <!--Kapazitätsplanung-->
+    <sys:String x:Key="Workplace">Workplace</sys:String>
+    <sys:String x:Key="Item_No">Item No.</sys:String>
+    <sys:String x:Key="OrderQuantity">Order-quantity</sys:String>
+    <sys:String x:Key="Period">Period</sys:String>
+    <sys:String x:Key="Description">Description</sys:String>
+    <sys:String x:Key="RearWheel">Rear Wheel</sys:String>
+    <sys:String x:Key="FrontWheel">Front Wheel</sys:String>
+    <sys:String x:Key="MudguardRear">Mudguard rear</sys:String>
+    <sys:String x:Key="MudguardFront">Mudguard front</sys:String>
+    <sys:String x:Key="HandleBar">Handle bar</sys:String>
+    <sys:String x:Key="Seat">Seat</sys:String>
+    <sys:String x:Key="Frame">Frame</sys:String>
+    <sys:String x:Key="Pedal">Pedal</sys:String>
+    <sys:String x:Key="FrontWheelComplete">Front wheel complete</sys:String>
+    <sys:String x:Key="FrameAndWheels">Frame and wheels</sys:String>
+    <sys:String x:Key="BicycleWOPedal">Bicycle w/o pedal</sys:String>
+    <sys:String x:Key="BicycleComplete">Bicycle complete</sys:String>
+    <sys:String x:Key="CapacityRequirementsNEW">Capacity requirements (new)</sys:String>
+    <sys:String x:Key="SetupTimeNEW">Setup time (new)</sys:String>
+    <sys:String x:Key="CapReqBACK">Cap. req. (backlog prev. periods)</sys:String>
+    <sys:String x:Key="SetupBACK">Setup time (backlog prev. periods)</sys:String>
+    <sys:String x:Key="TotalCapReq">Total Capacity Requirements</sys:String>
+    <sys:String x:Key="C">C</sys:String>
+    <sys:String x:Key="L">L</sys:String>
+    <sys:String x:Key="M">M</sys:String>
+    <sys:String x:Key="CLM">CLM</sys:String>
+    <sys:String x:Key="OvertimeInMin">Overtime (in min)</sys:String>
+    
 </ResourceDictionary>
