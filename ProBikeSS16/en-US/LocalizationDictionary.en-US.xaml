@@ -93,6 +93,8 @@
     <sys:String x:Key="Stockvalue">Stockvalue (in €)</sys:String>
     <sys:String x:Key="Evaluation">Evaluation</sys:String>
 
+    <sys:String x:Key="InfoSellparts">Information Sellparts:</sys:String>
+
     <!-- Localized strings Manufactoring Orders-->
     <sys:String x:Key="Item">Item</sys:String>
     <sys:String x:Key="Amount2">Amount</sys:String>

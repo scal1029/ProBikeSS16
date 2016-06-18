@@ -93,6 +93,8 @@
     <sys:String x:Key="Stockvalue">Lagerwert (in €)</sys:String>
     <sys:String x:Key="Evaluation">Evaluation</sys:String>
 
+    <sys:String x:Key="InfoSellparts">Information Kaufteile:</sys:String>
+    
     <!-- Localized strings Manufactoring Orders-->
     <sys:String x:Key="Item">Teil</sys:String>
 
@@ -182,6 +184,6 @@
     <sys:String xml:space="preserve" x:Key="K57">Bezeichnung: Felge cpl.&#xa;Verwendung: P2&#xa;Wiedereschaffungszeit: 1,7&#xa;Abweichung: 0,3</sys:String>
     <sys:String xml:space="preserve" x:Key="K58">Bezeichnung: Speiche&#xa;Verwendung: P2&#xa;Wiedereschaffungszeit: 1,6&#xa;Abweichung: 0,5</sys:String>
     <sys:String xml:space="preserve" x:Key="K59">Bezeichnung: Schweißdraht&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 0,7&#xa;Abweichung: 0,2</sys:String>
-
+    
 
 </ResourceDictionary>
