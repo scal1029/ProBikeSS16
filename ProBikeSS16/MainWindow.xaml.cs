@@ -914,19 +914,20 @@ namespace ProBikeSS16
             MaleBikeOrderP3.Text = GlobalVariables.SaleMaleBikeN.ToString();
 
             DataTable Prognose = new DataTable();
-            Prognose.Clear();
-            if (!Prognose.Columns.Contains("article"))
+            GlobalVariables.Prognose.Clear();
+            if (!GlobalVariables.Prognose.Columns.Contains("article"))
             {
-                Prognose.Columns.Add("article", typeof(int));
-                Prognose.Columns.Add("quantity", typeof(int));
+                GlobalVariables.Prognose.Columns.Add("article", typeof(int));
+                GlobalVariables.Prognose.Columns.Add("quantity", typeof(int));
             }
 
-            Prognose.Rows.Add(1, GlobalVariables.SaleChildBikeN);
-            Prognose.Rows.Add(2, GlobalVariables.SaleFemaleBikeN);
-            Prognose.Rows.Add(3, GlobalVariables.SaleMaleBikeN);
+            GlobalVariables.Prognose.Rows.Add(1, GlobalVariables.SaleChildBikeN);
+            GlobalVariables.Prognose.Rows.Add(2, GlobalVariables.SaleFemaleBikeN);
+            GlobalVariables.Prognose.Rows.Add(3, GlobalVariables.SaleMaleBikeN);
 
-            Sellwish.DataContext = Prognose;
-            Sellwish.ItemsSource = Prognose.DefaultView;
+            
+            Sellwish.DataContext = GlobalVariables.Prognose;
+            Sellwish.ItemsSource = GlobalVariables.Prognose.DefaultView;
 
             //Geplanter Sicherheitsbestand
             #region SafetyStock
@@ -11176,8 +11177,7 @@ namespace ProBikeSS16
             List<XMLworkingtimelist> Schichten = new List<XMLworkingtimelist>();
 
 
-            //DataGridView 
-            Sellwish.Items.Refresh();
+
             foreach (DataRowView dr in Sellwish.ItemsSource)
             {
                 if (dr[0] != DBNull.Value && dr[1] != DBNull.Value)
@@ -11329,6 +11329,11 @@ namespace ProBikeSS16
                 MessageBox.Show("Fehler");
             }
 
+        }
+
+        private void Sellwish_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            Console.WriteLine();
         }
     }
 }
