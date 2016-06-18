@@ -6663,17 +6663,186 @@ namespace ProBikeSS16
             {
                 VerbrauchInPeriode.Columns.Add("Teil");
                 VerbrauchInPeriode.Columns.Add("Verbrauch");
+                VerbrauchInPeriode.Columns.Add("Lager");
+                VerbrauchInPeriode.Columns.Add("Differenz");
             }
             VerbrauchInPeriode.Clear();
 
-            int t21 = GlobalVariables.P1Produktionsauftrag;
-            int t22 = GlobalVariables.P2Produktionsauftrag;
+
+
+            int P1Produktionsauftrag = 0;
+            if (GlobalVariables.P1Produktionsauftrag > 0)
+                P1Produktionsauftrag = GlobalVariables.P1Produktionsauftrag;
+            int P2Produktionsauftrag = 0;
+            if (GlobalVariables.P2Produktionsauftrag > 0)
+                P2Produktionsauftrag = GlobalVariables.P2Produktionsauftrag;
+            int P3Produktionsauftrag = 0;
+            if (GlobalVariables.P3Produktionsauftrag > 0)
+                P3Produktionsauftrag = GlobalVariables.P3Produktionsauftrag;
+            int E4Produktionsauftrag = 0;
+            if (GlobalVariables.E4Produktionsauftrag > 0)
+                E4Produktionsauftrag = GlobalVariables.E4Produktionsauftrag;
+            int E5Produktionsauftrag = 0;
+            if (GlobalVariables.E5Produktionsauftrag > 0)
+                E5Produktionsauftrag = GlobalVariables.E5Produktionsauftrag;
+            int E6Produktionsauftrag = 0;
+            if (GlobalVariables.E6Produktionsauftrag > 0)
+                E6Produktionsauftrag = GlobalVariables.E6Produktionsauftrag;
+            int E7Produktionsauftrag = 0;
+            if (GlobalVariables.E7Produktionsauftrag > 0)
+                E7Produktionsauftrag = GlobalVariables.E7Produktionsauftrag;
+            int E8Produktionsauftrag = 0;
+            if (GlobalVariables.E8Produktionsauftrag > 0)
+                E8Produktionsauftrag = GlobalVariables.E8Produktionsauftrag;
+            int E9Produktionsauftrag = 0;
+            if (GlobalVariables.E9Produktionsauftrag > 0)
+                E9Produktionsauftrag = GlobalVariables.E9Produktionsauftrag;
+            int E10Produktionsauftrag = 0;
+            if (GlobalVariables.E10Produktionsauftrag > 0)
+                E10Produktionsauftrag = GlobalVariables.E10Produktionsauftrag;
+            int E11Produktionsauftrag = 0;
+            if (GlobalVariables.E11Produktionsauftrag > 0)
+                E11Produktionsauftrag = GlobalVariables.E11Produktionsauftrag;
+            int E12Produktionsauftrag = 0;
+            if (GlobalVariables.E12Produktionsauftrag > 0)
+                E12Produktionsauftrag = GlobalVariables.E12Produktionsauftrag;
+            int E13Produktionsauftrag = 0;
+            if (GlobalVariables.E13Produktionsauftrag > 0)
+                E13Produktionsauftrag = GlobalVariables.E13Produktionsauftrag;
+            int E14Produktionsauftrag = 0;
+            if (GlobalVariables.E14Produktionsauftrag > 0)
+                E14Produktionsauftrag = GlobalVariables.E14Produktionsauftrag;
+            int E15Produktionsauftrag = 0;
+            if (GlobalVariables.E15Produktionsauftrag > 0)
+                E15Produktionsauftrag = GlobalVariables.E15Produktionsauftrag;
+            int E16Produktionsauftrag = 0;
+            if (GlobalVariables.E16Produktionsauftrag > 0)
+                E16Produktionsauftrag = GlobalVariables.E16Produktionsauftrag;
+            int E17Produktionsauftrag = 0;
+            if (GlobalVariables.E17Produktionsauftrag > 0)
+                E17Produktionsauftrag = GlobalVariables.E17Produktionsauftrag;
+            int E18Produktionsauftrag = 0;
+            if (GlobalVariables.E18Produktionsauftrag > 0)
+                E18Produktionsauftrag = GlobalVariables.E18Produktionsauftrag;
+            int E19Produktionsauftrag = 0;
+            if (GlobalVariables.E19Produktionsauftrag > 0)
+                E19Produktionsauftrag = GlobalVariables.E19Produktionsauftrag;
+            int E20Produktionsauftrag = 0;
+            if (GlobalVariables.E20Produktionsauftrag > 0)
+                E20Produktionsauftrag = GlobalVariables.E20Produktionsauftrag;
+            int E26Produktionsauftrag = 0;
+            if (GlobalVariables.E26Produktionsauftrag > 0)
+                E26Produktionsauftrag = GlobalVariables.E26Produktionsauftrag;
+            int E49Produktionsauftrag = 0;
+            if (GlobalVariables.E49Produktionsauftrag > 0)
+                E49Produktionsauftrag = GlobalVariables.E49Produktionsauftrag;
+            int E54Produktionsauftrag = 0;
+            if (GlobalVariables.E54Produktionsauftrag > 0)
+                E54Produktionsauftrag = GlobalVariables.E54Produktionsauftrag;
+            int E29Produktionsauftrag = 0;
+            if (GlobalVariables.E29Produktionsauftrag > 0)
+                E29Produktionsauftrag = GlobalVariables.E29Produktionsauftrag;
+            int E50Produktionsauftrag = 0;
+            if (GlobalVariables.E50Produktionsauftrag > 0)
+                E50Produktionsauftrag = GlobalVariables.E50Produktionsauftrag;
+            int E55Produktionsauftrag = 0;
+            if (GlobalVariables.E55Produktionsauftrag > 0)
+                E55Produktionsauftrag = GlobalVariables.E55Produktionsauftrag;
+            int E30Produktionsauftrag = 0;
+            if (GlobalVariables.E30Produktionsauftrag > 0)
+                E30Produktionsauftrag = GlobalVariables.E30Produktionsauftrag;
+            int E51Produktionsauftrag = 0;
+            if (GlobalVariables.E51Produktionsauftrag > 0)
+                E51Produktionsauftrag = GlobalVariables.E51Produktionsauftrag;
+            int E56Produktionsauftrag = 0;
+            if (GlobalVariables.E56Produktionsauftrag > 0)
+                E56Produktionsauftrag = GlobalVariables.E56Produktionsauftrag;
+            int E31Produktionsauftrag = 0;
+            if (GlobalVariables.E31Produktionsauftrag > 0)
+                E31Produktionsauftrag = GlobalVariables.E31Produktionsauftrag;
 
 
 
-            VerbrauchInPeriode.Rows.Add();
+            int t4 = 0;
+            int t5 = 0;
+            int t6 = 0;
+            int t7 = 0;
+            int t8 = 0;
+            int t9 = 0;
+            int t10 = 0;
+            int t11 = 0;
+            int t12 = 0;
+            int t13 = 0;
+            int t14 = 0;
+            int t15 = 0;
+            int t16 = 0;
+            int t17 = 0;
+            int t18 = 0;
+            int t19 = 0;
+            int t20 = 0;
+            int t21 = P1Produktionsauftrag;
+            int t22 = P2Produktionsauftrag;
+            int t23 = P3Produktionsauftrag;
+            int t24 = E16Produktionsauftrag + E49Produktionsauftrag* 2 + E54Produktionsauftrag * 2 + E29Produktionsauftrag * 2 + E50Produktionsauftrag * 2
+                 + E55Produktionsauftrag * 2 + E30Produktionsauftrag * 2 + E51Produktionsauftrag + E56Produktionsauftrag + E31Produktionsauftrag
+                 + P1Produktionsauftrag + P2Produktionsauftrag + P3Produktionsauftrag;
+            int t25 = E49Produktionsauftrag* 2 + E54Produktionsauftrag * 2 + E29Produktionsauftrag * 2 + E50Produktionsauftrag * 2
+                + E55Produktionsauftrag * 2 + E30Produktionsauftrag * 2; ;
+            int t26 = 0;
+            int t27 = +E51Produktionsauftrag + E56Produktionsauftrag + E31Produktionsauftrag
+                + P1Produktionsauftrag + P2Produktionsauftrag + P3Produktionsauftrag;
+            int t28 = E16Produktionsauftrag + E18Produktionsauftrag*3 + E19Produktionsauftrag*4 + E20Produktionsauftrag*5;
+            int t29 = 0;
+            int t30 = 0;
+            int t31 = 0;
+            int t32 = E10Produktionsauftrag + E11Produktionsauftrag + E12Produktionsauftrag + E13Produktionsauftrag + E14Produktionsauftrag + E15Produktionsauftrag
+                + E18Produktionsauftrag + E19Produktionsauftrag + E20Produktionsauftrag;
+            int t33 = E6Produktionsauftrag + E9Produktionsauftrag;
+            int t34 = E6Produktionsauftrag* 36 + E9Produktionsauftrag*36;
+            int t35 = E4Produktionsauftrag*2 + E5Produktionsauftrag*2 + E6Produktionsauftrag* 2 
+                + E7Produktionsauftrag* 2 + E8Produktionsauftrag*2 + E9Produktionsauftrag*2;
+            int t36 = E4Produktionsauftrag + E5Produktionsauftrag + E6Produktionsauftrag;
+            int t37 = E7Produktionsauftrag + E8Produktionsauftrag + E9Produktionsauftrag;
+            int t38 = E7Produktionsauftrag + E8Produktionsauftrag + E9Produktionsauftrag;
+            int t39 = E10Produktionsauftrag + E11Produktionsauftrag + E12Produktionsauftrag + E13Produktionsauftrag + +E14Produktionsauftrag + E15Produktionsauftrag;
+            int t40 = E16Produktionsauftrag;
+            int t41 = E16Produktionsauftrag;
+            int t42 = E16Produktionsauftrag*2;
+            int t43 = E17Produktionsauftrag;
+            int t44 = E17Produktionsauftrag + E26Produktionsauftrag*2;
+            int t45 = E17Produktionsauftrag;
+            int t46 = E17Produktionsauftrag;
+            int t47 = E26Produktionsauftrag*1;
+            int t48 = E26Produktionsauftrag*2;
+            int t49 = 0;
+            int t50 = 0;
+            int t51 = 0;
+            int t52 = E4Produktionsauftrag + E7Produktionsauftrag;
+            int t53 = E4Produktionsauftrag* 36 + E7Produktionsauftrag*36;
+            int t54 = 0;
+            int t55 = 0;
+            int t56 = 0;
+            int t57 = E5Produktionsauftrag + E8Produktionsauftrag;
+            int t58 = E5Produktionsauftrag* 36 + E8Produktionsauftrag*36;
+            int t59 = E18Produktionsauftrag*2 + E19Produktionsauftrag*2 + E20Produktionsauftrag*2;
 
 
+            Console.WriteLine("TestTESTSET: " + t33.ToString());
+
+
+            
+
+            foreach(DataRow row in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].Rows)
+                {
+                    if((int)row["id"] == 21 || (int)row["id"] == 22 || (int)row["id"] == 23 || (int)row["id"] == 24 || (int)row["id"] == 25 || (int)row["id"] == 27 ||
+                    (int)row["id"] == 28 || (int)row["id"] == 32 || (int)row["id"] == 33 || (int)row["id"] == 34 || (int)row["id"] == 35 || (int)row["id"] == 36 ||
+                    (int)row["id"] == 37 || (int)row["id"] == 38 || (int)row["id"] == 39 || (int)row["id"] == 40 || (int)row["id"] == 41 || (int)row["id"] == 42 ||
+                    (int)row["id"] == 43 || (int)row["id"] == 44 || (int)row["id"] == 45 || (int)row["id"] == 46 || (int)row["id"] == 47 || (int)row["id"] == 48 ||
+                    (int)row["id"] == 52 || (int)row["id"] == 53 || (int)row["id"] == 57 || (int)row["id"] == 58 || (int)row["id"] == 59 )
+                    {
+                        VerbrauchInPeriode.Rows.Add();
+                    }
+                }
 
 
             #endregion bestellungsplannung
