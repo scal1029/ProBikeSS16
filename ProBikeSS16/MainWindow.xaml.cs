@@ -824,10 +824,30 @@ namespace ProBikeSS16
 
 
             DataRow result_0 = GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables["results"].Rows[0];
-            GlobalVariables.curPeriod = int.Parse(result_0["period"].ToString());
+            GlobalVariables.curPeriod = int.Parse(result_0["period"].ToString())+1;
             GlobalVariables.groupNumber = int.Parse(result_0["period"].ToString());
 
-            groupNumber.Content = "Gruppe " + groupNumber;
+            capCurPeriod.Content = GlobalVariables.curPeriod.ToString();
+            GlobalVariables.capN1Period = GlobalVariables.curPeriod + 1;
+            GlobalVariables.capN2Period = GlobalVariables.curPeriod + 2;
+            GlobalVariables.capN3Period = GlobalVariables.curPeriod + 3;
+
+            PeriodeN.Content = GlobalVariables.curPeriod.ToString();
+            PeriodeN1.Content = GlobalVariables.capN1Period.ToString();
+            PeriodeN2.Content = GlobalVariables.capN2Period.ToString();
+            PeriodeN3.Content = GlobalVariables.capN3Period.ToString();
+
+            Bestellung.Columns[2].Header = GlobalVariables.curPeriod;
+            Bestellung.Columns[3].Header = GlobalVariables.capN1Period;
+            Bestellung.Columns[4].Header = GlobalVariables.capN2Period;
+            Bestellung.Columns[5].Header = GlobalVariables.capN3Period;
+            Bestellung.Columns[6].Header = GlobalVariables.curPeriod;
+            Bestellung.Columns[7].Header = GlobalVariables.capN1Period;
+            Bestellung.Columns[8].Header = GlobalVariables.capN2Period;
+            Bestellung.Columns[9].Header = GlobalVariables.capN3Period;
+            //capCurPeriod.Content = (string)(App.Current.Resources["PeriodeNLabel"]);
+            //Application.Current.Resources["PeriodeNLabel"] = "PETER";
+            //groupNumber.Content = "Gruppe " + groupNumber;
 
             //GeplanterVerkauf
             ChildBikeOrderP1.Text = GlobalVariables.SaleChildBikeN.ToString();

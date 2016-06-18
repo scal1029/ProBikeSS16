@@ -159,5 +159,8 @@ namespace ProBikeSS16
         //Ausgabe
         public static DataTable KPErg = new DataTable();
         internal static int groupNumber;
+        internal static int capN1Period;
+        internal static int capN2Period;
+        internal static int capN3Period;
     }
 }
