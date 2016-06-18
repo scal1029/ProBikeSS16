@@ -94,7 +94,16 @@
     <sys:String x:Key="Evaluation">Evaluation</sys:String>
 
     <sys:String x:Key="InfoSellparts">Information Kaufteile:</sys:String>
-    
+    <sys:String x:Key="green">über 80% der Startmenge</sys:String>
+    <sys:String x:Key="yellow">zwischen 60% und 80% der Startmenge</sys:String>
+    <sys:String x:Key="orange">zwischen 40$ und 60% der Startmenge</sys:String>
+    <sys:String x:Key="red">unter 40% der Startmenge</sys:String>
+
+    <sys:String x:Key="greenContent">grün</sys:String>
+    <sys:String x:Key="yellowContent">gelb</sys:String>
+    <sys:String x:Key="orangeContent">orange</sys:String>
+    <sys:String x:Key="redContent">rot</sys:String>
+
     <!-- Localized strings Manufactoring Orders-->
     <sys:String x:Key="Item">Teil</sys:String>
 
