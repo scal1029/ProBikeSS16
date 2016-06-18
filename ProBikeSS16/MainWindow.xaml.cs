@@ -7025,17 +7025,17 @@ namespace ProBikeSS16
 
             
 
-            foreach(DataRow row in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].Rows)
-                {
-                    if((int)row["id"] == 21 || (int)row["id"] == 22 || (int)row["id"] == 23 || (int)row["id"] == 24 || (int)row["id"] == 25 || (int)row["id"] == 27 ||
-                    (int)row["id"] == 28 || (int)row["id"] == 32 || (int)row["id"] == 33 || (int)row["id"] == 34 || (int)row["id"] == 35 || (int)row["id"] == 36 ||
-                    (int)row["id"] == 37 || (int)row["id"] == 38 || (int)row["id"] == 39 || (int)row["id"] == 40 || (int)row["id"] == 41 || (int)row["id"] == 42 ||
-                    (int)row["id"] == 43 || (int)row["id"] == 44 || (int)row["id"] == 45 || (int)row["id"] == 46 || (int)row["id"] == 47 || (int)row["id"] == 48 ||
-                    (int)row["id"] == 52 || (int)row["id"] == 53 || (int)row["id"] == 57 || (int)row["id"] == 58 || (int)row["id"] == 59 )
-                    {
-                        VerbrauchInPeriode.Rows.Add();
-                    }
-                }
+            //foreach(DataRow row in GlobalVariables.InputDataSetWithoutOldBatchCalc.Tables[2].Rows)
+            //    {
+            //        if((int)row["id"] == 21 || (int)row["id"] == 22 || (int)row["id"] == 23 || (int)row["id"] == 24 || (int)row["id"] == 25 || (int)row["id"] == 27 ||
+            //        (int)row["id"] == 28 || (int)row["id"] == 32 || (int)row["id"] == 33 || (int)row["id"] == 34 || (int)row["id"] == 35 || (int)row["id"] == 36 ||
+            //        (int)row["id"] == 37 || (int)row["id"] == 38 || (int)row["id"] == 39 || (int)row["id"] == 40 || (int)row["id"] == 41 || (int)row["id"] == 42 ||
+            //        (int)row["id"] == 43 || (int)row["id"] == 44 || (int)row["id"] == 45 || (int)row["id"] == 46 || (int)row["id"] == 47 || (int)row["id"] == 48 ||
+            //        (int)row["id"] == 52 || (int)row["id"] == 53 || (int)row["id"] == 57 || (int)row["id"] == 58 || (int)row["id"] == 59 )
+            //        {
+            //            VerbrauchInPeriode.Rows.Add();
+            //        }
+            //    }
 
 
             #endregion bestellungsplannung

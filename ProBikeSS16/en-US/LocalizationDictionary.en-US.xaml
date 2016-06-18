@@ -94,6 +94,15 @@
     <sys:String x:Key="Evaluation">Evaluation</sys:String>
 
     <sys:String x:Key="InfoSellparts">Information Sellparts:</sys:String>
+    <sys:String x:Key="green">over 80% of the start volume</sys:String>
+    <sys:String x:Key="yellow">between 60% and 80% of the start volume</sys:String>
+    <sys:String x:Key="orange">between 40$ and 60% of the start volume</sys:String>
+    <sys:String x:Key="red">under 40% of the start volume</sys:String>
+
+    <sys:String x:Key="greenContent">green</sys:String>
+    <sys:String x:Key="yellowContent">yellow</sys:String>
+    <sys:String x:Key="orangeContent">orange</sys:String>
+    <sys:String x:Key="redContent">red</sys:String>
 
     <!-- Localized strings Manufactoring Orders-->
     <sys:String x:Key="Item">Item</sys:String>
