@@ -56,7 +56,7 @@
     <sys:String x:Key="ordersProcessing">Aufträge in Bearbeitung</sys:String>
     <sys:String x:Key="comingPeriod">Produktionsauftäge für die kommende Periode</sys:String>
     <sys:String x:Key="refresh">Aktualisieren</sys:String>
-    <sys:String x:Key="currentStock">aktueller Lagerbestand</sys:String>
+    <sys:String x:Key="currentStock">Lagerbestand</sys:String>
     <sys:String x:Key="manufactoringOrders">Produktionsaufträge</sys:String>
     <sys:String x:Key="addOrder">Auftrag hinzufügen</sys:String>
     <sys:String x:Key="itemID">Artikel ID</sys:String>
@@ -153,6 +153,35 @@
     <sys:String x:Key="OvertimeInMin">Überstunden (in Min)</sys:String>
 
     <!--Kaufteile-->
-    <sys:String xml:space="preserve" x:Key="K21">Bezeichnung: Kette&#xa;Wiedereschaffungszeit: 1,8</sys:String>
+    <sys:String xml:space="preserve" x:Key="K21">Bezeichnung: Kette&#xa;Verwendung: P1&#xa;Wiedereschaffungszeit: 1,8&#xa;Abweichung: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K22">Bezeichnung: Kette&#xa;Verwendung: P2&#xa;Wiedereschaffungszeit: 1,7&#xa;Abweichung: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K23">Bezeichnung: Kette&#xa;Verwendung: P3&#xa;Wiedereschaffungszeit: 1,2&#xa;Abweichung: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K24">Bezeichnung: Mutter 3/8&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 3,2&#xa;Abweichung: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K25">Bezeichnung: Scheibe 3/8&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 0,9&#xa;Abweichung: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K27">Bezeichnung: Schraube 3/8&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 0,9&#xa;Abweichung: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K28">Bezeichnung: Rohr 3/4&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,7&#xa;Abweichung: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K32">Bezeichnung: Farbe&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 2,1&#xa;Abweichung: 0,5</sys:String>
+    <sys:String xml:space="preserve" x:Key="K33">Bezeichnung: Felgecpl.&#xa;Verwendung: P3&#xa;Wiedereschaffungszeit: 1,9&#xa;Abweichung: 0,5</sys:String>
+    <sys:String xml:space="preserve" x:Key="K34">Bezeichnung: Speiche&#xa;Verwendung: P3&#xa;Wiedereschaffungszeit: 1,6&#xa;Abweichung: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K35">Bezeichnung: Nabe&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 2,2&#xa;Abweichung: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K36">Bezeichnung: Freilauf&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,2&#xa;Abweichung: 0,1</sys:String>
+    <sys:String xml:space="preserve" x:Key="K37">Bezeichnung: Gabel&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,5&#xa;Abweichung: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K38">Bezeichnung: Welle&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,7&#xa;Abweichung: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K39">Bezeichnung: Blech&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,5&#xa;Abweichung: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K40">Bezeichnung: Lenker&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,7&#xa;Abweichung: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K41">Bezeichnung: Mutter 3/4&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 0,9&#xa;Abweichung: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K42">Bezeichnung: Griff&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,2&#xa;Abweichung: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K43">Bezeichnung: Sattel&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 2,0&#xa;Abweichung: 0,5</sys:String>
+    <sys:String xml:space="preserve" x:Key="K44">Bezeichnung: Stange 1/2&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,0&#xa;Abweichung: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K45">Bezeichnung: Mutter 1/4&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,7&#xa;Abweichung: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K46">Bezeichnung: Schraube 1/4&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 0,9&#xa;Abweichung: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K47">Bezeichnung: Zahnkranz&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,1&#xa;Abweichung: 0,1</sys:String>
+    <sys:String xml:space="preserve" x:Key="K48">Bezeichnung: Pedal&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 1,0&#xa;Abweichung: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K52">Bezeichnung: Felge cpl.&#xa;Verwendung: P1&#xa;Wiedereschaffungszeit: 1,6&#xa;Abweichung: 0,4</sys:String>
+    <sys:String xml:space="preserve" x:Key="K53">Bezeichnung: Speiche&#xa;Verwendung: P1&#xa;Wiedereschaffungszeit: 1,6&#xa;Abweichung: 0,2</sys:String>
+    <sys:String xml:space="preserve" x:Key="K57">Bezeichnung: Felge cpl.&#xa;Verwendung: P2&#xa;Wiedereschaffungszeit: 1,7&#xa;Abweichung: 0,3</sys:String>
+    <sys:String xml:space="preserve" x:Key="K58">Bezeichnung: Speiche&#xa;Verwendung: P2&#xa;Wiedereschaffungszeit: 1,6&#xa;Abweichung: 0,5</sys:String>
+    <sys:String xml:space="preserve" x:Key="K59">Bezeichnung: Schweißdraht&#xa;Verwendung: P1,2,3&#xa;Wiedereschaffungszeit: 0,7&#xa;Abweichung: 0,2</sys:String>
+
 
 </ResourceDictionary>

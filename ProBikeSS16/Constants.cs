@@ -60,6 +60,9 @@ namespace ProBikeSS16
 
         public static DataTable Kapaza;
 
+        //Blocking Errors for Exporting XML
+        public static bool blockingErrorKapaPlan;
+
         //SetUpLastPeriod
         public static int A1SetUpsLastPeriod;
         public static int A2SetUpsLastPeriod;
