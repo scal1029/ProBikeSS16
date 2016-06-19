@@ -201,6 +201,7 @@ namespace ProBikeSS16
             calcWholeCap();
             calcWorkLoad();
             calculateShiftAndOverDo();
+            calcCulateApproxCosts();
         }
 
         #region Refreshing Functions
@@ -399,20 +400,47 @@ namespace ProBikeSS16
 
         public void calculateShiftAndOverDo()
         {
-            SuOTimeA1.Text = calcShift(Int32.Parse(wholeKapA1.Text));
-            SuOTimeA2.Text = calcShift(Int32.Parse(wholeKapA2.Text));
-            SuOTimeA3.Text = calcShift(Int32.Parse(wholeKapA3.Text));
-            SuOTimeA4.Text = calcShift(Int32.Parse(wholeKapA4.Text));
-            SuOTimeA6.Text = calcShift(Int32.Parse(wholeKapA6.Text));
-            SuOTimeA7.Text = calcShift(Int32.Parse(wholeKapA7.Text));
-            SuOTimeA8.Text = calcShift(Int32.Parse(wholeKapA8.Text));
-            SuOTimeA9.Text = calcShift(Int32.Parse(wholeKapA9.Text));
-            SuOTimeA10.Text = calcShift(Int32.Parse(wholeKapA10.Text));
-            SuOTimeA11.Text = calcShift(Int32.Parse(wholeKapA11.Text));
-            SuOTimeA12.Text = calcShift(Int32.Parse(wholeKapA12.Text));
-            SuOTimeA13.Text = calcShift(Int32.Parse(wholeKapA13.Text));
-            SuOTimeA14.Text = calcShift(Int32.Parse(wholeKapA14.Text));
-            SuOTimeA15.Text = calcShift(Int32.Parse(wholeKapA15.Text));
+            int temp = calcShift(Int32.Parse(wholeKapA1.Text));
+            SuOTimeA1.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA2.Text));
+            GlobalVariables.factory.Workplaces[2].ShiftsToDo = temp;
+            SuOTimeA2.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA3.Text));
+            GlobalVariables.factory.Workplaces[3].ShiftsToDo = temp;
+            SuOTimeA3.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA4.Text));
+            GlobalVariables.factory.Workplaces[4].ShiftsToDo = temp;
+            SuOTimeA4.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA6.Text));
+            GlobalVariables.factory.Workplaces[6].ShiftsToDo = temp;
+            SuOTimeA6.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA7.Text));
+            GlobalVariables.factory.Workplaces[7].ShiftsToDo = temp;
+            SuOTimeA7.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA8.Text));
+            GlobalVariables.factory.Workplaces[8].ShiftsToDo = temp;
+            SuOTimeA8.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA9.Text));
+            GlobalVariables.factory.Workplaces[9].ShiftsToDo = temp;
+            SuOTimeA9.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA10.Text));
+            GlobalVariables.factory.Workplaces[10].ShiftsToDo = temp;
+            SuOTimeA10.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA11.Text));
+            GlobalVariables.factory.Workplaces[11].ShiftsToDo = temp;
+            SuOTimeA11.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA12.Text));
+            GlobalVariables.factory.Workplaces[12].ShiftsToDo = temp;
+            SuOTimeA12.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA13.Text));
+            GlobalVariables.factory.Workplaces[13].ShiftsToDo = temp;
+            SuOTimeA13.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA14.Text));
+            GlobalVariables.factory.Workplaces[14].ShiftsToDo = temp;
+            SuOTimeA14.Text = temp.ToString();
+            temp = calcShift(Int32.Parse(wholeKapA15.Text));
+            GlobalVariables.factory.Workplaces[15].ShiftsToDo = temp;
+            SuOTimeA15.Text = temp.ToString();
 
             OTimeA1.Text = calcOverDo(Int32.Parse(wholeKapA1.Text));
             OTimeA2.Text = calcOverDo(Int32.Parse(wholeKapA2.Text));
@@ -470,12 +498,18 @@ namespace ProBikeSS16
                 MessageBox.Show("Workplace 1 has an overload in worktime (" + Math.Abs(7200 - sum) + " minutes), please reduce the specific production");
                 GlobalVariables.blockingErrorKapaPlan = true;
                 wholeKapA1.Text = (7200 - sum).ToString();
-            } else if (sum < 1200)
+            }
+            else if (sum < 1200)
             {
-                MessageBox.Show("WARNING | Workplace 1 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                MessageBox.Show("WARNING | Workplace 1 has a low workload (" + sum + " (" + (int)(((double)sum / 2400) * 100) + "%)) --> Recommendation to improve it!");
+                wholeKapA1.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[1].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA1.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[1].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA2.Text) + Int32.Parse(setUpTimeA2.Text) + Int32.Parse(kapOldA2.Text) + Int32.Parse(setUpOldTimeA2.Text);
             if (sum > 7200)
@@ -487,10 +521,15 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 2 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA2.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[2].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA2.Text = sum.ToString();
-
+                GlobalVariables.factory.Workplaces[2].CurrentWorkTime = sum;
+            }
+        
             sum = Int32.Parse(kapA3.Text) + Int32.Parse(setUpTimeA3.Text) + Int32.Parse(kapOldA3.Text) + Int32.Parse(setUpOldTimeA3.Text);
             if (sum > 7200)
             {
@@ -501,9 +540,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 3 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA3.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[3].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA3.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[3].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA4.Text) + Int32.Parse(setUpTimeA4.Text) + Int32.Parse(kapOldA4.Text) + Int32.Parse(setUpOldTimeA4.Text);
             if (sum > 7200)
@@ -515,9 +559,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 4 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA4.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[4].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA4.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[4].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA6.Text) + Int32.Parse(setUpTimeA6.Text) + Int32.Parse(kapOldA6.Text) + Int32.Parse(setUpOldTimeA6.Text);
             if (sum > 7200)
@@ -529,9 +578,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 6 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA6.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[6].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA6.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[6].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA7.Text) + Int32.Parse(setUpTimeA7.Text) + Int32.Parse(kapOldA7.Text) + Int32.Parse(setUpOldTimeA7.Text);
             if (sum > 7200)
@@ -543,9 +597,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 7 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA7.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[7].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA7.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[7].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA8.Text) + Int32.Parse(setUpTimeA8.Text) + Int32.Parse(kapOldA8.Text) + Int32.Parse(setUpOldTimeA8.Text);
             if (sum > 7200)
@@ -557,9 +616,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 8 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA8.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[8].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA8.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[8].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA9.Text) + Int32.Parse(setUpTimeA9.Text) + Int32.Parse(kapOldA9.Text) + Int32.Parse(setUpOldTimeA9.Text);
             if (sum > 7200)
@@ -571,9 +635,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 9 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA9.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[9].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA9.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[9].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA10.Text) + Int32.Parse(setUpTimeA10.Text) + Int32.Parse(kapOldA10.Text) + Int32.Parse(setUpOldTimeA10.Text);
             if (sum > 7200)
@@ -585,9 +654,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 10 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA10.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[10].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA10.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[10].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA11.Text) + Int32.Parse(setUpTimeA11.Text) + Int32.Parse(kapOldA11.Text) + Int32.Parse(setUpOldTimeA11.Text);
             if (sum > 7200)
@@ -599,9 +673,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 11 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA11.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[11].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA11.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[11].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA12.Text) + Int32.Parse(setUpTimeA12.Text) + Int32.Parse(kapOldA12.Text) + Int32.Parse(setUpOldTimeA12.Text);
             if (sum > 7200)
@@ -613,9 +692,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 12 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA12.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[12].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA12.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[12].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA13.Text) + Int32.Parse(setUpTimeA13.Text) + Int32.Parse(kapOldA13.Text) + Int32.Parse(setUpOldTimeA13.Text);
             if (sum > 7200)
@@ -627,9 +711,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 13 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA13.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[13].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA13.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[13].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA14.Text) + Int32.Parse(setUpTimeA14.Text) + Int32.Parse(kapOldA14.Text) + Int32.Parse(setUpOldTimeA14.Text);
             if (sum > 7200)
@@ -641,9 +730,14 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 14 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA14.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[14].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA14.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[14].CurrentWorkTime = sum;
+            }
 
             sum = Int32.Parse(kapA15.Text) + Int32.Parse(setUpTimeA15.Text) + Int32.Parse(kapOldA15.Text) + Int32.Parse(setUpOldTimeA15.Text);
             if (sum > 7200)
@@ -655,9 +749,63 @@ namespace ProBikeSS16
             else if (sum < 1200)
             {
                 MessageBox.Show("WARNING | Workplace 15 has a low workload (" + sum + " (" + (int)(((double)sum /2400)*100) + "%)) --> Recommendation to improve it!");
+                wholeKapA15.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[15].CurrentWorkTime = sum;
             }
             else
+            {
                 wholeKapA15.Text = sum.ToString();
+                GlobalVariables.factory.Workplaces[15].CurrentWorkTime = sum;
+            }
+        }
+
+        public void calcCulateApproxCosts()
+        {
+            double sum = 0;
+            double zSum = 0;
+            sum += zSum = calcCostsWP(1, Int32.Parse(wholeKapA1.Text));
+            wholeKapA1.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(2, Int32.Parse(wholeKapA2.Text));
+            wholeKapA2.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(3, Int32.Parse(wholeKapA3.Text));
+            wholeKapA3.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(4, Int32.Parse(wholeKapA4.Text));
+            wholeKapA4.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(6, Int32.Parse(wholeKapA6.Text));
+            wholeKapA6.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(7, Int32.Parse(wholeKapA7.Text));
+            wholeKapA7.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(8, Int32.Parse(wholeKapA8.Text));
+            wholeKapA8.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(9, Int32.Parse(wholeKapA9.Text));
+            wholeKapA9.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(10, Int32.Parse(wholeKapA10.Text));
+            wholeKapA10.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(11, Int32.Parse(wholeKapA11.Text));
+            wholeKapA11.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(12, Int32.Parse(wholeKapA12.Text));
+            wholeKapA12.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(13, Int32.Parse(wholeKapA13.Text));
+            wholeKapA13.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(14, Int32.Parse(wholeKapA14.Text));
+            wholeKapA14.ToolTip = "Approximate Costs " + zSum + "€";
+            sum += zSum = calcCostsWP(15, Int32.Parse(wholeKapA15.Text));
+            wholeKapA15.ToolTip = "Approximate Costs " + zSum + "€";
+
+            wholeKapLabel.ToolTip = "Whole Costs: " + sum + "€ | Average Costs per WP: " + Math.Round(sum / 14, 2) + "€";
+
+        }
+
+        public double calcCostsWP(int id, int wholeCap)
+        {
+            double sum = 0;
+            if (wholeCap > 7200)
+                return -1;
+            
+            sum += GlobalVariables.factory.Workplaces[id].getApproxWageCosts();
+            sum += GlobalVariables.factory.Workplaces[id].getApproxMaachineCosts();
+
+            return Math.Round(sum, 2);
         }
 
         public void calcWorkLoad()
@@ -714,7 +862,7 @@ namespace ProBikeSS16
             return 0;
         }
 
-        public string calcShift(int sum)
+        public int calcShift(int sum)
         {
             int shift = 0;
             if (sum > 7200 || sum < 0)
@@ -732,7 +880,7 @@ namespace ProBikeSS16
             else
                 shift = 1;
 
-            return shift.ToString();
+            return shift;
         }
 
         public string calcOverDo(int sum)
@@ -11053,6 +11201,7 @@ namespace ProBikeSS16
             calcWholeCap();
             calcWorkLoad();
             calculateShiftAndOverDo();
+            calcCulateApproxCosts();
         }
 
         #endregion Data

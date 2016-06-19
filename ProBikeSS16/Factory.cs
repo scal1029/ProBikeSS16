@@ -148,6 +148,14 @@ namespace ProBikeSS16
             }
         }
 
+        internal Dictionary<int, Workplace> Workplaces
+        {
+            get
+            {
+                return workplaces;
+            }
+        }
+
         private Factory()
         {
             initWorkplaces();
