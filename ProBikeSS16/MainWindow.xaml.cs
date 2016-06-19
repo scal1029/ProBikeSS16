@@ -11824,9 +11824,9 @@ namespace ProBikeSS16
 
         private void Handbuch(object sender, RoutedEventArgs e)
         {
-            string Pfad = System.AppDomain.CurrentDomain.BaseDirectory;
+            string path = AppDomain.CurrentDomain.BaseDirectory;
 
-            System.Diagnostics.Process.Start(Pfad + @"Handbuch.pdf");
+            System.Diagnostics.Process.Start("AcroRd32", path + @"Handbuch.pdf");
         }
 
         private void Evaluierung(object sender, RoutedEventArgs e)
