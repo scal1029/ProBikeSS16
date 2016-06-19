@@ -11897,24 +11897,24 @@ namespace ProBikeSS16
                 {
 
 
-                    //double check1 = ((double)dr[2]);
-                    //if (GetDecimals(((decimal)check1)) > 1)
-                    //{
-                    //    if (germanHeader.IsChecked == true)
-                    //        MessageBox.Show("Artikel: " + ((double)dr[0]).ToString() + " Format Strafe XXX.X Nachkommastellen");
-                    //    if (germanHeader.IsChecked == false)
-                    //        MessageBox.Show("Article: " + ((double)dr[0]).ToString() + " Format Penalty XXX.X Decimals");
-                    //    return;
-                    //}
-                    //double check2 = ((double)dr[3]);
-                    //if (GetDecimals(((decimal)check2)) > 1)
-                    //{
-                    //    if (germanHeader.IsChecked == true)
-                    //        MessageBox.Show("Artikel: " + ((double)dr[0]).ToString() + " Format Price XXX.X Nachkommastellen");
-                    //    if (germanHeader.IsChecked == false)
-                    //        MessageBox.Show("Article: " + ((double)dr[0]).ToString() + " Format Preis XXX.X Decimals");
-                    //    return;
-                    //}
+                    double check1 = ((double)dr[2]);
+                    if (GetDecimals(((decimal)check1)) > 1)
+                    {
+                        if (germanHeader.IsChecked == true)
+                            MessageBox.Show("Direktverkäufe Artikel: " + ((int)dr[1]).ToString() + " Format Strafe XXX.X; Nur eine Nachkommastellen");
+                        if (germanHeader.IsChecked == false)
+                            MessageBox.Show("Direct Sales Article: " + ((int)dr[1]).ToString() + " Format Penalty XXX.X; only one Decimal");
+                        return;
+                    }
+                    double check2 = ((double)dr[3]);
+                    if (GetDecimals(((decimal)check2)) > 1)
+                    {
+                        if (germanHeader.IsChecked == true)
+                            MessageBox.Show("Artikel: " + ((int)dr[1]).ToString() + " Format Price XXX.X Nachkommastellen");
+                        if (germanHeader.IsChecked == false)
+                            MessageBox.Show("Article: " + ((int)dr[1]).ToString() + " Format Preis XXX.X Decimals");
+                        return;
+                    }
 
                     DirektVerkäufe.Add(new XMLselldirect((int)dr["quantity"], (int)dr["article"], (double)dr["price"], (double)dr["penalty"]));
 
@@ -11993,7 +11993,16 @@ namespace ProBikeSS16
         {
             string path = AppDomain.CurrentDomain.BaseDirectory;
 
-            System.Diagnostics.Process.Start("AcroRd32", path + @"Handbuch.pdf");
+            try
+            {
+                System.Diagnostics.Process.Start(path + @"Handbuch.pdf");
+                
+            }
+            catch
+            {
+                System.Diagnostics.Process.Start("AcroRd32", path + @"Handbuch.pdf");
+            }
+            
         }
 
         private void Evaluierung(object sender, RoutedEventArgs e)
