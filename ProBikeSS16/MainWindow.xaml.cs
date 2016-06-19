@@ -58,7 +58,23 @@ namespace ProBikeSS16
                 !SalesFemaleBikeN1.Value.HasValue || !SalesFemaleBikeN2.Value.HasValue || !SalesFemaleBikeN3.Value.HasValue || !SalesMaleBikeN.Value.HasValue ||
                 !SalesMaleBikeN1.Value.HasValue || !SalesMaleBikeN2.Value.HasValue || !SalesMaleBikeN3.Value.HasValue)
             {
-                MessageBox.Show("Error: Neue Werte nicht übernommen");
+                if(germanHeader.IsChecked == true)
+                    MessageBox.Show("Error: Nicht alle Werte ausgefüllt");
+                if (germanHeader.IsChecked == false)
+                    MessageBox.Show("Error: Missing Input Data");
+
+                GlobalVariables.ForecastCorrect = false;
+            }
+            else if ((SafetyStockChildBike.Value % 10 != 0 || SafetyStockFemaleBike.Value % 10 != 0 || SafetyStockMaleBike.Value % 10 != 0 || SalesChildBikeN.Value % 10 != 0 ||
+                SalesChildBikeN1.Value % 10 != 0 || SalesChildBikeN2.Value % 10 != 0 || SalesChildBikeN3.Value % 10 != 0 || SalesFemaleBikeN.Value % 10 != 0 ||
+                SalesFemaleBikeN1.Value % 10 != 0 || SalesFemaleBikeN2.Value % 10 != 0 || SalesFemaleBikeN3.Value % 10 != 0 || SalesMaleBikeN.Value % 10 != 0 ||
+                SalesMaleBikeN1.Value % 10 != 0 || SalesMaleBikeN2.Value % 10 != 0 || SalesMaleBikeN3.Value % 10 != 0))
+            {
+                if (germanHeader.IsChecked == true)
+                    MessageBox.Show("Error: Stückelung muss 10 sein");
+                if (germanHeader.IsChecked == false)
+                    MessageBox.Show("Error: Batschsize must be 10");
+
                 GlobalVariables.ForecastCorrect = false;
             }
             else
@@ -148,7 +164,7 @@ namespace ProBikeSS16
 
 
                 }
-                catch (XmlException)
+                catch (XmlException exception)
                 {
                     XMLPath.Text = null;
                     MessageBox.Show("Your XML was probably bad...");
@@ -4002,6 +4018,7 @@ namespace ProBikeSS16
             GlobalVariables.ProduktionsAufträgeAktuellePeriode.Clear();
             foreach (DataRow Produktionsauftrag in GlobalVariables.dtProdOrder.Rows)
             {
+                int Index;
                 if (Produktionsauftrag[0] != null && Produktionsauftrag[1] != null)
                 {
                     foreach (TeilPrototyp teil in GlobalVariables.AlleTeile)
@@ -4321,6 +4338,7 @@ namespace ProBikeSS16
             int BruttoT21P2 = GlobalVariables.SaleChildBikeN1.GetValueOrDefault() * 1;
             int BruttoT21P3 = GlobalVariables.SaleChildBikeN2.GetValueOrDefault() * 1;
             int BruttoT21P4 = GlobalVariables.SaleChildBikeN3.GetValueOrDefault() * 1;
+            int P1Zuwachs = 0;
             int P2Zuwachs = 0;
             int P3Zuwachs = 0;
             int P4Zuwachs = 0;
@@ -4426,6 +4444,7 @@ namespace ProBikeSS16
             int BruttoT22P2 = GlobalVariables.SaleFemaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT22P3 = GlobalVariables.SaleFemaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT22P4 = GlobalVariables.SaleFemaleBikeN3.GetValueOrDefault() * 1;
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
@@ -4530,7 +4549,10 @@ namespace ProBikeSS16
             int BruttoT23P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT23P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT23P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
@@ -4629,9 +4651,11 @@ namespace ProBikeSS16
             int BruttoT24P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN1.Value * 7 + GlobalVariables.SaleFemaleBikeN1.Value * 7;
             int BruttoT24P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN2.Value * 7 + GlobalVariables.SaleFemaleBikeN2.Value * 7;
             int BruttoT24P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN3.Value * 7 + GlobalVariables.SaleFemaleBikeN3.Value * 7;
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+            int P5Zuwachs = 0;
 
             if (BruttoT24P1 < 0)
                 BruttoT24P1 = 0;
@@ -4732,7 +4756,9 @@ namespace ProBikeSS16
             int BruttoT25P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 4;
             int BruttoT25P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 4;
             int BruttoT25P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 4;
-            
+
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
@@ -4833,10 +4859,8 @@ namespace ProBikeSS16
             int BruttoT27P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2;
             int BruttoT27P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2;
 
-            Bestellungsplannung.Rows.Add(27, LagerZuBeginn[27], BruttoT27P1, BruttoT27P2, BruttoT27P3, BruttoT27P4,
-                LagerZuBeginn[27] - BruttoT27P1, LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2, LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3,
-                LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3 - BruttoT27P2);
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
@@ -4936,7 +4960,8 @@ namespace ProBikeSS16
             int BruttoT28P2 = GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 5 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 6;
             int BruttoT28P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
             int BruttoT28P4 = GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 5 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 6;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
@@ -5041,7 +5066,8 @@ namespace ProBikeSS16
             int BruttoT32P2 = GlobalVariables.SaleChildBikeN1.Value * 3 + GlobalVariables.SaleFemaleBikeN1.Value * 3 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 3;
             int BruttoT32P3 = GlobalVariables.SaleChildBikeN2.Value * 3 + GlobalVariables.SaleFemaleBikeN2.Value * 3 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 3;
             int BruttoT32P4 = GlobalVariables.SaleChildBikeN3.Value * 3 + GlobalVariables.SaleFemaleBikeN3.Value * 3 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 3;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
@@ -5152,19 +5178,20 @@ namespace ProBikeSS16
             int BruttoT33P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
             int BruttoT33P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT33P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
-            if (BruttoT21P1 < 0)
-                BruttoT21P1 = 0;
-            if (BruttoT21P2 < 0)
-                BruttoT21P2 = 0;
-            if (BruttoT21P3 < 0)
-                BruttoT21P3 = 0;
-            if (BruttoT21P4 < 0)
-                BruttoT21P4 = 0;
+            if (BruttoT33P1 < 0)
+                BruttoT33P1 = 0;
+            if (BruttoT33P2 < 0)
+                BruttoT33P2 = 0;
+            if (BruttoT33P3 < 0)
+                BruttoT33P3 = 0;
+            if (BruttoT33P4 < 0)
+                BruttoT33P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -5258,10 +5285,20 @@ namespace ProBikeSS16
             int BruttoT34P2 = GlobalVariables.SaleChildBikeN1.Value * 72 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
             int BruttoT34P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT34P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT34P1 < 0)
+                BruttoT34P1 = 0;
+            if (BruttoT34P2 < 0)
+                BruttoT34P2 = 0;
+            if (BruttoT34P3 < 0)
+                BruttoT34P3 = 0;
+            if (BruttoT34P4 < 0)
+                BruttoT34P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -5350,10 +5387,20 @@ namespace ProBikeSS16
             int BruttoT35P2 = GlobalVariables.SaleChildBikeN1.Value * 4 + GlobalVariables.SaleFemaleBikeN1.Value * 5 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 6;
             int BruttoT35P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
             int BruttoT35P4 = GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 5 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 6;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT35P1 < 0)
+                BruttoT35P1 = 0;
+            if (BruttoT35P2 < 0)
+                BruttoT35P2 = 0;
+            if (BruttoT35P3 < 0)
+                BruttoT35P3 = 0;
+            if (BruttoT35P4 < 0)
+                BruttoT35P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -5452,10 +5499,20 @@ namespace ProBikeSS16
             int BruttoT36P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT36P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT36P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT36P1 < 0)
+                BruttoT36P1 = 0;
+            if (BruttoT36P2 < 0)
+                BruttoT36P2 = 0;
+            if (BruttoT36P3 < 0)
+                BruttoT36P3 = 0;
+            if (BruttoT36P4 < 0)
+                BruttoT36P4 = 0;
 
             results = AlteBestellungen.Select("item = '36'");
             foreach (var row in results)
@@ -5541,10 +5598,20 @@ namespace ProBikeSS16
             int BruttoT37P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT37P1 < 0)
+                BruttoT37P1 = 0;
+            if (BruttoT37P2 < 0)
+                BruttoT37P2 = 0;
+            if (BruttoT37P3 < 0)
+                BruttoT37P3 = 0;
+            if (BruttoT37P4 < 0)
+                BruttoT37P4 = 0;
 
             results = AlteBestellungen.Select("item = '37'");
             foreach (var row in results)
@@ -5630,10 +5697,20 @@ namespace ProBikeSS16
             int BruttoT38P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT38P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT38P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT38P1 < 0)
+                BruttoT38P1 = 0;
+            if (BruttoT38P2 < 0)
+                BruttoT38P2 = 0;
+            if (BruttoT38P3 < 0)
+                BruttoT38P3 = 0;
+            if (BruttoT38P4 < 0)
+                BruttoT38P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -5727,10 +5804,20 @@ namespace ProBikeSS16
             int BruttoT39P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
             int BruttoT39P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT39P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT39P1 < 0)
+                BruttoT39P1 = 0;
+            if (BruttoT39P2 < 0)
+                BruttoT39P2 = 0;
+            if (BruttoT39P3 < 0)
+                BruttoT39P3 = 0;
+            if (BruttoT39P4 < 0)
+                BruttoT39P4 = 0;
 
             results = AlteBestellungen.Select("item = '39'");
             foreach (var row in results)
@@ -5816,10 +5903,20 @@ namespace ProBikeSS16
             int BruttoT40P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT40P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT40P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT40P1 < 0)
+                BruttoT40P1 = 0;
+            if (BruttoT40P2 < 0)
+                BruttoT40P2 = 0;
+            if (BruttoT40P3 < 0)
+                BruttoT40P3 = 0;
+            if (BruttoT40P4 < 0)
+                BruttoT40P4 = 0;
 
             results = AlteBestellungen.Select("item = '40'");
             foreach (var row in results)
@@ -5906,11 +6003,20 @@ namespace ProBikeSS16
             int BruttoT41P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT41P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT41P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT41P1 < 0)
+                BruttoT41P1 = 0;
+            if (BruttoT41P2 < 0)
+                BruttoT41P2 = 0;
+            if (BruttoT41P3 < 0)
+                BruttoT41P3 = 0;
+            if (BruttoT41P4 < 0)
+                BruttoT41P4 = 0;
 
             results = AlteBestellungen.Select("item = '41'");
             foreach (var row in results)
@@ -5998,11 +6104,20 @@ namespace ProBikeSS16
             int BruttoT42P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
             int BruttoT42P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT42P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT42P1 < 0)
+                BruttoT42P1 = 0;
+            if (BruttoT42P2 < 0)
+                BruttoT42P2 = 0;
+            if (BruttoT42P3 < 0)
+                BruttoT42P3 = 0;
+            if (BruttoT42P4 < 0)
+                BruttoT42P4 = 0;
 
             results = AlteBestellungen.Select("item = '42'");
             foreach (var row in results)
@@ -6090,10 +6205,20 @@ namespace ProBikeSS16
             int BruttoT43P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT43P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT43P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT43P1 < 0)
+                BruttoT43P1 = 0;
+            if (BruttoT43P2 < 0)
+                BruttoT43P2 = 0;
+            if (BruttoT43P3 < 0)
+                BruttoT43P3 = 0;
+            if (BruttoT43P4 < 0)
+                BruttoT43P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -6193,11 +6318,20 @@ namespace ProBikeSS16
             int BruttoT44P2 = GlobalVariables.SaleChildBikeN1.Value * 3 + GlobalVariables.SaleFemaleBikeN1.Value * 3 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 3;
             int BruttoT44P3 = GlobalVariables.SaleChildBikeN2.Value * 3 + GlobalVariables.SaleFemaleBikeN2.Value * 3 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 3;
             int BruttoT44P4 = GlobalVariables.SaleChildBikeN3.Value * 3 + GlobalVariables.SaleFemaleBikeN3.Value * 3 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 3;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT44P1 < 0)
+                BruttoT44P1 = 0;
+            if (BruttoT44P2 < 0)
+                BruttoT44P2 = 0;
+            if (BruttoT44P3 < 0)
+                BruttoT44P3 = 0;
+            if (BruttoT44P4 < 0)
+                BruttoT44P4 = 0;
 
             results = AlteBestellungen.Select("item = '44'");
             foreach (var row in results)
@@ -6284,10 +6418,20 @@ namespace ProBikeSS16
             int BruttoT45P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT45P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT45P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT45P1 < 0)
+                BruttoT45P1 = 0;
+            if (BruttoT45P2 < 0)
+                BruttoT45P2 = 0;
+            if (BruttoT45P3 < 0)
+                BruttoT45P3 = 0;
+            if (BruttoT45P4 < 0)
+                BruttoT45P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -6376,11 +6520,20 @@ namespace ProBikeSS16
             int BruttoT46P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT46P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT46P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT46P1 < 0)
+                BruttoT46P1 = 0;
+            if (BruttoT46P2 < 0)
+                BruttoT46P2 = 0;
+            if (BruttoT46P3 < 0)
+                BruttoT46P3 = 0;
+            if (BruttoT46P4 < 0)
+                BruttoT46P4 = 0;
 
             results = AlteBestellungen.Select("item = '46'");
             foreach (var row in results)
@@ -6467,11 +6620,20 @@ namespace ProBikeSS16
             int BruttoT47P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT47P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT47P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT47P1 < 0)
+                BruttoT47P1 = 0;
+            if (BruttoT47P2 < 0)
+                BruttoT47P2 = 0;
+            if (BruttoT47P3 < 0)
+                BruttoT47P3 = 0;
+            if (BruttoT47P4 < 0)
+                BruttoT47P4 = 0;
 
             results = AlteBestellungen.Select("item = '47'");
             foreach (var row in results)
@@ -6558,11 +6720,20 @@ namespace ProBikeSS16
             int BruttoT48P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 2;
             int BruttoT48P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT48P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT48P1 < 0)
+                BruttoT48P1 = 0;
+            if (BruttoT48P2 < 0)
+                BruttoT48P2 = 0;
+            if (BruttoT48P3 < 0)
+                BruttoT48P3 = 0;
+            if (BruttoT48P4 < 0)
+                BruttoT48P4 = 0;
 
             results = AlteBestellungen.Select("item = '48'");
             foreach (var row in results)
@@ -6649,10 +6820,20 @@ namespace ProBikeSS16
             int BruttoT52P2 = GlobalVariables.SaleChildBikeN1.Value * 2 + GlobalVariables.SaleFemaleBikeN1.Value * 0 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
             int BruttoT52P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT52P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT52P1 < 0)
+                BruttoT52P1 = 0;
+            if (BruttoT52P2 < 0)
+                BruttoT52P2 = 0;
+            if (BruttoT52P3 < 0)
+                BruttoT52P3 = 0;
+            if (BruttoT52P4 < 0)
+                BruttoT52P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -6747,10 +6928,19 @@ namespace ProBikeSS16
             int BruttoT53P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT53P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT53P1 < 0)
+                BruttoT53P1 = 0;
+            if (BruttoT53P2 < 0)
+                BruttoT53P2 = 0;
+            if (BruttoT53P3 < 0)
+                BruttoT53P3 = 0;
+            if (BruttoT53P4 < 0)
+                BruttoT53P4 = 0;
 
             results = AlteBestellungen.Select("item = '53'");
             foreach (var row in results)
@@ -6836,10 +7026,20 @@ namespace ProBikeSS16
             int BruttoT57P2 = GlobalVariables.SaleChildBikeN1.Value * 0 + GlobalVariables.SaleFemaleBikeN1.Value * 2 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 0;
             int BruttoT57P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT57P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT57P1 < 0)
+                BruttoT57P1 = 0;
+            if (BruttoT57P2 < 0)
+                BruttoT57P2 = 0;
+            if (BruttoT57P3 < 0)
+                BruttoT57P3 = 0;
+            if (BruttoT57P4 < 0)
+                BruttoT57P4 = 0;
 
             results = AlteBestellungen.Select("item = '57'");
             foreach (var row in results)
@@ -6932,10 +7132,19 @@ namespace ProBikeSS16
             int BruttoT58P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 72 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT58P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 72 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT58P1 < 0)
+                BruttoT58P1 = 0;
+            if (BruttoT58P2 < 0)
+                BruttoT58P2 = 0;
+            if (BruttoT58P3 < 0)
+                BruttoT58P3 = 0;
+            if (BruttoT58P4 < 0)
+                BruttoT58P4 = 0;
 
             results = AlteBestellungen.Select("item = '58'");
             foreach (var row in results)
@@ -7028,10 +7237,19 @@ namespace ProBikeSS16
             int BruttoT59P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT59P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT59P1 < 0)
+                BruttoT59P1 = 0;
+            if (BruttoT59P2 < 0)
+                BruttoT59P2 = 0;
+            if (BruttoT59P3 < 0)
+                BruttoT59P3 = 0;
+            if (BruttoT59P4 < 0)
+                BruttoT59P4 = 0;
 
             results = AlteBestellungen.Select("item = '59'");
             foreach (var row in results)
@@ -7232,6 +7450,25 @@ namespace ProBikeSS16
             if (GlobalVariables.E31Produktionsauftrag > 0)
                 E31Produktionsauftrag = GlobalVariables.E31Produktionsauftrag;
 
+
+
+            int t4 = 0;
+            int t5 = 0;
+            int t6 = 0;
+            int t7 = 0;
+            int t8 = 0;
+            int t9 = 0;
+            int t10 = 0;
+            int t11 = 0;
+            int t12 = 0;
+            int t13 = 0;
+            int t14 = 0;
+            int t15 = 0;
+            int t16 = 0;
+            int t17 = 0;
+            int t18 = 0;
+            int t19 = 0;
+            int t20 = 0;
             int t21 = P1Produktionsauftrag;
             int t22 = P2Produktionsauftrag;
             int t23 = P3Produktionsauftrag;
@@ -7240,9 +7477,13 @@ namespace ProBikeSS16
                  + P1Produktionsauftrag + P2Produktionsauftrag + P3Produktionsauftrag;
             int t25 = E49Produktionsauftrag* 2 + E54Produktionsauftrag * 2 + E29Produktionsauftrag * 2 + E50Produktionsauftrag * 2
                 + E55Produktionsauftrag * 2 + E30Produktionsauftrag * 2; ;
+            int t26 = 0;
             int t27 = +E51Produktionsauftrag + E56Produktionsauftrag + E31Produktionsauftrag
                 + P1Produktionsauftrag + P2Produktionsauftrag + P3Produktionsauftrag;
             int t28 = E16Produktionsauftrag + E18Produktionsauftrag*3 + E19Produktionsauftrag*4 + E20Produktionsauftrag*5;
+            int t29 = 0;
+            int t30 = 0;
+            int t31 = 0;
             int t32 = E10Produktionsauftrag + E11Produktionsauftrag + E12Produktionsauftrag + E13Produktionsauftrag + E14Produktionsauftrag + E15Produktionsauftrag
                 + E18Produktionsauftrag + E19Produktionsauftrag + E20Produktionsauftrag;
             int t33 = E6Produktionsauftrag + E9Produktionsauftrag;
@@ -7262,10 +7503,14 @@ namespace ProBikeSS16
             int t46 = E17Produktionsauftrag;
             int t47 = E26Produktionsauftrag*1;
             int t48 = E26Produktionsauftrag*2;
-
+            int t49 = 0;
+            int t50 = 0;
+            int t51 = 0;
             int t52 = E4Produktionsauftrag + E7Produktionsauftrag;
             int t53 = E4Produktionsauftrag* 36 + E7Produktionsauftrag*36;
-
+            int t54 = 0;
+            int t55 = 0;
+            int t56 = 0;
             int t57 = E5Produktionsauftrag + E8Produktionsauftrag;
             int t58 = E5Produktionsauftrag* 36 + E8Produktionsauftrag*36;
             int t59 = E18Produktionsauftrag*2 + E19Produktionsauftrag*2 + E20Produktionsauftrag*2;
@@ -8365,7 +8610,7 @@ namespace ProBikeSS16
 
 
 
-            //Teil21
+                       //Teil21
             double T21LZ = 1.8;
             double T21AB = 0.4;
             double T21E = 1.8 / 2;
@@ -8373,9 +8618,19 @@ namespace ProBikeSS16
             int BruttoT21P2 = GlobalVariables.SaleChildBikeN1.GetValueOrDefault() * 1;
             int BruttoT21P3 = GlobalVariables.SaleChildBikeN2.GetValueOrDefault() * 1;
             int BruttoT21P4 = GlobalVariables.SaleChildBikeN3.GetValueOrDefault() * 1;
+            int P1Zuwachs = 0;
             int P2Zuwachs = 0;
             int P3Zuwachs = 0;
             int P4Zuwachs = 0;
+
+            if (BruttoT21P1 < 0)
+                BruttoT21P1 = 0;
+            if (BruttoT21P2 < 0)
+                BruttoT21P2 = 0;
+            if (BruttoT21P3 < 0)
+                BruttoT21P3 = 0;
+            if (BruttoT21P4 < 0)
+                BruttoT21P4 = 0;
 
 
             DataRow[] results = AlteBestellungen.Select("item = '21'");
@@ -8414,12 +8669,13 @@ namespace ProBikeSS16
                     }
                 }
             }
-
+            
 
             int Periode1 = LagerZuBeginn[21] - BruttoT21P1;
             int Periode2 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 + P2Zuwachs;
             int Periode3 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 + P3Zuwachs;
             int Periode4 = LagerZuBeginn[21] - BruttoT21P1 - BruttoT21P2 - BruttoT21P3 - BruttoT21P2 + P4Zuwachs;
+
 
             int Modus = 5;
             int Bestellmenge = 0;
@@ -8468,10 +8724,19 @@ namespace ProBikeSS16
             int BruttoT22P2 = GlobalVariables.SaleFemaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT22P3 = GlobalVariables.SaleFemaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT22P4 = GlobalVariables.SaleFemaleBikeN3.GetValueOrDefault() * 1;
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT22P1 < 0)
+                BruttoT22P1 = 0;
+            if (BruttoT22P2 < 0)
+                BruttoT22P2 = 0;
+            if (BruttoT22P3 < 0)
+                BruttoT22P3 = 0;
+            if (BruttoT22P4 < 0)
+                BruttoT22P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -8565,10 +8830,21 @@ namespace ProBikeSS16
             int BruttoT23P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT23P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            
+
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT23P1 < 0)
+                BruttoT23P1 = 0;
+            if (BruttoT23P2 < 0)
+                BruttoT23P2 = 0;
+            if (BruttoT23P3 < 0)
+                BruttoT23P3 = 0;
+            if (BruttoT23P4 < 0)
+                BruttoT23P4 = 0;
 
             results = AlteBestellungen.Select("item = '23'");
             foreach (var row in results)
@@ -8655,10 +8931,20 @@ namespace ProBikeSS16
             int BruttoT24P2 = GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN1.Value * 7 + GlobalVariables.SaleFemaleBikeN1.Value * 7;
             int BruttoT24P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN2.Value * 7 + GlobalVariables.SaleFemaleBikeN2.Value * 7;
             int BruttoT24P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 7 + GlobalVariables.SaleChildBikeN3.Value * 7 + GlobalVariables.SaleFemaleBikeN3.Value * 7;
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+            int P5Zuwachs = 0;
 
+            if (BruttoT24P1 < 0)
+                BruttoT24P1 = 0;
+            if (BruttoT24P2 < 0)
+                BruttoT24P2 = 0;
+            if (BruttoT24P3 < 0)
+                BruttoT24P3 = 0;
+            if (BruttoT24P4 < 0)
+                BruttoT24P4 = 0;
 
             results = AlteBestellungen.Select("item = '24'");
             foreach (var row in results)
@@ -8752,11 +9038,19 @@ namespace ProBikeSS16
             int BruttoT25P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 4 + GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 4;
 
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT25P1 < 0)
+                BruttoT25P1 = 0;
+            if (BruttoT25P2 < 0)
+                BruttoT25P2 = 0;
+            if (BruttoT25P3 < 0)
+                BruttoT25P3 = 0;
+            if (BruttoT25P4 < 0)
+                BruttoT25P4 = 0;
 
             results = AlteBestellungen.Select("item = '25'");
             foreach (var row in results)
@@ -8845,15 +9139,21 @@ namespace ProBikeSS16
             int BruttoT27P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2;
             int BruttoT27P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2 + GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2;
 
-            Bestellungsplannung.Rows.Add(27, LagerZuBeginn[27], BruttoT27P1, BruttoT27P2, BruttoT27P3, BruttoT27P4,
-                LagerZuBeginn[27] - BruttoT27P1, LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2, LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3,
-                LagerZuBeginn[27] - BruttoT27P1 - BruttoT27P2 - BruttoT27P3 - BruttoT27P2);
 
-            
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT27P1 < 0)
+                BruttoT27P1 = 0;
+            if (BruttoT27P2 < 0)
+                BruttoT27P2 = 0;
+            if (BruttoT27P3 < 0)
+                BruttoT27P3 = 0;
+            if (BruttoT27P4 < 0)
+                BruttoT27P4 = 0;
 
             results = AlteBestellungen.Select("item = '27'");
             foreach (var row in results)
@@ -8942,10 +9242,18 @@ namespace ProBikeSS16
             int BruttoT28P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
             int BruttoT28P4 = GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 5 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 6;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+            if (BruttoT28P1 < 0)
+                BruttoT28P1 = 0;
+            if (BruttoT28P2 < 0)
+                BruttoT28P2 = 0;
+            if (BruttoT28P3 < 0)
+                BruttoT28P3 = 0;
+            if (BruttoT28P4 < 0)
+                BruttoT28P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -9040,10 +9348,19 @@ namespace ProBikeSS16
             int BruttoT32P3 = GlobalVariables.SaleChildBikeN2.Value * 3 + GlobalVariables.SaleFemaleBikeN2.Value * 3 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 3;
             int BruttoT32P4 = GlobalVariables.SaleChildBikeN3.Value * 3 + GlobalVariables.SaleFemaleBikeN3.Value * 3 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 3;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT32P1 < 0)
+                BruttoT32P1 = 0;
+            if (BruttoT32P2 < 0)
+                BruttoT32P2 = 0;
+            if (BruttoT32P3 < 0)
+                BruttoT32P3 = 0;
+            if (BruttoT32P4 < 0)
+                BruttoT32P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -9143,10 +9460,19 @@ namespace ProBikeSS16
             int BruttoT33P3 = GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT33P4 = GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT33P1 < 0)
+                BruttoT33P1 = 0;
+            if (BruttoT33P2 < 0)
+                BruttoT33P2 = 0;
+            if (BruttoT33P3 < 0)
+                BruttoT33P3 = 0;
+            if (BruttoT33P4 < 0)
+                BruttoT33P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -9241,10 +9567,19 @@ namespace ProBikeSS16
             int BruttoT34P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT34P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT34P1 < 0)
+                BruttoT34P1 = 0;
+            if (BruttoT34P2 < 0)
+                BruttoT34P2 = 0;
+            if (BruttoT34P3 < 0)
+                BruttoT34P3 = 0;
+            if (BruttoT34P4 < 0)
+                BruttoT34P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -9334,10 +9669,19 @@ namespace ProBikeSS16
             int BruttoT35P3 = GlobalVariables.SaleChildBikeN2.Value * 4 + GlobalVariables.SaleFemaleBikeN2.Value * 5 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 6;
             int BruttoT35P4 = GlobalVariables.SaleChildBikeN3.Value * 4 + GlobalVariables.SaleFemaleBikeN3.Value * 5 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 6;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT35P1 < 0)
+                BruttoT35P1 = 0;
+            if (BruttoT35P2 < 0)
+                BruttoT35P2 = 0;
+            if (BruttoT35P3 < 0)
+                BruttoT35P3 = 0;
+            if (BruttoT35P4 < 0)
+                BruttoT35P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -9437,10 +9781,19 @@ namespace ProBikeSS16
             int BruttoT36P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT36P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT36P1 < 0)
+                BruttoT36P1 = 0;
+            if (BruttoT36P2 < 0)
+                BruttoT36P2 = 0;
+            if (BruttoT36P3 < 0)
+                BruttoT36P3 = 0;
+            if (BruttoT36P4 < 0)
+                BruttoT36P4 = 0;
 
             results = AlteBestellungen.Select("item = '36'");
             foreach (var row in results)
@@ -9527,10 +9880,19 @@ namespace ProBikeSS16
             int BruttoT37P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT37P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT37P1 < 0)
+                BruttoT37P1 = 0;
+            if (BruttoT37P2 < 0)
+                BruttoT37P2 = 0;
+            if (BruttoT37P3 < 0)
+                BruttoT37P3 = 0;
+            if (BruttoT37P4 < 0)
+                BruttoT37P4 = 0;
 
             results = AlteBestellungen.Select("item = '37'");
             foreach (var row in results)
@@ -9617,10 +9979,19 @@ namespace ProBikeSS16
             int BruttoT38P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT38P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT38P1 < 0)
+                BruttoT38P1 = 0;
+            if (BruttoT38P2 < 0)
+                BruttoT38P2 = 0;
+            if (BruttoT38P3 < 0)
+                BruttoT38P3 = 0;
+            if (BruttoT38P4 < 0)
+                BruttoT38P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -9715,10 +10086,19 @@ namespace ProBikeSS16
             int BruttoT39P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT39P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT39P1 < 0)
+                BruttoT39P1 = 0;
+            if (BruttoT39P2 < 0)
+                BruttoT39P2 = 0;
+            if (BruttoT39P3 < 0)
+                BruttoT39P3 = 0;
+            if (BruttoT39P4 < 0)
+                BruttoT39P4 = 0;
 
             results = AlteBestellungen.Select("item = '39'");
             foreach (var row in results)
@@ -9805,10 +10185,19 @@ namespace ProBikeSS16
             int BruttoT40P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT40P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT40P1 < 0)
+                BruttoT40P1 = 0;
+            if (BruttoT40P2 < 0)
+                BruttoT40P2 = 0;
+            if (BruttoT40P3 < 0)
+                BruttoT40P3 = 0;
+            if (BruttoT40P4 < 0)
+                BruttoT40P4 = 0;
 
             results = AlteBestellungen.Select("item = '40'");
             foreach (var row in results)
@@ -9896,11 +10285,19 @@ namespace ProBikeSS16
             int BruttoT41P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT41P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT41P1 < 0)
+                BruttoT41P1 = 0;
+            if (BruttoT41P2 < 0)
+                BruttoT41P2 = 0;
+            if (BruttoT41P3 < 0)
+                BruttoT41P3 = 0;
+            if (BruttoT41P4 < 0)
+                BruttoT41P4 = 0;
 
             results = AlteBestellungen.Select("item = '41'");
             foreach (var row in results)
@@ -9989,11 +10386,19 @@ namespace ProBikeSS16
             int BruttoT42P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT42P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT42P1 < 0)
+                BruttoT42P1 = 0;
+            if (BruttoT42P2 < 0)
+                BruttoT42P2 = 0;
+            if (BruttoT42P3 < 0)
+                BruttoT42P3 = 0;
+            if (BruttoT42P4 < 0)
+                BruttoT42P4 = 0;
 
             results = AlteBestellungen.Select("item = '42'");
             foreach (var row in results)
@@ -10082,10 +10487,19 @@ namespace ProBikeSS16
             int BruttoT43P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT43P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT43P1 < 0)
+                BruttoT43P1 = 0;
+            if (BruttoT43P2 < 0)
+                BruttoT43P2 = 0;
+            if (BruttoT43P3 < 0)
+                BruttoT43P3 = 0;
+            if (BruttoT43P4 < 0)
+                BruttoT43P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -10186,11 +10600,19 @@ namespace ProBikeSS16
             int BruttoT44P3 = GlobalVariables.SaleChildBikeN2.Value * 3 + GlobalVariables.SaleFemaleBikeN2.Value * 3 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 3;
             int BruttoT44P4 = GlobalVariables.SaleChildBikeN3.Value * 3 + GlobalVariables.SaleFemaleBikeN3.Value * 3 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 3;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT44P1 < 0)
+                BruttoT44P1 = 0;
+            if (BruttoT44P2 < 0)
+                BruttoT44P2 = 0;
+            if (BruttoT44P3 < 0)
+                BruttoT44P3 = 0;
+            if (BruttoT44P4 < 0)
+                BruttoT44P4 = 0;
 
             results = AlteBestellungen.Select("item = '44'");
             foreach (var row in results)
@@ -10278,10 +10700,19 @@ namespace ProBikeSS16
             int BruttoT45P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT45P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT45P1 < 0)
+                BruttoT45P1 = 0;
+            if (BruttoT45P2 < 0)
+                BruttoT45P2 = 0;
+            if (BruttoT45P3 < 0)
+                BruttoT45P3 = 0;
+            if (BruttoT45P4 < 0)
+                BruttoT45P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -10371,11 +10802,19 @@ namespace ProBikeSS16
             int BruttoT46P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT46P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT46P1 < 0)
+                BruttoT46P1 = 0;
+            if (BruttoT46P2 < 0)
+                BruttoT46P2 = 0;
+            if (BruttoT46P3 < 0)
+                BruttoT46P3 = 0;
+            if (BruttoT46P4 < 0)
+                BruttoT46P4 = 0;
 
             results = AlteBestellungen.Select("item = '46'");
             foreach (var row in results)
@@ -10462,10 +10901,20 @@ namespace ProBikeSS16
             int BruttoT47P2 = GlobalVariables.SaleChildBikeN1.Value * 1 + GlobalVariables.SaleFemaleBikeN1.Value * 1 + GlobalVariables.SaleMaleBikeN1.GetValueOrDefault() * 1;
             int BruttoT47P3 = GlobalVariables.SaleChildBikeN2.Value * 1 + GlobalVariables.SaleFemaleBikeN2.Value * 1 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 1;
             int BruttoT47P4 = GlobalVariables.SaleChildBikeN3.Value * 1 + GlobalVariables.SaleFemaleBikeN3.Value * 1 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 1;
+
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT47P1 < 0)
+                BruttoT47P1 = 0;
+            if (BruttoT47P2 < 0)
+                BruttoT47P2 = 0;
+            if (BruttoT47P3 < 0)
+                BruttoT47P3 = 0;
+            if (BruttoT47P4 < 0)
+                BruttoT47P4 = 0;
 
             results = AlteBestellungen.Select("item = '47'");
             foreach (var row in results)
@@ -10553,11 +11002,19 @@ namespace ProBikeSS16
             int BruttoT48P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT48P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
 
+            if (BruttoT48P1 < 0)
+                BruttoT48P1 = 0;
+            if (BruttoT48P2 < 0)
+                BruttoT48P2 = 0;
+            if (BruttoT48P3 < 0)
+                BruttoT48P3 = 0;
+            if (BruttoT48P4 < 0)
+                BruttoT48P4 = 0;
 
             results = AlteBestellungen.Select("item = '48'");
             foreach (var row in results)
@@ -10645,10 +11102,19 @@ namespace ProBikeSS16
             int BruttoT52P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT52P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT52P1 < 0)
+                BruttoT52P1 = 0;
+            if (BruttoT52P2 < 0)
+                BruttoT52P2 = 0;
+            if (BruttoT52P3 < 0)
+                BruttoT52P3 = 0;
+            if (BruttoT52P4 < 0)
+                BruttoT52P4 = 0;
 
             foreach (DataRow DR in AlteBestellungen.Rows)
             {
@@ -10743,10 +11209,19 @@ namespace ProBikeSS16
             int BruttoT53P3 = GlobalVariables.SaleChildBikeN2.Value * 72 + GlobalVariables.SaleFemaleBikeN2.Value * 0 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT53P4 = GlobalVariables.SaleChildBikeN3.Value * 72 + GlobalVariables.SaleFemaleBikeN3.Value * 0 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT53P1 < 0)
+                BruttoT53P1 = 0;
+            if (BruttoT53P2 < 0)
+                BruttoT53P2 = 0;
+            if (BruttoT53P3 < 0)
+                BruttoT53P3 = 0;
+            if (BruttoT53P4 < 0)
+                BruttoT53P4 = 0;
 
             results = AlteBestellungen.Select("item = '53'");
             foreach (var row in results)
@@ -10833,10 +11308,19 @@ namespace ProBikeSS16
             int BruttoT57P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT57P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT57P1 < 0)
+                BruttoT57P1 = 0;
+            if (BruttoT57P2 < 0)
+                BruttoT57P2 = 0;
+            if (BruttoT57P3 < 0)
+                BruttoT57P3 = 0;
+            if (BruttoT57P4 < 0)
+                BruttoT57P4 = 0;
 
             results = AlteBestellungen.Select("item = '57'");
             foreach (var row in results)
@@ -10929,10 +11413,19 @@ namespace ProBikeSS16
             int BruttoT58P3 = GlobalVariables.SaleChildBikeN2.Value * 0 + GlobalVariables.SaleFemaleBikeN2.Value * 72 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 0;
             int BruttoT58P4 = GlobalVariables.SaleChildBikeN3.Value * 0 + GlobalVariables.SaleFemaleBikeN3.Value * 72 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 0;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT58P1 < 0)
+                BruttoT58P1 = 0;
+            if (BruttoT58P2 < 0)
+                BruttoT58P2 = 0;
+            if (BruttoT58P3 < 0)
+                BruttoT58P3 = 0;
+            if (BruttoT58P4 < 0)
+                BruttoT58P4 = 0;
 
             results = AlteBestellungen.Select("item = '58'");
             foreach (var row in results)
@@ -11025,10 +11518,19 @@ namespace ProBikeSS16
             int BruttoT59P3 = GlobalVariables.SaleChildBikeN2.Value * 2 + GlobalVariables.SaleFemaleBikeN2.Value * 2 + GlobalVariables.SaleMaleBikeN2.GetValueOrDefault() * 2;
             int BruttoT59P4 = GlobalVariables.SaleChildBikeN3.Value * 2 + GlobalVariables.SaleFemaleBikeN3.Value * 2 + GlobalVariables.SaleMaleBikeN3.GetValueOrDefault() * 2;
 
-            
+            P1Zuwachs = 0;
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
+
+            if (BruttoT59P1 < 0)
+                BruttoT59P1 = 0;
+            if (BruttoT59P2 < 0)
+                BruttoT59P2 = 0;
+            if (BruttoT59P3 < 0)
+                BruttoT59P3 = 0;
+            if (BruttoT59P4 < 0)
+                BruttoT59P4 = 0;
 
             results = AlteBestellungen.Select("item = '59'");
             foreach (var row in results)
