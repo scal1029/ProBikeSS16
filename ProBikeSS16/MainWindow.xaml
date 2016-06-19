@@ -1213,234 +1213,234 @@
                                     <Label Grid.Column="2" Grid.Row="30" Content="P1" HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="30" ></Label>
                                     <Label Grid.Column="2" Grid.Row="31" Content="P2" HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="30" ></Label>
                                     <Label Grid.Column="2" Grid.Row="32" Content="P3" HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="54" Width="30" ></Label>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E4A10" Grid.Column="13" Grid.Row="3" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E5A10" Grid.Column="13" Grid.Row="4" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E6A10" Grid.Column="13" Grid.Row="5" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E7A10" Grid.Column="13" Grid.Row="6" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E8A10" Grid.Column="13" Grid.Row="7" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E9A10" Grid.Column="13" Grid.Row="8" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E4A10" Grid.Column="13" Grid.Row="3" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E5A10" Grid.Column="13" Grid.Row="4" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E6A10" Grid.Column="13" Grid.Row="5" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E7A10" Grid.Column="13" Grid.Row="6" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E8A10" Grid.Column="13" Grid.Row="7" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E9A10" Grid.Column="13" Grid.Row="8" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E4A11" Grid.Column="14" Grid.Row="3" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E5A11" Grid.Column="14" Grid.Row="4" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E6A11" Grid.Column="14" Grid.Row="5" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E7A11" Grid.Column="14" Grid.Row="6" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E8A11" Grid.Column="14" Grid.Row="7" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E9A11" Grid.Column="14" Grid.Row="8" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E4A11" Grid.Column="14" Grid.Row="3" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E5A11" Grid.Column="14" Grid.Row="4" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E6A11" Grid.Column="14" Grid.Row="5" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E7A11" Grid.Column="14" Grid.Row="6" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E8A11" Grid.Column="14" Grid.Row="7" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E9A11" Grid.Column="14" Grid.Row="8" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A7" Grid.Column="10" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A7" Grid.Column="10" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A7" Grid.Column="10" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A7" Grid.Column="10" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A7" Grid.Column="10" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A7" Grid.Column="10" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A7" Grid.Column="10" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A7" Grid.Column="10" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A7" Grid.Column="10" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A7" Grid.Column="10" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A7" Grid.Column="10" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A7" Grid.Column="10" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A8" Grid.Column="11" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A8" Grid.Column="11" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A8" Grid.Column="11" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A8" Grid.Column="11" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A8" Grid.Column="11" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A8" Grid.Column="11" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A8" Grid.Column="11" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A8" Grid.Column="11" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A8" Grid.Column="11" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A8" Grid.Column="11" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A8" Grid.Column="11" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A8" Grid.Column="11" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A9" Grid.Column="12" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A9" Grid.Column="12" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A9" Grid.Column="12" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A9" Grid.Column="12" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A9" Grid.Column="12" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A9" Grid.Column="12" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A9" Grid.Column="12" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A9" Grid.Column="12" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A9" Grid.Column="12" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A9" Grid.Column="12" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A9" Grid.Column="12" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A9" Grid.Column="12" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A12" Grid.Column="15" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A12" Grid.Column="15" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A12" Grid.Column="15" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A12" Grid.Column="15" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A12" Grid.Column="15" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A12" Grid.Column="15" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A12" Grid.Column="15" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A12" Grid.Column="15" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A12" Grid.Column="15" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A12" Grid.Column="15" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A12" Grid.Column="15" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A12" Grid.Column="15" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A13" Grid.Column="16" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A13" Grid.Column="16" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A13" Grid.Column="16" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A13" Grid.Column="16" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A13" Grid.Column="16" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A13" Grid.Column="16" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E10A13" Grid.Column="16" Grid.Row="9" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E11A13" Grid.Column="16" Grid.Row="10" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E12A13" Grid.Column="16" Grid.Row="11" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E13A13" Grid.Column="16" Grid.Row="12" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E14A13" Grid.Column="16" Grid.Row="13" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E15A13" Grid.Column="16" Grid.Row="14" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E16A6" Grid.Column="9" Grid.Row="15" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E16A14" Grid.Column="17" Grid.Row="15" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E16A6" Grid.Column="9" Grid.Row="15" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E16A14" Grid.Column="17" Grid.Row="15" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E17A15" Grid.Column="18" Grid.Row="16" Margin="20,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E17A15" Grid.Column="18" Grid.Row="16" Margin="20,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E18A6" Grid.Column="9" Grid.Row="17" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E19A6" Grid.Column="9" Grid.Row="18" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E20A6" Grid.Column="9" Grid.Row="19" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E18A6" Grid.Column="9" Grid.Row="17" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E19A6" Grid.Column="9" Grid.Row="18" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E20A6" Grid.Column="9" Grid.Row="19" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E18A7" Grid.Column="10" Grid.Row="17" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E19A7" Grid.Column="10" Grid.Row="18" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E20A7" Grid.Column="10" Grid.Row="19" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E18A7" Grid.Column="10" Grid.Row="17" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E19A7" Grid.Column="10" Grid.Row="18" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E20A7" Grid.Column="10" Grid.Row="19" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E18A8" Grid.Column="11" Grid.Row="17" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E19A8" Grid.Column="11" Grid.Row="18" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E20A8" Grid.Column="11" Grid.Row="19" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E18A8" Grid.Column="11" Grid.Row="17" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E19A8" Grid.Column="11" Grid.Row="18" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E20A8" Grid.Column="11" Grid.Row="19" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E18A9" Grid.Column="12" Grid.Row="17" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E19A9" Grid.Column="12" Grid.Row="18" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E20A9" Grid.Column="12" Grid.Row="19" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E18A9" Grid.Column="12" Grid.Row="17" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E19A9" Grid.Column="12" Grid.Row="18" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E20A9" Grid.Column="12" Grid.Row="19" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E26A7" Grid.Column="10" Grid.Row="20" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E26A15" Grid.Column="18" Grid.Row="20" Margin="20,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E26A7" Grid.Column="10" Grid.Row="20" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E26A15" Grid.Column="18" Grid.Row="20" Margin="20,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E49A1" Grid.Column="4" Grid.Row="21" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E54A1" Grid.Column="4" Grid.Row="22" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E29A1" Grid.Column="4" Grid.Row="23" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E49A1" Grid.Column="4" Grid.Row="21" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E54A1" Grid.Column="4" Grid.Row="22" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E29A1" Grid.Column="4" Grid.Row="23" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E50A2" Grid.Column="5" Grid.Row="24" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E55A2" Grid.Column="5" Grid.Row="25" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E30A2" Grid.Column="5" Grid.Row="26" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E50A2" Grid.Column="5" Grid.Row="24" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E55A2" Grid.Column="5" Grid.Row="25" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E30A2" Grid.Column="5" Grid.Row="26" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E51A3" Grid.Column="6" Grid.Row="27" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E56A3" Grid.Column="6" Grid.Row="28" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E31A3" Grid.Column="6" Grid.Row="29" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E51A3" Grid.Column="6" Grid.Row="27" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E56A3" Grid.Column="6" Grid.Row="28" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="E31A3" Grid.Column="6" Grid.Row="29" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="P1A4" Grid.Column="7" Grid.Row="30" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="P2A4" Grid.Column="7" Grid.Row="31" Margin="15,0,0,0" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="P3A4" Grid.Column="7" Grid.Row="32" Margin="15,0,0,0" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="P1A4" Grid.Column="7" Grid.Row="30" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="P2A4" Grid.Column="7" Grid.Row="31" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="P3A4" Grid.Column="7" Grid.Row="32" Margin="15,0,0,0" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE4" Grid.Column="3" Grid.Row="3" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE5" Grid.Column="3" Grid.Row="4" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE6" Grid.Column="3" Grid.Row="5" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE7" Grid.Column="3" Grid.Row="6" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE8" Grid.Column="3" Grid.Row="7" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE9" Grid.Column="3" Grid.Row="8" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE10" Grid.Column="3" Grid.Row="9" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE11" Grid.Column="3" Grid.Row="10" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE12" Grid.Column="3" Grid.Row="11" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE13" Grid.Column="3" Grid.Row="12" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE14" Grid.Column="3" Grid.Row="13" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE15" Grid.Column="3" Grid.Row="14" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE16" Grid.Column="3" Grid.Row="15" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE17" Grid.Column="3" Grid.Row="16" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE18" Grid.Column="3" Grid.Row="17" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE19" Grid.Column="3" Grid.Row="18" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE20" Grid.Column="3" Grid.Row="19" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE26" Grid.Column="3" Grid.Row="20" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE49" Grid.Column="3" Grid.Row="21" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE54" Grid.Column="3" Grid.Row="22" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE29" Grid.Column="3" Grid.Row="23" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE50" Grid.Column="3" Grid.Row="24" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE55" Grid.Column="3" Grid.Row="25" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE30" Grid.Column="3" Grid.Row="26" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE51" Grid.Column="3" Grid.Row="27" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE56" Grid.Column="3" Grid.Row="28" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE31" Grid.Column="3" Grid.Row="29" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmP1" Grid.Column="3" Grid.Row="30" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmP2" Grid.Column="3" Grid.Row="31" TextAlignment="Center" IsReadOnly="True"/>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmP3" Grid.Column="3" Grid.Row="32" TextAlignment="Center" IsReadOnly="True"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE4" Grid.Column="3" Grid.Row="3" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE5" Grid.Column="3" Grid.Row="4" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE6" Grid.Column="3" Grid.Row="5" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE7" Grid.Column="3" Grid.Row="6" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE8" Grid.Column="3" Grid.Row="7" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE9" Grid.Column="3" Grid.Row="8" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE10" Grid.Column="3" Grid.Row="9" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE11" Grid.Column="3" Grid.Row="10" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE12" Grid.Column="3" Grid.Row="11" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE13" Grid.Column="3" Grid.Row="12" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE14" Grid.Column="3" Grid.Row="13" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE15" Grid.Column="3" Grid.Row="14" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE16" Grid.Column="3" Grid.Row="15" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE17" Grid.Column="3" Grid.Row="16" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE18" Grid.Column="3" Grid.Row="17" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE19" Grid.Column="3" Grid.Row="18" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE20" Grid.Column="3" Grid.Row="19" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE26" Grid.Column="3" Grid.Row="20" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE49" Grid.Column="3" Grid.Row="21" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE54" Grid.Column="3" Grid.Row="22" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE29" Grid.Column="3" Grid.Row="23" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE50" Grid.Column="3" Grid.Row="24" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE55" Grid.Column="3" Grid.Row="25" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE30" Grid.Column="3" Grid.Row="26" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE51" Grid.Column="3" Grid.Row="27" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE56" Grid.Column="3" Grid.Row="28" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmE31" Grid.Column="3" Grid.Row="29" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmP1" Grid.Column="3" Grid.Row="30" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmP2" Grid.Column="3" Grid.Row="31" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
+                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Name="AmP3" Grid.Column="3" Grid.Row="32" TextAlignment="Center" IsReadOnly="True" FontSize="10"/>
 
-                                    <TextBox Name="kapA1" Grid.Column="4" Grid.Row="33" TextAlignment="Right" IsEnabled="False" FontWeight="Bold" Text="0">
+                                    <TextBox Name="kapA1" Grid.Column="4" Grid.Row="33" TextAlignment="Right" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10">
                                         <TextBox.Background>
                                             <ImageBrush/>
                                         </TextBox.Background>
                                     </TextBox>
-                                    <TextBox Name="kapA2" Grid.Column="5" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA3" Grid.Column="6" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA4" Grid.Column="7" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA6" Grid.Column="9" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA7" Grid.Column="10" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA8" Grid.Column="11" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA9" Grid.Column="12" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA10" Grid.Column="13" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA11" Grid.Column="14" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA12" Grid.Column="15" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA13" Grid.Column="16" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA14" Grid.Column="17" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapA15" Grid.Column="18" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
+                                    <TextBox Name="kapA2" Grid.Column="5" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA3" Grid.Column="6" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA4" Grid.Column="7" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA6" Grid.Column="9" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA7" Grid.Column="10" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA8" Grid.Column="11" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA9" Grid.Column="12" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA10" Grid.Column="13" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA11" Grid.Column="14" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA12" Grid.Column="15" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA13" Grid.Column="16" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA14" Grid.Column="17" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapA15" Grid.Column="18" Grid.Row="33" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
 
-                                    <TextBox Name="setUpTimeA1" Grid.Column="4" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA2" Grid.Column="5" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA3" Grid.Column="6" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA4" Grid.Column="7" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA6" Grid.Column="9" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA7" Grid.Column="10" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA8" Grid.Column="11" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA9" Grid.Column="12" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA10" Grid.Column="13" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA11" Grid.Column="14" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA12" Grid.Column="15" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA13" Grid.Column="16" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA14" Grid.Column="17" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpTimeA15" Grid.Column="18" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
+                                    <TextBox Name="setUpTimeA1" Grid.Column="4" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA2" Grid.Column="5" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA3" Grid.Column="6" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA4" Grid.Column="7" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA6" Grid.Column="9" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA7" Grid.Column="10" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA8" Grid.Column="11" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA9" Grid.Column="12" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA10" Grid.Column="13" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA11" Grid.Column="14" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA12" Grid.Column="15" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA13" Grid.Column="16" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA14" Grid.Column="17" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpTimeA15" Grid.Column="18" Grid.Row="34" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
 
-                                    <TextBox Name="kapOldA1" Grid.Column="4" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" FontWeight="Bold" IsEnabled="False" Text="0"/>
-                                    <TextBox Name="kapOldA2" Grid.Column="5" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA3" Grid.Column="6" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA4" Grid.Column="7" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA6" Grid.Column="9" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA7" Grid.Column="10" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA8" Grid.Column="11" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA9" Grid.Column="12" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA10" Grid.Column="13" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA11" Grid.Column="14" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA12" Grid.Column="15" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA13" Grid.Column="16" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA14" Grid.Column="17" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="kapOldA15" Grid.Column="18" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
+                                    <TextBox Name="kapOldA1" Grid.Column="4" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" FontWeight="Bold" IsEnabled="False" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA2" Grid.Column="5" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA3" Grid.Column="6" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA4" Grid.Column="7" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA6" Grid.Column="9" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA7" Grid.Column="10" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA8" Grid.Column="11" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA9" Grid.Column="12" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA10" Grid.Column="13" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA11" Grid.Column="14" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA12" Grid.Column="15" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA13" Grid.Column="16" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA14" Grid.Column="17" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="kapOldA15" Grid.Column="18" Grid.Row="35" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
 
-                                    <TextBox Name="setUpOldTimeA1" Grid.Column="4" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA2" Grid.Column="5" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA3" Grid.Column="6" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA4" Grid.Column="7" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA6" Grid.Column="9" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA7" Grid.Column="10" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA8" Grid.Column="11" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA9" Grid.Column="12" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA10" Grid.Column="13" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA11" Grid.Column="14" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA12" Grid.Column="15" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA13" Grid.Column="16" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA14" Grid.Column="17" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="setUpOldTimeA15" Grid.Column="18" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0"/>
+                                    <TextBox Name="setUpOldTimeA1" Grid.Column="4" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA2" Grid.Column="5" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA3" Grid.Column="6" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA4" Grid.Column="7" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA6" Grid.Column="9" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA7" Grid.Column="10" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA8" Grid.Column="11" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA9" Grid.Column="12" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA10" Grid.Column="13" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA11" Grid.Column="14" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA12" Grid.Column="15" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA13" Grid.Column="16" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA14" Grid.Column="17" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="setUpOldTimeA15" Grid.Column="18" Grid.Row="36" TextAlignment="Right" Background="{x:Null}" IsEnabled="False" FontWeight="Bold" Text="0" FontSize="10"/>
 
-                                    <TextBox Name="wholeKapA1" Grid.Column="4" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA2" Grid.Column="5" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True"  FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA3" Grid.Column="6" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA4" Grid.Column="7" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA6" Grid.Column="9" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA7" Grid.Column="10" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA8" Grid.Column="11" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA9" Grid.Column="12" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA10" Grid.Column="13" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA11" Grid.Column="14" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA12" Grid.Column="15" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA13" Grid.Column="16" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA14" Grid.Column="17" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="wholeKapA15" Grid.Column="18" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
+                                    <TextBox Name="wholeKapA1" Grid.Column="4" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA2" Grid.Column="5" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True"  FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA3" Grid.Column="6" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA4" Grid.Column="7" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA6" Grid.Column="9" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA7" Grid.Column="10" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA8" Grid.Column="11" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA9" Grid.Column="12" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA10" Grid.Column="13" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA11" Grid.Column="14" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA12" Grid.Column="15" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA13" Grid.Column="16" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA14" Grid.Column="17" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="wholeKapA15" Grid.Column="18" Grid.Row="37" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
 
-                                    <TextBox Name="SuOTimeA1" Grid.Column="4" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA2" Grid.Column="5" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA3" Grid.Column="6" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA4" Grid.Column="7" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA6" Grid.Column="9" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA7" Grid.Column="10" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA8" Grid.Column="11" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA9" Grid.Column="12" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA10" Grid.Column="13" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA11" Grid.Column="14" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA12" Grid.Column="15" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA13" Grid.Column="16" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA14" Grid.Column="17" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="SuOTimeA15" Grid.Column="18" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
+                                    <TextBox Name="SuOTimeA1" Grid.Column="4" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA2" Grid.Column="5" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA3" Grid.Column="6" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA4" Grid.Column="7" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA6" Grid.Column="9" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA7" Grid.Column="10" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA8" Grid.Column="11" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA9" Grid.Column="12" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA10" Grid.Column="13" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA11" Grid.Column="14" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA12" Grid.Column="15" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA13" Grid.Column="16" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA14" Grid.Column="17" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="SuOTimeA15" Grid.Column="18" Grid.Row="38" TextAlignment="Center" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
 
-                                    <TextBox Name="OTimeA1" Grid.Column="4" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA2" Grid.Column="5" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA3" Grid.Column="6" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA4" Grid.Column="7" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA6" Grid.Column="9" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA7" Grid.Column="10" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA8" Grid.Column="11" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA9" Grid.Column="12" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA10" Grid.Column="13" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA11" Grid.Column="14" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA12" Grid.Column="15" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA13" Grid.Column="16" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA14" Grid.Column="17" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
-                                    <TextBox Name="OTimeA15" Grid.Column="18" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0"/>
+                                    <TextBox Name="OTimeA1" Grid.Column="4" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA2" Grid.Column="5" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA3" Grid.Column="6" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA4" Grid.Column="7" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA6" Grid.Column="9" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA7" Grid.Column="10" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA8" Grid.Column="11" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA9" Grid.Column="12" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA10" Grid.Column="13" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA11" Grid.Column="14" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA12" Grid.Column="15" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA13" Grid.Column="16" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA14" Grid.Column="17" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
+                                    <TextBox Name="OTimeA15" Grid.Column="18" Grid.Row="39" TextAlignment="Right" Background="{x:Null}" IsReadOnly="True" FontWeight="Bold" Text="0" FontSize="10"/>
 
                                     <TextBox Name="KPBA5" IsReadOnly="True" Background="SlateGray" Cursor="No" Grid.Column="8" Grid.Row="33" Margin="0,0,0,0"></TextBox>
                                     <TextBox Name="RüBA5" IsReadOnly="True" Background="SlateGray" Cursor="No" Grid.Column="8" Grid.Row="34" Margin="0,0,0,0"></TextBox>
