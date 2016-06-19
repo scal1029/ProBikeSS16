@@ -11750,12 +11750,18 @@ namespace ProBikeSS16
                 }
                 else
                 {
-                    MessageBox.Show("Really");
+                    if (germanHeader.IsChecked == true)
+                        MessageBox.Show("Ernsthaft?");
+                    if (germanHeader.IsChecked == false)
+                        MessageBox.Show("Realy?");
                 }
             }
             else
             {
-                MessageBox.Show("Really");
+                if (germanHeader.IsChecked == true)
+                    MessageBox.Show("Ernsthaft?");
+                if (germanHeader.IsChecked == false)
+                    MessageBox.Show("Realy?");
             }
 
         }
@@ -11789,7 +11795,10 @@ namespace ProBikeSS16
         {
             if(GlobalVariables.blockingErrorKapaPlan)
             {
-                MessageBox.Show("Overtime for at least one Workstation exist! (Please correct the production in the Capa-Plan-Section, to Export the XML properly)");
+                if (germanHeader.IsChecked == true)
+                    MessageBox.Show("Geplante Arbeitszeit is nicht zu realisieren");
+                if (germanHeader.IsChecked == false)
+                    MessageBox.Show("Overtime for at least one Workstation exist! (Please correct the production in the Capa-Plan-Section, to Export the XML properly)");
                 return;
             }
 
@@ -11810,25 +11819,97 @@ namespace ProBikeSS16
             foreach (DataRowView dr in Orderlist.ItemsSource)
             {
                 if (dr[0] != DBNull.Value && dr[1] != DBNull.Value && dr[2] != DBNull.Value)
-                    Bestellungen.Add(new XMLorderlist((int)dr[0], (int)dr[1], (int)dr[2]));
+                {
+                    if(!((int)dr[2] == 4 || (int)dr[2] == 5))
+                    {
+                        if (germanHeader.IsChecked == true)
+                            MessageBox.Show("Artikel: " + ((int)dr[2]).ToString() + " Bestellungsmodus nicht vorhanden");
+                        if (germanHeader.IsChecked == false)
+                            MessageBox.Show("Article: " + ((int)dr[2]).ToString() + "Order mode doesn't exist");
+                        return;
+                    }
+                    else
+                    {
+                        Bestellungen.Add(new XMLorderlist((int)dr[0], (int)dr[1], (int)dr[2]));
+                    }
+                }
+                    
             }
+
+
 
             foreach (System.Data.DataRowView dr in Selldirect.ItemsSource)
             {
                 if (dr[0] != DBNull.Value && dr[1] != DBNull.Value && dr[2] != DBNull.Value && dr[3] != DBNull.Value)
+                {
+
+
+                    //double check1 = ((double)dr[2]);
+                    //if (GetDecimals(((decimal)check1)) > 1)
+                    //{
+                    //    if (germanHeader.IsChecked == true)
+                    //        MessageBox.Show("Artikel: " + ((double)dr[0]).ToString() + " Format Strafe XXX.X Nachkommastellen");
+                    //    if (germanHeader.IsChecked == false)
+                    //        MessageBox.Show("Article: " + ((double)dr[0]).ToString() + " Format Penalty XXX.X Decimals");
+                    //    return;
+                    //}
+                    //double check2 = ((double)dr[3]);
+                    //if (GetDecimals(((decimal)check2)) > 1)
+                    //{
+                    //    if (germanHeader.IsChecked == true)
+                    //        MessageBox.Show("Artikel: " + ((double)dr[0]).ToString() + " Format Price XXX.X Nachkommastellen");
+                    //    if (germanHeader.IsChecked == false)
+                    //        MessageBox.Show("Article: " + ((double)dr[0]).ToString() + " Format Preis XXX.X Decimals");
+                    //    return;
+                    //}
+
                     DirektVerkäufe.Add(new XMLselldirect((int)dr["quantity"], (int)dr["article"], (double)dr["price"], (double)dr["penalty"]));
+
+                }
+                    
             }
 
             foreach (System.Data.DataRowView dr in Productionlist.ItemsSource)
             {
-                if (dr[0] != DBNull.Value && dr[1] != DBNull.Value)
+                if (dr[0] != DBNull.Value && dr[1] != DBNull.Value && (string)dr[1] != "")
                     Aufträge.Add(new XMLproductionlist(int.Parse((string)dr[0]), (int.Parse((string)dr[1]))));
+                else
+                {
+                    if (germanHeader.IsChecked == true)
+                        MessageBox.Show("Produktion ID: " + ((string)dr[0]) + " Leere Menge");
+                    if (germanHeader.IsChecked == false)
+                        MessageBox.Show("Production ID: " + ((string)dr[0]) + " Empty Amount");
+                    return;
+                }
             }
 
             foreach (System.Data.DataRowView dr in Workingtimelist.ItemsSource)
             {
                 if (dr[0] != DBNull.Value && dr[1] != DBNull.Value && dr[2] != DBNull.Value)
-                    Schichten.Add(new XMLworkingtimelist((int)dr[0], (int)dr[1], (int)dr[2]));
+                {
+                    if((int)dr[2] > 240)
+                    {
+                        if (germanHeader.IsChecked == true)
+                            MessageBox.Show( "Station: "+ ((int)dr[0]).ToString() +" Überstunden Maximal 240 Minuten");
+                        if (germanHeader.IsChecked == false)
+                            MessageBox.Show("Station: " + ((int)dr[0]).ToString() + " Overtime Max of 240 Minutes");
+                        return;
+                    }
+                    else if((int)dr[1] == 3 && (int)dr[2] > 0)
+                    {
+                        if (germanHeader.IsChecked == true)
+                            MessageBox.Show("Station: " + ((int)dr[0]).ToString() + " Schicht und Überstunden inkompatibel");
+                        if (germanHeader.IsChecked == false)
+                            MessageBox.Show("Station: " + ((int)dr[0]).ToString() + " Order mode doesn't exist");
+                        return;
+                    }
+                    else
+                    {
+                        Schichten.Add(new XMLworkingtimelist((int)dr[0], (int)dr[1], (int)dr[2]));
+                    }
+                }
+
+                    
             }
 
 
@@ -11943,6 +12024,39 @@ namespace ProBikeSS16
                 {
                     modus = 5;
                 }
+
+
+
+                if (ItemID != 21 && ItemID != 22 && ItemID != 23 && ItemID != 24 && ItemID != 25 && ItemID != 27 && ItemID != 32 && ItemID != 33 &&
+                    ItemID != 34 && ItemID != 35 && ItemID != 36 && ItemID != 37 && ItemID != 38 && ItemID != 39 && ItemID != 40 && ItemID != 41 &&
+                    ItemID != 42 && ItemID != 43 && ItemID != 44 && ItemID != 45 && ItemID != 46 && ItemID != 47 && ItemID != 48 && ItemID != 52 &&
+                    ItemID != 53 && ItemID != 57 && ItemID != 58 && ItemID != 59)
+                {
+                    if (germanHeader.IsChecked == true)
+                        MessageBox.Show("K-Teil mit der ID: " + ItemID + " existiert nicht");
+                    if (germanHeader.IsChecked == false)
+                        MessageBox.Show("K-Part with ID: " + ItemID + " doesn't exist");
+                    return;
+                }
+                if (((amount) <= 0))
+                {
+                    if (germanHeader.IsChecked == true)
+                        MessageBox.Show("Menge erhöhen");
+                    if (germanHeader.IsChecked == false)
+                        MessageBox.Show("Insufficient Amount");
+                    return;
+                }
+                if (((amount) % 10 != 0))
+                {
+                    if (germanHeader.IsChecked == true)
+                        MessageBox.Show("Stückelung beachten");
+                    if (germanHeader.IsChecked == false)
+                        MessageBox.Show("BatchSize Warning");
+                    return;
+                }
+
+
+
                 DataRow AddRow = GlobalVariables.Bestellungsspeicher.NewRow();
                 AddRow["article"] = ItemID;
                 AddRow["quantity"] = amount;
@@ -11950,11 +12064,14 @@ namespace ProBikeSS16
                 
 
                 GlobalVariables.Bestellungsspeicher.Rows.Add(AddRow);
+                OrderArticle.Clear();
+                OrderAmount.Clear();
             }
             else
-            {
-                MessageBox.Show("Fehler");
-            }
+                if (germanHeader.IsChecked == true)
+                MessageBox.Show("Fehlerhafte Eingabe");
+            if (germanHeader.IsChecked == false)
+                MessageBox.Show("Input Error");
 
         }
 
@@ -11964,6 +12081,30 @@ namespace ProBikeSS16
             {
                 e.Handled = true;
             }
+        }
+
+        public bool IsDouble(string text)
+        {
+            Double num = 0;
+            bool isDouble = false;
+
+            // Check for empty string.
+            if (string.IsNullOrEmpty(text))
+            {
+                return false;
+            }
+
+            isDouble = Double.TryParse(text, out num);
+
+            return isDouble;
+        }
+
+        private int GetDecimals(decimal d, int i = 0)
+        {
+            decimal multiplied = (decimal)((double)d * Math.Pow(10, i));
+            if (Math.Round(multiplied) == multiplied)
+                return i;
+            return GetDecimals(d, i + 1);
         }
 
     }

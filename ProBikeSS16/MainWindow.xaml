@@ -86,21 +86,21 @@
                         <Label Grid.Column="1" Grid.Row="2" x:Name="ChildBike" Content="{DynamicResource ResourceKey=ChildBike}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="P1"/>
                         <Label Grid.Column="1" Grid.Row="3" x:Name="FemaleBike" Content="{DynamicResource ResourceKey=FemaleBike}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="P2"/>
                         <Label Grid.Column="1" Grid.Row="4" x:Name="MaleBike" Content="{DynamicResource ResourceKey=MaleBike}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="P3"/>
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="2" Grid.Row="2" x:Name="SafetyStockChildBike" ToolTip="{DynamicResource ResourceKey=SBP1ToolTip}" Background="#FFFF7878" Height="20" Width="100" Increment="1" Minimum="0" Watermark="{DynamicResource ResourceKey=ShortSafetyStock}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="2" Grid.Row="3" x:Name="SafetyStockFemaleBike" ToolTip="{DynamicResource ResourceKey=SBP2ToolTip}" Background="#FFFF7878" Height="20" Width="100" Increment="1" Minimum="0" Watermark="{DynamicResource ResourceKey=ShortSafetyStock}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="2" Grid.Row="4" x:Name="SafetyStockMaleBike" ToolTip="{DynamicResource ResourceKey=SBP3ToolTip}" Background="#FFFF7878" Height="20" Width="100" Increment="1" Minimum="0" Watermark="{DynamicResource ResourceKey=ShortSafetyStock}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="3" Grid.Row="2" x:Name="SalesChildBikeN" ToolTip="{DynamicResource ResourceKey=SalesP1ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="3" Grid.Row="3" x:Name="SalesFemaleBikeN" ToolTip="{DynamicResource ResourceKey=SalesP2ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="3" Grid.Row="4" x:Name="SalesMaleBikeN" ToolTip="{DynamicResource ResourceKey=SalesP3ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="4" Grid.Row="2" x:Name="SalesChildBikeN1" ToolTip="{DynamicResource ResourceKey=SalesP1+1ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="4" Grid.Row="3" x:Name="SalesFemaleBikeN1" ToolTip="{DynamicResource ResourceKey=SalesP2+1ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="4" Grid.Row="4" x:Name="SalesMaleBikeN1" ToolTip="{DynamicResource ResourceKey=SalesP3+1ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="5" Grid.Row="2" x:Name="SalesChildBikeN2" ToolTip="{DynamicResource ResourceKey=SalesP1+2ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="5" Grid.Row="3" x:Name="SalesFemaleBikeN2" ToolTip="{DynamicResource ResourceKey=SalesP2+2ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="5" Grid.Row="4" x:Name="SalesMaleBikeN2" ToolTip="{DynamicResource ResourceKey=SalesP3+2ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="6" Grid.Row="2" x:Name="SalesChildBikeN3" ToolTip="{DynamicResource ResourceKey=SalesP1+3ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="6" Grid.Row="3" x:Name="SalesFemaleBikeN3" ToolTip="{DynamicResource ResourceKey=SalesP2+3ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
-                        <wpfTool:IntegerUpDown CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="6" Grid.Row="4" x:Name="SalesMaleBikeN3" ToolTip="{DynamicResource ResourceKey=SalesP3+3ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="2" Grid.Row="2" x:Name="SafetyStockChildBike" ToolTip="{DynamicResource ResourceKey=SBP1ToolTip}" Background="#FFFF7878" Height="20" Width="100" Increment="1" Minimum="0" Watermark="{DynamicResource ResourceKey=ShortSafetyStock}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="2" Grid.Row="3" x:Name="SafetyStockFemaleBike" ToolTip="{DynamicResource ResourceKey=SBP2ToolTip}" Background="#FFFF7878" Height="20" Width="100" Increment="1" Minimum="0" Watermark="{DynamicResource ResourceKey=ShortSafetyStock}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="2" Grid.Row="4" x:Name="SafetyStockMaleBike" ToolTip="{DynamicResource ResourceKey=SBP3ToolTip}" Background="#FFFF7878" Height="20" Width="100" Increment="1" Minimum="0" Watermark="{DynamicResource ResourceKey=ShortSafetyStock}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="3" Grid.Row="2" x:Name="SalesChildBikeN" ToolTip="{DynamicResource ResourceKey=SalesP1ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="3" Grid.Row="3" x:Name="SalesFemaleBikeN" ToolTip="{DynamicResource ResourceKey=SalesP2ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="3" Grid.Row="4" x:Name="SalesMaleBikeN" ToolTip="{DynamicResource ResourceKey=SalesP3ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="4" Grid.Row="2" x:Name="SalesChildBikeN1" ToolTip="{DynamicResource ResourceKey=SalesP1+1ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="4" Grid.Row="3" x:Name="SalesFemaleBikeN1" ToolTip="{DynamicResource ResourceKey=SalesP2+1ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="4" Grid.Row="4" x:Name="SalesMaleBikeN1" ToolTip="{DynamicResource ResourceKey=SalesP3+1ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="5" Grid.Row="2" x:Name="SalesChildBikeN2" ToolTip="{DynamicResource ResourceKey=SalesP1+2ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="5" Grid.Row="3" x:Name="SalesFemaleBikeN2" ToolTip="{DynamicResource ResourceKey=SalesP2+2ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="5" Grid.Row="4" x:Name="SalesMaleBikeN2" ToolTip="{DynamicResource ResourceKey=SalesP3+2ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="6" Grid.Row="2" x:Name="SalesChildBikeN3" ToolTip="{DynamicResource ResourceKey=SalesP1+3ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="6" Grid.Row="3" x:Name="SalesFemaleBikeN3" ToolTip="{DynamicResource ResourceKey=SalesP2+3ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
+                        <wpfTool:IntegerUpDown PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="6" Grid.Row="4" x:Name="SalesMaleBikeN3" ToolTip="{DynamicResource ResourceKey=SalesP3+3ToolTip}" Background="#FFC2FF78" Height="20" Width="100" Increment="10" Minimum="0" Watermark="{DynamicResource ResourceKey=Sales}" />
                         <Button Grid.Column="6" Grid.Row="5" x:Name="SaveSafetyStockAndSales" Height="20" Width="100" Content="{DynamicResource ResourceKey=Save}" Click="SaveSafetyStockAndSales_OnClick"/>
                         <Label Grid.Column="1" Grid.Row="7" Visibility="Hidden" Grid.ColumnSpan="2" x:Name="XMLLabel" Content="XML" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0" FontSize="30"/>
                         <Image Grid.Column="0" Grid.Row="7" Visibility="Hidden" Grid.ColumnSpan="2" x:Name="XMLImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="54" Source="Images/File Adobe Dreamweaver XML-01.png"/>
@@ -837,7 +837,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding Item, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
+                                                        <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding Item, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -960,8 +960,8 @@
                                     <Label Grid.Column="1" Margin="-130,10,10,550" Content="ID" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
                                     <Label Grid.Column="1" Margin="-130,10,10,500" Content="{DynamicResource ResourceKey=amount}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
                                     <Label Grid.Column="1" Margin="-130,10,10,450" Content="{DynamicResource ResourceKey=Mode}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="1" Name="OrderArticle" Margin="60,10,10,550" Height="20" Width="130"></TextBox>
-                                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="1" Name="OrderAmount" Margin="60,10,10,500" Height="20" Width="130"></TextBox>
+                                    <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="1" Name="OrderArticle" Margin="60,10,10,550" Height="20" Width="130"></TextBox>
+                                    <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Grid.Column="1" Name="OrderAmount" Margin="60,10,10,500" Height="20" Width="130"></TextBox>
                                     <ComboBox Grid.Column="1" Height="20" Width="130" Name="BestellungModus" Margin="60,10,10,450">
                                         <ComboBoxItem Content="Eilbestellung(4)"></ComboBoxItem>
                                         <ComboBoxItem Content="Bestellung(5)"></ComboBoxItem>
@@ -986,7 +986,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
+                                                        <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -996,7 +996,7 @@
                                                 </DataGridTemplateColumn.Header>
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding modus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="1"/>
+                                                        <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding modus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="1"/>
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
@@ -1592,7 +1592,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+                                            <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1606,7 +1606,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1623,7 +1623,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding penalty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding penalty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1634,7 +1634,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+                                            <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1699,7 +1699,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding overtime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="TextBox_PreviewTextInput1to240" />
+                                            <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding overtime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
