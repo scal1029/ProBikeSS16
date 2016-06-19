@@ -164,7 +164,7 @@ namespace ProBikeSS16
 
 
                 }
-                catch (XmlException exception)
+                catch (XmlException)
                 {
                     XMLPath.Text = null;
                     MessageBox.Show("Your XML was probably bad...");
@@ -4018,7 +4018,6 @@ namespace ProBikeSS16
             GlobalVariables.ProduktionsAufträgeAktuellePeriode.Clear();
             foreach (DataRow Produktionsauftrag in GlobalVariables.dtProdOrder.Rows)
             {
-                int Index;
                 if (Produktionsauftrag[0] != null && Produktionsauftrag[1] != null)
                 {
                     foreach (TeilPrototyp teil in GlobalVariables.AlleTeile)
@@ -4655,7 +4654,6 @@ namespace ProBikeSS16
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
-            int P5Zuwachs = 0;
 
             if (BruttoT24P1 < 0)
                 BruttoT24P1 = 0;
@@ -7449,26 +7447,7 @@ namespace ProBikeSS16
             int E31Produktionsauftrag = 0;
             if (GlobalVariables.E31Produktionsauftrag > 0)
                 E31Produktionsauftrag = GlobalVariables.E31Produktionsauftrag;
-
-
-
-            int t4 = 0;
-            int t5 = 0;
-            int t6 = 0;
-            int t7 = 0;
-            int t8 = 0;
-            int t9 = 0;
-            int t10 = 0;
-            int t11 = 0;
-            int t12 = 0;
-            int t13 = 0;
-            int t14 = 0;
-            int t15 = 0;
-            int t16 = 0;
-            int t17 = 0;
-            int t18 = 0;
-            int t19 = 0;
-            int t20 = 0;
+            
             int t21 = P1Produktionsauftrag;
             int t22 = P2Produktionsauftrag;
             int t23 = P3Produktionsauftrag;
@@ -7477,13 +7456,11 @@ namespace ProBikeSS16
                  + P1Produktionsauftrag + P2Produktionsauftrag + P3Produktionsauftrag;
             int t25 = E49Produktionsauftrag* 2 + E54Produktionsauftrag * 2 + E29Produktionsauftrag * 2 + E50Produktionsauftrag * 2
                 + E55Produktionsauftrag * 2 + E30Produktionsauftrag * 2; ;
-            int t26 = 0;
+
             int t27 = +E51Produktionsauftrag + E56Produktionsauftrag + E31Produktionsauftrag
                 + P1Produktionsauftrag + P2Produktionsauftrag + P3Produktionsauftrag;
             int t28 = E16Produktionsauftrag + E18Produktionsauftrag*3 + E19Produktionsauftrag*4 + E20Produktionsauftrag*5;
-            int t29 = 0;
-            int t30 = 0;
-            int t31 = 0;
+
             int t32 = E10Produktionsauftrag + E11Produktionsauftrag + E12Produktionsauftrag + E13Produktionsauftrag + E14Produktionsauftrag + E15Produktionsauftrag
                 + E18Produktionsauftrag + E19Produktionsauftrag + E20Produktionsauftrag;
             int t33 = E6Produktionsauftrag + E9Produktionsauftrag;
@@ -7503,14 +7480,10 @@ namespace ProBikeSS16
             int t46 = E17Produktionsauftrag;
             int t47 = E26Produktionsauftrag*1;
             int t48 = E26Produktionsauftrag*2;
-            int t49 = 0;
-            int t50 = 0;
-            int t51 = 0;
+
             int t52 = E4Produktionsauftrag + E7Produktionsauftrag;
             int t53 = E4Produktionsauftrag* 36 + E7Produktionsauftrag*36;
-            int t54 = 0;
-            int t55 = 0;
-            int t56 = 0;
+
             int t57 = E5Produktionsauftrag + E8Produktionsauftrag;
             int t58 = E5Produktionsauftrag* 36 + E8Produktionsauftrag*36;
             int t59 = E18Produktionsauftrag*2 + E19Produktionsauftrag*2 + E20Produktionsauftrag*2;
@@ -7603,69 +7576,148 @@ namespace ProBikeSS16
                     GlobalVariables.A15SetUpsLastPeriod = (setUps * 15);
                 }
             }
-
+            
             foreach (DataRow row in data.Tables["workplace"].Rows)
             {
                 int id = Convert.ToInt32((string)row["id"]);
-                int timeneed = -1;
-                if (!(row["timeneed"] is DBNull))
-                    timeneed = Convert.ToInt32((string)row["timeneed"]);
+                int orderInWorkTimeNeed = -1;
+                int waitingTimeNeed = -1;
+                if (!(row["timeneed"] is DBNull) && row["period"] is DBNull)
+                    waitingTimeNeed = Convert.ToInt32((string)row["timeneed"]);
 
-                if (id == 1 && timeneed >= 0)
+                if (!(row["timeneed"] is DBNull) && !(row["period"] is DBNull))
+                    orderInWorkTimeNeed = Convert.ToInt32((string)row["timeneed"]);
+
+                if (id == 1)
                 {
-                    kapOldA1.Text = (Int32.Parse(kapOldA1.Text) + timeneed).ToString();
+                    if(waitingTimeNeed >= 0)
+                        kapOldA1.Text = (Int32.Parse(kapOldA1.Text) + waitingTimeNeed).ToString();
+                    if(orderInWorkTimeNeed >= 0)
+                        kapOldA1.Text = (Int32.Parse(kapOldA1.Text) + orderInWorkTimeNeed).ToString();
                 }
-                if (id == 2 && timeneed >= 0)
+                if (id == 2)
                 {
-                    kapOldA2.Text = (Int32.Parse(kapOldA2.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                        kapOldA2.Text = (Int32.Parse(kapOldA2.Text) + waitingTimeNeed).ToString();
+                    if (orderInWorkTimeNeed >= 0)
+                            kapOldA2.Text = (Int32.Parse(kapOldA2.Text) + orderInWorkTimeNeed).ToString();
                 }
-                if (id == 3 && timeneed >= 0)
+                if (id == 3)
                 {
-                    kapOldA3.Text = (Int32.Parse(kapOldA3.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                        kapOldA3.Text = (Int32.Parse(kapOldA3.Text) + waitingTimeNeed).ToString();
+                    if (orderInWorkTimeNeed >= 0)
+                            kapOldA3.Text = (Int32.Parse(kapOldA3.Text) + orderInWorkTimeNeed).ToString();
                 }
-                if (id == 4 && timeneed >= 0)
+                if (id == 4)
                 {
-                    kapOldA4.Text = (Int32.Parse(kapOldA4.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                        kapOldA4.Text = (Int32.Parse(kapOldA4.Text) + waitingTimeNeed).ToString();
+                    if (orderInWorkTimeNeed >= 0)
+                            kapOldA4.Text = (Int32.Parse(kapOldA4.Text) + orderInWorkTimeNeed).ToString();
                 }
-                if (id == 6 && timeneed >= 0)
+                if (id == 6)
                 {
-                    kapOldA6.Text = (Int32.Parse(kapOldA6.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                    {
+                        kapOldA6.Text = (Int32.Parse(kapOldA6.Text) + waitingTimeNeed).ToString();
+                        kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + waitingTimeNeed).ToString();
+                    }
+                    if (orderInWorkTimeNeed >= 0)
+                        kapOldA6.Text = (Int32.Parse(kapOldA6.Text) + orderInWorkTimeNeed).ToString();
+                    
                 }
-                if (id == 7 && timeneed >= 0)
+                if (id == 7)
                 {
-                    kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
+                    kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                    kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + waitingTimeNeed).ToString();
+                    if (orderInWorkTimeNeed >= 0)
+                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + orderInWorkTimeNeed).ToString();
+                    
                 }
-                if (id == 8 && timeneed >= 0)
+                if (id == 8)
                 {
-                    kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                    {
+                        kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + waitingTimeNeed).ToString();
+                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
+                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                    }
+                    if (orderInWorkTimeNeed >= 0)
+                        kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + orderInWorkTimeNeed).ToString();
+                    
                 }
-                if (id == 9 && timeneed >= 0)
+                if (id == 9)
                 {
-                    kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                    {
+                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                    }
+                    if (orderInWorkTimeNeed >= 0)
+                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + orderInWorkTimeNeed).ToString();
+
+                    
                 }
-                if (id == 10 && timeneed >= 0)
+                if (id == 10)
                 {
-                    kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                    {
+                        kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + waitingTimeNeed).ToString();
+                        kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + waitingTimeNeed).ToString();
+                    }
+                    if (orderInWorkTimeNeed >= 0)
+                        kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + orderInWorkTimeNeed).ToString();
+                    
                 }
-                if (id == 11 && timeneed >= 0)
+                if (id == 11)
                 {
-                    kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                        kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + waitingTimeNeed).ToString();
+                    if (orderInWorkTimeNeed >= 0)
+                            kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + orderInWorkTimeNeed).ToString();
                 }
-                if (id == 12 && timeneed >= 0)
+                if (id == 12)
                 {
-                    kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                    {
+                        kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + waitingTimeNeed).ToString();
+                        kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + waitingTimeNeed).ToString();
+                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
+                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                    }
+                    if (orderInWorkTimeNeed >= 0)
+                        kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + orderInWorkTimeNeed).ToString();
+                    
                 }
-                if (id == 13 && timeneed >= 0)
+                if (id == 13)
                 {
-                    kapOldA13.Text = (Int32.Parse(kapOldA13.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                    {
+                        kapOldA13.Text = (Int32.Parse(kapOldA13.Text) + waitingTimeNeed).ToString();
+                        kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + waitingTimeNeed).ToString();
+                        kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + waitingTimeNeed).ToString();
+                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
+                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                    }
+                    if (orderInWorkTimeNeed >= 0)
+                        kapOldA13.Text = (Int32.Parse(kapOldA13.Text) + orderInWorkTimeNeed).ToString();
+                    
                 }
-                if (id == 14 && timeneed >= 0)
+                if (id == 14)
                 {
-                    kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                        kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + waitingTimeNeed).ToString();
+                    if (orderInWorkTimeNeed >= 0)
+                            kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + orderInWorkTimeNeed).ToString();
                 }
-                if (id == 15 && timeneed >= 0)
+                if (id == 15)
                 {
-                    kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + timeneed).ToString();
+                    if (waitingTimeNeed >= 0)
+                        kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + waitingTimeNeed).ToString();
+                    if (orderInWorkTimeNeed >= 0)
+                        kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + orderInWorkTimeNeed).ToString();
                 }
             }
         }
@@ -8935,7 +8987,6 @@ namespace ProBikeSS16
             P2Zuwachs = 0;
             P3Zuwachs = 0;
             P4Zuwachs = 0;
-            int P5Zuwachs = 0;
 
             if (BruttoT24P1 < 0)
                 BruttoT24P1 = 0;

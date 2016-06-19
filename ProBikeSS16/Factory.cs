@@ -8,6 +8,7 @@ namespace ProBikeSS16
     public sealed class Factory
     {
         static readonly Factory instance = new Factory();
+        public delegate int partFunc(int x);
 
         Dictionary<int, Workplace> workplaces = new Dictionary<int, Workplace>();
         WP_1 wp_1;
