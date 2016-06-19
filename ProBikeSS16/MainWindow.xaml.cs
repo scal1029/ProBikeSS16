@@ -11661,20 +11661,53 @@ namespace ProBikeSS16
 
         private void AddOrder_OnClick(object sender, RoutedEventArgs e)
         {
-            if (AddItemBox.Text.Length > 0 && AddAmountBox.Text.Length > 0)
+            if ((AddItemBox.Text.Length > 0 && AddAmountBox.Text.Length > 0))
             {
                 string ItemID;
                 string amount;
                 ItemID = AddItemBox.Text;
                 amount = AddAmountBox.Text;
+                if(int.Parse(ItemID) <= 0 || int.Parse(ItemID) > 56 || (20 < int.Parse(ItemID) && int.Parse(ItemID) < 26) 
+                    || ((26 < int.Parse(ItemID) && int.Parse(ItemID) < 57) && ((int.Parse(ItemID) != 29) && (int.Parse(ItemID) != 30) && (int.Parse(ItemID) != 31) 
+                    && (int.Parse(ItemID) != 49) && (int.Parse(ItemID) != 50) && (int.Parse(ItemID) != 51)
+                    && (int.Parse(ItemID) != 54) && (int.Parse(ItemID) != 55) && (int.Parse(ItemID) != 56))))
+                {
+                    if(germanHeader.IsChecked == true)
+                        MessageBox.Show("P- oder E-Teil mit der ID: " + ItemID + " existiert nicht");
+                    if (germanHeader.IsChecked == false)
+                        MessageBox.Show("P- or E-Part with ID: " + ItemID + " doesn't exist");
+                    return;
+                }
+                 if((int.Parse(amount) <= 0))
+                {
+                    if (germanHeader.IsChecked == true)
+                        MessageBox.Show("Menge erhöhen");
+                    if (germanHeader.IsChecked == false)
+                        MessageBox.Show("Insufficient Amount");
+                    return;
+                }
+                if ((int.Parse(amount) %10 != 0))
+                {
+                    if (germanHeader.IsChecked == true)
+                        MessageBox.Show("Stückelung beachten");
+                    if (germanHeader.IsChecked == false)
+                        MessageBox.Show("BatchSize Warning");
+                    return;
+                }
+
                 DataRow AddRow = GlobalVariables.Aussortierung.NewRow();
                 AddRow["Item"] = ItemID;
                 AddRow["Amount"] = amount;
                 GlobalVariables.Aussortierung.Rows.Add(AddRow);
+                AddItemBox.Clear();
+                AddAmountBox.Clear();
             }
             else
             {
-                MessageBox.Show("Fehler");
+                if (germanHeader.IsChecked == true)
+                    MessageBox.Show("Fehlerhafte Eingabe");
+                if (germanHeader.IsChecked == false)
+                    MessageBox.Show("Input Error");
             }
 
         }
@@ -11923,6 +11956,14 @@ namespace ProBikeSS16
                 MessageBox.Show("Fehler");
             }
 
+        }
+
+        private void textBox_PreviewExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (e.Command == ApplicationCommands.Paste)
+            {
+                e.Handled = true;
+            }
         }
 
     }
