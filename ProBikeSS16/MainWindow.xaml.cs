@@ -11294,8 +11294,12 @@ namespace ProBikeSS16
 
         private void DeleteOrderBestellung_OnClick(object sender, RoutedEventArgs e)
         {
-            DataRowView row = (DataRowView)BestellungslisteZu.SelectedItems[0];
-            row.Delete();
+            var currentRowIndex = BestellungslisteZu.SelectedIndex;
+            if (!(currentRowIndex < 0))
+            {
+                DataRowView row = (DataRowView)BestellungslisteZu.SelectedItems[0];
+                row.Delete();
+            }
         }
 
 
