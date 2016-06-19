@@ -372,46 +372,46 @@ namespace ProBikeSS16
 
         public void calculateSetUpTime()
         {
-            setUpTimeA1.Text = (Math.Round(GlobalVariables.A1SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA2.Text = (Math.Round(GlobalVariables.A2SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA3.Text = (Math.Round(GlobalVariables.A3SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA4.Text = (Math.Round(GlobalVariables.A4SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA6.Text = (Math.Round(GlobalVariables.A6SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA7.Text = (Math.Round(GlobalVariables.A7SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA8.Text = (Math.Round(GlobalVariables.A8SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA9.Text = (Math.Round(GlobalVariables.A9SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA10.Text = (Math.Round(GlobalVariables.A10SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA11.Text = (Math.Round(GlobalVariables.A11SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA12.Text = (Math.Round(GlobalVariables.A12SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA13.Text = (Math.Round(GlobalVariables.A13SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA14.Text = (Math.Round(GlobalVariables.A14SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA15.Text = (Math.Round(GlobalVariables.A15SetUpsLastPeriod * 1.15 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA1.Text = (Math.Round(GlobalVariables.A1SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA2.Text = (Math.Round(GlobalVariables.A2SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA3.Text = (Math.Round(GlobalVariables.A3SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA4.Text = (Math.Round(GlobalVariables.A4SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA6.Text = (Math.Round(GlobalVariables.A6SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA7.Text = (Math.Round(GlobalVariables.A7SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA8.Text = (Math.Round(GlobalVariables.A8SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA9.Text = (Math.Round(GlobalVariables.A9SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA10.Text = (Math.Round(GlobalVariables.A10SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA11.Text = (Math.Round(GlobalVariables.A11SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA12.Text = (Math.Round(GlobalVariables.A12SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA13.Text = (Math.Round(GlobalVariables.A13SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA14.Text = (Math.Round(GlobalVariables.A14SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+            setUpTimeA15.Text = (Math.Round(GlobalVariables.A15SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
         }
 
         public void calculateOldSetUpTime()
         {
             if (Int32.Parse(kapOldA1.Text) > 0)
-                setUpOldTimeA1.Text = (Math.Round((double)Int32.Parse(kapOldA1.Text) / 100) * 20).ToString();
+                setUpOldTimeA1.Text = (Math.Truncate((double)Int32.Parse(kapOldA1.Text) / 100) * 20).ToString();
             if (Int32.Parse(kapOldA2.Text) > 0)
-                setUpOldTimeA2.Text = (Math.Round((double)Int32.Parse(kapOldA2.Text) / 100) * 30).ToString();
+                setUpOldTimeA2.Text = (Math.Truncate((double)Int32.Parse(kapOldA2.Text) / 100) * 30).ToString();
             if (Int32.Parse(kapOldA3.Text) > 0)
-                setUpOldTimeA3.Text = (Math.Round((double)Int32.Parse(kapOldA3.Text) / 100) * 20).ToString();
+                setUpOldTimeA3.Text = (Math.Truncate((double)Int32.Parse(kapOldA3.Text) / 100) * 20).ToString();
             if (Int32.Parse(kapOldA4.Text) > 0)
-                setUpOldTimeA4.Text = (Math.Round((double)Int32.Parse(kapOldA4.Text) / 100) * 30).ToString();
+                setUpOldTimeA4.Text = (Math.Truncate((double)Int32.Parse(kapOldA4.Text) / 100) * 30).ToString();
             if (Int32.Parse(kapOldA6.Text) > 0)
-                setUpOldTimeA6.Text = (Math.Round((double)Int32.Parse(kapOldA6.Text) / 100) * 15).ToString();
+                setUpOldTimeA6.Text = (Math.Truncate((double)Int32.Parse(kapOldA6.Text) / 100) * 15).ToString();
             if (Int32.Parse(kapOldA7.Text) > 0)
-                setUpOldTimeA7.Text = (Math.Round((double)Int32.Parse(kapOldA7.Text) / 100) * 20).ToString();
+                setUpOldTimeA7.Text = (Math.Truncate((double)Int32.Parse(kapOldA7.Text) / 100) * 20).ToString();
             if (Int32.Parse(kapOldA8.Text) > 0)
-                setUpOldTimeA8.Text = (Math.Round((double)Int32.Parse(kapOldA8.Text) / 100) * 20).ToString();
+                setUpOldTimeA8.Text = (Math.Truncate((double)Int32.Parse(kapOldA8.Text) / 100) * 20).ToString();
             if (Int32.Parse(kapOldA9.Text) > 0)
-                setUpOldTimeA9.Text = (Math.Round((double)Int32.Parse(kapOldA9.Text) / 100) * 15).ToString();
+                setUpOldTimeA9.Text = (Math.Truncate((double)Int32.Parse(kapOldA9.Text) / 100) * 15).ToString();
             if (Int32.Parse(kapOldA10.Text) > 0)
-                setUpOldTimeA10.Text = (Math.Round((double)Int32.Parse(kapOldA10.Text) / 100) * 20).ToString();
+                setUpOldTimeA10.Text = (Math.Truncate((double)Int32.Parse(kapOldA10.Text) / 100) * 20).ToString();
             if (Int32.Parse(kapOldA11.Text) > 0)
-                setUpOldTimeA11.Text = (Math.Round((double)Int32.Parse(kapOldA11.Text) / 100) * 15).ToString();
+                setUpOldTimeA11.Text = (Math.Truncate((double)Int32.Parse(kapOldA11.Text) / 100) * 15).ToString();
             if (Int32.Parse(kapOldA14.Text) > 0)
-                setUpOldTimeA15.Text = (Math.Round((double)Int32.Parse(kapOldA15.Text) / 100) * 15).ToString();
+                setUpOldTimeA15.Text = (Math.Truncate((double)Int32.Parse(kapOldA15.Text) / 100) * 15).ToString();
         }
 
         public void calculateShiftAndOverDo()
@@ -7630,9 +7630,11 @@ namespace ProBikeSS16
                 if (id == 7)
                 {
                     if (waitingTimeNeed >= 0)
+                    {
                         kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
-                    kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
-                    kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + waitingTimeNeed).ToString();
+                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                        kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + waitingTimeNeed).ToString();
+                    }
                     if (orderInWorkTimeNeed >= 0)
                         kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + orderInWorkTimeNeed).ToString();
                     
@@ -7665,7 +7667,7 @@ namespace ProBikeSS16
                     if (waitingTimeNeed >= 0)
                     {
                         kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + waitingTimeNeed).ToString();
-                        kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + waitingTimeNeed).ToString();
+                        kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + waitingTimeNeed).ToString();
                     }
                     if (orderInWorkTimeNeed >= 0)
                         kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + orderInWorkTimeNeed).ToString();
