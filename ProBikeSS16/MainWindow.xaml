@@ -1623,7 +1623,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding penalty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <TextBox  CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding penalty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1634,7 +1634,7 @@
                                     </DataGridTemplateColumn.Header>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox PreviewTextInput="NumberValidationTextBox" CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+                                            <TextBox  CommandManager.PreviewExecuted="textBox_PreviewExecuted" Text="{Binding price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
