@@ -372,20 +372,65 @@ namespace ProBikeSS16
 
         public void calculateSetUpTime()
         {
-            setUpTimeA1.Text = (Math.Round(GlobalVariables.A1SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA2.Text = (Math.Round(GlobalVariables.A2SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA3.Text = (Math.Round(GlobalVariables.A3SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA4.Text = (Math.Round(GlobalVariables.A4SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA6.Text = (Math.Round(GlobalVariables.A6SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA7.Text = (Math.Round(GlobalVariables.A7SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA8.Text = (Math.Round(GlobalVariables.A8SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA9.Text = (Math.Round(GlobalVariables.A9SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA10.Text = (Math.Round(GlobalVariables.A10SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA11.Text = (Math.Round(GlobalVariables.A11SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A1SetUpsLastPeriod <= 0)
+                setUpTimeA1.Text = (Math.Ceiling((double)(Int32.Parse(kapA1.Text) * 0.0446))).ToString();
+            else
+                setUpTimeA1.Text = (Math.Round(GlobalVariables.A1SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A2SetUpsLastPeriod <= 0)
+                setUpTimeA2.Text = (Math.Ceiling((double)(Int32.Parse(kapA2.Text) * 0.07))).ToString();
+            else
+                setUpTimeA2.Text = (Math.Round(GlobalVariables.A2SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A3SetUpsLastPeriod <= 0)
+                setUpTimeA3.Text = (Math.Ceiling((double)(Int32.Parse(kapA3.Text) * 0.02))).ToString();
+            else
+                setUpTimeA3.Text = (Math.Round(GlobalVariables.A3SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A4SetUpsLastPeriod <= 0)
+                setUpTimeA4.Text = (Math.Ceiling((double)(Int32.Parse(kapA4.Text) * 0.04))).ToString();
+            else
+                setUpTimeA4.Text = (Math.Round(GlobalVariables.A4SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A6SetUpsLastPeriod <= 0)
+                setUpTimeA6.Text = (Math.Ceiling((double)(Int32.Parse(kapA6.Text) * 0.03))).ToString();
+            else
+                setUpTimeA6.Text = (Math.Round(GlobalVariables.A6SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A7SetUpsLastPeriod <= 0)
+                setUpTimeA7.Text = (Math.Ceiling((double)(Int32.Parse(kapA7.Text) * 0.25))).ToString();
+            else
+                setUpTimeA7.Text = (Math.Round(GlobalVariables.A7SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A8SetUpsLastPeriod <= 0)
+                setUpTimeA8.Text = (Math.Ceiling((double)(Int32.Parse(kapA8.Text) * 0.2))).ToString();
+            else
+                setUpTimeA8.Text = (Math.Round(GlobalVariables.A8SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A9SetUpsLastPeriod <= 0)
+                setUpTimeA9.Text = (Math.Ceiling((double)(Int32.Parse(kapA9.Text) * 0.095))).ToString();
+            else
+                setUpTimeA9.Text = (Math.Round(GlobalVariables.A9SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A10SetUpsLastPeriod <= 0)
+                setUpTimeA10.Text = (Math.Ceiling((double)(Int32.Parse(kapA10.Text) * 0.043))).ToString();
+            else
+                setUpTimeA10.Text = (Math.Round(GlobalVariables.A10SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A11SetUpsLastPeriod <= 0)
+                setUpTimeA11.Text = (Math.Ceiling((double)(Int32.Parse(kapA11.Text) * 0.038))).ToString();
+            else
+                setUpTimeA11.Text = (Math.Round(GlobalVariables.A11SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
             setUpTimeA12.Text = (Math.Round(GlobalVariables.A12SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
             setUpTimeA13.Text = (Math.Round(GlobalVariables.A13SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
             setUpTimeA14.Text = (Math.Round(GlobalVariables.A14SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
-            setUpTimeA15.Text = (Math.Round(GlobalVariables.A15SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
+
+            if (GlobalVariables.A15SetUpsLastPeriod <= 0)
+                setUpTimeA15.Text = (Math.Ceiling((double)(Int32.Parse(kapA15.Text) * 0.008))).ToString();
+            else
+                setUpTimeA15.Text = (Math.Round(GlobalVariables.A15SetUpsLastPeriod * 1.10 / 10, MidpointRounding.AwayFromZero) * 10).ToString();
         }
 
         public void calculateOldSetUpTime()
@@ -921,16 +966,12 @@ namespace ProBikeSS16
         public void calculateCapNeedA1()
         {
             kapA1.Text = (Int32.Parse(E49A1.Text) + Int32.Parse(E54A1.Text) + Int32.Parse(E29A1.Text)).ToString();
-            if (GlobalVariables.A1SetUpsLastPeriod <= 0)
-                setUpTimeA1.Text = (Math.Ceiling((decimal)(Int32.Parse(kapA1.Text) * 0.0446))).ToString();
 
         }
 
         public void calculateCapNeedA2()
         {
             kapA2.Text = (Int32.Parse(E50A2.Text) + Int32.Parse(E55A2.Text) + Int32.Parse(E30A2.Text)).ToString();
-            if (GlobalVariables.A2SetUpsLastPeriod <= 0)
-                setUpTimeA2.Text = (Math.Ceiling((decimal)(Int32.Parse(kapA2.Text) * 0.07))).ToString();
         }
 
         public void calculateCapNeedA3()

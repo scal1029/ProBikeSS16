@@ -66,20 +66,20 @@ namespace ProBikeSS16
         public static bool blockingErrorKapaPlan;
 
         //SetUpLastPeriod
-        public static int A1SetUpsLastPeriod;
-        public static int A2SetUpsLastPeriod;
-        public static int A3SetUpsLastPeriod;
-        public static int A4SetUpsLastPeriod;
-        public static int A6SetUpsLastPeriod;
-        public static int A7SetUpsLastPeriod;
-        public static int A8SetUpsLastPeriod;
-        public static int A9SetUpsLastPeriod;
-        public static int A10SetUpsLastPeriod;
-        public static int A11SetUpsLastPeriod;
-        public static int A12SetUpsLastPeriod;
-        public static int A13SetUpsLastPeriod;
-        public static int A14SetUpsLastPeriod;
-        public static int A15SetUpsLastPeriod;
+        public static int A1SetUpsLastPeriod = 0;
+        public static int A2SetUpsLastPeriod = 0;
+        public static int A3SetUpsLastPeriod = 0;
+        public static int A4SetUpsLastPeriod = 0;
+        public static int A6SetUpsLastPeriod = 0;
+        public static int A7SetUpsLastPeriod = 0;
+        public static int A8SetUpsLastPeriod = 0;
+        public static int A9SetUpsLastPeriod = 0;
+        public static int A10SetUpsLastPeriod = 0;
+        public static int A11SetUpsLastPeriod = 0;
+        public static int A12SetUpsLastPeriod = 0;
+        public static int A13SetUpsLastPeriod = 0;
+        public static int A14SetUpsLastPeriod = 0;
+        public static int A15SetUpsLastPeriod = 0;
 
         //Produktionsaufträge
         public static int E26Produktionsauftrag;
