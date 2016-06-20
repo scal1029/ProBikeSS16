@@ -921,11 +921,16 @@ namespace ProBikeSS16
         public void calculateCapNeedA1()
         {
             kapA1.Text = (Int32.Parse(E49A1.Text) + Int32.Parse(E54A1.Text) + Int32.Parse(E29A1.Text)).ToString();
+            if (GlobalVariables.A1SetUpsLastPeriod <= 0)
+                setUpTimeA1.Text = (Math.Ceiling((decimal)(Int32.Parse(kapA1.Text) * 0.0446))).ToString();
+
         }
 
         public void calculateCapNeedA2()
         {
             kapA2.Text = (Int32.Parse(E50A2.Text) + Int32.Parse(E55A2.Text) + Int32.Parse(E30A2.Text)).ToString();
+            if (GlobalVariables.A2SetUpsLastPeriod <= 0)
+                setUpTimeA2.Text = (Math.Ceiling((decimal)(Int32.Parse(kapA2.Text) * 0.07))).ToString();
         }
 
         public void calculateCapNeedA3()
@@ -7582,145 +7587,157 @@ namespace ProBikeSS16
                 int id = Convert.ToInt32((string)row["id"]);
                 int orderInWorkTimeNeed = -1;
                 int waitingTimeNeed = -1;
-                if (!(row["timeneed"] is DBNull) && row["period"] is DBNull)
-                    waitingTimeNeed = Convert.ToInt32((string)row["timeneed"]);
 
-                if (!(row["timeneed"] is DBNull) && !(row["period"] is DBNull))
-                    orderInWorkTimeNeed = Convert.ToInt32((string)row["timeneed"]);
+                if (data.Tables["workplace"].Columns.Contains("period"))
+                {
+
+                    if (!(row["timeneed"] is DBNull) && row["period"] is DBNull)
+                        waitingTimeNeed = Convert.ToInt32((string)row["timeneed"]);
+
+                    if (!(row["timeneed"] is DBNull) && !(row["period"] is DBNull))
+                        orderInWorkTimeNeed = Convert.ToInt32((string)row["timeneed"]);
+                } else
+                {
+                    if (!(row["timeneed"] is DBNull))
+                        waitingTimeNeed = Convert.ToInt32((string)row["timeneed"]);
+                    
+                        orderInWorkTimeNeed = 0;
+                }
 
                 if (id == 1)
-                {
-                    if(waitingTimeNeed >= 0)
-                        kapOldA1.Text = (Int32.Parse(kapOldA1.Text) + waitingTimeNeed).ToString();
-                    if(orderInWorkTimeNeed >= 0)
-                        kapOldA1.Text = (Int32.Parse(kapOldA1.Text) + orderInWorkTimeNeed).ToString();
-                }
-                if (id == 2)
-                {
-                    if (waitingTimeNeed >= 0)
-                        kapOldA2.Text = (Int32.Parse(kapOldA2.Text) + waitingTimeNeed).ToString();
-                    if (orderInWorkTimeNeed >= 0)
+                    {
+                        if (waitingTimeNeed >= 0)
+                            kapOldA1.Text = (Int32.Parse(kapOldA1.Text) + waitingTimeNeed).ToString();
+                        if (orderInWorkTimeNeed >= 0)
+                            kapOldA1.Text = (Int32.Parse(kapOldA1.Text) + orderInWorkTimeNeed).ToString();
+                    }
+                    if (id == 2)
+                    {
+                        if (waitingTimeNeed >= 0)
+                            kapOldA2.Text = (Int32.Parse(kapOldA2.Text) + waitingTimeNeed).ToString();
+                        if (orderInWorkTimeNeed >= 0)
                             kapOldA2.Text = (Int32.Parse(kapOldA2.Text) + orderInWorkTimeNeed).ToString();
-                }
-                if (id == 3)
-                {
-                    if (waitingTimeNeed >= 0)
-                        kapOldA3.Text = (Int32.Parse(kapOldA3.Text) + waitingTimeNeed).ToString();
-                    if (orderInWorkTimeNeed >= 0)
+                    }
+                    if (id == 3)
+                    {
+                        if (waitingTimeNeed >= 0)
+                            kapOldA3.Text = (Int32.Parse(kapOldA3.Text) + waitingTimeNeed).ToString();
+                        if (orderInWorkTimeNeed >= 0)
                             kapOldA3.Text = (Int32.Parse(kapOldA3.Text) + orderInWorkTimeNeed).ToString();
-                }
-                if (id == 4)
-                {
-                    if (waitingTimeNeed >= 0)
-                        kapOldA4.Text = (Int32.Parse(kapOldA4.Text) + waitingTimeNeed).ToString();
-                    if (orderInWorkTimeNeed >= 0)
+                    }
+                    if (id == 4)
+                    {
+                        if (waitingTimeNeed >= 0)
+                            kapOldA4.Text = (Int32.Parse(kapOldA4.Text) + waitingTimeNeed).ToString();
+                        if (orderInWorkTimeNeed >= 0)
                             kapOldA4.Text = (Int32.Parse(kapOldA4.Text) + orderInWorkTimeNeed).ToString();
-                }
-                if (id == 6)
-                {
-                    if (waitingTimeNeed >= 0)
-                    {
-                        kapOldA6.Text = (Int32.Parse(kapOldA6.Text) + waitingTimeNeed).ToString();
-                        kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + waitingTimeNeed).ToString();
                     }
-                    if (orderInWorkTimeNeed >= 0)
-                        kapOldA6.Text = (Int32.Parse(kapOldA6.Text) + orderInWorkTimeNeed).ToString();
-                    
-                }
-                if (id == 7)
-                {
-                    if (waitingTimeNeed >= 0)
+                    if (id == 6)
                     {
-                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
-                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
-                        kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + waitingTimeNeed).ToString();
-                    }
-                    if (orderInWorkTimeNeed >= 0)
-                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + orderInWorkTimeNeed).ToString();
-                    
-                }
-                if (id == 8)
-                {
-                    if (waitingTimeNeed >= 0)
-                    {
-                        kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + waitingTimeNeed).ToString();
-                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
-                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
-                    }
-                    if (orderInWorkTimeNeed >= 0)
-                        kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + orderInWorkTimeNeed).ToString();
-                    
-                }
-                if (id == 9)
-                {
-                    if (waitingTimeNeed >= 0)
-                    {
-                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
-                    }
-                    if (orderInWorkTimeNeed >= 0)
-                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + orderInWorkTimeNeed).ToString();
+                        if (waitingTimeNeed >= 0)
+                        {
+                            kapOldA6.Text = (Int32.Parse(kapOldA6.Text) + waitingTimeNeed).ToString();
+                            kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + waitingTimeNeed).ToString();
+                        }
+                        if (orderInWorkTimeNeed >= 0)
+                            kapOldA6.Text = (Int32.Parse(kapOldA6.Text) + orderInWorkTimeNeed).ToString();
 
-                    
-                }
-                if (id == 10)
-                {
-                    if (waitingTimeNeed >= 0)
-                    {
-                        kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + waitingTimeNeed).ToString();
-                        kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + waitingTimeNeed).ToString();
                     }
-                    if (orderInWorkTimeNeed >= 0)
-                        kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + orderInWorkTimeNeed).ToString();
-                    
-                }
-                if (id == 11)
-                {
-                    if (waitingTimeNeed >= 0)
-                        kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + waitingTimeNeed).ToString();
-                    if (orderInWorkTimeNeed >= 0)
+                    if (id == 7)
+                    {
+                        if (waitingTimeNeed >= 0)
+                        {
+                            kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
+                            kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                            kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + waitingTimeNeed).ToString();
+                        }
+                        if (orderInWorkTimeNeed >= 0)
+                            kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + orderInWorkTimeNeed).ToString();
+
+                    }
+                    if (id == 8)
+                    {
+                        if (waitingTimeNeed >= 0)
+                        {
+                            kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + waitingTimeNeed).ToString();
+                            kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
+                            kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                        }
+                        if (orderInWorkTimeNeed >= 0)
+                            kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + orderInWorkTimeNeed).ToString();
+
+                    }
+                    if (id == 9)
+                    {
+                        if (waitingTimeNeed >= 0)
+                        {
+                            kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                        }
+                        if (orderInWorkTimeNeed >= 0)
+                            kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + orderInWorkTimeNeed).ToString();
+
+
+                    }
+                    if (id == 10)
+                    {
+                        if (waitingTimeNeed >= 0)
+                        {
+                            kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + waitingTimeNeed).ToString();
+                            kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + waitingTimeNeed).ToString();
+                        }
+                        if (orderInWorkTimeNeed >= 0)
+                            kapOldA10.Text = (Int32.Parse(kapOldA10.Text) + orderInWorkTimeNeed).ToString();
+
+                    }
+                    if (id == 11)
+                    {
+                        if (waitingTimeNeed >= 0)
+                            kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + waitingTimeNeed).ToString();
+                        if (orderInWorkTimeNeed >= 0)
                             kapOldA11.Text = (Int32.Parse(kapOldA11.Text) + orderInWorkTimeNeed).ToString();
-                }
-                if (id == 12)
-                {
-                    if (waitingTimeNeed >= 0)
-                    {
-                        kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + waitingTimeNeed).ToString();
-                        kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + waitingTimeNeed).ToString();
-                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
-                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
                     }
-                    if (orderInWorkTimeNeed >= 0)
-                        kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + orderInWorkTimeNeed).ToString();
-                    
-                }
-                if (id == 13)
-                {
-                    if (waitingTimeNeed >= 0)
+                    if (id == 12)
                     {
-                        kapOldA13.Text = (Int32.Parse(kapOldA13.Text) + waitingTimeNeed).ToString();
-                        kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + waitingTimeNeed).ToString();
-                        kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + waitingTimeNeed).ToString();
-                        kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
-                        kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                        if (waitingTimeNeed >= 0)
+                        {
+                            kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + waitingTimeNeed).ToString();
+                            kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + waitingTimeNeed).ToString();
+                            kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
+                            kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                        }
+                        if (orderInWorkTimeNeed >= 0)
+                            kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + orderInWorkTimeNeed).ToString();
+
                     }
-                    if (orderInWorkTimeNeed >= 0)
-                        kapOldA13.Text = (Int32.Parse(kapOldA13.Text) + orderInWorkTimeNeed).ToString();
-                    
-                }
-                if (id == 14)
-                {
-                    if (waitingTimeNeed >= 0)
-                        kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + waitingTimeNeed).ToString();
-                    if (orderInWorkTimeNeed >= 0)
+                    if (id == 13)
+                    {
+                        if (waitingTimeNeed >= 0)
+                        {
+                            kapOldA13.Text = (Int32.Parse(kapOldA13.Text) + waitingTimeNeed).ToString();
+                            kapOldA12.Text = (Int32.Parse(kapOldA12.Text) + waitingTimeNeed).ToString();
+                            kapOldA8.Text = (Int32.Parse(kapOldA8.Text) + waitingTimeNeed).ToString();
+                            kapOldA7.Text = (Int32.Parse(kapOldA7.Text) + waitingTimeNeed).ToString();
+                            kapOldA9.Text = (Int32.Parse(kapOldA9.Text) + waitingTimeNeed).ToString();
+                        }
+                        if (orderInWorkTimeNeed >= 0)
+                            kapOldA13.Text = (Int32.Parse(kapOldA13.Text) + orderInWorkTimeNeed).ToString();
+
+                    }
+                    if (id == 14)
+                    {
+                        if (waitingTimeNeed >= 0)
+                            kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + waitingTimeNeed).ToString();
+                        if (orderInWorkTimeNeed >= 0)
                             kapOldA14.Text = (Int32.Parse(kapOldA14.Text) + orderInWorkTimeNeed).ToString();
-                }
-                if (id == 15)
-                {
-                    if (waitingTimeNeed >= 0)
-                        kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + waitingTimeNeed).ToString();
-                    if (orderInWorkTimeNeed >= 0)
-                        kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + orderInWorkTimeNeed).ToString();
-                }
+                    }
+                    if (id == 15)
+                    {
+                        if (waitingTimeNeed >= 0)
+                            kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + waitingTimeNeed).ToString();
+                        if (orderInWorkTimeNeed >= 0)
+                            kapOldA15.Text = (Int32.Parse(kapOldA15.Text) + orderInWorkTimeNeed).ToString();
+                    }
+                
             }
         }
 
